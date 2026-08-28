@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Калькулятор окупаемости базы отдыха</title>
+<meta name="description" content="Посчитайте вложения, годовую выручку и срок окупаемости базы отдыха за минуту.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header class="hdr solid" id="hdr">
+  <div class="hdr__in">
+    <a class="hdr__logo" href="index.html">открытьбазу.рф</a>
+    <nav class="hdr__nav"><a href="index.html">Главная</a><a href="uslugi.html">Услуги и цены</a><a href="materialy.html">Материалы</a><a href="stroyka.html">Строительство</a><a href="calc.html" aria-current="page">Калькулятор</a><a href="rabotaet.html">Действующим базам</a></nav>
+    <a class="hdr__tel" href="tel:+79019608069">+7 901 960-80-69</a>
+    <a class="hdr__cta" href="#zayavka" data-goal="hdr_cta">Диагностика</a>
+    <button class="hdr__burger" aria-label="Меню" onclick="document.getElementById('mob').classList.toggle('open')"><span></span></button>
+  </div>
+  <div class="hdr__mob" id="mob"><a href="index.html">Главная</a><a href="uslugi.html">Услуги и цены</a><a href="materialy.html">Материалы</a><a href="stroyka.html">Строительство</a><a href="calc.html">Калькулятор</a><a href="rabotaet.html">Действующим базам</a><a href="#zayavka">Пройти диагностику</a></div>
+</header>
+
+<section class="pagehead" style="--sec-img:url(assets/img/proekt.webp)">
+  <div class="w">
+    <span class="eyebrow">Расчёт за минуту<span class="new">новое</span></span>
+    <h1 style="max-width:18ch;margin-bottom:var(--s3)">Калькулятор окупаемости базы отдыха</h1>
+    <p class="lead">Прикидка по среднерыночным цифрам: сколько нужно вложить, сколько приносит база и когда вернутся деньги. Точный расчёт под ваш участок делаем в финансовой модели за 230 000 ₽.</p>
+  </div>
+</section>
+
+<section class="sec-tint">
+  <div class="w">
+    <div class="grid" style="align-items:start">
+
+      <div class="card">
+        <h3 style="margin-bottom:var(--s4)">Ваши вводные</h3>
+        <label class="f">
+          <span>Количество домиков <b id="v-houses">6</b></span>
+          <input type="range" id="houses" min="2" max="30" step="1" value="6">
+        </label>
+        <label class="f">
+          <span>Тип дома</span>
+          <select id="cls">
+            <option value="eco">Хаус, базовый формат</option>
+            <option value="comfort" selected>Барнхаус или шале</option>
+            <option value="premium">Панорама или а-фрейм</option>
+          </select>
+        </label>
+        <label class="f">
+          <span>Цена за ночь <b id="v-price">10 000</b> ₽</span>
+          <input type="range" id="price" min="3000" max="40000" step="500" value="10000">
+        </label>
+        <label class="f">
+          <span>Средняя загрузка за год <b id="v-load">55</b>%</span>
+          <input type="range" id="load" min="20" max="90" step="1" value="55">
+        </label>
+        <label class="f" style="margin-bottom:0">
+          <span>Общая зона: баня, чаша, кафе</span>
+          <select id="infra">
+            <option value="0">Нет, только домики</option>
+            <option value="1" selected>Базовая: баня и зона отдыха</option>
+            <option value="2">Развитая: кафе, спа, детская</option>
+          </select>
+        </label>
+      </div>
+
+      <div class="card card--acc">
+        <h3 style="margin-bottom:var(--s3)">Что получается</h3>
+        <div class="res">
+          <div class="res__row"><span>Вложения в стройку</span><b id="r-capex">0</b></div>
+          <div class="res__row"><span>Выручка в год</span><b id="r-rev">0</b></div>
+          <div class="res__row"><span>Расходы в год</span><b id="r-cost">0</b></div>
+          <div class="res__row res__row--big"><span>Прибыль в год</span><b id="r-profit">0</b></div>
+          <div class="res__row res__row--big"><span>Окупаемость</span><b id="r-pb">0</b></div>
+        </div>
+        <p class="note" style="text-align:left;margin:var(--s3) 0">Расчёт ориентировочный. Реальные цифры зависят от участка, региона и сезонности.</p>
+        <a class="btn btn--w" href="#zayavka" data-goal="calc_request">Получить точный расчёт</a>
+        <p class="note">Финансовая модель под ваш проект, 230 000 ₽, 10 дней</p>
+      </div>
+
+    </div>
+
+    <div class="todo"><b>Подставить ваши коэффициенты:</b> стоимость дома по типам и комплектациям, доля инфраструктуры, доля операционных расходов. Сейчас в калькуляторе рыночная рыба. У вас есть коммерческие по пяти типам домов, оттуда и берём цифры, иначе калькулятор будет спорить с вашими же кейсами.</div>
+  </div>
+</section>
+
+<section class="sec-grid">
+  <div class="w">
+    <span class="eyebrow">Методика</span>
+    <h2>Как считаем</h2>
+    <div class="grid grid--3" style="margin-top:var(--s4)">
+      <div class="card"><h3>Вложения</h3><p class="for">Стоимость дома по типу, умноженная на количество, плюс общая зона и подготовка участка.</p></div>
+      <div class="card"><h3>Выручка</h3><p class="for">Домики, умноженные на цену ночи, на 365 дней и на загрузку за год.</p></div>
+      <div class="card"><h3>Расходы</h3><p class="for">Персонал, коммуналка, уборка, продвижение и налоги. В расчёте это доля от выручки.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="zayavka" class="sec-tint">
+  <div class="w">
+    <div class="cta">
+      <div class="cta__bg"><img src="assets/img/hero2.webp" alt="" loading="lazy" width="1600" height="900"></div>
+      <div class="cta__in">
+        <h2>Бесплатная диагностика проекта</h2>
+        <p>Посмотрим участок и задачу, скажем, что нужно именно вам, и не станем предлагать лишнее. Около 30 минут, без обязательств.</p>
+        <form class="form" onsubmit="return false">
+          <input type="text" placeholder="Ваше имя" required>
+          <input type="tel" placeholder="Телефон" required>
+          <select class="full">
+            <option>На каком вы этапе</option>
+            <option>Есть идея</option>
+            <option>Есть участок</option>
+            <option>Есть готовый проект</option>
+            <option>Есть действующая база</option>
+          </select>
+          <button class="btn btn--light full" data-goal="diag_submit">Записаться на диагностику</button>
+          <label class="full"><input type="checkbox" checked><span>Согласен на обработку персональных данных</span></label>
+        </form>
+      </div>
+    </div>
+    <div class="todo"><b>Форма:</b> было пять полей на первом шаге, стало три. Город и вопрос спрашиваем на втором шаге, когда телефон уже получен. На сайте сейчас 16 одинаковых форм, здесь у каждой свой заголовок и своя цель в Метрике.</div>
+  </div>
+</section>
+
+<style>
+.f{display:block;margin-bottom:var(--s4)}
+.f>span{display:flex;justify-content:space-between;align-items:baseline;font-size:15px;color:var(--dim);margin-bottom:10px}
+.f>span b{color:var(--ink);font-size:19px;font-weight:700}
+.f input[type=range]{width:100%;height:44px;accent-color:var(--acc);cursor:pointer}
+.f select{width:100%;min-height:52px;border:1px solid var(--line);border-radius:12px;
+  padding:0 16px;font:400 16px 'Inter',sans-serif;color:var(--ink);background:var(--bg);cursor:pointer}
+.res__row{display:flex;justify-content:space-between;align-items:baseline;gap:var(--s2);
+  padding:14px 0;border-bottom:1px solid var(--line);font-size:15.5px;color:var(--dim)}
+.res__row b{color:var(--ink);font-size:20px;font-weight:700;white-space:nowrap}
+.res__row--big b{font-size:27px;color:var(--acc);letter-spacing:-.02em}
+</style>
+
+<script>
+(function(){
+  // РЫБА, ЗАМЕНИТЬ НА ЦИФРЫ ИЗ ВАШИХ КОММЕРЧЕСКИХ
+  var HOUSE = {eco:2500000, comfort:4000000, premium:7000000};
+  var INFRA = [0, 0.25, 0.45];
+  var PREP  = 3000000;
+  var OPEX  = 0.42;
+  var TAX   = 0.06;
+
+  var $ = function(id){ return document.getElementById(id); };
+  var fmt = function(n){
+    if (n >= 1e6) return (n/1e6).toFixed(n/1e6 >= 10 ? 0 : 1).replace('.', ',') + ' млн ₽';
+    return Math.round(n).toLocaleString('ru-RU') + ' ₽';
+  };
+
+  function calc(){
+    var n = +$('houses').value, cls = $('cls').value;
+    var price = +$('price').value, load = +$('load').value/100, inf = +$('infra').value;
+    var houses = n * HOUSE[cls];
+    var capex  = houses + houses * INFRA[inf] + PREP;
+    var rev    = n * price * 365 * load;
+    var cost   = rev * (OPEX + TAX);
+    var profit = rev - cost;
+    var years  = profit > 0 ? capex / profit : 0;
+
+    $('v-houses').textContent = n;
+    $('v-price').textContent  = (+price).toLocaleString('ru-RU');
+    $('v-load').textContent   = Math.round(load*100);
+    $('r-capex').textContent  = fmt(capex);
+    $('r-rev').textContent    = fmt(rev);
+    $('r-cost').textContent   = fmt(cost);
+    $('r-profit').textContent = fmt(profit);
+
+    if (!years || years > 25) { $('r-pb').textContent = 'не окупается'; }
+    else {
+      var y = Math.floor(years), m = Math.round((years-y)*12);
+      if (m === 12) { y++; m = 0; }
+      $('r-pb').textContent = (y ? y+' г. ' : '') + (m ? m+' мес.' : '');
+    }
+  }
+  ['houses','cls','price','load','infra'].forEach(function(id){
+    $(id).addEventListener('input', calc);
+    $(id).addEventListener('change', calc);
+  });
+  calc();
+})();
+</script>
+
+<footer class="ftr">
+  <div class="w">
+    <div class="ftr__grid">
+      <div>
+        <h4>открытьбазу.рф</h4>
+        <ul>
+          <li>9 лет в гостеприимстве</li>
+          <li>130+ проектов, 46 регионов</li>
+          <li>112+ построенных домов</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Услуги</h4>
+        <ul>
+          <li><a href="materialy.html">Обучающие материалы</a></li>
+          <li><a href="uslugi.html#konsultacii">Консультации</a></li>
+          <li><a href="uslugi.html#proekt">Проектирование</a></li>
+          <li><a href="stroyka.html">Строительство</a></li>
+          <li><a href="uslugi.html#prodvizhenie">Продвижение</a></li>
+          <li><a href="uslugi.html#price">Все цены</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Контакты</h4>
+        <ul>
+          <li><a href="tel:+79019608069">+7 901 960-80-69</a></li>
+          <li><a href="#">Telegram</a></li>
+          <li><a href="#">VK</a></li>
+          <li><a href="#">YouTube</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Документы</h4>
+        <ul>
+          <li><a href="#">Политика обработки данных</a></li>
+          <li><a href="#">Оферта на цифровые товары</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="ftr__legal">ИП Резниченко А. С., ИНН 502009611481. ООО «Открытьбазу», ИНН 5044142749.<br>
+    Instagram принадлежит компании Meta, деятельность которой запрещена на территории Российской Федерации.</p>
+  </div>
+</footer>
+
+<button class="notes-btn" onclick="document.body.classList.toggle('notes');try{localStorage.setItem('notes',document.body.classList.contains('notes')?'1':'')}catch(e){}"><i></i>Комментарии</button>
+
+<script>
+(function(){
+  var ID=108184957;
+  document.querySelectorAll('[data-goal]').forEach(function(el){
+    el.addEventListener('click',function(){
+      var g=el.getAttribute('data-goal');
+      if(typeof ym==='function'){ym(ID,'reachGoal',g);}
+      console.log('цель:',g);
+    });
+  });
+  try{ if(localStorage.getItem('notes')) document.body.classList.add('notes'); }catch(e){}
+  var h=document.getElementById('hdr');
+  if(h && !h.classList.contains('solid')){
+    var t=function(){ h.classList.toggle('solid', window.scrollY>60); };
+    window.addEventListener('scroll',t,{passive:true}); t();
+  }
+})();
+</script>
+</body>
+</html>
