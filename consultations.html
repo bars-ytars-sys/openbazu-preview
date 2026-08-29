@@ -4,7 +4,7 @@ function t_onFuncLoad(funcName,okFunc,time) {if(typeof window[funcName]==='funct
 document.addEventListener('DOMContentLoaded',t_setvisRecs);}})();</script>
 <style id="ob-notes-css">
 .ob-note-mark{display:none;position:relative;z-index:60;margin:0 auto;max-width:1360px;
-  padding:18px 22px;border-radius:10px;box-sizing:border-box;
+  padding:18px 22px;border-radius:20px;box-sizing:border-box;
   font-family:var(--t-text-font,Montserrat,Arial,sans-serif);font-size:15px;line-height:1.45}
 body.ob-notes .ob-note-mark{display:block}
 .ob-note-mark--add{background:rgba(108,152,188,.14);border:1px solid #52719d;color:#313a39}
@@ -16,7 +16,7 @@ body.ob-notes .ob-note-mark{display:block}
 .ob-note-mark i{display:block;margin-top:8px;font-style:normal;opacity:.78;font-size:14px}
 
 .ob-notes-btn{position:fixed;right:18px;bottom:18px;z-index:99999;display:inline-flex;
-  align-items:center;gap:10px;height:48px;padding:0 20px;border:0;border-radius:10px;
+  align-items:center;gap:10px;height:48px;padding:0 20px;border:0;border-radius:30px;
   background:#313a39;color:#fffffb;cursor:pointer;box-shadow:0 8px 30px rgba(49,58,57,.35);
   font-family:var(--t-text-font,Montserrat,Arial,sans-serif);font-size:14px;font-weight:600;letter-spacing:.02em}
 .ob-notes-btn:hover{background:#52719d}
@@ -243,7 +243,7 @@ aria-label='' role="img"> </div> </div> <div class='t396__elem tn-elem tn-elem__
 .ob-note{font-family:var(--t-text-font,Arial);font-size:15px;line-height:1.4;color:rgba(49,58,57,.62)}
 
 .ob-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
-.ob-card{background:#fffffb;border:1px solid rgba(49,58,57,.14);border-radius:10px;padding:34px 32px;
+.ob-card{background:#fffffb;border:1px solid rgba(49,58,57,.14);border-radius:30px;padding:34px 32px;
   display:flex;flex-direction:column}
 .ob-card--soft{background:linear-gradient(0.25turn,rgba(227,231,231,.58) 0%,rgba(217,225,234,.58) 100%);
   border-color:transparent}
@@ -263,7 +263,7 @@ aria-label='' role="img"> </div> </div> <div class='t396__elem tn-elem tn-elem__
 .ob-price-row span{font-family:var(--t-text-font,Arial);font-size:14px;color:rgba(49,58,57,.62)}
 
 .ob-btn{display:inline-flex;align-items:center;justify-content:center;width:100%;min-height:52px;
-  padding:0 24px;border:0;border-radius:10px;background:#52719d;color:#fffffb;cursor:pointer;
+  padding:0 24px;border:0;border-radius:30px;background:#52719d;color:#fffffb;cursor:pointer;
   font-family:var(--uc-button-fontfamily-q6td2,EngraversGothic);font-size:15px;font-weight:700;
   letter-spacing:.04em;text-transform:uppercase;text-decoration:none;transition:background .2s}
 .ob-btn:hover{background:#313a39;color:#fffffb}
@@ -272,7 +272,7 @@ aria-label='' role="img"> </div> </div> <div class='t396__elem tn-elem tn-elem__
 .ob-after{margin-top:8px;font-family:var(--t-text-font,Arial);font-size:13px;color:rgba(49,58,57,.62);text-align:center}
 
 /* таблица прайса */
-.ob-tw{overflow-x:auto;border:1px solid rgba(49,58,57,.14);border-radius:10px}
+.ob-tw{overflow-x:auto;border:1px solid rgba(49,58,57,.14);border-radius:30px}
 .ob-table{width:100%;min-width:680px;border-collapse:collapse;font-family:var(--t-text-font,Arial)}
 .ob-table th{padding:18px 26px;text-align:left;font-size:13px;font-weight:600;letter-spacing:.05em;
   text-transform:uppercase;color:rgba(49,58,57,.62);background:#f7f9f8;border-bottom:1px solid rgba(49,58,57,.14)}
@@ -289,7 +289,7 @@ aria-label='' role="img"> </div> </div> <div class='t396__elem tn-elem tn-elem__
 .ob-field>span b{font-family:var(--uc-typo-fontfamily-ZcDjuR,EngraversGothic);
   font-size:20px;font-weight:700;color:#313a39}
 .ob-field input[type=range]{width:100%;height:44px;accent-color:#52719d;cursor:pointer}
-.ob-field select{width:100%;min-height:52px;padding:0 16px;border:1px solid rgba(49,58,57,.14);border-radius:10px;
+.ob-field select{width:100%;min-height:52px;padding:0 16px;border:1px solid rgba(49,58,57,.14);border-radius:15px;
   background:#fffffb;color:#313a39;font-family:var(--t-text-font,Arial);font-size:16px;cursor:pointer}
 .ob-res{margin-bottom:18px}
 .ob-res__row{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:14px 0;
@@ -300,15 +300,15 @@ aria-label='' role="img"> </div> </div> <div class='t396__elem tn-elem tn-elem__
 
 /* цепочка зачёта */
 .ob-chain{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:26px}
-.ob-chain span{padding:11px 20px;border:1px solid rgba(49,58,57,.14);border-radius:8px;background:#fffffb;
+.ob-chain span{padding:11px 20px;border:1px solid rgba(49,58,57,.14);border-radius:30px;background:#fffffb;
   font-family:var(--t-text-font,Arial);font-size:15px;color:#313a39;white-space:nowrap}
 .ob-chain i{font-style:normal;color:#52719d;font-size:18px}
 
 @media screen and (max-width:960px){
   .ob-sec{padding:56px 20px 54px}
   .ob-h2{font-size:32px}
-  .ob-card{padding:28px 24px;border-radius:10px}
-  .ob-tw{border-radius:10px}
+  .ob-card{padding:28px 24px;border-radius:20px}
+  .ob-tw{border-radius:20px}
 }
 </style><div class="ob-note-mark ob-note-mark--add"><b>добавили</b>Единый прайс на 18 позиций<i>Сейчас на сайте 43 разные цены на 32 страницах, и одна цифра означает разные услуги: 200 000 стоит на семи страницах. Собрать картину невозможно.</i></div><div id="rec9000000005" class="r t-rec" style="background-color:#fffffb; " data-animationappear="off" data-record-type="131" data-bg-color="#fffffb">
 <!-- T123 -->
