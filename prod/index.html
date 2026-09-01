@@ -374,6 +374,13 @@ document.addEventListener('DOMContentLoaded',t_setvisRecs);}})();</script><style
 .ob-pcta .ob-btn{width:auto;min-width:280px;background:var(--c)}
 .ob-pcta .ob-btn:hover{background:#313a39}
 .ob-pcta__note{font-family:var(--t-text-font,Arial);font-size:14px;color:rgba(49,58,57,.62)}
+.ob-first{display:flex;gap:14px;align-items:flex-start;margin:0 0 26px;padding:16px 20px;
+  border-radius:16px;background:color-mix(in srgb, var(--c) 8%, #fffffb);
+  border-left:3px solid var(--c)}
+.ob-first b{display:block;font-family:var(--t-text-font,Arial);font-size:15px;font-weight:600;
+  color:#313a39;margin-bottom:4px}
+.ob-first span{font-family:var(--t-text-font,Arial);font-size:14px;line-height:1.42;
+  color:rgba(49,58,57,.7)}
 
 @media screen and (max-width:1100px){
   .ob-doors{grid-template-columns:1fr}
@@ -487,7 +494,7 @@ document.addEventListener('DOMContentLoaded',t_setvisRecs);}})();</script><style
             <button class="ob-door" type="button" aria-expanded="false" data-ob-door="nozem">
               <div class="ob-door__ico"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.6-3.6"/></svg></div>
               <h3>Земли ещё нет</h3>
-              <p>Есть бюджет и желание, участка пока нет. Найдём землю под ваш формат.</p>
+              <p>Есть бюджет и желание, участка пока нет. Поможем найти землю под ваш формат.</p>
               <div class="ob-door__go"><span>Как ищем землю</span><i>&#8964;</i></div>
             </button>
             <button class="ob-door" type="button" aria-expanded="false" data-ob-door="zem">
@@ -507,13 +514,18 @@ document.addEventListener('DOMContentLoaded',t_setvisRecs);}})();</script><style
             <div class="ob-panel__in">
               <h3 class="ob-panel__h">Как ищем землю</h3>
               <p class="ob-panel__d">Сначала считаем, где база будет зарабатывать,
-              и только потом смотрим участки.</p>
+              и только потом смотрим участки. Начинаем с консультации.</p>
+              <div class="ob-first">
+                <div><b>Всё начинается с консультации</b>
+                <span>На ней разбираем ваш случай и даём рекомендации. Оставите заявку,
+                менеджер подскажет, какая консультация подойдёт и сколько она стоит.</span></div>
+              </div>
               <div class="ob-chainx">
               <div class="ob-chainx__s ob-chainx__s--first">
                 <div class="ob-chainx__n">1</div>
-                <div class="ob-chainx__t">Разбор запроса</div>
-                <div class="ob-chainx__d">Бюджет, формат, регион, ожидания по доходу</div>
-                <div class="ob-chainx__w">0 ₽ · 3 дня</div>
+                <div class="ob-chainx__t">Консультация</div>
+                <div class="ob-chainx__d">Разбираем бюджет, формат и регион, отвечаем на вопросы</div>
+                <div class="ob-chainx__w">от 140 000 ₽</div>
               </div>
               <div class="ob-chainx__s">
                 <div class="ob-chainx__n">2</div>
@@ -535,8 +547,8 @@ document.addEventListener('DOMContentLoaded',t_setvisRecs);}})();</script><style
               </div>
               </div>
               <div class="ob-pcta">
-                <a class="ob-btn" href="#popup:zayavka">Подобрать участок</a>
-                <div class="ob-pcta__note">Бесплатно, ни к чему не обязывает</div>
+                <a class="ob-btn" href="#popup:zayavka">Обсудить проект</a>
+                <div class="ob-pcta__note">Ответим в мессенджере и подскажем, с какой консультации начать</div>
               </div>
             </div>
           </div>
@@ -546,13 +558,18 @@ document.addEventListener('DOMContentLoaded',t_setvisRecs);}})();</script><style
               <h3 class="ob-panel__h">От вашего участка до первых гостей</h3>
               <p class="ob-panel__d">Пять этапов. Остановиться можно после любого,
               каждый заканчивается результатом на руках.</p>
+              <div class="ob-first">
+                <div><b>Всё начинается с консультации</b>
+                <span>На ней разбираем ваш случай и даём рекомендации. Оставите заявку,
+                менеджер подскажет, какая консультация подойдёт и сколько она стоит.</span></div>
+              </div>
               <div class="ob-zz">
               <div class="ob-zz__s ob-zz__s--up ob-zz__s--first">
                 <div class="ob-zz__n">1</div>
                 <div class="ob-zz__box">
-                  <div class="ob-zz__t">Разбор участка</div>
-                  <div class="ob-zz__d">Кадастр, ограничения, сколько домов встанет</div>
-                  <div class="ob-zz__w">0 ₽ · 3 дня</div>
+                  <div class="ob-zz__t">Консультация</div>
+                  <div class="ob-zz__d">Смотрим участок: что на нём построится и сколько принесёт</div>
+                  <div class="ob-zz__w">от 140 000 ₽</div>
                 </div>
               </div>
               <div class="ob-zz__s ob-zz__s--down">
@@ -589,8 +606,8 @@ document.addEventListener('DOMContentLoaded',t_setvisRecs);}})();</script><style
               </div>
               </div>
               <div class="ob-pcta">
-                <a class="ob-btn" href="#popup:zayavka">Разобрать мой участок</a>
-                <div class="ob-pcta__note">Бесплатно, ответ в течение дня</div>
+                <a class="ob-btn" href="#popup:zayavka">Обсудить участок</a>
+                <div class="ob-pcta__note">Ответим в мессенджере и подскажем, с какой консультации начать</div>
               </div>
             </div>
           </div>
@@ -598,7 +615,12 @@ document.addEventListener('DOMContentLoaded',t_setvisRecs);}})();</script><style
           <div class="ob-panel" data-ob-panel="work">
             <div class="ob-panel__in">
               <h3 class="ob-panel__h">Что чиним чаще всего</h3>
-              <p class="ob-panel__d">Выберите свою задачу или начните с разбора базы.</p>
+              <p class="ob-panel__d">Выберите свою задачу. Разбираем её на консультации, дальше работаем по плану.</p>
+              <div class="ob-first">
+                <div><b>Всё начинается с консультации</b>
+                <span>На ней разбираем ваш случай и даём рекомендации. Оставите заявку,
+                менеджер подскажет, какая консультация подойдёт и сколько она стоит.</span></div>
+              </div>
               <div class="ob-jobs">
               <a class="ob-job" href="#popup:zayavka">
                 <div class="ob-job__t">Домики стоят пустыми в будни</div>
@@ -629,8 +651,8 @@ document.addEventListener('DOMContentLoaded',t_setvisRecs);}})();</script><style
               <div class="ob-strip">
               <div class="ob-strip__s ob-strip__s--first">
                 <div class="ob-strip__n">1</div>
-                <div class="ob-strip__t">Разбор базы</div>
-                <div class="ob-strip__w">0 ₽ · 3 дня</div>
+                <div class="ob-strip__t">Консультация</div>
+                <div class="ob-strip__w">от 140 000 ₽</div>
               </div>
               <div class="ob-strip__s">
                 <div class="ob-strip__n">2</div>
@@ -649,8 +671,8 @@ document.addEventListener('DOMContentLoaded',t_setvisRecs);}})();</script><style
               </div>
               </div>
               <div class="ob-pcta">
-                <a class="ob-btn" href="#popup:zayavka">Начать с разбора базы</a>
-                <div class="ob-pcta__note">Бесплатно. Скажем, что чинить в первую очередь</div>
+                <a class="ob-btn" href="#popup:zayavka">Обсудить задачу</a>
+                <div class="ob-pcta__note">Ответим в мессенджере и подскажем, с какой консультации начать</div>
               </div>
             </div>
           </div>
