@@ -1,0 +1,300 @@
+<!DOCTYPE html><html lang="ru"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Главная: новые блоки</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+<style>body{margin:0;font-family:Montserrat,Arial,sans-serif;--t-text-font:Montserrat;--uc-typo-fontfamily-ZcDjuR:Montserrat;--uc-button-fontfamily-q6td2:Montserrat}.ob-tag{position:sticky;top:0;z-index:9;background:#313a39;color:#fffffb;font-size:13px;letter-spacing:.1em;text-transform:uppercase;padding:10px 20px}</style>
+</head><body>
+<style>
+.ob-sec{width:100%;padding:86px 20px 82px;box-sizing:border-box;background:#fffffb}
+.ob-sec *{box-sizing:border-box}
+.ob-sec--soft{background:#f7f9f8}
+.ob-wrap{width:100%;max-width:1360px;margin:0 auto}
+.ob-label{margin-bottom:14px;font-family:var(--t-text-font,Arial);font-size:16px;line-height:1.2;
+  font-weight:400;letter-spacing:.04em;text-transform:uppercase;color:#313a39}
+.ob-h2{margin:0 0 18px;font-family:var(--uc-typo-fontfamily-ZcDjuR,EngraversGothic);
+  font-size:42px;line-height:1;font-weight:700;letter-spacing:0;text-transform:uppercase;
+  color:transparent;background-image:var(--uc-typo-color-plt09,linear-gradient(0.25turn, rgba(70,104,153,1) 0%, rgba(30,114,104,1) 100%));
+  -webkit-background-clip:text;background-clip:text}
+.ob-lead{margin:0 0 40px;max-width:860px;font-family:var(--t-text-font,Arial);
+  font-size:18px;line-height:1.35;color:#313a39}
+
+/* ── услуги: коротко ── */
+.ob-serv{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.ob-serv a{display:flex;flex-direction:column;text-decoration:none;color:inherit;
+  border:1px solid rgba(49,58,57,.14);border-radius:30px;padding:32px 30px 28px;background:#fffffb;
+  transition:border-color .2s, transform .2s, box-shadow .2s}
+.ob-serv a:hover{border-color:#52719d;transform:translateY(-3px);
+  box-shadow:0 14px 34px rgba(49,58,57,.09)}
+.ob-serv .n{font-family:var(--t-text-font,Arial);font-size:13px;font-weight:600;letter-spacing:.1em;
+  color:rgba(49,58,57,.44);margin-bottom:14px}
+.ob-serv h3{margin:0 0 10px;font-family:var(--uc-typo-fontfamily-ZcDjuR,EngraversGothic);
+  font-size:26px;line-height:1.08;font-weight:700;text-transform:uppercase;color:#313a39}
+.ob-serv p{margin:0;font-family:var(--t-text-font,Arial);font-size:16px;line-height:1.4;color:#313a39}
+.ob-serv .go{margin-top:22px;font-family:var(--t-text-font,Arial);font-size:15px;font-weight:600;
+  color:#52719d;display:flex;align-items:center;gap:8px}
+.ob-serv a:hover .go{gap:14px}
+.ob-serv .go i{font-style:normal;transition:transform .2s}
+
+/* ── развилка по участку ── */
+.ob-fork{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.ob-fork__card{border-radius:30px;padding:38px 36px 32px;display:flex;flex-direction:column;
+  border:1px solid rgba(49,58,57,.14);background:#fffffb}
+.ob-fork__card--b{background:linear-gradient(0.25turn,rgba(227,231,231,.58) 0%,rgba(217,225,234,.58) 100%);
+  border-color:transparent}
+.ob-fork__q{font-family:var(--t-text-font,Arial);font-size:14px;font-weight:600;letter-spacing:.1em;
+  text-transform:uppercase;color:#52719d;margin-bottom:12px}
+.ob-fork__card h3{margin:0 0 14px;font-family:var(--uc-typo-fontfamily-ZcDjuR,EngraversGothic);
+  font-size:32px;line-height:1.04;font-weight:700;text-transform:uppercase;color:#313a39}
+.ob-fork__card p{margin:0 0 20px;font-family:var(--t-text-font,Arial);font-size:17px;
+  line-height:1.4;color:#313a39}
+.ob-fork__card ul{margin:0 0 26px;padding:0;list-style:none}
+.ob-fork__card li{position:relative;padding-left:22px;margin-bottom:11px;
+  font-family:var(--t-text-font,Arial);font-size:16px;line-height:1.38;color:#313a39}
+.ob-fork__card li:before{content:"";position:absolute;left:0;top:8px;width:8px;height:8px;
+  border-radius:50%;background:#52719d}
+
+/* ── маршрут: карта этапов ── */
+.ob-map{position:relative;display:grid;grid-template-columns:repeat(5,1fr);gap:0;
+  margin-top:8px}
+.ob-map:before{content:"";position:absolute;left:8%;right:8%;top:34px;height:2px;
+  background:linear-gradient(90deg,rgba(82,113,157,.18),#52719d 22%,#52719d 78%,rgba(82,113,157,.18))}
+.ob-step{position:relative;padding:0 14px;text-align:center}
+.ob-step__dot{position:relative;width:68px;height:68px;margin:0 auto 18px;border-radius:50%;
+  background:#fffffb;border:2px solid #52719d;display:flex;align-items:center;justify-content:center;
+  font-family:var(--uc-typo-fontfamily-ZcDjuR,EngraversGothic);font-size:26px;font-weight:700;color:#52719d}
+.ob-step--done .ob-step__dot{background:#52719d;color:#fffffb}
+.ob-step h4{margin:0 0 8px;font-family:var(--uc-typo-fontfamily-ZcDjuR,EngraversGothic);
+  font-size:20px;line-height:1.08;font-weight:700;text-transform:uppercase;color:#313a39}
+.ob-step p{margin:0 0 10px;font-family:var(--t-text-font,Arial);font-size:15px;line-height:1.36;
+  color:rgba(49,58,57,.72)}
+.ob-step .w{display:inline-block;font-family:var(--t-text-font,Arial);font-size:13px;font-weight:600;
+  color:#52719d;background:rgba(108,152,188,.16);border-radius:20px;padding:5px 14px}
+
+/* ── путь для действующих: строки задач ── */
+.ob-fix{border:1px solid rgba(49,58,57,.14);border-radius:30px;overflow:hidden;background:#fffffb}
+.ob-fix__row{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr) 190px;gap:26px;
+  align-items:center;padding:26px 34px;border-bottom:1px solid rgba(49,58,57,.14)}
+.ob-fix__row:last-child{border-bottom:0}
+.ob-fix__row:hover{background:#f7f9f8}
+.ob-fix__p{font-family:var(--t-text-font,Arial);font-size:19px;font-weight:600;line-height:1.24;color:#313a39}
+.ob-fix__s{font-family:var(--t-text-font,Arial);font-size:16px;line-height:1.38;color:rgba(49,58,57,.72)}
+.ob-fix__a{text-align:right}
+.ob-fix__a b{display:block;font-family:var(--uc-typo-fontfamily-ZcDjuR,EngraversGothic);
+  font-size:19px;font-weight:700;text-transform:uppercase;color:#52719d;line-height:1.1}
+.ob-fix__a span{display:block;margin-top:5px;font-family:var(--t-text-font,Arial);
+  font-size:14px;color:rgba(49,58,57,.62)}
+
+.ob-btn{display:inline-flex;align-items:center;justify-content:center;width:100%;min-height:52px;
+  padding:0 24px;border:0;border-radius:30px;background:#52719d;color:#fffffb;cursor:pointer;
+  font-family:var(--uc-button-fontfamily-q6td2,EngraversGothic);font-size:15px;font-weight:700;
+  letter-spacing:.04em;text-transform:uppercase;text-decoration:none;transition:background .2s}
+.ob-btn:hover{background:#313a39;color:#fffffb}
+.ob-btn--ghost{background:transparent;color:#52719d;border:1px solid #52719d}
+.ob-btn--ghost:hover{background:rgba(108,152,188,.14);color:#313a39}
+.ob-btn--auto{width:auto;min-width:280px}
+.ob-after{margin-top:10px;font-family:var(--t-text-font,Arial);font-size:14px;
+  color:rgba(49,58,57,.62);text-align:center}
+.ob-cta{max-width:460px;margin:36px auto 0}
+
+@media screen and (max-width:1100px){
+  .ob-map{grid-template-columns:repeat(2,1fr);gap:34px 0}
+  .ob-map:before{display:none}
+}
+@media screen and (max-width:1100px){.ob-serv{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media screen and (max-width:960px){
+  .ob-sec{padding:56px 20px 54px}
+  .ob-h2{font-size:32px}
+  .ob-fork{grid-template-columns:1fr}
+  .ob-fork__card{padding:30px 26px 26px;border-radius:20px}
+  .ob-fork__card h3{font-size:26px}
+  .ob-fix{border-radius:20px}
+  .ob-fix__row{grid-template-columns:1fr;gap:10px;padding:22px 24px}
+  .ob-fix__a{text-align:left}
+  .ob-serv a{padding:26px 24px;border-radius:20px}
+  .ob-serv{grid-template-columns:1fr}
+}
+@media screen and (max-width:640px){
+  .ob-map{grid-template-columns:1fr;gap:26px}
+  .ob-step{text-align:left;display:grid;grid-template-columns:56px 1fr;gap:16px;align-items:start;padding:0}
+  .ob-step__dot{width:56px;height:56px;margin:0;font-size:22px}
+}
+</style>
+<div class="ob-tag">услуги</div>
+<section class="ob-sec">
+  <div class="ob-wrap">
+          <div class="ob-label">Что мы делаем</div>
+          <h2 class="ob-h2">Шесть направлений, одна команда</h2>
+          <p class="ob-lead">Можно взять одно, можно весь путь от пустого участка
+          до работающей базы с гостями.</p>
+          <div class="ob-serv">
+            <a href="/consultations">
+              <div class="n">01</div>
+              <h3>Консультации</h3>
+              <p>Разбираем ваш участок, считаем деньги, говорим что делать</p>
+              <div class="go">Подробнее <i>&#8594;</i></div>
+            </a>
+            <a href="/engineering">
+              <div class="n">02</div>
+              <h3>Проектирование</h3>
+              <p>Генплан, дома, инженерия. Проект, по которому строят</p>
+              <div class="go">Подробнее <i>&#8594;</i></div>
+            </a>
+            <a href="/building">
+              <div class="n">03</div>
+              <h3>Строительство</h3>
+              <p>От подготовки участка до сдачи готовой базы</p>
+              <div class="go">Подробнее <i>&#8594;</i></div>
+            </a>
+            <a href="/promotion">
+              <div class="n">04</div>
+              <h3>Продвижение</h3>
+              <p>Загрузка 70% без сезонных провалов, реклама до 10% выручки</p>
+              <div class="go">Подробнее <i>&#8594;</i></div>
+            </a>
+            <a href="/materials">
+              <div class="n">05</div>
+              <h3>Материалы</h3>
+              <p>Регламенты, книги и финмодель для тех, кто делает сам</p>
+              <div class="go">Подробнее <i>&#8594;</i></div>
+            </a>
+            <a href="/">
+              <div class="n">06</div>
+              <h3>Биржа земли</h3>
+              <p>Участки под базы и глэмпинги по всей России</p>
+              <div class="go">Подробнее <i>&#8594;</i></div>
+            </a>
+          </div>
+  </div>
+</section>
+<div class="ob-tag">развилка</div>
+<section class="ob-sec ob-sec--soft">
+  <div class="ob-wrap">
+          <div class="ob-label">Путь с нуля</div>
+          <h2 class="ob-h2">Начнём с главного вопроса</h2>
+          <p class="ob-lead">От ответа зависит, с чего начинать и сколько это займёт.
+          Оба варианта начинаются с бесплатной диагностики.</p>
+          <div class="ob-fork">
+            <article class="ob-fork__card">
+              <div class="ob-fork__q">Вариант первый</div>
+              <h3>Участка ещё нет</h3>
+              <p>Есть желание и бюджет, земли пока нет. Половина проектов приходит именно так.</p>
+              <ul>
+                <li>Подбираем регион по спросу, а не по красоте вида</li>
+                <li>Ищем участок под ваш формат и бюджет</li>
+                <li>Проверяем категорию, ВРИ, сети и подъезд до покупки</li>
+                <li>Считаем экономику до того, как вы заплатите за землю</li>
+              </ul>
+              <a class="ob-btn" href="#popup:zayavka">Подобрать участок</a>
+              <div class="ob-after">Бесплатно, ни к чему не обязывает</div>
+            </article>
+            <article class="ob-fork__card ob-fork__card--b">
+              <div class="ob-fork__q">Вариант второй</div>
+              <h3>Участок уже есть</h3>
+              <p>Земля куплена или в собственности. Нужно понять, что на ней реально построить.</p>
+              <ul>
+                <li>Смотрим кадастр, ограничения и охранные зоны</li>
+                <li>Считаем, сколько домов встанет и какой будет выручка</li>
+                <li>Говорим прямо, если базы на этом участке не будет</li>
+                <li>Даём план: что делать в первый месяц и в первый год</li>
+              </ul>
+              <a class="ob-btn" href="#popup:zayavka">Разобрать мой участок</a>
+              <div class="ob-after">Бесплатно, ответ в течение дня</div>
+            </article>
+          </div>
+  </div>
+</section>
+<div class="ob-tag">маршрут</div>
+<section class="ob-sec">
+  <div class="ob-wrap">
+          <div class="ob-label">Маршрутный лист</div>
+          <h2 class="ob-h2">Весь путь от участка до первых гостей</h2>
+          <p class="ob-lead">Пять этапов. Каждый заканчивается результатом, который можно
+          посмотреть и оценить. Остановиться можно после любого.</p>
+          <div class="ob-map">
+            <div class="ob-step ob-step--done">
+              <div class="ob-step__dot">1</div>
+              <div>
+                <h4>Диагностика</h4>
+                <p>Смотрим участок и считаем, что на нём получится</p>
+                <span class="w">0 ₽ · 3 дня</span>
+              </div>
+            </div>
+            <div class="ob-step">
+              <div class="ob-step__dot">2</div>
+              <div>
+                <h4>Концепция</h4>
+                <p>Формат, гости, состав домов, деньги на входе и выходе</p>
+                <span class="w">2 недели</span>
+              </div>
+            </div>
+            <div class="ob-step">
+              <div class="ob-step__dot">3</div>
+              <div>
+                <h4>Проект</h4>
+                <p>Генплан, дома, инженерия, финмодель для банка и грантов</p>
+                <span class="w">3 месяца</span>
+              </div>
+            </div>
+            <div class="ob-step">
+              <div class="ob-step__dot">4</div>
+              <div>
+                <h4>Стройка</h4>
+                <p>Подготовка участка, дома, сети, благоустройство</p>
+                <span class="w">по проекту</span>
+              </div>
+            </div>
+            <div class="ob-step">
+              <div class="ob-step__dot">5</div>
+              <div>
+                <h4>Запуск</h4>
+                <p>Классификация, реклама, первые брони, регламенты</p>
+                <span class="w">1 месяц</span>
+              </div>
+            </div>
+          </div>
+          <div class="ob-cta">
+            <a class="ob-btn" href="#popup:zayavka">Начать с диагностики</a>
+            <div class="ob-after">Бесплатно. Скажем честно, стоит ли вообще браться</div>
+          </div>
+  </div>
+</section>
+<div class="ob-tag">действующие</div>
+<section class="ob-sec ob-sec--soft">
+  <div class="ob-wrap">
+          <div class="ob-label">База уже работает</div>
+          <h2 class="ob-h2">Найдите свою задачу</h2>
+          <p class="ob-lead">Пять ситуаций, с которыми к нам приходят чаще всего.
+          Выберите свою и посмотрите, что мы предлагаем.</p>
+          <div class="ob-fix">
+            <div class="ob-fix__row">
+              <div class="ob-fix__p">Домики стоят пустыми в будни</div>
+              <div class="ob-fix__s">Работаем с загрузкой: каналы продаж, цены по сезонам, возвратные гости</div>
+              <div class="ob-fix__a"><b>Продвижение</b><span>от 100 000 ₽</span></div>
+            </div>
+            <div class="ob-fix__row">
+              <div class="ob-fix__p">Всё держится на вас лично</div>
+              <div class="ob-fix__s">Регламенты и книги под каждую роль. Команда работает без вашего участия</div>
+              <div class="ob-fix__a"><b>Материалы</b><span>от 15 000 ₽</span></div>
+            </div>
+            <div class="ob-fix__row">
+              <div class="ob-fix__p">Нет номера в реестре</div>
+              <div class="ob-fix__s">Классификация и самооценка. Без реестра рекламу размещать нельзя</div>
+              <div class="ob-fix__a"><b>Классификация</b><span>от 50 000 ₽</span></div>
+            </div>
+            <div class="ob-fix__row">
+              <div class="ob-fix__p">Непонятно, куда уходят деньги</div>
+              <div class="ob-fix__s">Финансовая модель под ваш объект: расходы, точка безубыточности, прибыль</div>
+              <div class="ob-fix__a"><b>Консультация</b><span>от 140 000 ₽</span></div>
+            </div>
+            <div class="ob-fix__row">
+              <div class="ob-fix__p">Хотите достроить или расширить</div>
+              <div class="ob-fix__s">Проект второй очереди на том же участке с учётом того, что уже работает</div>
+              <div class="ob-fix__a"><b>Проектирование</b><span>от 580 000 ₽</span></div>
+            </div>
+          </div>
+          <div class="ob-cta">
+            <a class="ob-btn ob-btn--ghost" href="#popup:zayavka">Моей задачи нет в списке</a>
+          </div>
+  </div>
+</section>
+</body></html>
