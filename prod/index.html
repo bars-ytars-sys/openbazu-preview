@@ -226,7 +226,16 @@ document.addEventListener('DOMContentLoaded',t_setvisRecs);}})();</script><style
 [data-ob-door="work"],[data-ob-panel="work"]{--c:#1e7268}
 
 /* ── три двери ── */
+/* Двери и панели живут в одной сетке. На широком экране панели идут
+   под рядом дверей, на узком каждая панель встаёт сразу под своей дверью. */
 .ob-doors{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.ob-doors .ob-panel{grid-column:1/-1}
+.ob-door[data-ob-door="nozem"]{order:1}
+.ob-door[data-ob-door="zem"]{order:2}
+.ob-door[data-ob-door="work"]{order:3}
+.ob-panel[data-ob-panel="nozem"]{order:4}
+.ob-panel[data-ob-panel="zem"]{order:5}
+.ob-panel[data-ob-panel="work"]{order:6}
 .ob-door{position:relative;border:1px solid rgba(49,58,57,.16);border-radius:26px;
   padding:28px 26px 22px;background:#fffffb;cursor:pointer;width:100%;
   font-family:inherit;display:flex;flex-direction:column;align-items:center;text-align:center;
@@ -368,12 +377,29 @@ document.addEventListener('DOMContentLoaded',t_setvisRecs);}})();</script><style
 
 @media screen and (max-width:1100px){
   .ob-doors{grid-template-columns:1fr}
+  .ob-door[data-ob-door="nozem"]{order:1}
+  .ob-panel[data-ob-panel="nozem"]{order:2}
+  .ob-door[data-ob-door="zem"]{order:3}
+  .ob-panel[data-ob-panel="zem"]{order:4}
+  .ob-door[data-ob-door="work"]{order:5}
+  .ob-panel[data-ob-panel="work"]{order:6}
+  .ob-panel.is-open{margin-top:14px;margin-bottom:6px}
   .ob-jobs{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media screen and (max-width:900px){
+  /* цепочка первого маршрута разворачивается в вертикальный список */
+  .ob-chainx{flex-direction:column}
+  .ob-chainx__s{min-width:100%;padding:0 0 22px 60px;position:relative}
+  .ob-chainx__s:first-child{padding-left:60px}
+  .ob-chainx__n{position:absolute;left:0;top:0;margin-bottom:0}
+  .ob-chainx__t{margin-top:9px}
+  .ob-chainx__s:not(:last-child):after{left:21px !important;right:auto;top:50px;bottom:-2px;
+    width:2px;height:auto}
+  /* полоса шагов третьего маршрута */
+  .ob-strip__s{min-width:100%}
 }
 @media screen and (max-width:700px){
   .ob-jobs{grid-template-columns:1fr}
-  .ob-chainx__s{min-width:100%;padding:0 0 16px}
-  .ob-chainx__s:not(:last-child):after{display:none}
   .ob-panel__in{padding:24px 20px 20px;border-radius:20px}
   .ob-pcta .ob-btn{width:100%;min-width:0}
 }
@@ -476,7 +502,6 @@ document.addEventListener('DOMContentLoaded',t_setvisRecs);}})();</script><style
               <p>Поднять загрузку, навести порядок, пройти классификацию, достроить.</p>
               <div class="ob-door__go"><span>Что чиним</span><i>&#8964;</i></div>
             </button>
-          </div>
 
           <div class="ob-panel" data-ob-panel="nozem">
             <div class="ob-panel__in">
@@ -628,6 +653,7 @@ document.addEventListener('DOMContentLoaded',t_setvisRecs);}})();</script><style
                 <div class="ob-pcta__note">Бесплатно. Скажем, что чинить в первую очередь</div>
               </div>
             </div>
+          </div>
           </div>
 
           <script>
