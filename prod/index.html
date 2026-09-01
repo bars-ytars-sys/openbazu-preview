@@ -233,10 +233,12 @@ document.addEventListener('DOMContentLoaded',t_setvisRecs);}})();</script><style
   box-shadow:0 12px 28px rgba(49,58,57,.10)}
 .ob-door[aria-expanded="true"]:before{transform:scaleX(1)}
 
-.ob-door__ico{width:52px;height:52px;border-radius:16px;margin-bottom:18px;flex:none;
-  background:rgba(108,152,188,.14);display:flex;align-items:center;justify-content:center}
-.ob-door__ico svg{width:26px;height:26px;stroke:#52719d;fill:none;stroke-width:1.7;
-  stroke-linecap:round;stroke-linejoin:round}
+.ob-door{align-items:center;text-align:center}
+.ob-door__ico{width:64px;height:64px;border-radius:50%;margin:0 auto 20px;flex:none;
+  background:rgba(108,152,188,.14);display:flex;align-items:center;justify-content:center;
+  transition:background .18s}
+.ob-door__ico svg{width:30px;height:30px;stroke:#52719d;fill:none;stroke-width:1.6;
+  stroke-linecap:round;stroke-linejoin:round;display:block}
 .ob-door[aria-expanded="true"] .ob-door__ico{background:#52719d}
 .ob-door[aria-expanded="true"] .ob-door__ico svg{stroke:#fffffb}
 
@@ -244,12 +246,15 @@ document.addEventListener('DOMContentLoaded',t_setvisRecs);}})();</script><style
   font-size:25px;line-height:1.06;font-weight:700;text-transform:uppercase;color:#313a39}
 .ob-door p{margin:0 0 18px;font-family:var(--t-text-font,Arial);font-size:16px;
   line-height:1.38;color:rgba(49,58,57,.72);flex:1}
-.ob-door__go{display:flex;align-items:center;justify-content:space-between;gap:12px;
+.ob-door__go{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;
   padding-top:16px;border-top:1px solid rgba(49,58,57,.14);
   font-family:var(--uc-button-fontfamily-q6td2,EngraversGothic);font-size:14px;font-weight:700;
   letter-spacing:.04em;text-transform:uppercase;color:#52719d}
-.ob-door__go i{font-style:normal;font-size:19px;line-height:1;transition:transform .25s}
-.ob-door[aria-expanded="true"] .ob-door__go i{transform:rotate(180deg)}
+.ob-door__go i{font-style:normal;font-size:15px;line-height:1;width:26px;height:26px;flex:none;
+  border-radius:50%;background:rgba(108,152,188,.16);color:#52719d;
+  display:flex;align-items:center;justify-content:center;transition:transform .25s, background .18s}
+.ob-door:hover .ob-door__go i{background:#52719d;color:#fffffb}
+.ob-door[aria-expanded="true"] .ob-door__go i{transform:rotate(180deg);background:#52719d;color:#fffffb}
 
 /* ── раскрытие ── */
 .ob-panel{overflow:hidden;max-height:0;opacity:0;
@@ -269,7 +274,29 @@ document.addEventListener('DOMContentLoaded',t_setvisRecs);}})();</script><style
 .ob-plist li:before{content:"";position:absolute;left:0;top:8px;width:8px;height:8px;
   border-radius:50%;background:#52719d}
 
-@media screen and (max-width:1100px){.ob-doors{grid-template-columns:1fr}}
+/* задачи действующей базы плитками */
+.ob-jobs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-bottom:8px}
+.ob-job{border:1px solid rgba(49,58,57,.16);border-radius:20px;padding:22px 22px 20px;
+  background:#fffffb;display:flex;flex-direction:column;text-decoration:none;color:inherit;
+  transition:border-color .18s, transform .18s, box-shadow .18s}
+.ob-job:hover{border-color:#52719d;transform:translateY(-3px);
+  box-shadow:0 14px 32px rgba(49,58,57,.10)}
+.ob-job__t{font-family:var(--t-text-font,Arial);font-size:17px;font-weight:600;
+  line-height:1.26;color:#313a39;margin-bottom:8px}
+.ob-job__d{font-family:var(--t-text-font,Arial);font-size:14px;line-height:1.4;
+  color:rgba(49,58,57,.66);flex:1;margin-bottom:16px}
+.ob-job__f{display:flex;align-items:baseline;justify-content:space-between;gap:10px;
+  padding-top:14px;border-top:1px solid rgba(49,58,57,.14)}
+.ob-job__f b{font-family:var(--uc-typo-fontfamily-ZcDjuR,EngraversGothic);font-size:16px;
+  font-weight:700;text-transform:uppercase;color:#52719d;line-height:1.1}
+.ob-job__f span{font-family:var(--t-text-font,Arial);font-size:13px;color:rgba(49,58,57,.62);
+  white-space:nowrap}
+
+@media screen and (max-width:1100px){
+  .ob-doors{grid-template-columns:1fr}
+  .ob-jobs{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media screen and (max-width:700px){.ob-jobs{grid-template-columns:1fr}}
 @media screen and (max-width:960px){
   .ob-door{padding:24px 22px 22px;border-radius:20px}
   .ob-door h3{font-size:22px}
@@ -460,37 +487,58 @@ document.addEventListener('DOMContentLoaded',t_setvisRecs);}})();</script><style
 
           <div class="ob-panel" data-ob-panel="work">
             <div class="ob-panel__in">
-              <h3 class="ob-panel__h">Найдите свою задачу</h3>
-              <p class="ob-panel__d">Пять ситуаций, с которыми к нам приходят чаще всего.</p>
-              <div class="ob-fix">
-              <div class="ob-fix__row">
-                <div class="ob-fix__p">Домики стоят пустыми в будни</div>
-                <div class="ob-fix__s">Каналы продаж, цены по сезонам, возвратные гости</div>
-                <div class="ob-fix__a"><b>Продвижение</b><span>от 100 000 ₽</span></div>
+              <h3 class="ob-panel__h">Что чиним чаще всего</h3>
+              <p class="ob-panel__d">Выберите свою задачу или начните с разбора: посмотрим базу
+              целиком и скажем, что даст результат быстрее.</p>
+              <div class="ob-jobs">
+              <a class="ob-job" href="#popup:zayavka">
+                <div class="ob-job__t">Домики стоят пустыми в будни</div>
+                <div class="ob-job__d">Каналы продаж, цены по сезонам, возвратные гости</div>
+                <div class="ob-job__f"><b>Продвижение</b><span>от 100 000 ₽</span></div>
+              </a>
+              <a class="ob-job" href="#popup:zayavka">
+                <div class="ob-job__t">Всё держится на вас лично</div>
+                <div class="ob-job__d">Регламенты и книги под каждую роль</div>
+                <div class="ob-job__f"><b>Материалы</b><span>от 15 000 ₽</span></div>
+              </a>
+              <a class="ob-job" href="#popup:zayavka">
+                <div class="ob-job__t">Нет номера в реестре</div>
+                <div class="ob-job__d">Классификация и самооценка, без реестра нельзя рекламировать</div>
+                <div class="ob-job__f"><b>Классификация</b><span>от 50 000 ₽</span></div>
+              </a>
+              <a class="ob-job" href="#popup:zayavka">
+                <div class="ob-job__t">Непонятно, куда уходят деньги</div>
+                <div class="ob-job__d">Финмодель под ваш объект: расходы, прибыль, точка нуля</div>
+                <div class="ob-job__f"><b>Консультация</b><span>от 140 000 ₽</span></div>
+              </a>
+              <a class="ob-job" href="#popup:zayavka">
+                <div class="ob-job__t">Хотите достроить или расширить</div>
+                <div class="ob-job__d">Проект второй очереди с учётом того, что уже работает</div>
+                <div class="ob-job__f"><b>Проектирование</b><span>от 580 000 ₽</span></div>
+              </a>
               </div>
-              <div class="ob-fix__row">
-                <div class="ob-fix__p">Всё держится на вас лично</div>
-                <div class="ob-fix__s">Регламенты и книги под каждую роль</div>
-                <div class="ob-fix__a"><b>Материалы</b><span>от 15 000 ₽</span></div>
+              <div class="ob-sub">Как мы работаем с действующей базой</div>
+              <div class="ob-map ob-map--4">
+              <div class="ob-step ob-step--done">
+                <div class="ob-step__dot">1</div>
+                <div><h4>Разбор базы</h4><p>Смотрим загрузку, цены, процессы, отзывы и каналы продаж</p><span class="w">0 ₽ · 3 дня</span></div>
               </div>
-              <div class="ob-fix__row">
-                <div class="ob-fix__p">Нет номера в реестре</div>
-                <div class="ob-fix__s">Классификация и самооценка, без реестра нельзя рекламировать</div>
-                <div class="ob-fix__a"><b>Классификация</b><span>от 50 000 ₽</span></div>
+              <div class="ob-step">
+                <div class="ob-step__dot">2</div>
+                <div><h4>План на квартал</h4><p>Что даёт эффект быстрее всего и в каком порядке делать</p><span class="w">неделя</span></div>
               </div>
-              <div class="ob-fix__row">
-                <div class="ob-fix__p">Непонятно, куда уходят деньги</div>
-                <div class="ob-fix__s">Финмодель под ваш объект: расходы, прибыль, точка нуля</div>
-                <div class="ob-fix__a"><b>Консультация</b><span>от 140 000 ₽</span></div>
+              <div class="ob-step">
+                <div class="ob-step__dot">3</div>
+                <div><h4>Внедрение</h4><p>Регламенты, каналы продаж, реклама, классификация</p><span class="w">1–3 месяца</span></div>
               </div>
-              <div class="ob-fix__row">
-                <div class="ob-fix__p">Хотите достроить или расширить</div>
-                <div class="ob-fix__s">Проект второй очереди с учётом того, что уже работает</div>
-                <div class="ob-fix__a"><b>Проектирование</b><span>от 580 000 ₽</span></div>
+              <div class="ob-step">
+                <div class="ob-step__dot">4</div>
+                <div><h4>Замер результата</h4><p>Считаем загрузку и выручку, сверяем с планом</p><span class="w">через квартал</span></div>
               </div>
               </div>
               <div class="ob-cta">
-                <a class="ob-btn ob-btn--ghost" href="#popup:zayavka">Моей задачи нет в списке</a>
+                <a class="ob-btn" href="#popup:zayavka">Начать с разбора базы</a>
+                <div class="ob-after">Бесплатно. Скажем, что чинить в первую очередь</div>
               </div>
             </div>
           </div>
