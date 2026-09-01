@@ -292,23 +292,10 @@ document.addEventListener('DOMContentLoaded',t_setvisRecs);}})();</script><style
   color:rgba(49,58,57,.68);margin-bottom:12px}
 .ob-chainx__w{font-family:var(--t-text-font,Arial);font-size:12.5px;font-weight:600;color:var(--c)}
 
-/* ── вариант 2: вертикальная лента в две колонки ── */
-.ob-rail{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 56px}
-.ob-rail__s{position:relative;padding:0 0 30px 60px}
-.ob-rail__s:before{content:"";position:absolute;left:21px;top:50px;bottom:4px;width:2px;
-  background:color-mix(in srgb, var(--c) 26%, #fffffb)}
-.ob-rail__s--last:before,.ob-rail__s--mid:before{display:none}
-.ob-rail__n{position:absolute;left:0;top:0;width:44px;height:44px;border-radius:50%;
-  background:#fffffb;border:2px solid var(--c);color:var(--c);display:flex;
-  align-items:center;justify-content:center;
-  font-family:var(--t-text-font,Arial);font-size:18px;font-weight:700;line-height:1}
-.ob-rail__s--first .ob-rail__n{background:var(--c);color:#fffffb}
-.ob-rail__t{font-family:var(--uc-typo-fontfamily-ZcDjuR,EngraversGothic);font-size:17px;
-  font-weight:700;text-transform:uppercase;color:#313a39;line-height:1.08;margin-bottom:8px}
-.ob-rail__d{font-family:var(--t-text-font,Arial);font-size:14.5px;line-height:1.45;
-  color:rgba(49,58,57,.68)}
-.ob-rail__w{display:inline-block;margin-top:9px;font-family:var(--t-text-font,Arial);
-  font-size:12.5px;font-weight:600;color:var(--c)}
+/* ── вариант 2: та же цепочка, но пять шагов ── */
+.ob-chainx--5 .ob-chainx__s{min-width:170px;padding:0 22px}
+.ob-chainx--5 .ob-chainx__s:not(:last-child):after{left:74px;right:-38px}
+.ob-chainx--5 .ob-chainx__s:first-child:not(:last-child):after{left:52px}
 
 /* ── вариант 3: задачи плитками и полоса шагов ── */
 .ob-jobs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-bottom:20px}
@@ -351,8 +338,6 @@ document.addEventListener('DOMContentLoaded',t_setvisRecs);}})();</script><style
 @media screen and (max-width:1100px){
   .ob-doors{grid-template-columns:1fr}
   .ob-jobs{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .ob-rail{grid-template-columns:1fr}
-  .ob-rail__s--mid:before{display:block}
 }
 @media screen and (max-width:700px){
   .ob-jobs{grid-template-columns:1fr}
@@ -505,36 +490,36 @@ document.addEventListener('DOMContentLoaded',t_setvisRecs);}})();</script><style
               <h3 class="ob-panel__h">От вашего участка до первых гостей</h3>
               <p class="ob-panel__d">Пять этапов. Остановиться можно после любого,
               каждый заканчивается результатом на руках.</p>
-              <div class="ob-rail">
-              <div class="ob-rail__s ob-rail__s--first">
-                <div class="ob-rail__n">1</div>
-                <div class="ob-rail__t">Разбор участка</div>
-                <div class="ob-rail__d">Кадастр, ограничения, сколько домов встанет</div>
-                <span class="ob-rail__w">0 ₽ · 3 дня</span>
+              <div class="ob-chainx ob-chainx--5">
+              <div class="ob-chainx__s ob-chainx__s--first">
+                <div class="ob-chainx__n">1</div>
+                <div class="ob-chainx__t">Разбор участка</div>
+                <div class="ob-chainx__d">Кадастр, ограничения, сколько домов встанет</div>
+                <div class="ob-chainx__w">0 ₽ · 3 дня</div>
               </div>
-              <div class="ob-rail__s">
-                <div class="ob-rail__n">2</div>
-                <div class="ob-rail__t">Концепция</div>
-                <div class="ob-rail__d">Формат, гости, состав объектов, деньги на входе и выходе</div>
-                <span class="ob-rail__w">2 недели</span>
+              <div class="ob-chainx__s">
+                <div class="ob-chainx__n">2</div>
+                <div class="ob-chainx__t">Концепция</div>
+                <div class="ob-chainx__d">Формат, гости, состав объектов, деньги на входе и выходе</div>
+                <div class="ob-chainx__w">2 недели</div>
               </div>
-              <div class="ob-rail__s ob-rail__s--mid">
-                <div class="ob-rail__n">3</div>
-                <div class="ob-rail__t">Проект</div>
-                <div class="ob-rail__d">Генплан, дома, инженерия, финмодель для банка и грантов</div>
-                <span class="ob-rail__w">3 месяца</span>
+              <div class="ob-chainx__s">
+                <div class="ob-chainx__n">3</div>
+                <div class="ob-chainx__t">Проект</div>
+                <div class="ob-chainx__d">Генплан, дома, инженерия, финмодель для банка и грантов</div>
+                <div class="ob-chainx__w">3 месяца</div>
               </div>
-              <div class="ob-rail__s">
-                <div class="ob-rail__n">4</div>
-                <div class="ob-rail__t">Стройка</div>
-                <div class="ob-rail__d">Подготовка участка, дома, сети, благоустройство</div>
-                <span class="ob-rail__w">по проекту</span>
+              <div class="ob-chainx__s">
+                <div class="ob-chainx__n">4</div>
+                <div class="ob-chainx__t">Стройка</div>
+                <div class="ob-chainx__d">Подготовка участка, дома, сети, благоустройство</div>
+                <div class="ob-chainx__w">по проекту</div>
               </div>
-              <div class="ob-rail__s ob-rail__s--last">
-                <div class="ob-rail__n">5</div>
-                <div class="ob-rail__t">Запуск</div>
-                <div class="ob-rail__d">Классификация, реклама, первые брони, регламенты</div>
-                <span class="ob-rail__w">1 месяц</span>
+              <div class="ob-chainx__s">
+                <div class="ob-chainx__n">5</div>
+                <div class="ob-chainx__t">Запуск</div>
+                <div class="ob-chainx__d">Классификация, реклама, первые брони, регламенты</div>
+                <div class="ob-chainx__w">1 месяц</div>
               </div>
               </div>
               <div class="ob-pcta">
