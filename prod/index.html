@@ -302,41 +302,31 @@ document.addEventListener('DOMContentLoaded',t_setvisRecs);}})();</script><style
   color:rgba(49,58,57,.68);margin-bottom:12px}
 .ob-chainx__w{font-family:var(--t-text-font,Arial);font-size:12.5px;font-weight:600;color:var(--c)}
 
-/* ── вариант 2: зигзаг вокруг общей линии ── */
-.ob-zz{position:relative;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));
-  gap:0 10px;padding:8px 0 4px}
-.ob-zz:before{content:"";position:absolute;left:9%;right:9%;top:50%;height:2px;
-  transform:translateY(-1px);background:color-mix(in srgb, var(--c) 26%, #fffffb)}
-.ob-zz__s{position:relative;display:flex;flex-direction:column;align-items:center;
-  text-align:center;padding:0 6px;text-decoration:none;color:inherit;
-  transition:transform .18s}
-.ob-zz__s:hover{transform:translateY(-3px)}
-.ob-zz__s:hover .ob-zz__t{color:var(--c)}
-.ob-zz__s .ob-zz__box{width:100%}
-/* нечётные шаги над линией, чётные под ней */
-.ob-zz__s--up{justify-content:flex-end;padding-bottom:calc(50% + 0px)}
-.ob-zz__s--down{justify-content:flex-start;padding-top:calc(50% + 0px)}
-.ob-zz__n{width:44px;height:44px;border-radius:50%;background:#fffffb;
+/* ── вариант 2: таймлайн строками ── */
+.ob-tl{display:flex;flex-direction:column}
+.ob-tl__s{position:relative;display:grid;grid-template-columns:44px minmax(0,1fr) 210px;
+  gap:22px;align-items:start;padding:0 0 28px;text-decoration:none;color:inherit}
+.ob-tl__s:last-child{padding-bottom:0}
+.ob-tl__s:not(:last-child):before{content:"";position:absolute;left:21px;top:52px;bottom:-4px;
+  width:2px;background:color-mix(in srgb, var(--c) 26%, #fffffb)}
+.ob-tl__n{width:44px;height:44px;border-radius:50%;background:#fffffb;
   border:2px solid var(--c);color:var(--c);display:flex;align-items:center;justify-content:center;
   font-family:var(--t-text-font,Arial);font-size:18px;font-weight:700;line-height:1;
-  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:2}
-.ob-zz__s--first .ob-zz__n{background:var(--c);color:#fffffb}
-.ob-zz__t{font-family:var(--uc-typo-fontfamily-ZcDjuR,EngraversGothic);font-size:16px;
-  font-weight:700;text-transform:uppercase;color:#313a39;line-height:1.1;margin-bottom:6px}
-.ob-zz__d{font-family:var(--t-text-font,Arial);font-size:13.5px;line-height:1.4;
-  color:rgba(49,58,57,.68);margin-bottom:6px}
-.ob-zz__w{font-family:var(--t-text-font,Arial);font-size:13px;font-weight:600;color:var(--c)}
-.ob-zz__s--up .ob-zz__box{margin-bottom:34px}
-.ob-zz__s--down .ob-zz__box{margin-top:34px}
+  position:relative;z-index:1;transition:background .18s,color .18s}
+.ob-tl__s--first .ob-tl__n{background:var(--c);color:#fffffb}
+.ob-tl__s:hover .ob-tl__n{background:var(--c);color:#fffffb}
+.ob-tl__t{font-family:var(--uc-typo-fontfamily-ZcDjuR,EngraversGothic);font-size:18px;
+  font-weight:700;text-transform:uppercase;color:#313a39;line-height:1.08;margin:10px 0 7px;
+  transition:color .18s}
+.ob-tl__s:hover .ob-tl__t{color:var(--c)}
+.ob-tl__d{font-family:var(--t-text-font,Arial);font-size:14.5px;line-height:1.45;
+  color:rgba(49,58,57,.68)}
+.ob-tl__w{margin-top:12px;text-align:right;font-family:var(--t-text-font,Arial);
+  font-size:14px;font-weight:600;color:var(--c);line-height:1.35}
 
-@media screen and (max-width:900px){
-  .ob-zz{grid-template-columns:1fr;gap:0}
-  .ob-zz:before{left:21px;right:auto;top:22px;bottom:22px;width:2px;height:auto;transform:none}
-  .ob-zz__s{flex-direction:row;text-align:left;align-items:flex-start;gap:18px;
-    padding:0 0 22px 0}
-  .ob-zz__s--up,.ob-zz__s--down{padding-top:0;padding-bottom:22px}
-  .ob-zz__n{position:relative;top:0;left:0;transform:none;flex:none}
-  .ob-zz__s--up .ob-zz__box,.ob-zz__s--down .ob-zz__box{margin:0}
+@media screen and (max-width:700px){
+  .ob-tl__s{grid-template-columns:44px minmax(0,1fr);gap:16px}
+  .ob-tl__w{grid-column:2;text-align:left;margin-top:8px}
 }
 
 /* ── вариант 3: задачи плитками и полоса шагов ── */
@@ -596,46 +586,46 @@ document.addEventListener('DOMContentLoaded',t_setvisRecs);}})();</script><style
                 <span>На ней разбираем ваш случай и даём рекомендации. Оставите заявку,
                 менеджер подскажет, какая консультация подойдёт и сколько она стоит.</span></div>
               </div>
-              <div class="ob-zz">
-              <a class="ob-zz__s ob-zz__s--up ob-zz__s--first" href="/consultations">
-                <div class="ob-zz__n">1</div>
-                <div class="ob-zz__box">
-                  <div class="ob-zz__t">Консультация</div>
-                  <div class="ob-zz__d">Онлайн с Александром, на нашей базе или с выездом на ваш участок</div>
-                  <div class="ob-zz__w">от 140 000 ₽</div>
+              <div class="ob-tl">
+              <a class="ob-tl__s ob-tl__s--first" href="/consultations">
+                <div class="ob-tl__n">1</div>
+                <div>
+                  <div class="ob-tl__t">Консультация</div>
+                  <div class="ob-tl__d">Онлайн с Александром, на нашей базе или с выездом на ваш участок</div>
                 </div>
+                <div class="ob-tl__w">от 140 000 ₽</div>
               </a>
-              <a class="ob-zz__s ob-zz__s--down" href="/engineering">
-                <div class="ob-zz__n">2</div>
-                <div class="ob-zz__box">
-                  <div class="ob-zz__t">Концептуальный проект с финмоделью</div>
-                  <div class="ob-zz__d">Мастер-план, генплан, дома, инженерия и расчёт для банка, гранта или инвестора</div>
-                  <div class="ob-zz__w">от 580 000 ₽ · около 3 месяцев</div>
+              <a class="ob-tl__s" href="/engineering">
+                <div class="ob-tl__n">2</div>
+                <div>
+                  <div class="ob-tl__t">Концептуальный проект с финмоделью</div>
+                  <div class="ob-tl__d">Мастер-план, генплан, дома, инженерия и расчёт для банка, гранта или инвестора</div>
                 </div>
+                <div class="ob-tl__w">от 580 000 ₽ · около 3 месяцев</div>
               </a>
-              <a class="ob-zz__s ob-zz__s--up" href="/building">
-                <div class="ob-zz__n">3</div>
-                <div class="ob-zz__box">
-                  <div class="ob-zz__t">Стройка</div>
-                  <div class="ob-zz__d">Подготовка участка, дома, сети, благоустройство</div>
-                  <div class="ob-zz__w">по коммерческому</div>
+              <a class="ob-tl__s" href="/building">
+                <div class="ob-tl__n">3</div>
+                <div>
+                  <div class="ob-tl__t">Стройка</div>
+                  <div class="ob-tl__d">Подготовка участка, дома, сети, благоустройство</div>
                 </div>
+                <div class="ob-tl__w">по коммерческому</div>
               </a>
-              <a class="ob-zz__s ob-zz__s--down" href="/promotion">
-                <div class="ob-zz__n">4</div>
-                <div class="ob-zz__box">
-                  <div class="ob-zz__t">Продвижение</div>
-                  <div class="ob-zz__d">Сайт и реклама, чтобы к открытию уже были брони</div>
-                  <div class="ob-zz__w">от 200 000 ₽</div>
+              <a class="ob-tl__s" href="/promotion">
+                <div class="ob-tl__n">4</div>
+                <div>
+                  <div class="ob-tl__t">Продвижение</div>
+                  <div class="ob-tl__d">Сайт и реклама, чтобы к открытию уже были брони</div>
                 </div>
+                <div class="ob-tl__w">от 200 000 ₽</div>
               </a>
-              <a class="ob-zz__s ob-zz__s--up" href="/consultations">
-                <div class="ob-zz__n">5</div>
-                <div class="ob-zz__box">
-                  <div class="ob-zz__t">Запуск</div>
-                  <div class="ob-zz__d">Классификация, первые заезды, регламенты для команды</div>
-                  <div class="ob-zz__w">1 месяц</div>
+              <a class="ob-tl__s" href="/consultations">
+                <div class="ob-tl__n">5</div>
+                <div>
+                  <div class="ob-tl__t">Запуск</div>
+                  <div class="ob-tl__d">Классификация, первые заезды, регламенты для команды</div>
                 </div>
+                <div class="ob-tl__w">1 месяц</div>
               </a>
               </div>
                             <div class="ob-what">
