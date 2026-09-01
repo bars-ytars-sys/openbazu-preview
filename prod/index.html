@@ -208,14 +208,24 @@ document.addEventListener('DOMContentLoaded',t_setvisRecs);}})();</script><style
   .ob-bz__card{padding:24px 22px;border-radius:20px}
 }
 
-/* первый экран: родной ролик, только вычищенный и зацикленный */
-#rec3452320701 .video1 video{object-fit:cover !important;transform:none !important}
-#rec3452320701 .video1 .tn-atom{
+/* Первый экран. Тильда задаёт блоку фиксированную ширину под каждое
+   разрешение, из-за чего на узких экранах кадр вылезал за край и был виден
+   только его центр. Привязываем видео к ширине окна: композиция одинаковая
+   на любом мониторе. */
+/* Zero Block масштабирует всё внутри через --zoom, поэтому ширину окна делим
+   на этот множитель, иначе кадр снова вылезет за край экрана */
+#rec3452320701 .video1{
+  width:calc(100vw / var(--zoom, 1)) !important;
+  left:50% !important;
+  margin-left:calc(-50vw / var(--zoom, 1)) !important}
+#rec3452320701 .video1 .tn-atom{width:100% !important;height:100% !important;
   position:relative;overflow:hidden;
-  background:#0b1a22 url(assets/hero-v4.webp) center/cover no-repeat}
+  background:#0b1a22 url(assets/hero-v5.webp) center/cover no-repeat}
+#rec3452320701 .video1 video{width:100% !important;height:100% !important;
+  object-fit:cover !important;object-position:50% 50% !important;transform:none !important}
 #rec3452320701 .video1 .tn-atom::before{
   content:"";position:absolute;inset:0;z-index:2;pointer-events:none;
-  background:linear-gradient(180deg,rgba(9,22,30,0) 38%,rgba(9,22,30,.24) 70%,rgba(9,22,30,.46) 100%)}
+  background:linear-gradient(180deg,rgba(9,22,30,0) 34%,rgba(9,22,30,.26) 68%,rgba(9,22,30,.5) 100%)}
 
 /* Цвета взяты из брендбука: голубой и синий, плюс правая точка
    фирменного градиента заголовков. Путь идёт от светлого к тёмному:
@@ -285,7 +295,11 @@ document.addEventListener('DOMContentLoaded',t_setvisRecs);}})();</script><style
 
 /* ── вариант 1: цепочка со стрелками ── */
 .ob-chainx{display:flex;align-items:stretch;flex-wrap:wrap}
-.ob-chainx__s{flex:1;min-width:190px;padding:0 26px;position:relative}
+.ob-chainx__s{flex:1;min-width:190px;padding:0 26px;position:relative;
+  text-decoration:none;color:inherit;transition:transform .18s}
+.ob-chainx__s:hover{transform:translateY(-3px)}
+.ob-chainx__s:hover .ob-chainx__t{color:var(--c)}
+.ob-chainx__s:hover .ob-chainx__n{background:var(--c);color:#fffffb}
 .ob-chainx__s:first-child{padding-left:0}
 /* соединяем кружки полоской, как в вертикальной ленте второго маршрута */
 .ob-chainx__s:not(:last-child):after{content:"";position:absolute;top:22px;height:2px;
@@ -544,30 +558,30 @@ document.addEventListener('DOMContentLoaded',t_setvisRecs);}})();</script><style
                 менеджер подскажет, какая консультация подойдёт и сколько она стоит.</span></div>
               </div>
               <div class="ob-chainx">
-              <div class="ob-chainx__s ob-chainx__s--first">
+              <a class="ob-chainx__s ob-chainx__s--first" href="/">
                 <div class="ob-chainx__n">1</div>
                 <div class="ob-chainx__t">Подбор земли</div>
                 <div class="ob-chainx__d">Считаем, где база будет зарабатывать, и ищем участок под ваш формат</div>
                 <div class="ob-chainx__w">Биржа земли</div>
-              </div>
-              <div class="ob-chainx__s">
+              </a>
+              <a class="ob-chainx__s" href="/consultations">
                 <div class="ob-chainx__n">2</div>
                 <div class="ob-chainx__t">Консультация</div>
                 <div class="ob-chainx__d">Разбираем найденный участок: что на нём построится и сколько принесёт</div>
                 <div class="ob-chainx__w">от 140 000 ₽</div>
-              </div>
-              <div class="ob-chainx__s">
+              </a>
+              <a class="ob-chainx__s" href="/engineering">
                 <div class="ob-chainx__n">3</div>
                 <div class="ob-chainx__t">Концептуальный проект с финмоделью</div>
                 <div class="ob-chainx__d">Мастер-план, генплан, дома, инженерия и расчёт для банка, гранта или инвестора</div>
                 <div class="ob-chainx__w">от 580 000 ₽</div>
-              </div>
-              <div class="ob-chainx__s">
+              </a>
+              <a class="ob-chainx__s" href="/building">
                 <div class="ob-chainx__n">4</div>
                 <div class="ob-chainx__t">Стройка и запуск</div>
                 <div class="ob-chainx__d">Строим, продвигаем и выводим на первые заезды</div>
                 <div class="ob-chainx__w">по коммерческому</div>
-              </div>
+              </a>
               </div>
               <div class="ob-pcta">
                 <a class="ob-btn" href="#popup:zayavka">Обсудить проект</a>
@@ -906,10 +920,10 @@ setTimeout(function(){(function(d,w,k,o,g) {var n=d.getElementsByTagName(o)[0],s
     if(!a) return;
     var v=a.querySelector('video');
     if(!v) return;
-    v.setAttribute('poster','assets/hero-v4.webp');
+    v.setAttribute('poster','assets/hero-v5.webp');
     var s=v.querySelector('source');
-    if(s && s.getAttribute('src').indexOf('hero-v4.mp4')<0){
-      s.setAttribute('src','assets/hero-v4.mp4');
+    if(s && s.getAttribute('src').indexOf('hero-v5.mp4')<0){
+      s.setAttribute('src','assets/hero-v5.mp4');
       v.muted=true; v.playsInline=true; v.loop=true;
       v.load(); var p=v.play(); if(p&&p.catch) p.catch(function(){});
     }
@@ -917,58 +931,5 @@ setTimeout(function(){(function(d,w,k,o,g) {var n=d.getElementsByTagName(o)[0],s
   if(document.readyState!=='loading') swap();
   document.addEventListener('DOMContentLoaded', swap);
   setTimeout(swap, 1200);
-})();
-</script><style>
-#ob-max{position:absolute;z-index:5;display:flex;align-items:center;gap:10px;
-  text-decoration:none;white-space:nowrap}
-#ob-max .ob-max__i{width:35px;height:35px;flex:none;display:block}
-#ob-max .ob-max__t{font-family:var(--t-text-font,Arial);font-size:15px;line-height:1.15;
-  color:#313a39}
-#ob-max:hover .ob-max__t{color:#52719d}
-@media screen and (max-width:1100px){#ob-max{display:none}}
-</style>
-<script>
-(function(){
-  var LINK = "https://max.ru/join/bATDWxSUu7dPxEyafZFkBu_St0pPuv6TNSYCXZsAot8";
-  function put(){
-    if (document.getElementById('ob-max')) return true;
-    // ищем в шапке ссылку на телеграм-канал и её соседа с подписью
-    var tg = document.querySelector('.t396__artboard a[href*="t.me/openbaza"]');
-    if (!tg) return false;
-    var icon = tg.closest('.tn-elem');
-    var board = icon && icon.closest('.t396__artboard');
-    if (!board) return false;
-
-    // подпись рядом с иконкой: берём самый правый элемент этой группы
-    var right = icon;
-    board.querySelectorAll('.tn-elem').forEach(function(e){
-      var a = e.querySelector('a[href*="t.me/openbaza"]');
-      if (a && e.getBoundingClientRect().right > right.getBoundingClientRect().right) right = e;
-    });
-
-    var br = board.getBoundingClientRect();
-    var rr = right.getBoundingClientRect();
-    var ir = icon.getBoundingClientRect();
-
-    var a = document.createElement('a');
-    a.id = 'ob-max';
-    a.href = LINK;
-    a.target = '_blank';
-    a.rel = 'noopener';
-    a.innerHTML = '<svg class="ob-max__i" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="17.5" cy="17.5" r="17" stroke="#6488BC"/><path fill="#6488BC" fill-rule="evenodd" clip-rule="evenodd" d="M17.9 8.8c-4.5 0-8.2 3.6-8.2 8.1 0 2 .7 3.8 1.9 5.2l-1.5 3.6c-.3.7.4 1.4 1.1 1.1l3.7-1.5c.9.3 1.9.5 3 .5 4.5 0 8.2-3.6 8.2-8.1s-3.7-8.9-8.2-8.9zm0 3.4c2.9 0 5.2 2.3 5.2 5.2s-2.3 5.2-5.2 5.2-5.2-2.3-5.2-5.2 2.3-5.2 5.2-5.2z"/></svg><span class="ob-max__t">Наше сообщество<br>в MAX</span>';
-    a.style.left = Math.round(rr.right - br.left + 34) + 'px';
-    a.style.top  = Math.round(ir.top - br.top) + 'px';
-    board.appendChild(a);
-    return true;
-  }
-  if (!put()) {
-    var n = 0, t = setInterval(function(){
-      if (put() || ++n > 40) clearInterval(t);
-    }, 250);
-  }
-  window.addEventListener('resize', function(){
-    var el = document.getElementById('ob-max');
-    if (el) { el.remove(); put(); }
-  });
 })();
 </script></body></html>
