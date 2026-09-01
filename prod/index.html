@@ -279,9 +279,10 @@ document.addEventListener('DOMContentLoaded',t_setvisRecs);}})();</script><style
 .ob-chainx__s{flex:1;min-width:200px;padding:0 28px;position:relative}
 .ob-chainx__s:first-child{padding-left:0}
 /* соединяем кружки полоской, как в вертикальной ленте второго маршрута */
-.ob-chainx__s:not(:last-child):after{content:"";position:absolute;top:21px;height:2px;
-  left:86px;right:-42px;background:color-mix(in srgb, var(--c) 26%, #fffffb)}
-.ob-chainx__s:first-child:not(:last-child):after{left:58px}
+.ob-chainx__s:not(:last-child):after{content:"";position:absolute;top:22px;height:2px;
+  left:calc(28px + 44px + 14px);right:-42px;
+  background:color-mix(in srgb, var(--c) 26%, #fffffb)}
+.ob-chainx__s:first-child:not(:last-child):after{left:calc(44px + 14px)}
 .ob-chainx__n{display:flex;align-items:center;justify-content:center;
   width:44px;height:44px;border-radius:50%;background:#fffffb;border:2px solid var(--c);
   color:var(--c);font-family:var(--t-text-font,Arial);font-size:18px;font-weight:700;line-height:1;margin-bottom:18px}
@@ -292,10 +293,25 @@ document.addEventListener('DOMContentLoaded',t_setvisRecs);}})();</script><style
   color:rgba(49,58,57,.68);margin-bottom:12px}
 .ob-chainx__w{font-family:var(--t-text-font,Arial);font-size:12.5px;font-weight:600;color:var(--c)}
 
-/* ── вариант 2: та же цепочка, но пять шагов ── */
-.ob-chainx--5 .ob-chainx__s{min-width:170px;padding:0 22px}
-.ob-chainx--5 .ob-chainx__s:not(:last-child):after{left:74px;right:-38px}
-.ob-chainx--5 .ob-chainx__s:first-child:not(:last-child):after{left:52px}
+/* ── вариант 2: таймлайн строками ── */
+.ob-tl{display:flex;flex-direction:column}
+.ob-tl__s{position:relative;display:grid;grid-template-columns:44px minmax(0,1fr) 150px;
+  gap:20px;align-items:start;padding:0 0 26px}
+.ob-tl__s:last-child{padding-bottom:0}
+.ob-tl__s:not(:last-child):before{content:"";position:absolute;left:21px;top:50px;bottom:-4px;
+  width:2px;background:color-mix(in srgb, var(--c) 26%, #fffffb)}
+.ob-tl__n{width:44px;height:44px;border-radius:50%;background:#fffffb;
+  border:2px solid var(--c);color:var(--c);display:flex;align-items:center;justify-content:center;
+  font-family:var(--t-text-font,Arial);font-size:18px;font-weight:700;line-height:1;
+  position:relative;z-index:1}
+.ob-tl__s--first .ob-tl__n{background:var(--c);color:#fffffb}
+.ob-tl__t{font-family:var(--uc-typo-fontfamily-ZcDjuR,EngraversGothic);font-size:18px;
+  font-weight:700;text-transform:uppercase;color:#313a39;line-height:1.08;
+  margin:10px 0 6px}
+.ob-tl__d{font-family:var(--t-text-font,Arial);font-size:14.5px;line-height:1.45;
+  color:rgba(49,58,57,.68)}
+.ob-tl__w{margin-top:12px;text-align:right;font-family:var(--t-text-font,Arial);
+  font-size:14px;font-weight:600;color:var(--c);white-space:nowrap}
 
 /* ── вариант 3: задачи плитками и полоса шагов ── */
 .ob-jobs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-bottom:20px}
@@ -491,36 +507,46 @@ document.addEventListener('DOMContentLoaded',t_setvisRecs);}})();</script><style
               <h3 class="ob-panel__h">От вашего участка до первых гостей</h3>
               <p class="ob-panel__d">Пять этапов. Остановиться можно после любого,
               каждый заканчивается результатом на руках.</p>
-              <div class="ob-chainx ob-chainx--5">
-              <div class="ob-chainx__s ob-chainx__s--first">
-                <div class="ob-chainx__n">1</div>
-                <div class="ob-chainx__t">Разбор участка</div>
-                <div class="ob-chainx__d">Кадастр, ограничения, сколько домов встанет</div>
-                <div class="ob-chainx__w">0 ₽ · 3 дня</div>
+              <div class="ob-tl">
+              <div class="ob-tl__s ob-tl__s--first">
+                <div class="ob-tl__n">1</div>
+                <div>
+                  <div class="ob-tl__t">Разбор участка</div>
+                  <div class="ob-tl__d">Кадастр, ограничения, сколько домов встанет</div>
+                </div>
+                <div class="ob-tl__w">0 ₽ · 3 дня</div>
               </div>
-              <div class="ob-chainx__s">
-                <div class="ob-chainx__n">2</div>
-                <div class="ob-chainx__t">Концепция</div>
-                <div class="ob-chainx__d">Формат, гости, состав объектов, деньги на входе и выходе</div>
-                <div class="ob-chainx__w">2 недели</div>
+              <div class="ob-tl__s">
+                <div class="ob-tl__n">2</div>
+                <div>
+                  <div class="ob-tl__t">Концепция</div>
+                  <div class="ob-tl__d">Формат, гости, состав объектов, деньги на входе и выходе</div>
+                </div>
+                <div class="ob-tl__w">2 недели</div>
               </div>
-              <div class="ob-chainx__s">
-                <div class="ob-chainx__n">3</div>
-                <div class="ob-chainx__t">Проект</div>
-                <div class="ob-chainx__d">Генплан, дома, инженерия, финмодель для банка и грантов</div>
-                <div class="ob-chainx__w">3 месяца</div>
+              <div class="ob-tl__s">
+                <div class="ob-tl__n">3</div>
+                <div>
+                  <div class="ob-tl__t">Проект</div>
+                  <div class="ob-tl__d">Генплан, дома, инженерия, финмодель для банка и грантов</div>
+                </div>
+                <div class="ob-tl__w">3 месяца</div>
               </div>
-              <div class="ob-chainx__s">
-                <div class="ob-chainx__n">4</div>
-                <div class="ob-chainx__t">Стройка</div>
-                <div class="ob-chainx__d">Подготовка участка, дома, сети, благоустройство</div>
-                <div class="ob-chainx__w">по проекту</div>
+              <div class="ob-tl__s">
+                <div class="ob-tl__n">4</div>
+                <div>
+                  <div class="ob-tl__t">Стройка</div>
+                  <div class="ob-tl__d">Подготовка участка, дома, сети, благоустройство</div>
+                </div>
+                <div class="ob-tl__w">по проекту</div>
               </div>
-              <div class="ob-chainx__s">
-                <div class="ob-chainx__n">5</div>
-                <div class="ob-chainx__t">Запуск</div>
-                <div class="ob-chainx__d">Классификация, реклама, первые брони, регламенты</div>
-                <div class="ob-chainx__w">1 месяц</div>
+              <div class="ob-tl__s">
+                <div class="ob-tl__n">5</div>
+                <div>
+                  <div class="ob-tl__t">Запуск</div>
+                  <div class="ob-tl__d">Классификация, реклама, первые брони, регламенты</div>
+                </div>
+                <div class="ob-tl__w">1 месяц</div>
               </div>
               </div>
               <div class="ob-pcta">
