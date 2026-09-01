@@ -212,7 +212,7 @@ document.addEventListener('DOMContentLoaded',t_setvisRecs);}})();</script><style
 #rec3452320701 .video1 video{object-fit:cover !important;transform:none !important}
 #rec3452320701 .video1 .tn-atom{
   position:relative;overflow:hidden;
-  background:#0b1a22 url(assets/hero.webp) center/cover no-repeat}
+  background:#0b1a22 url(assets/hero-v3.webp) center/cover no-repeat}
 #rec3452320701 .video1 .tn-atom::before{
   content:"";position:absolute;inset:0;z-index:2;pointer-events:none;
   background:linear-gradient(180deg,rgba(13,28,36,0) 34%,rgba(13,28,36,.34) 62%,rgba(13,28,36,.82) 88%,rgba(13,28,36,.96) 100%)}
@@ -635,10 +635,10 @@ setTimeout(function(){(function(d,w,k,o,g) {var n=d.getElementsByTagName(o)[0],s
     if(!a) return;
     var v=a.querySelector('video');
     if(!v) return;
-    v.setAttribute('poster','assets/hero.webp');
+    v.setAttribute('poster','assets/hero-v3.webp');
     var s=v.querySelector('source');
-    if(s && s.getAttribute('src').indexOf('hero.mp4')<0){
-      s.setAttribute('src','assets/hero.mp4');
+    if(s && s.getAttribute('src').indexOf('hero-v3.mp4')<0){
+      s.setAttribute('src','assets/hero-v3.mp4');
       v.muted=true; v.playsInline=true; v.loop=true;
       v.load(); var p=v.play(); if(p&&p.catch) p.catch(function(){});
     }
