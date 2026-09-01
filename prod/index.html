@@ -278,9 +278,10 @@ document.addEventListener('DOMContentLoaded',t_setvisRecs);}})();</script><style
 .ob-chainx{display:flex;align-items:stretch;flex-wrap:wrap}
 .ob-chainx__s{flex:1;min-width:200px;padding:0 28px;position:relative}
 .ob-chainx__s:first-child{padding-left:0}
-.ob-chainx__s:not(:last-child):after{content:"";position:absolute;right:-6px;top:17px;
-  width:11px;height:11px;border-top:2px solid var(--c);border-right:2px solid var(--c);
-  transform:rotate(45deg)}
+/* соединяем кружки полоской, как в вертикальной ленте второго маршрута */
+.ob-chainx__s:not(:last-child):after{content:"";position:absolute;top:21px;height:2px;
+  left:86px;right:-42px;background:color-mix(in srgb, var(--c) 26%, #fffffb)}
+.ob-chainx__s:first-child:not(:last-child):after{left:58px}
 .ob-chainx__n{display:flex;align-items:center;justify-content:center;
   width:44px;height:44px;border-radius:50%;background:#fffffb;border:2px solid var(--c);
   color:var(--c);font-family:var(--t-text-font,Arial);font-size:18px;font-weight:700;line-height:1;margin-bottom:18px}
