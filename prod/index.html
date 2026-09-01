@@ -285,7 +285,7 @@ document.addEventListener('DOMContentLoaded',t_setvisRecs);}})();</script><style
 
 /* ── вариант 1: цепочка со стрелками ── */
 .ob-chainx{display:flex;align-items:stretch;flex-wrap:wrap}
-.ob-chainx__s{flex:1;min-width:200px;padding:0 28px;position:relative}
+.ob-chainx__s{flex:1;min-width:190px;padding:0 26px;position:relative}
 .ob-chainx__s:first-child{padding-left:0}
 /* соединяем кружки полоской, как в вертикальной ленте второго маршрута */
 .ob-chainx__s:not(:last-child):after{content:"";position:absolute;top:22px;height:2px;
@@ -308,7 +308,10 @@ document.addEventListener('DOMContentLoaded',t_setvisRecs);}})();</script><style
 .ob-zz:before{content:"";position:absolute;left:9%;right:9%;top:50%;height:2px;
   transform:translateY(-1px);background:color-mix(in srgb, var(--c) 26%, #fffffb)}
 .ob-zz__s{position:relative;display:flex;flex-direction:column;align-items:center;
-  text-align:center;padding:0 6px}
+  text-align:center;padding:0 6px;text-decoration:none;color:inherit;
+  transition:transform .18s}
+.ob-zz__s:hover{transform:translateY(-3px)}
+.ob-zz__s:hover .ob-zz__t{color:var(--c)}
 .ob-zz__s .ob-zz__box{width:100%}
 /* нечётные шаги над линией, чётные под ней */
 .ob-zz__s--up{justify-content:flex-end;padding-bottom:calc(50% + 0px)}
@@ -381,6 +384,36 @@ document.addEventListener('DOMContentLoaded',t_setvisRecs);}})();</script><style
   color:#313a39;margin-bottom:4px}
 .ob-first span{font-family:var(--t-text-font,Arial);font-size:14px;line-height:1.42;
   color:rgba(49,58,57,.7)}
+
+/* состав продуктов под маршрутом */
+.ob-what{margin-top:30px;padding-top:26px;border-top:1px solid rgba(49,58,57,.14)}
+.ob-what__h{font-family:var(--t-text-font,Arial);font-size:14px;font-weight:600;
+  letter-spacing:.08em;text-transform:uppercase;color:var(--c);margin-bottom:16px}
+.ob-kinds{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-bottom:26px}
+.ob-kind{border:1px solid rgba(49,58,57,.16);border-radius:18px;padding:20px 20px 18px;
+  background:#fffffb;display:flex;flex-direction:column;text-decoration:none;color:inherit;
+  transition:border-color .18s, transform .18s, box-shadow .18s}
+.ob-kind:hover{border-color:var(--c);transform:translateY(-3px);
+  box-shadow:0 14px 30px rgba(49,58,57,.10)}
+.ob-kind b{font-family:var(--t-text-font,Arial);font-size:16px;font-weight:600;
+  color:#313a39;line-height:1.24;margin-bottom:6px}
+.ob-kind span{font-family:var(--t-text-font,Arial);font-size:13.5px;line-height:1.4;
+  color:rgba(49,58,57,.66);flex:1;margin-bottom:12px}
+.ob-kind i{font-style:normal;font-family:var(--uc-typo-fontfamily-ZcDjuR,EngraversGothic);
+  font-size:16px;font-weight:700;text-transform:uppercase;color:var(--c);
+  padding-top:10px;border-top:1px solid rgba(49,58,57,.14)}
+
+.ob-incl{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 28px;
+  margin:0;padding:0;list-style:none}
+.ob-incl li{position:relative;padding-left:22px;font-family:var(--t-text-font,Arial);
+  font-size:14.5px;line-height:1.42;color:#313a39}
+.ob-incl li:before{content:"";position:absolute;left:0;top:7px;width:7px;height:7px;
+  border-radius:50%;background:var(--c)}
+
+@media screen and (max-width:900px){
+  .ob-kinds{grid-template-columns:1fr}
+  .ob-incl{grid-template-columns:1fr}
+}
 
 @media screen and (max-width:1100px){
   .ob-doors{grid-template-columns:1fr}
@@ -523,27 +556,27 @@ document.addEventListener('DOMContentLoaded',t_setvisRecs);}})();</script><style
               <div class="ob-chainx">
               <div class="ob-chainx__s ob-chainx__s--first">
                 <div class="ob-chainx__n">1</div>
-                <div class="ob-chainx__t">Консультация</div>
-                <div class="ob-chainx__d">Разбираем бюджет, формат и регион, отвечаем на вопросы</div>
-                <div class="ob-chainx__w">от 140 000 ₽</div>
+                <div class="ob-chainx__t">Подбор земли</div>
+                <div class="ob-chainx__d">Считаем, где база будет зарабатывать, и ищем участок под ваш формат</div>
+                <div class="ob-chainx__w">Биржа земли</div>
               </div>
               <div class="ob-chainx__s">
                 <div class="ob-chainx__n">2</div>
-                <div class="ob-chainx__t">Подбор региона</div>
-                <div class="ob-chainx__d">Считаем спрос и сезонность, а не смотрим на вид</div>
-                <div class="ob-chainx__w">неделя</div>
+                <div class="ob-chainx__t">Консультация</div>
+                <div class="ob-chainx__d">Разбираем найденный участок: что на нём построится и сколько принесёт</div>
+                <div class="ob-chainx__w">от 140 000 ₽</div>
               </div>
               <div class="ob-chainx__s">
                 <div class="ob-chainx__n">3</div>
-                <div class="ob-chainx__t">Поиск участка</div>
-                <div class="ob-chainx__d">Свои каналы и Биржа земли, сразу проверяем ВРИ и сети</div>
-                <div class="ob-chainx__w">2–6 недель</div>
+                <div class="ob-chainx__t">Концептуальный проект с финмоделью</div>
+                <div class="ob-chainx__d">Мастер-план, генплан, дома, инженерия и расчёт для банка, гранта или инвестора</div>
+                <div class="ob-chainx__w">от 580 000 ₽</div>
               </div>
               <div class="ob-chainx__s">
                 <div class="ob-chainx__n">4</div>
-                <div class="ob-chainx__t">Проверка до сделки</div>
-                <div class="ob-chainx__d">Кадастр, ограничения, подъезд, экономика будущей базы</div>
-                <div class="ob-chainx__w">3 дня</div>
+                <div class="ob-chainx__t">Стройка и запуск</div>
+                <div class="ob-chainx__d">Строим, продвигаем и выводим на первые заезды</div>
+                <div class="ob-chainx__w">по коммерческому</div>
               </div>
               </div>
               <div class="ob-pcta">
@@ -564,46 +597,77 @@ document.addEventListener('DOMContentLoaded',t_setvisRecs);}})();</script><style
                 менеджер подскажет, какая консультация подойдёт и сколько она стоит.</span></div>
               </div>
               <div class="ob-zz">
-              <div class="ob-zz__s ob-zz__s--up ob-zz__s--first">
+              <a class="ob-zz__s ob-zz__s--up ob-zz__s--first" href="/consultations">
                 <div class="ob-zz__n">1</div>
                 <div class="ob-zz__box">
                   <div class="ob-zz__t">Консультация</div>
-                  <div class="ob-zz__d">Смотрим участок: что на нём построится и сколько принесёт</div>
+                  <div class="ob-zz__d">Онлайн с Александром, на нашей базе или с выездом на ваш участок</div>
                   <div class="ob-zz__w">от 140 000 ₽</div>
                 </div>
-              </div>
-              <div class="ob-zz__s ob-zz__s--down">
+              </a>
+              <a class="ob-zz__s ob-zz__s--down" href="/engineering">
                 <div class="ob-zz__n">2</div>
                 <div class="ob-zz__box">
-                  <div class="ob-zz__t">Концепция</div>
-                  <div class="ob-zz__d">Формат, гости, состав объектов, деньги на входе и выходе</div>
-                  <div class="ob-zz__w">2 недели</div>
+                  <div class="ob-zz__t">Концептуальный проект с финмоделью</div>
+                  <div class="ob-zz__d">Мастер-план, генплан, дома, инженерия и расчёт для банка, гранта или инвестора</div>
+                  <div class="ob-zz__w">от 580 000 ₽ · около 3 месяцев</div>
                 </div>
-              </div>
-              <div class="ob-zz__s ob-zz__s--up">
+              </a>
+              <a class="ob-zz__s ob-zz__s--up" href="/building">
                 <div class="ob-zz__n">3</div>
-                <div class="ob-zz__box">
-                  <div class="ob-zz__t">Проект</div>
-                  <div class="ob-zz__d">Генплан, дома, инженерия, финмодель для банка и грантов</div>
-                  <div class="ob-zz__w">3 месяца</div>
-                </div>
-              </div>
-              <div class="ob-zz__s ob-zz__s--down">
-                <div class="ob-zz__n">4</div>
                 <div class="ob-zz__box">
                   <div class="ob-zz__t">Стройка</div>
                   <div class="ob-zz__d">Подготовка участка, дома, сети, благоустройство</div>
-                  <div class="ob-zz__w">по проекту</div>
+                  <div class="ob-zz__w">по коммерческому</div>
                 </div>
-              </div>
-              <div class="ob-zz__s ob-zz__s--up">
+              </a>
+              <a class="ob-zz__s ob-zz__s--down" href="/promotion">
+                <div class="ob-zz__n">4</div>
+                <div class="ob-zz__box">
+                  <div class="ob-zz__t">Продвижение</div>
+                  <div class="ob-zz__d">Сайт и реклама, чтобы к открытию уже были брони</div>
+                  <div class="ob-zz__w">от 200 000 ₽</div>
+                </div>
+              </a>
+              <a class="ob-zz__s ob-zz__s--up" href="/consultations">
                 <div class="ob-zz__n">5</div>
                 <div class="ob-zz__box">
                   <div class="ob-zz__t">Запуск</div>
-                  <div class="ob-zz__d">Классификация, реклама, первые брони, регламенты</div>
+                  <div class="ob-zz__d">Классификация, первые заезды, регламенты для команды</div>
                   <div class="ob-zz__w">1 месяц</div>
                 </div>
+              </a>
               </div>
+                            <div class="ob-what">
+                <div class="ob-what__h">Три формата консультации</div>
+                <div class="ob-kinds">
+                  <a class="ob-kind" href="/consultations">
+                    <b>Онлайн с Александром</b>
+                    <span>Два часа в Zoom: разбираем участок, формат и экономику проекта</span>
+                    <i>140 000 ₽</i>
+                  </a>
+                  <a class="ob-kind" href="/consultations">
+                    <b>На нашей базе</b>
+                    <span>До четырёх часов: смотрите работающий объект и задаёте вопросы на месте</span>
+                    <i>200 000 ₽</i>
+                  </a>
+                  <a class="ob-kind" href="/consultations">
+                    <b>Выезд к вам</b>
+                    <span>Александр приезжает на ваш участок и смотрит его лично</span>
+                    <i>от 300 000 ₽</i>
+                  </a>
+                </div>
+                <div class="ob-what__h">Что входит в концептуальный проект с финмоделью</div>
+                <ul class="ob-incl">
+                  <li>Мастер-план участка: где что стоит и как ходят гости</li>
+                  <li>Генплан с посадкой домов, дорог и инженерных сетей</li>
+                  <li>Архитектура домов и общих зон</li>
+                  <li>Инженерия: электричество, вода, канализация, отопление</li>
+                  <li>Финансовая модель: вложения, загрузка, прибыль, окупаемость</li>
+                  <li>Расчёт под банк, грант или инвестора</li>
+                  <li>Книга проекта: всё собрано в один документ</li>
+                  <li>Сопровождение в Telegram на время работы</li>
+                </ul>
               </div>
               <div class="ob-pcta">
                 <a class="ob-btn" href="#popup:zayavka">Обсудить участок</a>
@@ -647,28 +711,6 @@ document.addEventListener('DOMContentLoaded',t_setvisRecs);}})();</script><style
                 <div class="ob-job__d">Проект второй очереди на том же участке</div>
                 <div class="ob-job__f"><b>Проектирование</b><span>от 580 000 ₽</span></div>
               </a>
-              </div>
-              <div class="ob-strip">
-              <div class="ob-strip__s ob-strip__s--first">
-                <div class="ob-strip__n">1</div>
-                <div class="ob-strip__t">Консультация</div>
-                <div class="ob-strip__w">от 140 000 ₽</div>
-              </div>
-              <div class="ob-strip__s">
-                <div class="ob-strip__n">2</div>
-                <div class="ob-strip__t">План на квартал</div>
-                <div class="ob-strip__w">неделя</div>
-              </div>
-              <div class="ob-strip__s">
-                <div class="ob-strip__n">3</div>
-                <div class="ob-strip__t">Внедрение</div>
-                <div class="ob-strip__w">1–3 месяца</div>
-              </div>
-              <div class="ob-strip__s">
-                <div class="ob-strip__n">4</div>
-                <div class="ob-strip__t">Замер результата</div>
-                <div class="ob-strip__w">через квартал</div>
-              </div>
               </div>
               <div class="ob-pcta">
                 <a class="ob-btn" href="#popup:zayavka">Обсудить задачу</a>
