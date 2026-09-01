@@ -35,6 +35,40 @@
 .ob-serv a:hover .go{gap:14px}
 .ob-serv .go i{font-style:normal;transition:transform .2s}
 
+/* ── единый блок пути: две двери и раскрытие ── */
+.ob-doors{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.ob-door{position:relative;border:1px solid rgba(49,58,57,.14);border-radius:30px;
+  padding:36px 34px 30px;background:#fffffb;cursor:pointer;text-align:left;width:100%;
+  font-family:inherit;display:flex;flex-direction:column;
+  transition:border-color .2s, transform .2s, box-shadow .2s, background .2s}
+.ob-door:hover{border-color:#52719d;transform:translateY(-3px);box-shadow:0 14px 34px rgba(49,58,57,.09)}
+.ob-door[aria-expanded="true"]{border-color:#52719d;background:#f7f9f8;transform:none;
+  box-shadow:0 10px 26px rgba(49,58,57,.08)}
+.ob-door__k{font-family:var(--t-text-font,Arial);font-size:13px;font-weight:600;letter-spacing:.1em;
+  text-transform:uppercase;color:#52719d;margin-bottom:12px}
+.ob-door h3{margin:0 0 10px;font-family:var(--uc-typo-fontfamily-ZcDjuR,EngraversGothic);
+  font-size:32px;line-height:1.04;font-weight:700;text-transform:uppercase;color:#313a39}
+.ob-door p{margin:0;font-family:var(--t-text-font,Arial);font-size:17px;line-height:1.38;color:#313a39}
+.ob-door__go{margin-top:22px;display:flex;align-items:center;gap:10px;
+  font-family:var(--uc-button-fontfamily-q6td2,EngraversGothic);font-size:15px;font-weight:700;
+  letter-spacing:.04em;text-transform:uppercase;color:#52719d}
+.ob-door__go i{font-style:normal;font-size:20px;line-height:1;transition:transform .25s}
+.ob-door[aria-expanded="true"] .ob-door__go i{transform:rotate(180deg)}
+
+.ob-panel{overflow:hidden;max-height:0;opacity:0;
+  transition:max-height .45s ease, opacity .3s ease, margin-top .3s ease}
+.ob-panel.is-open{max-height:2600px;opacity:1;margin-top:28px}
+.ob-panel__in{border:1px solid rgba(49,58,57,.14);border-radius:30px;padding:40px 38px 34px;
+  background:#fffffb}
+.ob-panel__h{margin:0 0 6px;font-family:var(--uc-typo-fontfamily-ZcDjuR,EngraversGothic);
+  font-size:26px;line-height:1.06;font-weight:700;text-transform:uppercase;color:#313a39}
+.ob-panel__d{margin:0 0 28px;font-family:var(--t-text-font,Arial);font-size:17px;
+  line-height:1.38;color:rgba(49,58,57,.72)}
+.ob-sub{margin:36px 0 18px;font-family:var(--t-text-font,Arial);font-size:14px;font-weight:600;
+  letter-spacing:.1em;text-transform:uppercase;color:#52719d}
+.ob-panel .ob-fork__card{padding:30px 28px 26px;border-radius:22px}
+.ob-panel .ob-fork__card h3{font-size:26px}
+
 /* ── развилка по участку ── */
 .ob-fork{display:grid;grid-template-columns:1fr 1fr;gap:20px}
 .ob-fork__card{border-radius:30px;padding:38px 36px 32px;display:flex;flex-direction:column;
@@ -105,6 +139,10 @@
   .ob-sec{padding:56px 20px 54px}
   .ob-h2{font-size:32px}
   .ob-fork{grid-template-columns:1fr}
+  .ob-doors{grid-template-columns:1fr}
+  .ob-door{padding:28px 24px 24px;border-radius:20px}
+  .ob-door h3{font-size:26px}
+  .ob-panel__in{padding:28px 22px 24px;border-radius:20px}
   .ob-fork__card{padding:30px 26px 26px;border-radius:20px}
   .ob-fork__card h3{font-size:26px}
   .ob-fix{border-radius:20px}
@@ -166,135 +204,177 @@
           </div>
   </div>
 </section>
-<div class="ob-tag">развилка</div>
+<div class="ob-tag">путь</div>
 <section class="ob-sec ob-sec--soft">
   <div class="ob-wrap">
-          <div class="ob-label">Путь с нуля</div>
-          <h2 class="ob-h2">Начнём с главного вопроса</h2>
-          <p class="ob-lead">От ответа зависит, с чего начинать и сколько это займёт.
-          Оба варианта начинаются с бесплатной диагностики.</p>
-          <div class="ob-fork">
-            <article class="ob-fork__card">
-              <div class="ob-fork__q">Вариант первый</div>
-              <h3>Участка ещё нет</h3>
-              <p>Есть желание и бюджет, земли пока нет. Половина проектов приходит именно так.</p>
-              <ul>
-                <li>Подбираем регион по спросу, а не по красоте вида</li>
-                <li>Ищем участок под ваш формат и бюджет</li>
-                <li>Проверяем категорию, ВРИ, сети и подъезд до покупки</li>
-                <li>Считаем экономику до того, как вы заплатите за землю</li>
-              </ul>
-              <a class="ob-btn" href="#popup:zayavka">Подобрать участок</a>
-              <div class="ob-after">Бесплатно, ни к чему не обязывает</div>
-            </article>
-            <article class="ob-fork__card ob-fork__card--b">
-              <div class="ob-fork__q">Вариант второй</div>
-              <h3>Участок уже есть</h3>
-              <p>Земля куплена или в собственности. Нужно понять, что на ней реально построить.</p>
-              <ul>
-                <li>Смотрим кадастр, ограничения и охранные зоны</li>
-                <li>Считаем, сколько домов встанет и какой будет выручка</li>
-                <li>Говорим прямо, если базы на этом участке не будет</li>
-                <li>Даём план: что делать в первый месяц и в первый год</li>
-              </ul>
-              <a class="ob-btn" href="#popup:zayavka">Разобрать мой участок</a>
-              <div class="ob-after">Бесплатно, ответ в течение дня</div>
-            </article>
+          <div class="ob-label">С чего начать</div>
+          <h2 class="ob-h2">Выберите свой путь</h2>
+          <p class="ob-lead">Владелец действующей базы и человек с пустым участком приходят
+          за разным. Нажмите на свой вариант, покажем весь маршрут.</p>
+
+          <div class="ob-doors">
+            <button class="ob-door" type="button" aria-expanded="false" data-ob-door="zero">
+              <div class="ob-door__k">Базы ещё нет</div>
+              <h3>Путь с нуля</h3>
+              <p>От участка или даже от одной идеи до первых гостей на объекте.</p>
+              <div class="ob-door__go">Показать маршрут <i>&#8964;</i></div>
+            </button>
+            <button class="ob-door" type="button" aria-expanded="false" data-ob-door="work">
+              <div class="ob-door__k">База уже работает</div>
+              <h3>Путь для действующих</h3>
+              <p>Поднять загрузку, навести порядок, пройти классификацию, достроить.</p>
+              <div class="ob-door__go">Показать задачи <i>&#8964;</i></div>
+            </button>
           </div>
-  </div>
-</section>
-<div class="ob-tag">маршрут</div>
-<section class="ob-sec">
-  <div class="ob-wrap">
-          <div class="ob-label">Маршрутный лист</div>
-          <h2 class="ob-h2">Весь путь от участка до первых гостей</h2>
-          <p class="ob-lead">Пять этапов. Каждый заканчивается результатом, который можно
-          посмотреть и оценить. Остановиться можно после любого.</p>
-          <div class="ob-map">
-            <div class="ob-step ob-step--done">
-              <div class="ob-step__dot">1</div>
-              <div>
-                <h4>Диагностика</h4>
-                <p>Смотрим участок и считаем, что на нём получится</p>
-                <span class="w">0 ₽ · 3 дня</span>
+
+          <div class="ob-panel" data-ob-panel="zero">
+            <div class="ob-panel__in">
+              <h3 class="ob-panel__h">Сначала главный вопрос</h3>
+              <p class="ob-panel__d">От ответа зависит, с чего начинать и сколько это займёт.</p>
+            <div class="ob-fork">
+              <article class="ob-fork__card">
+                <div class="ob-fork__q">Если земли нет</div>
+                <h3>Участка ещё нет</h3>
+                <p>Есть желание и бюджет, земли пока нет. Половина проектов приходит именно так.</p>
+                <ul>
+                  <li>Подбираем регион по спросу, а не по красоте вида</li>
+                  <li>Ищем участок под ваш формат и бюджет</li>
+                  <li>Проверяем категорию, ВРИ, сети и подъезд до покупки</li>
+                  <li>Считаем экономику до того, как вы заплатите за землю</li>
+                </ul>
+                <a class="ob-btn" href="#popup:zayavka">Подобрать участок</a>
+                <div class="ob-after">Бесплатно, ни к чему не обязывает</div>
+              </article>
+              <article class="ob-fork__card ob-fork__card--b">
+                <div class="ob-fork__q">Если земля есть</div>
+                <h3>Разбор вашего участка</h3>
+                <p>Земля куплена или в собственности. Нужно понять, что на ней реально построить.</p>
+                <ul>
+                  <li>Смотрим кадастр, ограничения и охранные зоны</li>
+                  <li>Считаем, сколько домов встанет и какой будет выручка</li>
+                  <li>Говорим прямо, если базы на этом участке не будет</li>
+                  <li>Даём план: что делать в первый месяц и в первый год</li>
+                </ul>
+                <a class="ob-btn" href="#popup:zayavka">Разобрать мой участок</a>
+                <div class="ob-after">Бесплатно, ответ в течение дня</div>
+              </article>
+            </div>
+              <div class="ob-sub">Дальше маршрут одинаковый</div>
+              <div class="ob-map">
+              <div class="ob-step ob-step--done">
+                <div class="ob-step__dot">1</div>
+                <div>
+                  <h4>Диагностика</h4>
+                  <p>Смотрим участок и считаем, что на нём получится</p>
+                  <span class="w">0 ₽ · 3 дня</span>
+                </div>
+              </div>
+              <div class="ob-step">
+                <div class="ob-step__dot">2</div>
+                <div>
+                  <h4>Концепция</h4>
+                  <p>Формат, гости, состав домов, деньги на входе и выходе</p>
+                  <span class="w">2 недели</span>
+                </div>
+              </div>
+              <div class="ob-step">
+                <div class="ob-step__dot">3</div>
+                <div>
+                  <h4>Проект</h4>
+                  <p>Генплан, дома, инженерия, финмодель для банка и грантов</p>
+                  <span class="w">3 месяца</span>
+                </div>
+              </div>
+              <div class="ob-step">
+                <div class="ob-step__dot">4</div>
+                <div>
+                  <h4>Стройка</h4>
+                  <p>Подготовка участка, дома, сети, благоустройство</p>
+                  <span class="w">по проекту</span>
+                </div>
+              </div>
+              <div class="ob-step">
+                <div class="ob-step__dot">5</div>
+                <div>
+                  <h4>Запуск</h4>
+                  <p>Классификация, реклама, первые брони, регламенты</p>
+                  <span class="w">1 месяц</span>
+                </div>
+              </div>
+              </div>
+              <div class="ob-cta">
+                <a class="ob-btn" href="#popup:zayavka">Начать с диагностики</a>
+                <div class="ob-after">Бесплатно. Скажем честно, стоит ли вообще браться</div>
               </div>
             </div>
-            <div class="ob-step">
-              <div class="ob-step__dot">2</div>
-              <div>
-                <h4>Концепция</h4>
-                <p>Формат, гости, состав домов, деньги на входе и выходе</p>
-                <span class="w">2 недели</span>
+          </div>
+
+          <div class="ob-panel" data-ob-panel="work">
+            <div class="ob-panel__in">
+              <h3 class="ob-panel__h">Найдите свою задачу</h3>
+              <p class="ob-panel__d">Пять ситуаций, с которыми к нам приходят чаще всего.</p>
+              <div class="ob-fix">
+              <div class="ob-fix__row">
+                <div class="ob-fix__p">Домики стоят пустыми в будни</div>
+                <div class="ob-fix__s">Работаем с загрузкой: каналы продаж, цены по сезонам, возвратные гости</div>
+                <div class="ob-fix__a"><b>Продвижение</b><span>от 100 000 ₽</span></div>
               </div>
-            </div>
-            <div class="ob-step">
-              <div class="ob-step__dot">3</div>
-              <div>
-                <h4>Проект</h4>
-                <p>Генплан, дома, инженерия, финмодель для банка и грантов</p>
-                <span class="w">3 месяца</span>
+              <div class="ob-fix__row">
+                <div class="ob-fix__p">Всё держится на вас лично</div>
+                <div class="ob-fix__s">Регламенты и книги под каждую роль. Команда работает без вашего участия</div>
+                <div class="ob-fix__a"><b>Материалы</b><span>от 15 000 ₽</span></div>
               </div>
-            </div>
-            <div class="ob-step">
-              <div class="ob-step__dot">4</div>
-              <div>
-                <h4>Стройка</h4>
-                <p>Подготовка участка, дома, сети, благоустройство</p>
-                <span class="w">по проекту</span>
+              <div class="ob-fix__row">
+                <div class="ob-fix__p">Нет номера в реестре</div>
+                <div class="ob-fix__s">Классификация и самооценка. Без реестра рекламу размещать нельзя</div>
+                <div class="ob-fix__a"><b>Классификация</b><span>от 50 000 ₽</span></div>
               </div>
-            </div>
-            <div class="ob-step">
-              <div class="ob-step__dot">5</div>
-              <div>
-                <h4>Запуск</h4>
-                <p>Классификация, реклама, первые брони, регламенты</p>
-                <span class="w">1 месяц</span>
+              <div class="ob-fix__row">
+                <div class="ob-fix__p">Непонятно, куда уходят деньги</div>
+                <div class="ob-fix__s">Финансовая модель под ваш объект: расходы, точка безубыточности, прибыль</div>
+                <div class="ob-fix__a"><b>Консультация</b><span>от 140 000 ₽</span></div>
+              </div>
+              <div class="ob-fix__row">
+                <div class="ob-fix__p">Хотите достроить или расширить</div>
+                <div class="ob-fix__s">Проект второй очереди на том же участке с учётом того, что уже работает</div>
+                <div class="ob-fix__a"><b>Проектирование</b><span>от 580 000 ₽</span></div>
+              </div>
+              </div>
+              <div class="ob-cta">
+                <a class="ob-btn ob-btn--ghost" href="#popup:zayavka">Моей задачи нет в списке</a>
               </div>
             </div>
           </div>
-          <div class="ob-cta">
-            <a class="ob-btn" href="#popup:zayavka">Начать с диагностики</a>
-            <div class="ob-after">Бесплатно. Скажем честно, стоит ли вообще браться</div>
-          </div>
-  </div>
-</section>
-<div class="ob-tag">действующие</div>
-<section class="ob-sec ob-sec--soft">
-  <div class="ob-wrap">
-          <div class="ob-label">База уже работает</div>
-          <h2 class="ob-h2">Найдите свою задачу</h2>
-          <p class="ob-lead">Пять ситуаций, с которыми к нам приходят чаще всего.
-          Выберите свою и посмотрите, что мы предлагаем.</p>
-          <div class="ob-fix">
-            <div class="ob-fix__row">
-              <div class="ob-fix__p">Домики стоят пустыми в будни</div>
-              <div class="ob-fix__s">Работаем с загрузкой: каналы продаж, цены по сезонам, возвратные гости</div>
-              <div class="ob-fix__a"><b>Продвижение</b><span>от 100 000 ₽</span></div>
-            </div>
-            <div class="ob-fix__row">
-              <div class="ob-fix__p">Всё держится на вас лично</div>
-              <div class="ob-fix__s">Регламенты и книги под каждую роль. Команда работает без вашего участия</div>
-              <div class="ob-fix__a"><b>Материалы</b><span>от 15 000 ₽</span></div>
-            </div>
-            <div class="ob-fix__row">
-              <div class="ob-fix__p">Нет номера в реестре</div>
-              <div class="ob-fix__s">Классификация и самооценка. Без реестра рекламу размещать нельзя</div>
-              <div class="ob-fix__a"><b>Классификация</b><span>от 50 000 ₽</span></div>
-            </div>
-            <div class="ob-fix__row">
-              <div class="ob-fix__p">Непонятно, куда уходят деньги</div>
-              <div class="ob-fix__s">Финансовая модель под ваш объект: расходы, точка безубыточности, прибыль</div>
-              <div class="ob-fix__a"><b>Консультация</b><span>от 140 000 ₽</span></div>
-            </div>
-            <div class="ob-fix__row">
-              <div class="ob-fix__p">Хотите достроить или расширить</div>
-              <div class="ob-fix__s">Проект второй очереди на том же участке с учётом того, что уже работает</div>
-              <div class="ob-fix__a"><b>Проектирование</b><span>от 580 000 ₽</span></div>
-            </div>
-          </div>
-          <div class="ob-cta">
-            <a class="ob-btn ob-btn--ghost" href="#popup:zayavka">Моей задачи нет в списке</a>
-          </div>
+
+          <script>
+          (function(){
+            var doors = document.querySelectorAll('[data-ob-door]');
+            var panels = document.querySelectorAll('[data-ob-panel]');
+            function closeAll(){
+              Array.prototype.forEach.call(doors, function(o){
+                o.setAttribute('aria-expanded','false');
+              });
+              Array.prototype.forEach.call(panels, function(p){
+                p.classList.remove('is-open');
+              });
+            }
+            Array.prototype.forEach.call(doors, function(d){
+              d.addEventListener('click', function(){
+                var key = d.getAttribute('data-ob-door');
+                var panel = document.querySelector('[data-ob-panel="' + key + '"]');
+                var wasOpen = d.getAttribute('aria-expanded') === 'true';
+                closeAll();
+                if (wasOpen || !panel) return;
+                d.setAttribute('aria-expanded','true');
+                panel.classList.add('is-open');
+                setTimeout(function(){
+                  var top = panel.getBoundingClientRect().top + window.pageYOffset - 90;
+                  window.scrollTo({top: top, behavior: 'smooth'});
+                }, 260);
+              });
+            });
+          })();
+          </script>
   </div>
 </section>
 </body></html>
