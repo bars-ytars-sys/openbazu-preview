@@ -58,39 +58,9 @@ document.addEventListener('DOMContentLoaded',t_setvisRecs);}})();</script><scrip
 .ob-serv a:hover .go{gap:14px}
 .ob-serv .go i{font-style:normal;transition:transform .2s}
 
-/* ── единый блок пути: две двери и раскрытие ── */
-.ob-doors{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-.ob-door{position:relative;border:1px solid rgba(49,58,57,.14);border-radius:30px;
-  padding:36px 34px 30px;background:#fffffb;cursor:pointer;text-align:left;width:100%;
-  font-family:inherit;display:flex;flex-direction:column;
-  transition:border-color .2s, transform .2s, box-shadow .2s, background .2s}
-.ob-door:hover{border-color:#52719d;transform:translateY(-3px);box-shadow:0 14px 34px rgba(49,58,57,.09)}
-.ob-door[aria-expanded="true"]{border-color:#52719d;background:#f7f9f8;transform:none;
-  box-shadow:0 10px 26px rgba(49,58,57,.08)}
-.ob-door__k{font-family:var(--t-text-font,Arial);font-size:13px;font-weight:600;letter-spacing:.1em;
-  text-transform:uppercase;color:#52719d;margin-bottom:12px}
-.ob-door h3{margin:0 0 10px;font-family:var(--uc-typo-fontfamily-ZcDjuR,EngraversGothic);
-  font-size:32px;line-height:1.04;font-weight:700;text-transform:uppercase;color:#313a39}
-.ob-door p{margin:0;font-family:var(--t-text-font,Arial);font-size:17px;line-height:1.38;color:#313a39}
-.ob-door__go{margin-top:22px;display:flex;align-items:center;gap:10px;
-  font-family:var(--uc-button-fontfamily-q6td2,EngraversGothic);font-size:15px;font-weight:700;
-  letter-spacing:.04em;text-transform:uppercase;color:#52719d}
-.ob-door__go i{font-style:normal;font-size:20px;line-height:1;transition:transform .25s}
-.ob-door[aria-expanded="true"] .ob-door__go i{transform:rotate(180deg)}
-
-.ob-panel{overflow:hidden;max-height:0;opacity:0;
-  transition:max-height .45s ease, opacity .3s ease, margin-top .3s ease}
-.ob-panel.is-open{max-height:2600px;opacity:1;margin-top:28px}
-.ob-panel__in{border:1px solid rgba(49,58,57,.14);border-radius:30px;padding:40px 38px 34px;
-  background:#fffffb}
-.ob-panel__h{margin:0 0 6px;font-family:var(--uc-typo-fontfamily-ZcDjuR,EngraversGothic);
-  font-size:26px;line-height:1.06;font-weight:700;text-transform:uppercase;color:#313a39}
-.ob-panel__d{margin:0 0 28px;font-family:var(--t-text-font,Arial);font-size:17px;
-  line-height:1.38;color:rgba(49,58,57,.72)}
-.ob-sub{margin:36px 0 18px;font-family:var(--t-text-font,Arial);font-size:14px;font-weight:600;
-  letter-spacing:.1em;text-transform:uppercase;color:#52719d}
-.ob-panel .ob-fork__card{padding:30px 28px 26px;border-radius:22px}
-.ob-panel .ob-fork__card h3{font-size:26px}
+/* Старый блок пути отсюда убран: его собирала устаревшая path_html(),
+   которую заменил модуль «путь». Имена классов совпадали, поэтому
+   старые правила перебивали новые, стоило переставить блоки местами. */
 
 /* ── развилка по участку ── */
 .ob-fork{display:grid;grid-template-columns:1fr 1fr;gap:20px}
@@ -969,8 +939,12 @@ setTimeout(function(){(function(d,w,k,o,g) {var n=d.getElementsByTagName(o)[0],s
 		}</style>
 		<div class="t396__tooltip-portal"></div>
 	<div class="t-input-phonemask__options-wrap" data-nosnippet=""></div><style>
+/* Холст шапки в Тильде гасит клики (pointer-events:none) и включает их
+   только своим элементам, поэтому нашей ссылке включаем явно. */
 #ob-max{position:absolute;z-index:9999;display:flex;align-items:center;gap:10px;
-  text-decoration:none;white-space:nowrap;line-height:1.15}
+  text-decoration:none;white-space:nowrap;line-height:1.15;
+  pointer-events:auto;cursor:pointer}
+#ob-max *{pointer-events:none}
 #ob-max .ob-max__i{width:35px;height:35px;flex:none;display:block}
 #ob-max .ob-max__t{font-family:var(--t-text-font,Arial);font-size:15px;color:#313a39}
 #ob-max:hover .ob-max__t{color:#52719d}
@@ -979,7 +953,7 @@ setTimeout(function(){(function(d,w,k,o,g) {var n=d.getElementsByTagName(o)[0],s
 <script>
 (function(){
   var LINK = "https://max.ru/join/bATDWxSUu7dPxEyafZFkBu_St0pPuv6TNSYCXZsAot8";
-  var ICON = '<svg class="ob-max__i" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="17.5" cy="17.5" r="17" stroke="#6488BC"/><path fill="#6488BC" fill-rule="evenodd" clip-rule="evenodd" d="M17.9 8.8c-4.5 0-8.2 3.6-8.2 8.1 0 2 .7 3.8 1.9 5.2l-1.5 3.6c-.3.7.4 1.4 1.1 1.1l3.7-1.5c.9.3 1.9.5 3 .5 4.5 0 8.2-3.6 8.2-8.1s-3.7-8.9-8.2-8.9zm0 3.4c2.9 0 5.2 2.3 5.2 5.2s-2.3 5.2-5.2 5.2-5.2-2.3-5.2-5.2 2.3-5.2 5.2-5.2z"/></svg>';
+  var ICON = '<svg class="ob-max__i" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="obMaxG" x1="10" y1="25" x2="25" y2="10" gradientUnits="userSpaceOnUse"><stop stop-color="#3AB6F5"/><stop offset=".5" stop-color="#3A44F0"/><stop offset="1" stop-color="#9B2FE0"/></linearGradient></defs><circle cx="17.5" cy="17.5" r="17" stroke="#6488BC"/><circle cx="17.5" cy="17.5" r="7.6" fill="url(#obMaxG)"/><path fill="#fff" fill-rule="evenodd" clip-rule="evenodd" d="M17.62 11.6c-3.1 0-5.62 2.5-5.62 5.6 0 1.4.52 2.68 1.38 3.66l-.41 1.95c-.1.46.39.81.79.6l1.81-.97c.63.23 1.31.35 2.05.353.1 0 5.62-2.5 5.62-5.59s-2.52-5.6-5.62-5.6zm0 2.76a2.84 2.84 0 1 1 0 5.68a2.84 2.84 0 0 1 0-5.68z"/></svg>';
   var GAP  = 36;
 
   function parts(){
