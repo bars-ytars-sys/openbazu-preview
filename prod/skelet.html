@@ -1,0 +1,1049 @@
+<!doctype html><html lang='ru'><head><meta charset='utf-8'><meta name='viewport' content='width=device-width, initial-scale=1'><meta name='robots' content='noindex'><title>Скелет: все блоки на одной странице</title><style>
+.ob-sec{width:100%;padding:80px 20px 76px;box-sizing:border-box;background:#fffffb}
+.ob-sec *{box-sizing:border-box}
+.ob-sec--soft{background:#f7f9f8}
+.ob-wrap{width:100%;max-width:1200px;margin:0 auto}
+.ob-label{margin-bottom:14px;font-family:var(--t-text-font,Arial);font-size:16px;line-height:1.2;
+  font-weight:400;letter-spacing:.04em;text-transform:uppercase;color:#313a39}
+.ob-h2{margin:0 0 18px;font-family:var(--uc-typo-fontfamily-ZcDjuR,EngraversGothic);
+  font-size:42px;line-height:1;font-weight:700;letter-spacing:0;text-transform:uppercase;
+  color:transparent;background-image:var(--uc-typo-color-plt09,linear-gradient(0.25turn, rgba(70,104,153,1) 0%, rgba(30,114,104,1) 100%));
+  -webkit-background-clip:text;background-clip:text}
+.ob-lead{margin:0 0 40px;max-width:860px;font-family:var(--t-text-font,Arial);
+  font-size:18px;line-height:1.35;color:#313a39}
+
+/* ── услуги: коротко ── */
+.ob-serv{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.ob-serv a{display:flex;flex-direction:column;text-decoration:none;color:inherit;
+  border:1px solid rgba(49,58,57,.14);border-radius:30px;padding:32px 30px 28px;background:#fffffb;
+  transition:border-color .2s, transform .2s, box-shadow .2s}
+.ob-serv a:hover{border-color:#52719d;transform:translateY(-3px);
+  box-shadow:0 14px 34px rgba(49,58,57,.09)}
+.ob-serv .n{font-family:var(--t-text-font,Arial);font-size:13px;font-weight:600;letter-spacing:.1em;
+  color:rgba(49,58,57,.44);margin-bottom:14px}
+.ob-serv h3{margin:0 0 10px;font-family:var(--uc-typo-fontfamily-ZcDjuR,EngraversGothic);
+  font-size:26px;line-height:1.08;font-weight:700;text-transform:uppercase;color:#313a39}
+.ob-serv p{margin:0;font-family:var(--t-text-font,Arial);font-size:16px;line-height:1.4;color:#313a39}
+.ob-serv .go{margin-top:22px;font-family:var(--t-text-font,Arial);font-size:15px;font-weight:600;
+  color:#52719d;display:flex;align-items:center;gap:8px}
+.ob-serv a:hover .go{gap:14px}
+.ob-serv .go i{font-style:normal;transition:transform .2s}
+
+/* Старый блок пути отсюда убран: его собирала устаревшая path_html(),
+   которую заменил модуль «путь». Имена классов совпадали, поэтому
+   старые правила перебивали новые, стоило переставить блоки местами. */
+
+/* ── развилка по участку ── */
+.ob-fork{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.ob-fork__card{border-radius:30px;padding:38px 36px 32px;display:flex;flex-direction:column;
+  border:1px solid rgba(49,58,57,.14);background:#fffffb}
+.ob-fork__card--b{background:linear-gradient(0.25turn,rgba(227,231,231,.58) 0%,rgba(217,225,234,.58) 100%);
+  border-color:transparent}
+.ob-fork__q{font-family:var(--t-text-font,Arial);font-size:14px;font-weight:600;letter-spacing:.1em;
+  text-transform:uppercase;color:#52719d;margin-bottom:12px}
+.ob-fork__card h3{margin:0 0 14px;font-family:var(--uc-typo-fontfamily-ZcDjuR,EngraversGothic);
+  font-size:32px;line-height:1.04;font-weight:700;text-transform:uppercase;color:#313a39}
+.ob-fork__card p{margin:0 0 20px;font-family:var(--t-text-font,Arial);font-size:17px;
+  line-height:1.4;color:#313a39}
+.ob-fork__card ul{margin:0 0 26px;padding:0;list-style:none}
+.ob-fork__card li{position:relative;padding-left:22px;margin-bottom:11px;
+  font-family:var(--t-text-font,Arial);font-size:16px;line-height:1.38;color:#313a39}
+.ob-fork__card li:before{content:"";position:absolute;left:0;top:8px;width:8px;height:8px;
+  border-radius:50%;background:#52719d}
+
+/* ── маршрут: карта этапов ── */
+.ob-map{position:relative;display:grid;grid-template-columns:repeat(5,1fr);gap:0;
+  margin-top:8px}
+.ob-map:before{content:"";position:absolute;left:8%;right:8%;top:34px;height:2px;
+  background:linear-gradient(90deg,rgba(82,113,157,.18),#52719d 22%,#52719d 78%,rgba(82,113,157,.18))}
+.ob-step{position:relative;padding:0 14px;text-align:center}
+.ob-step__dot{position:relative;width:68px;height:68px;margin:0 auto 18px;border-radius:50%;
+  background:#fffffb;border:2px solid #52719d;display:flex;align-items:center;justify-content:center;
+  font-family:var(--uc-typo-fontfamily-ZcDjuR,EngraversGothic);font-size:26px;font-weight:700;color:#52719d}
+.ob-step--done .ob-step__dot{background:#52719d;color:#fffffb}
+.ob-step h4{margin:0 0 8px;font-family:var(--uc-typo-fontfamily-ZcDjuR,EngraversGothic);
+  font-size:20px;line-height:1.08;font-weight:700;text-transform:uppercase;color:#313a39}
+.ob-step p{margin:0 0 10px;font-family:var(--t-text-font,Arial);font-size:15px;line-height:1.36;
+  color:rgba(49,58,57,.72)}
+.ob-step .w{display:inline-block;font-family:var(--t-text-font,Arial);font-size:13px;font-weight:600;
+  color:#52719d;background:rgba(108,152,188,.16);border-radius:20px;padding:5px 14px}
+
+/* ── путь для действующих: строки задач ── */
+.ob-fix{border:1px solid rgba(49,58,57,.14);border-radius:30px;overflow:hidden;background:#fffffb}
+.ob-fix__row{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr) 190px;gap:26px;
+  align-items:center;padding:26px 34px;border-bottom:1px solid rgba(49,58,57,.14)}
+.ob-fix__row:last-child{border-bottom:0}
+.ob-fix__row:hover{background:#f7f9f8}
+.ob-fix__p{font-family:var(--t-text-font,Arial);font-size:19px;font-weight:600;line-height:1.24;color:#313a39}
+.ob-fix__s{font-family:var(--t-text-font,Arial);font-size:16px;line-height:1.38;color:rgba(49,58,57,.72)}
+.ob-fix__a{text-align:right}
+.ob-fix__a b{display:block;font-family:var(--uc-typo-fontfamily-ZcDjuR,EngraversGothic);
+  font-size:19px;font-weight:700;text-transform:uppercase;color:#52719d;line-height:1.1}
+.ob-fix__a span{display:block;margin-top:5px;font-family:var(--t-text-font,Arial);
+  font-size:14px;color:rgba(49,58,57,.62)}
+
+.ob-btn{display:inline-flex;align-items:center;justify-content:center;width:100%;min-height:52px;
+  padding:0 24px;border:0;border-radius:30px;background:#52719d;color:#fffffb;cursor:pointer;
+  font-family:var(--uc-button-fontfamily-q6td2,EngraversGothic);font-size:15px;font-weight:700;
+  letter-spacing:.04em;text-transform:uppercase;text-decoration:none;transition:background .2s}
+.ob-btn:hover{background:#313a39;color:#fffffb}
+.ob-btn--ghost{background:transparent;color:#52719d;border:1px solid #52719d}
+.ob-btn--ghost:hover{background:rgba(108,152,188,.14);color:#313a39}
+.ob-btn--auto{width:auto;min-width:280px}
+.ob-after{margin-top:10px;font-family:var(--t-text-font,Arial);font-size:14px;
+  color:rgba(49,58,57,.62);text-align:center}
+.ob-cta{max-width:460px;margin:36px auto 0}
+
+@media screen and (max-width:1100px){
+  .ob-map{grid-template-columns:repeat(2,1fr);gap:34px 0}
+  .ob-map:before{display:none}
+}
+@media screen and (max-width:1100px){.ob-serv{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media screen and (max-width:960px){
+  .ob-sec{padding:56px 20px 54px}
+  .ob-h2{font-size:32px}
+  .ob-fork{grid-template-columns:1fr}
+  .ob-doors{grid-template-columns:1fr}
+  .ob-door{padding:28px 24px 24px;border-radius:20px}
+  .ob-door h3{font-size:26px}
+  .ob-panel__in{padding:28px 22px 24px;border-radius:20px}
+  .ob-fork__card{padding:30px 26px 26px;border-radius:20px}
+  .ob-fork__card h3{font-size:26px}
+  .ob-fix{border-radius:20px}
+  .ob-fix__row{grid-template-columns:1fr;gap:10px;padding:22px 24px}
+  .ob-fix__a{text-align:left}
+  .ob-serv a{padding:26px 24px;border-radius:20px}
+  .ob-serv{grid-template-columns:1fr}
+}
+@media screen and (max-width:640px){
+  .ob-map{grid-template-columns:1fr;gap:26px}
+  .ob-step{text-align:left;display:grid;grid-template-columns:56px 1fr;gap:16px;align-items:start;padding:0}
+  .ob-step__dot{width:56px;height:56px;margin:0;font-size:22px}
+}
+</style><style>
+/* Цвета взяты из брендбука: голубой и синий, плюс правая точка
+   фирменного градиента заголовков. Путь идёт от светлого к тёмному:
+   земли нет → участок есть → база работает. */
+.ob-doors,.ob-panel{--c:#52719d}
+[data-ob-door="nozem"],[data-ob-panel="nozem"]{--c:#6c98bc}
+[data-ob-door="zem"],[data-ob-panel="zem"]{--c:#52719d}
+[data-ob-door="work"],[data-ob-panel="work"]{--c:#1e7268}
+
+/* ── три двери ── */
+/* Двери и панели живут в одной сетке. На широком экране панели идут
+   под рядом дверей, на узком каждая панель встаёт сразу под своей дверью. */
+/* Три карточки в ряд, раскрытый маршрут широкой панелью под ними. */
+.ob-doors{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.ob-doors .ob-panel{grid-column:1/-1}
+.ob-door[data-ob-door="nozem"]{order:1}
+.ob-door[data-ob-door="zem"]{order:2}
+.ob-door[data-ob-door="work"]{order:3}
+.ob-panel[data-ob-panel="nozem"]{order:4}
+.ob-panel[data-ob-panel="zem"]{order:5}
+.ob-panel[data-ob-panel="work"]{order:6}
+.ob-door{position:relative;border:1px solid rgba(49,58,57,.16);border-radius:26px;
+  padding:28px 26px 22px;background:#fffffb;cursor:pointer;width:100%;
+  font-family:inherit;display:flex;flex-direction:column;align-items:center;text-align:center;
+  overflow:hidden;transition:border-color .18s, transform .18s, box-shadow .18s, background .18s}
+.ob-door:before{content:"";position:absolute;left:0;right:0;top:0;height:4px;
+  transform:scaleX(0);transform-origin:left;transition:transform .25s}
+.ob-door:before{background:var(--c)}
+.ob-door:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(49,58,57,.13)}
+.ob-door:hover:before,.ob-door[aria-expanded="true"]:before{transform:scaleX(1)}
+.ob-door[aria-expanded="true"]{background:#f7f9f8;transform:none;
+  box-shadow:0 12px 28px rgba(49,58,57,.10)}
+.ob-door:hover,.ob-door[aria-expanded="true"]{border-color:var(--c)}
+
+.ob-door__ico{width:64px;height:64px;border-radius:50%;margin:0 auto 18px;flex:none;
+  display:flex;align-items:center;justify-content:center;transition:background .18s}
+.ob-door__ico svg{width:30px;height:30px;fill:none;stroke-width:1.6;
+  stroke-linecap:round;stroke-linejoin:round;display:block}
+.ob-door__ico{background:color-mix(in srgb, var(--c) 13%, #fffffb)}
+.ob-door__ico svg{stroke:var(--c)}
+.ob-door[aria-expanded="true"] .ob-door__ico{background:var(--c)}
+.ob-door[aria-expanded="true"] .ob-door__ico svg{stroke:#fffffb}
+
+.ob-door h3{margin:0 0 8px;font-family:var(--uc-typo-fontfamily-ZcDjuR,EngraversGothic);
+  font-size:24px;line-height:1.06;font-weight:700;text-transform:uppercase;color:#313a39}
+.ob-door p{margin:0 0 16px;font-family:var(--t-text-font,Arial);font-size:15px;
+  line-height:1.36;color:rgba(49,58,57,.7);flex:1}
+.ob-door__go{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;
+  padding-top:14px;border-top:1px solid rgba(49,58,57,.14);
+  font-family:var(--uc-button-fontfamily-q6td2,EngraversGothic);font-size:13px;font-weight:700;
+  letter-spacing:.04em;text-transform:uppercase;color:var(--c)}
+.ob-door__go i{font-style:normal;font-size:14px;line-height:1;width:24px;height:24px;flex:none;
+  border-radius:50%;background:color-mix(in srgb, var(--c) 16%, #fffffb);color:inherit;
+  display:flex;align-items:center;justify-content:center;transition:transform .25s, background .18s}
+.ob-door[aria-expanded="true"] .ob-door__go i{transform:rotate(180deg)}
+
+/* ── раскрытие ── */
+.ob-panel{overflow:hidden;max-height:0;opacity:0;
+  transition:max-height .4s ease, opacity .28s ease, margin-top .28s ease}
+.ob-panel.is-open{max-height:1600px;opacity:1;
+  /* минус зазор сетки: панель подходит вплотную к ряду карточек,
+     а место под уголок отдаём внутренним отступом, иначе overflow его срежет */
+  margin-top:-18px;padding-top:12px}
+.ob-panel__in{position:relative;border:1px solid rgba(49,58,57,.16);border-radius:26px;
+  padding:36px 38px 30px;background:#fffffb;border-top-width:4px}
+.ob-panel__in{border-top-color:var(--c)}
+/* Уголок вверх: панель читается как продолжение нажатой карточки, а не как
+   отдельная плашка снизу. Колонки равные, между ними зазор 18 пикселей,
+   поэтому середину первой и третьей считаем от ширины колонки. */
+.ob-panel__in:before{content:"";position:absolute;top:-12px;width:0;height:0;
+  border-left:12px solid transparent;border-right:12px solid transparent;
+  border-bottom:12px solid var(--c)}
+.ob-panel[data-ob-panel="nozem"] .ob-panel__in:before{left:calc((100% - 36px)/6 - 12px)}
+.ob-panel[data-ob-panel="zem"] .ob-panel__in:before{left:calc(50% - 12px)}
+.ob-panel[data-ob-panel="work"] .ob-panel__in:before{left:calc(100% - (100% - 36px)/6 - 12px)}
+.ob-panel__h{margin:0 0 4px;font-family:var(--uc-typo-fontfamily-ZcDjuR,EngraversGothic);
+  font-size:23px;line-height:1.06;font-weight:700;text-transform:uppercase;color:#313a39}
+.ob-panel__d{margin:0 0 30px;font-family:var(--t-text-font,Arial);font-size:16px;
+  line-height:1.36;color:rgba(49,58,57,.7)}
+
+/* ── вариант 1: цепочка со стрелками ── */
+.ob-chainx{display:flex;align-items:stretch;flex-wrap:wrap}
+.ob-chainx__s{flex:1;min-width:190px;padding:0 26px;position:relative;
+  text-decoration:none;color:inherit;transition:transform .18s}
+.ob-chainx__s:hover{transform:translateY(-3px)}
+.ob-chainx__s:hover .ob-chainx__t{color:var(--c)}
+.ob-chainx__s:hover .ob-chainx__n{background:var(--c);color:#fffffb}
+.ob-chainx__s:first-child{padding-left:0}
+/* соединяем кружки полоской, как в вертикальной ленте второго маршрута */
+.ob-chainx__s:not(:last-child):after{content:"";position:absolute;top:22px;height:2px;
+  left:calc(28px + 44px + 14px);right:-42px;
+  background:color-mix(in srgb, var(--c) 26%, #fffffb)}
+.ob-chainx__s:first-child:not(:last-child):after{left:calc(44px + 14px)}
+.ob-chainx__n{display:flex;align-items:center;justify-content:center;
+  width:44px;height:44px;border-radius:50%;background:#fffffb;border:2px solid var(--c);
+  color:var(--c);font-family:var(--t-text-font,Arial);font-size:18px;font-weight:700;line-height:1;margin-bottom:18px}
+.ob-chainx__t{font-family:var(--uc-typo-fontfamily-ZcDjuR,EngraversGothic);font-size:17px;
+  font-weight:700;text-transform:uppercase;color:#313a39;line-height:1.08;margin-bottom:9px}
+.ob-chainx__d{font-family:var(--t-text-font,Arial);font-size:14.5px;line-height:1.45;
+  color:rgba(49,58,57,.68);margin-bottom:12px}
+.ob-chainx__w{font-family:var(--t-text-font,Arial);font-size:12.5px;font-weight:600;color:var(--c)}
+
+/* ── вариант 2: таймлайн строками ── */
+.ob-tl{display:flex;flex-direction:column}
+.ob-tl__s{position:relative;display:grid;grid-template-columns:44px minmax(0,1fr) 210px;
+  gap:22px;align-items:start;padding:0 0 28px;text-decoration:none;color:inherit}
+.ob-tl__s:last-child{padding-bottom:0}
+.ob-tl__s:not(:last-child):before{content:"";position:absolute;left:21px;top:52px;bottom:-4px;
+  width:2px;background:color-mix(in srgb, var(--c) 26%, #fffffb)}
+.ob-tl__n{width:44px;height:44px;border-radius:50%;background:#fffffb;
+  border:2px solid var(--c);color:var(--c);display:flex;align-items:center;justify-content:center;
+  font-family:var(--t-text-font,Arial);font-size:18px;font-weight:700;line-height:1;
+  position:relative;z-index:1;transition:background .18s,color .18s}
+.ob-tl__s:hover .ob-tl__n{background:var(--c);color:#fffffb}
+.ob-tl__t{font-family:var(--uc-typo-fontfamily-ZcDjuR,EngraversGothic);font-size:18px;
+  font-weight:700;text-transform:uppercase;color:#313a39;line-height:1.08;margin:10px 0 7px;
+  transition:color .18s}
+.ob-tl__s:hover .ob-tl__t{color:var(--c)}
+.ob-tl__d{font-family:var(--t-text-font,Arial);font-size:14.5px;line-height:1.45;
+  color:rgba(49,58,57,.68)}
+.ob-tl__w{margin-top:12px;text-align:right;font-family:var(--t-text-font,Arial);
+  font-size:14px;font-weight:600;color:var(--c);line-height:1.35}
+
+@media screen and (max-width:700px){
+  .ob-tl__s{grid-template-columns:44px minmax(0,1fr);gap:16px}
+  .ob-tl__w{grid-column:2;text-align:left;margin-top:8px}
+}
+
+/* ── вариант 3: задачи плитками и полоса шагов ── */
+.ob-jobs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-bottom:20px}
+.ob-job{border:1px solid rgba(49,58,57,.16);border-radius:18px;padding:18px 18px 15px;
+  background:#fffffb;display:flex;flex-direction:column;text-decoration:none;color:inherit;
+  transition:border-color .18s, transform .18s, box-shadow .18s}
+.ob-job:hover{border-color:var(--c);transform:translateY(-3px);
+  box-shadow:0 14px 30px rgba(49,58,57,.10)}
+.ob-job__t{font-family:var(--t-text-font,Arial);font-size:16px;font-weight:600;
+  line-height:1.24;color:#313a39;margin-bottom:6px}
+.ob-job__d{font-family:var(--t-text-font,Arial);font-size:13.5px;line-height:1.36;
+  color:rgba(49,58,57,.64);flex:1;margin-bottom:12px}
+.ob-job__f{display:flex;align-items:baseline;justify-content:space-between;gap:8px;
+  padding-top:11px;border-top:1px solid rgba(49,58,57,.14)}
+.ob-job__f b{font-family:var(--uc-typo-fontfamily-ZcDjuR,EngraversGothic);font-size:14px;
+  font-weight:700;text-transform:uppercase;color:var(--c);line-height:1.1}
+.ob-job__f span{font-family:var(--t-text-font,Arial);font-size:12.5px;
+  color:rgba(49,58,57,.6);white-space:nowrap}
+
+.ob-strip{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:24px}
+.ob-strip__s{flex:1;min-width:170px;border:1px solid rgba(49,58,57,.14);border-radius:18px;
+  background:#fffffb;padding:22px 22px 20px}
+.ob-strip__n{display:flex;align-items:center;justify-content:center;width:44px;height:44px;
+  border-radius:50%;background:#fffffb;border:2px solid var(--c);color:var(--c);
+  font-family:var(--t-text-font,Arial);font-size:18px;font-weight:700;line-height:1;
+  margin-bottom:16px}
+.ob-strip__s--first .ob-strip__n{background:var(--c);color:#fffffb}
+.ob-strip__t{font-family:var(--uc-typo-fontfamily-ZcDjuR,EngraversGothic);font-size:16px;
+  font-weight:700;text-transform:uppercase;color:#313a39;line-height:1.08;margin-bottom:7px}
+
+.ob-strip__w{font-family:var(--t-text-font,Arial);font-size:13px;color:rgba(49,58,57,.64)}
+
+
+/* ── общий низ панели ── */
+.ob-pcta{display:flex;align-items:center;gap:20px;flex-wrap:wrap;
+  margin-top:38px;padding-top:30px;border-top:1px solid rgba(49,58,57,.14)}
+.ob-pcta .ob-btn{width:auto;min-width:280px;background:var(--c)}
+.ob-pcta .ob-btn:hover{background:#313a39}
+.ob-pcta__note{font-family:var(--t-text-font,Arial);font-size:14px;color:rgba(49,58,57,.62)}
+.ob-first{display:flex;gap:14px;align-items:flex-start;margin:0 0 26px;padding:16px 20px;
+  border-radius:16px;background:color-mix(in srgb, var(--c) 8%, #fffffb);
+  border-left:3px solid var(--c)}
+.ob-first b{display:block;font-family:var(--t-text-font,Arial);font-size:15px;font-weight:600;
+  color:#313a39;margin-bottom:4px}
+.ob-first span{font-family:var(--t-text-font,Arial);font-size:14px;line-height:1.42;
+  color:rgba(49,58,57,.7)}
+
+/* состав продуктов под маршрутом */
+.ob-what{margin-top:30px;padding-top:26px;border-top:1px solid rgba(49,58,57,.14)}
+.ob-what__h{font-family:var(--t-text-font,Arial);font-size:14px;font-weight:600;
+  letter-spacing:.08em;text-transform:uppercase;color:var(--c);margin-bottom:16px}
+.ob-kinds{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-bottom:26px}
+.ob-kind{border:1px solid rgba(49,58,57,.16);border-radius:18px;padding:20px 20px 18px;
+  background:#fffffb;display:flex;flex-direction:column;text-decoration:none;color:inherit;
+  transition:border-color .18s, transform .18s, box-shadow .18s}
+.ob-kind:hover{border-color:var(--c);transform:translateY(-3px);
+  box-shadow:0 14px 30px rgba(49,58,57,.10)}
+.ob-kind b{font-family:var(--t-text-font,Arial);font-size:16px;font-weight:600;
+  color:#313a39;line-height:1.24;margin-bottom:6px}
+.ob-kind span{font-family:var(--t-text-font,Arial);font-size:13.5px;line-height:1.4;
+  color:rgba(49,58,57,.66);flex:1;margin-bottom:12px}
+.ob-kind i{font-style:normal;font-family:var(--uc-typo-fontfamily-ZcDjuR,EngraversGothic);
+  font-size:16px;font-weight:700;text-transform:uppercase;color:var(--c);
+  padding-top:10px;border-top:1px solid rgba(49,58,57,.14)}
+
+.ob-incl{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 28px;
+  margin:0;padding:0;list-style:none}
+.ob-incl li{position:relative;padding-left:22px;font-family:var(--t-text-font,Arial);
+  font-size:14.5px;line-height:1.42;color:#313a39}
+.ob-incl li:before{content:"";position:absolute;left:0;top:7px;width:7px;height:7px;
+  border-radius:50%;background:var(--c)}
+
+@media screen and (max-width:900px){
+  .ob-kinds{grid-template-columns:1fr}
+  .ob-incl{grid-template-columns:1fr}
+}
+
+@media screen and (max-width:1100px){
+  .ob-doors{grid-template-columns:1fr}
+  .ob-panel .ob-panel__in:before{left:calc(50% - 12px) !important}
+  .ob-door[data-ob-door="nozem"]{order:1}
+  .ob-panel[data-ob-panel="nozem"]{order:2}
+  .ob-door[data-ob-door="zem"]{order:3}
+  .ob-panel[data-ob-panel="zem"]{order:4}
+  .ob-door[data-ob-door="work"]{order:5}
+  .ob-panel[data-ob-panel="work"]{order:6}
+  .ob-panel.is-open{margin-top:14px;margin-bottom:6px}
+  .ob-jobs{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media screen and (max-width:900px){
+  /* цепочка первого маршрута разворачивается в вертикальный список */
+  .ob-chainx{flex-direction:column}
+  .ob-chainx__s{min-width:100%;padding:0 0 22px 60px;position:relative}
+  .ob-chainx__s:first-child{padding-left:60px}
+  .ob-chainx__n{position:absolute;left:0;top:0;margin-bottom:0}
+  .ob-chainx__t{margin-top:9px}
+  .ob-chainx__s:not(:last-child):after{left:21px !important;right:auto;top:50px;bottom:-2px;
+    width:2px;height:auto}
+  /* полоса шагов третьего маршрута */
+  .ob-strip__s{min-width:100%}
+}
+/* Телефон: карточка маршрута в строку, а не башней.
+   Все три помещаются на один экран, выбирать можно не листая. */
+@media screen and (max-width:700px){
+  .ob-door{padding:16px 18px 14px;border-radius:20px;
+    display:grid;grid-template-columns:44px minmax(0,1fr);column-gap:14px;
+    align-items:start;text-align:left}
+  .ob-door__ico{width:44px;height:44px;margin:0;grid-row:span 3}
+  .ob-door__ico svg{width:22px;height:22px}
+  .ob-door h3{grid-column:2;margin:1px 0 5px;font-size:19px}
+  .ob-door p{grid-column:2;margin:0 0 10px;font-size:14px;line-height:1.34}
+  .ob-door__go{grid-column:2;width:auto;justify-content:flex-start;
+    padding-top:10px;font-size:12px}
+  .ob-doors{gap:12px}
+}
+@media screen and (max-width:700px){
+  .ob-jobs{grid-template-columns:1fr}
+  .ob-panel__in{padding:24px 20px 20px;border-radius:20px}
+  .ob-pcta .ob-btn{width:100%;min-width:0}
+}
+
+/* ── прайс материалов ── */
+.ob-mat{border:1px solid rgba(49,58,57,.16);border-radius:26px;overflow:hidden;background:#fffffb}
+.ob-mat__group{padding:22px 30px 8px;background:#f7f9f8;
+  border-bottom:1px solid rgba(49,58,57,.14)}
+.ob-mat__group b{display:block;font-family:var(--uc-typo-fontfamily-ZcDjuR,EngraversGothic);
+  font-size:17px;font-weight:700;text-transform:uppercase;color:#313a39;line-height:1.1}
+.ob-mat__group span{display:block;margin:5px 0 14px;font-family:var(--t-text-font,Arial);
+  font-size:14.5px;line-height:1.4;color:rgba(49,58,57,.66)}
+
+.ob-mat__row{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1.35fr) 190px;
+  gap:26px;align-items:center;padding:20px 30px;
+  border-bottom:1px solid rgba(49,58,57,.12);text-decoration:none;color:inherit;
+  transition:background .16s}
+.ob-mat__row:last-child{border-bottom:0}
+.ob-mat__row:hover{background:#f7f9f8}
+.ob-mat__n{font-family:var(--t-text-font,Arial);font-size:17px;font-weight:600;
+  line-height:1.26;color:#313a39}
+.ob-mat__d{font-family:var(--t-text-font,Arial);font-size:14.5px;line-height:1.4;
+  color:rgba(49,58,57,.66)}
+.ob-mat__p{text-align:right;display:flex;flex-direction:column;align-items:flex-end;gap:3px}
+.ob-mat__p b{font-family:var(--uc-typo-fontfamily-ZcDjuR,EngraversGothic);font-size:22px;
+  font-weight:700;color:#313a39;line-height:1;white-space:nowrap}
+.ob-mat__p s{font-family:var(--t-text-font,Arial);font-size:14px;color:rgba(49,58,57,.5)}
+.ob-mat__p span{font-family:var(--t-text-font,Arial);font-size:13px;color:rgba(49,58,57,.6)}
+.ob-mat__row--hl{background:rgba(108,152,188,.1)}
+.ob-mat__row--hl:hover{background:rgba(108,152,188,.16)}
+
+.ob-mat__tag{display:inline-block;margin-top:6px;padding:3px 10px;border-radius:20px;
+  background:rgba(30,114,104,.12);color:#1e7268;font-family:var(--t-text-font,Arial);
+  font-size:12px;font-weight:600}
+
+.ob-matnote{display:flex;flex-wrap:wrap;gap:26px;margin-top:26px;padding:22px 26px;
+  border-radius:20px;background:#f7f9f8}
+.ob-matnote div{flex:1;min-width:220px}
+.ob-matnote b{display:block;font-family:var(--t-text-font,Arial);font-size:15px;
+  font-weight:600;color:#313a39;margin-bottom:4px}
+.ob-matnote span{font-family:var(--t-text-font,Arial);font-size:14px;line-height:1.4;
+  color:rgba(49,58,57,.66)}
+
+@media screen and (max-width:960px){
+  .ob-mat{border-radius:20px}
+  .ob-mat__row{grid-template-columns:1fr;gap:8px;padding:18px 20px}
+  .ob-mat__p{align-items:flex-start;text-align:left;flex-direction:row;gap:10px;align-items:baseline}
+  .ob-mat__group{padding:18px 20px 6px}
+}
+
+.ob-bz{display:grid;grid-template-columns:260px 1fr;gap:26px;align-items:start}
+.ob-bz__side{display:flex;flex-direction:column;gap:14px}
+.ob-bz__num{border-left:3px solid #52719d;padding:6px 0 6px 18px}
+.ob-bz__num b{display:block;font-family:var(--uc-typo-fontfamily-ZcDjuR,EngraversGothic);
+  font-size:34px;line-height:1;font-weight:700;color:#313a39}
+.ob-bz__num span{display:block;margin-top:6px;font-family:var(--t-text-font,Arial);
+  font-size:15px;line-height:1.35;color:rgba(49,58,57,.62)}
+.ob-bz__grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.ob-bz__card{border:1px solid rgba(49,58,57,.14);border-radius:30px;padding:30px 28px 26px;
+  background:#fffffb;display:flex;flex-direction:column}
+.ob-bz__card--soft{background:linear-gradient(0.25turn,rgba(227,231,231,.58) 0%,rgba(217,225,234,.58) 100%);
+  border-color:transparent}
+.ob-bz__card h3{margin:0 0 10px;font-family:var(--uc-typo-fontfamily-ZcDjuR,EngraversGothic);
+  font-size:24px;line-height:1.08;font-weight:700;text-transform:uppercase;color:#313a39}
+.ob-bz__card p{margin:0 0 22px;font-family:var(--t-text-font,Arial);font-size:16px;
+  line-height:1.4;color:#313a39;flex:1}
+.ob-bz__note{margin-top:18px;border-radius:20px;background:#f7f9f8;padding:20px 24px;
+  font-family:var(--t-text-font,Arial);font-size:16px;line-height:1.45;color:#313a39}
+.ob-bz__note a{color:#52719d;font-weight:600;text-decoration:none;white-space:nowrap}
+@media screen and (max-width:960px){
+  .ob-bz{grid-template-columns:1fr;gap:20px}
+  .ob-bz__side{flex-direction:row;flex-wrap:wrap;gap:10px 24px}
+  .ob-bz__num{flex:1;min-width:150px}
+  .ob-bz__num b{font-size:26px}
+  .ob-bz__grid{grid-template-columns:1fr}
+  .ob-bz__card{padding:24px 22px;border-radius:20px}
+}
+
+.ob-case{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:34px;
+  align-items:start}
+.ob-case__media{position:relative;border-radius:26px;overflow:hidden;
+  background:#0f1e26;aspect-ratio:16/10;display:flex;align-items:center;
+  justify-content:center}
+.ob-case__media video,.ob-case__media img{width:100%;height:100%;object-fit:cover;display:block}
+.ob-case__wait{padding:26px;text-align:center;font-family:var(--t-text-font,Arial);
+  font-size:15px;line-height:1.45;color:rgba(255,255,251,.72)}
+.ob-case__wait b{display:block;margin-bottom:6px;font-size:17px;color:#fffffb}
+
+.ob-case__t{margin:0 0 14px;font-family:var(--uc-typo-fontfamily-ZcDjuR,EngraversGothic);
+  font-size:32px;line-height:1.08;font-weight:700;text-transform:uppercase;color:#313a39}
+.ob-case__d{margin:0 0 22px;font-family:var(--t-text-font,Arial);font-size:16px;
+  line-height:1.45;color:rgba(49,58,57,.78)}
+.ob-case__facts{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:24px}
+.ob-case__f{border:1px solid rgba(49,58,57,.14);border-radius:18px;padding:16px 18px;
+  background:#fffffb}
+.ob-case__f span{display:block;font-family:var(--t-text-font,Arial);font-size:13px;
+  letter-spacing:.06em;text-transform:uppercase;color:rgba(49,58,57,.5);margin-bottom:6px}
+.ob-case__f b{font-family:var(--t-text-font,Arial);font-size:17px;font-weight:600;color:#313a39}
+
+.ob-case__shots{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;
+  margin-top:28px}
+.ob-case__shot{border-radius:18px;overflow:hidden;aspect-ratio:4/3;background:#e7ebea;
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--t-text-font,Arial);font-size:13px;color:rgba(49,58,57,.45)}
+.ob-case__shot img{width:100%;height:100%;object-fit:cover;display:block}
+
+@media screen and (max-width:960px){
+  .ob-case{grid-template-columns:1fr;gap:22px}
+  .ob-case__t{font-size:26px}
+  .ob-case__shots{grid-template-columns:1fr 1fr;gap:10px;margin-top:20px}
+}
+@media screen and (max-width:640px){
+  .ob-case__facts{grid-template-columns:1fr}
+}
+
+/* ── диагностика: широкая плашка с кадром ── */
+.ob-diag{position:relative;border-radius:30px;overflow:hidden;background:#0f1e26;
+  min-height:340px;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);
+  align-items:center}
+.ob-diag:before{content:"";position:absolute;inset:0;
+  background-position:center;background-size:cover;background-repeat:no-repeat;
+  opacity:.9}
+.ob-diag--fon:before{background-image:var(--ob-diag-fon)}
+.ob-diag:after{content:"";position:absolute;inset:0;
+  background:linear-gradient(90deg,rgba(11,24,31,.88) 0%,rgba(11,24,31,.72) 46%,
+    rgba(11,24,31,.32) 100%)}
+.ob-diag__in{position:relative;z-index:2;padding:46px 44px}
+.ob-diag__k{font-family:var(--t-text-font,Arial);font-size:13px;letter-spacing:.1em;
+  text-transform:uppercase;color:rgba(255,255,251,.62);margin-bottom:14px}
+.ob-diag__t{margin:0 0 14px;font-family:var(--uc-typo-fontfamily-ZcDjuR,EngraversGothic);
+  font-size:38px;line-height:1.04;font-weight:700;text-transform:uppercase;color:#fffffb}
+.ob-diag__d{margin:0 0 26px;font-family:var(--t-text-font,Arial);font-size:17px;
+  line-height:1.45;color:rgba(255,255,251,.8);max-width:520px}
+.ob-diag__row{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.ob-diag__note{font-family:var(--t-text-font,Arial);font-size:14px;
+  color:rgba(255,255,251,.6);max-width:300px;line-height:1.4}
+.ob-diag .ob-btn{background:#fffffb;color:#1b2b33}
+.ob-diag .ob-btn:hover{background:#e7ecec}
+.ob-diag__steps{position:relative;z-index:2;padding:46px 44px 46px 0;display:grid;gap:12px}
+.ob-diag__s{display:grid;grid-template-columns:30px minmax(0,1fr);gap:14px;
+  align-items:start;font-family:var(--t-text-font,Arial);font-size:15px;line-height:1.4;
+  color:rgba(255,255,251,.9)}
+.ob-diag__s b{width:30px;height:30px;border-radius:50%;display:flex;align-items:center;
+  justify-content:center;background:rgba(255,255,251,.14);font-size:14px;color:#fffffb}
+
+/* ── отзывы: сначала результат, потом слова ── */
+.ob-rev{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.ob-rev__c{position:relative;border:1px solid rgba(49,58,57,.14);border-radius:26px;
+  padding:26px 26px 22px;background:#fffffb;display:flex;flex-direction:column;
+  overflow:hidden}
+.ob-rev__c:before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;
+  background:var(--c,#52719d)}
+.ob-rev__res{display:flex;align-items:baseline;gap:10px;margin-bottom:16px;
+  padding-bottom:16px;border-bottom:1px solid rgba(49,58,57,.12)}
+.ob-rev__num{font-family:var(--uc-typo-fontfamily-ZcDjuR,EngraversGothic);
+  font-size:34px;line-height:1;font-weight:700;color:var(--c,#52719d);white-space:nowrap}
+.ob-rev__cap{font-family:var(--t-text-font,Arial);font-size:14px;line-height:1.3;
+  color:rgba(49,58,57,.62)}
+.ob-rev__q{margin:0 0 20px;font-family:var(--t-text-font,Arial);font-size:16px;
+  line-height:1.5;color:#313a39;flex:1}
+.ob-rev__w{display:flex;align-items:center;gap:12px}
+.ob-rev__av{width:44px;height:44px;border-radius:50%;flex:none;
+  background:color-mix(in srgb, var(--c,#52719d) 14%, #fffffb);
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--uc-typo-fontfamily-ZcDjuR,EngraversGothic);font-size:17px;
+  color:var(--c,#52719d)}
+.ob-rev__av img{width:100%;height:100%;object-fit:cover;border-radius:50%;display:block}
+.ob-rev__n{font-family:var(--t-text-font,Arial);font-size:15px;font-weight:600;color:#313a39}
+.ob-rev__o{font-family:var(--t-text-font,Arial);font-size:14px;color:rgba(49,58,57,.6)}
+.ob-rev__o a{color:#52719d;text-decoration:none;border-bottom:1px solid rgba(82,113,157,.4)}
+.ob-rev__vid{position:relative;border-radius:26px;overflow:hidden;background:#0f1e26;
+  min-height:220px;display:flex;align-items:flex-end;cursor:pointer}
+.ob-rev__vid img,.ob-rev__vid video{position:absolute;inset:0;width:100%;height:100%;
+  object-fit:cover}
+.ob-rev__vid:after{content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(11,24,31,.1) 40%,rgba(11,24,31,.8) 100%)}
+.ob-rev__vt{position:relative;z-index:2;padding:22px 24px;color:#fffffb;
+  font-family:var(--t-text-font,Arial);font-size:15px;line-height:1.35}
+.ob-rev__vt b{display:block;font-size:17px;margin-bottom:4px}
+.ob-rev__play{position:absolute;z-index:2;left:24px;top:24px;width:44px;height:44px;
+  border-radius:50%;background:rgba(255,255,251,.9);display:flex;align-items:center;
+  justify-content:center;color:#1b2b33;font-size:15px}
+
+/* пустое состояние: показываем, что именно нужно собрать */
+.ob-rev__wait{border:1px dashed rgba(49,58,57,.26);border-radius:26px;padding:30px 28px;
+  background:#f7f9f8;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+.ob-rev__wt{grid-column:1/-1;font-family:var(--t-text-font,Arial);font-size:15px;
+  line-height:1.45;color:rgba(49,58,57,.62);margin:0}
+.ob-rev__f{font-family:var(--t-text-font,Arial);font-size:14px;line-height:1.45;
+  color:rgba(49,58,57,.72)}
+.ob-rev__f b{display:block;font-size:13px;letter-spacing:.06em;text-transform:uppercase;
+  color:rgba(49,58,57,.45);margin-bottom:6px}
+
+/* ── партнёры ── */
+.ob-part{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px}
+.ob-part__c{border:1px solid rgba(49,58,57,.12);border-radius:20px;background:#fffffb;
+  aspect-ratio:3/2;display:flex;align-items:center;justify-content:center;padding:18px;
+  transition:border-color .18s, transform .18s}
+.ob-part__c:hover{border-color:#52719d;transform:translateY(-2px)}
+.ob-part__c img{max-width:100%;max-height:100%;object-fit:contain;display:block;
+  filter:grayscale(1);opacity:.75;transition:filter .18s, opacity .18s}
+.ob-part__c:hover img{filter:none;opacity:1}
+.ob-part__c span{font-family:var(--t-text-font,Arial);font-size:13px;
+  color:rgba(49,58,57,.45);text-align:center;line-height:1.3}
+
+@media screen and (max-width:960px){
+  .ob-diag{grid-template-columns:1fr;min-height:0}
+  .ob-diag__in{padding:32px 26px 8px}
+  .ob-diag__t{font-size:28px}
+  .ob-diag__steps{padding:16px 26px 32px}
+  .ob-rev{grid-template-columns:1fr}
+  .ob-part{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+@media screen and (max-width:640px){
+  .ob-part{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .ob-diag__d{font-size:16px}
+}
+
+.sk-top{position:sticky;top:0;z-index:50;background:#1b2b33;color:#fffffb;
+  padding:14px 22px;display:flex;flex-wrap:wrap;gap:8px 18px;align-items:center;
+  font-family:var(--t-text-font,Arial);font-size:14px}
+.sk-top b{font-family:var(--uc-typo-fontfamily-ZcDjuR,EngraversGothic);font-size:16px;
+  letter-spacing:.04em;text-transform:uppercase;margin-right:8px}
+.sk-top a{color:rgba(255,255,251,.72);text-decoration:none;
+  border-bottom:1px solid rgba(255,255,251,.25)}
+.sk-top a:hover{color:#fffffb}
+.sk-note{margin:0;padding:16px 22px;background:#fdf5ec;color:#6b4a2a;
+  font-family:var(--t-text-font,Arial);font-size:14px;line-height:1.45;
+  border-bottom:1px solid rgba(191,120,60,.28)}
+.sk-note b{color:#5a3a1c}
+.sk-lab{max-width:1200px;margin:0 auto;padding:34px 20px 0;
+  font-family:var(--t-text-font,Arial);font-size:13px;letter-spacing:.08em;
+  text-transform:uppercase;color:rgba(49,58,57,.42);
+  display:flex;flex-wrap:wrap;gap:10px;align-items:baseline}
+.sk-lab i{font-style:normal;color:#52719d;border:1px solid rgba(82,113,157,.35);
+  border-radius:20px;padding:3px 10px;font-size:12px;letter-spacing:.04em}
+.sk-lab span{text-transform:none;letter-spacing:0;font-size:14px;
+  color:rgba(49,58,57,.55)}
+</style></head><body style='background:#fffffb;margin:0'><div class="sk-top"><b>Скелет</b><a href="#uslugi">Услуги</a> <a href="#birzha">Биржа земли</a> <a href="#put">Маршруты</a> <a href="#diag">Диагностика</a> <a href="#case">Кейс</a> <a href="#otz">Отзывы</a> <a href="#part">Партнёры</a> <a href="#price">Прайс материалов</a></div><p class="sk-note"><b>Это рабочая раскладка, а не страница сайта.</b> Здесь собраны все новые блоки подряд, чтобы видеть их вместе. Отзывы наполнены условными примерами, кейс ждёт материалов. На боевых страницах блоки стоят на своих местах и вперемешку со старыми.</p><div class="sk-lab" id="uslugi"><i>Главная</i><span>блок услуг вместо шести старых карточек</span></div><section class="ob-sec"><div class="ob-wrap">
+          <div class="ob-label">Что мы делаем</div>
+          <h2 class="ob-h2">Шесть направлений, одна команда</h2>
+          <p class="ob-lead">Можно взять одно, можно весь путь от пустого участка
+          до работающей базы с гостями.</p>
+          <div class="ob-serv">
+            <a href="/consultations">
+              <div class="n">01</div>
+              <h3>Консультации</h3>
+              <p>Разбираем ваш участок, считаем деньги, говорим что делать</p>
+              <div class="go">Подробнее <i>&#8594;</i></div>
+            </a>
+            <a href="/engineering">
+              <div class="n">02</div>
+              <h3>Проектирование</h3>
+              <p>Генплан, дома, инженерия. Проект, по которому строят</p>
+              <div class="go">Подробнее <i>&#8594;</i></div>
+            </a>
+            <a href="/building">
+              <div class="n">03</div>
+              <h3>Строительство</h3>
+              <p>От подготовки участка до сдачи готовой базы</p>
+              <div class="go">Подробнее <i>&#8594;</i></div>
+            </a>
+            <a href="/promotion">
+              <div class="n">04</div>
+              <h3>Продвижение</h3>
+              <p>Загрузка 70% без сезонных провалов, реклама до 10% выручки</p>
+              <div class="go">Подробнее <i>&#8594;</i></div>
+            </a>
+            <a href="/materials">
+              <div class="n">05</div>
+              <h3>Материалы</h3>
+              <p>Регламенты, книги и финмодель для тех, кто делает сам</p>
+              <div class="go">Подробнее <i>&#8594;</i></div>
+            </a>
+            <a href="/">
+              <div class="n">06</div>
+              <h3>Биржа земли</h3>
+              <p>Участки под базы и глэмпинги по всей России</p>
+              <div class="go">Подробнее <i>&#8594;</i></div>
+            </a>
+          </div></div></section><div class="sk-lab" id="birzha"><i>Главная</i><span>Биржа земли сразу под услугами</span></div><section class="ob-sec ob-sec--soft"><div class="ob-wrap">
+          <div class="ob-label">Новый проект команды</div>
+          <h2 class="ob-h2">Биржа земли: участки под базы отдыха</h2>
+          <p class="ob-lead">Отдельная площадка, где собираем землю под туристические проекты
+          со всей России. Назначение, коммуникации, вода рядом, кадастр: всё видно в карточке
+          ещё до звонка продавцу.</p>
+
+          <div class="ob-bz">
+            <div class="ob-bz__side">
+              <div class="ob-bz__num"><b>0 ₽</b><span>размещение объявления</span></div>
+              <div class="ob-bz__num"><b>5</b><span>пунктов проверки в каждой карточке</span></div>
+              <div class="ob-bz__num"><b>Прямые</b><span>контакты продавца, без посредников</span></div>
+            </div>
+            <div class="ob-bz__main">
+              <div class="ob-bz__grid">
+                <div class="ob-bz__card">
+                  <h3>Ищете землю</h3>
+                  <p>Фильтры по назначению, категории, площади и цене. Отдельно участки
+                  у воды, с электричеством и круглогодичным подъездом.</p>
+                  <a class="ob-btn" href="https://xn--e1adnd0h.xn--80abtjtnmcm9em.xn--p1ai/listings" target="_blank" rel="noopener">Смотреть участки</a>
+                </div>
+                <div class="ob-bz__card ob-bz__card--soft">
+                  <h3>Продаёте землю</h3>
+                  <p>Разместите объявление бесплатно. Покупатели пишут напрямую вам,
+                  комиссии за сделку нет.</p>
+                  <a class="ob-btn ob-btn--ghost" href="https://xn--e1adnd0h.xn--80abtjtnmcm9em.xn--p1ai/add" target="_blank" rel="noopener">Разместить участок</a>
+                </div>
+              </div>
+              <div class="ob-bz__note">Не уверены, что на участке можно строить базу?
+              На бирже есть проверка земли до сделки: смотрим категорию, ВРИ, ограничения
+              и говорим, что реально построить.
+              <a href="https://xn--e1adnd0h.xn--80abtjtnmcm9em.xn--p1ai/land-check" target="_blank" rel="noopener">Проверить землю &#8594;</a></div>
+            </div>
+          </div></div></section><div class="sk-lab" id="put"><i>Главная</i><span>три маршрута, раскрытие под карточками</span></div><section class="ob-sec"><div class="ob-wrap">
+          <div class="ob-label">С чего начать</div>
+          <h2 class="ob-h2">Выберите, где вы сейчас</h2>
+          <p class="ob-lead">Три ситуации, с которыми к нам приходят. У каждой свой маршрут.</p>
+
+          <div class="ob-doors">
+            <button class="ob-door" type="button" aria-expanded="false" data-ob-door="nozem">
+              <div class="ob-door__ico"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.6-3.6"/></svg></div>
+              <h3>Земли ещё нет</h3>
+              <p>Есть бюджет и желание, участка пока нет. Поможем найти землю под ваш формат.</p>
+              <div class="ob-door__go"><span>Как ищем землю</span><i>&#8964;</i></div>
+            </button>
+            <button class="ob-door" type="button" aria-expanded="false" data-ob-door="zem">
+              <div class="ob-door__ico"><svg viewBox="0 0 24 24"><path d="M9 3L3 6v15l6-3 6 3 6-3V3l-6 3-6-3z"/><path d="M9 3v15M15 6v15"/></svg></div>
+              <h3>Участок уже есть</h3>
+              <p>Земля в собственности. Разберём, что на ней построится и сколько принесёт.</p>
+              <div class="ob-door__go"><span>Как строим</span><i>&#8964;</i></div>
+            </button>
+            <button class="ob-door" type="button" aria-expanded="false" data-ob-door="work">
+              <div class="ob-door__ico"><svg viewBox="0 0 24 24"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg></div>
+              <h3>База уже работает</h3>
+              <p>Поднять загрузку, навести порядок, пройти классификацию, достроить.</p>
+              <div class="ob-door__go"><span>Что чиним</span><i>&#8964;</i></div>
+            </button>
+
+          <div class="ob-panel" data-ob-panel="nozem">
+            <div class="ob-panel__in">
+              <h3 class="ob-panel__h">Как ищем землю</h3>
+              <p class="ob-panel__d">Сначала считаем, где база будет зарабатывать,
+              и только потом смотрим участки. Начинаем с консультации.</p>
+              <div class="ob-first">
+                <div><b>Всё начинается с консультации</b>
+                <span>На ней разбираем ваш случай и даём рекомендации. Оставите заявку,
+                команда подскажет, какая консультация подойдёт и сколько она стоит.</span></div>
+              </div>
+              <div class="ob-chainx">
+              <a class="ob-chainx__s ob-chainx__s--first" href="https://xn--e1adnd0h.xn--80abtjtnmcm9em.xn--p1ai/listings" target="_blank" rel="noopener">
+                <div class="ob-chainx__n">1</div>
+                <div class="ob-chainx__t">Подбор земли</div>
+                <div class="ob-chainx__d">Считаем, где база будет зарабатывать, и ищем участок под ваш формат</div>
+                <div class="ob-chainx__w">Биржа земли</div>
+              </a>
+              <a class="ob-chainx__s" href="/consultations">
+                <div class="ob-chainx__n">2</div>
+                <div class="ob-chainx__t">Консультация</div>
+                <div class="ob-chainx__d">Разбираем найденный участок: что на нём построится и сколько принесёт</div>
+                <div class="ob-chainx__w">от 140 000 ₽</div>
+              </a>
+              <a class="ob-chainx__s" href="/engineering">
+                <div class="ob-chainx__n">3</div>
+                <div class="ob-chainx__t">Концептуальный проект с финмоделью</div>
+                <div class="ob-chainx__d">Мастер-план, генплан, дома, инженерия и расчёт для банка, гранта или инвестора</div>
+                <div class="ob-chainx__w">от 580 000 ₽</div>
+              </a>
+              <a class="ob-chainx__s" href="/building">
+                <div class="ob-chainx__n">4</div>
+                <div class="ob-chainx__t">Стройка и запуск</div>
+                <div class="ob-chainx__d">Строим, продвигаем и выводим на первые заезды</div>
+                <div class="ob-chainx__w">по коммерческому</div>
+              </a>
+              </div>
+              <div class="ob-pcta">
+                <a class="ob-btn" href="#popup:zayavka">Обсудить проект</a>
+                <div class="ob-pcta__note">Ответим в мессенджере и подскажем, с какой консультации начать</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="ob-panel" data-ob-panel="zem">
+            <div class="ob-panel__in">
+              <h3 class="ob-panel__h">От вашего участка до первых гостей</h3>
+              <p class="ob-panel__d">Пять этапов. Остановиться можно после любого,
+              каждый заканчивается результатом на руках.</p>
+              <div class="ob-first">
+                <div><b>Всё начинается с консультации</b>
+                <span>На ней разбираем ваш случай и даём рекомендации. Оставите заявку,
+                команда подскажет, какая консультация подойдёт и сколько она стоит.</span></div>
+              </div>
+              <div class="ob-tl">
+              <a class="ob-tl__s ob-tl__s--first" href="/consultations">
+                <div class="ob-tl__n">1</div>
+                <div>
+                  <div class="ob-tl__t">Консультация</div>
+                  <div class="ob-tl__d">Онлайн с Александром, на нашей базе или с выездом на ваш участок</div>
+                </div>
+                <div class="ob-tl__w">от 140 000 ₽</div>
+              </a>
+              <a class="ob-tl__s" href="/engineering">
+                <div class="ob-tl__n">2</div>
+                <div>
+                  <div class="ob-tl__t">Концептуальный проект с финмоделью</div>
+                  <div class="ob-tl__d">Мастер-план, генплан, дома, инженерия и расчёт для банка, гранта или инвестора</div>
+                </div>
+                <div class="ob-tl__w">от 580 000 ₽ · около 3 месяцев</div>
+              </a>
+              <a class="ob-tl__s" href="/building">
+                <div class="ob-tl__n">3</div>
+                <div>
+                  <div class="ob-tl__t">Стройка</div>
+                  <div class="ob-tl__d">Подготовка участка, дома, сети, благоустройство</div>
+                </div>
+                <div class="ob-tl__w">по коммерческому</div>
+              </a>
+              <a class="ob-tl__s" href="/promotion">
+                <div class="ob-tl__n">4</div>
+                <div>
+                  <div class="ob-tl__t">Продвижение</div>
+                  <div class="ob-tl__d">Сайт и реклама, чтобы к открытию уже были брони</div>
+                </div>
+                <div class="ob-tl__w">от 200 000 ₽</div>
+              </a>
+              <a class="ob-tl__s" href="/consultations">
+                <div class="ob-tl__n">5</div>
+                <div>
+                  <div class="ob-tl__t">Запуск</div>
+                  <div class="ob-tl__d">Классификация, первые заезды, регламенты для команды</div>
+                </div>
+                <div class="ob-tl__w">1 месяц</div>
+              </a>
+              </div>
+                            <div class="ob-what">
+                <div class="ob-what__h">Три формата консультации</div>
+                <div class="ob-kinds">
+                  <a class="ob-kind" href="/consultations">
+                    <b>Онлайн с Александром</b>
+                    <span>Два часа в Zoom: разбираем участок, формат и экономику проекта</span>
+                    <i>140 000 ₽</i>
+                  </a>
+                  <a class="ob-kind" href="/consultations">
+                    <b>На нашей базе</b>
+                    <span>До четырёх часов: смотрите работающий объект и задаёте вопросы на месте</span>
+                    <i>200 000 ₽</i>
+                  </a>
+                  <a class="ob-kind" href="/consultations">
+                    <b>Выезд к вам</b>
+                    <span>Александр приезжает на ваш участок и смотрит его лично</span>
+                    <i>от 300 000 ₽</i>
+                  </a>
+                </div>
+                <div class="ob-what__h">Что входит в концептуальный проект с финмоделью</div>
+                <ul class="ob-incl">
+                  <li>Мастер-план участка: где что стоит и как ходят гости</li>
+                  <li>Генплан с посадкой домов, дорог и инженерных сетей</li>
+                  <li>Архитектура домов и общих зон</li>
+                  <li>Инженерия: электричество, вода, канализация, отопление</li>
+                  <li>Финансовая модель: вложения, загрузка, прибыль, окупаемость</li>
+                  <li>Расчёт под банк, грант или инвестора</li>
+                  <li>Книга проекта: всё собрано в один документ</li>
+                  <li>Сопровождение в Telegram на время работы</li>
+                </ul>
+              </div>
+              <div class="ob-pcta">
+                <a class="ob-btn" href="#popup:zayavka">Обсудить участок</a>
+                <div class="ob-pcta__note">Ответим в мессенджере и подскажем, с какой консультации начать</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="ob-panel" data-ob-panel="work">
+            <div class="ob-panel__in">
+              <h3 class="ob-panel__h">Что чиним чаще всего</h3>
+              <p class="ob-panel__d">Выберите свою задачу. Разбираем её на консультации, дальше работаем по плану.</p>
+              <div class="ob-first">
+                <div><b>Всё начинается с консультации</b>
+                <span>На ней разбираем ваш случай и даём рекомендации. Оставите заявку,
+                команда подскажет, какая консультация подойдёт и сколько она стоит.</span></div>
+              </div>
+              <div class="ob-jobs">
+              <a class="ob-job" href="/promotion">
+                <div class="ob-job__t">Домики стоят пустыми в будни</div>
+                <div class="ob-job__d">Каналы продаж, цены по сезонам, возвратные гости</div>
+                <div class="ob-job__f"><b>Продвижение</b><span>от 100 000 ₽</span></div>
+              </a>
+              <a class="ob-job" href="/materials">
+                <div class="ob-job__t">Всё держится на вас лично</div>
+                <div class="ob-job__d">Регламенты и книги под каждую роль</div>
+                <div class="ob-job__f"><b>Материалы</b><span>от 15 000 ₽</span></div>
+              </a>
+              <a class="ob-job" href="/cons_classification">
+                <div class="ob-job__t">Нет номера в реестре</div>
+                <div class="ob-job__d">Классификация и самооценка</div>
+                <div class="ob-job__f"><b>Классификация</b><span>от 50 000 ₽</span></div>
+              </a>
+              <a class="ob-job" href="/consultations">
+                <div class="ob-job__t">Непонятно, куда уходят деньги</div>
+                <div class="ob-job__d">Анализ всех предоставленных вами показателей и материалов</div>
+                <div class="ob-job__f"><b>Консультация</b><span>от 140 000 ₽</span></div>
+              </a>
+              <a class="ob-job" href="/proektirovanie">
+                <div class="ob-job__t">Хотите достроить</div>
+                <div class="ob-job__d">Проект второй очереди на том же участке</div>
+                <div class="ob-job__f"><b>Проектирование</b><span>от 580 000 ₽</span></div>
+              </a>
+              <a class="ob-job" href="/cons_engineering">
+                <div class="ob-job__t">Инженерия не тянет нагрузку</div>
+                <div class="ob-job__d">Свет, вода, септик и отопление под реальную загрузку</div>
+                <div class="ob-job__f"><b>Инженерия</b><span>по запросу</span></div>
+              </a>
+              </div>
+              <div class="ob-pcta">
+                <a class="ob-btn" href="#popup:zayavka">Обсудить задачу</a>
+                <div class="ob-pcta__note">Ответим в мессенджере и подскажем, с какой консультации начать</div>
+              </div>
+            </div>
+          </div>
+          </div>
+
+          <script>
+          (function(){
+            var doors=document.querySelectorAll('[data-ob-door]');
+            var panels=document.querySelectorAll('[data-ob-panel]');
+            function closeAll(){
+              Array.prototype.forEach.call(doors,function(o){o.setAttribute('aria-expanded','false')});
+              Array.prototype.forEach.call(panels,function(p){p.classList.remove('is-open')});
+            }
+            Array.prototype.forEach.call(doors,function(d){
+              d.addEventListener('click',function(){
+                var key=d.getAttribute('data-ob-door');
+                var panel=document.querySelector('[data-ob-panel="'+key+'"]');
+                var was=d.getAttribute('aria-expanded')==='true';
+                closeAll();
+                if(was||!panel) return;
+                d.setAttribute('aria-expanded','true');
+                panel.classList.add('is-open');
+              });
+            });
+          })();
+          </script></div></section><div class="sk-lab" id="diag"><i>Главная</i><span>вместо бесплатной диагностики: подсказка, какая консультация нужна</span></div><section class="ob-sec"><div class="ob-wrap">
+          <div class="ob-diag ob-diag--fon" style="--ob-diag-fon:url(assets/diag-fon.webp)">
+            <div class="ob-diag__in">
+              <div class="ob-diag__k">С чего начать разговор</div>
+              <h2 class="ob-diag__t">Подскажем, какая консультация вам нужна</h2>
+              <p class="ob-diag__d">Не угадывайте формат по прайсу. Опишите свою ситуацию —
+              ответим, с чего начинать именно вам, и назовём цену. Это бесплатно
+              и ни к чему не обязывает.</p>
+              <div class="ob-diag__row">
+                <a class="ob-btn" href="#popup:zayavka">Описать свою ситуацию</a>
+                <div class="ob-diag__note">Отвечаем в мессенджере,
+                обычно в тот же день</div>
+              </div>
+            </div>
+            <div class="ob-diag__steps"><div class="ob-diag__s"><b>1</b><span>Пишете, что у вас: участок, идея или работающая база</span></div><div class="ob-diag__s"><b>2</b><span>Задаём несколько вопросов по делу, без анкет на сорок пунктов</span></div><div class="ob-diag__s"><b>3</b><span>Говорим, какая консультация подойдёт и сколько стоит</span></div></div>
+          </div>
+</div></section><div class="sk-lab" id="case"><i>Страница кейсов</i><span>новый проект в Одинцовском районе</span></div><section class="ob-sec ob-sec--soft"><div class="ob-wrap">
+          <div class="ob-label">Кейс</div>
+          <h2 class="ob-h2">База отдыха в Одинцовском районе Московской области</h2>
+          <div class="ob-case">
+            <div class="ob-case__media"><div class="ob-case__wait"><b>Здесь будет видео</b>Как визуал дома собирается с нуля: от первых объёмов до финального кадра</div></div>
+            <div>
+              <p class="ob-case__d">Премиальный сегмент домов на участке в сосновом лесу. Вокруг развитая инфраструктура, участок с выраженным природным рельефом — его и держали как основу планировки.</p>
+              <div class="ob-case__facts"><div class="ob-case__f"><span>Участок</span><b>1,0 Га</b></div><div class="ob-case__f"><span>Сегмент</span><b>Премиальные дома</b></div><div class="ob-case__f"><span>Окружение</span><b>Сосновый лес</b></div><div class="ob-case__f"><span>Срок работ</span><b>2 месяца</b></div></div>
+              <a class="ob-btn" href="#popup:zayavka">Обсудить свой участок</a>
+            </div>
+          </div>
+          <div class="ob-case__shots"><div class="ob-case__shot">фото готовится</div><div class="ob-case__shot">фото готовится</div><div class="ob-case__shot">фото готовится</div></div>
+</div></section><div class="sk-lab" id="otz"><i>Главная</i><span>отзывы: сначала результат, потом слова</span></div><section class="ob-sec"><div class="ob-wrap">
+          <div class="ob-label">Отзывы</div>
+          <h2 class="ob-h2">Что говорят владельцы баз</h2>
+          <div class="ob-rev"><div class="ob-rev__c" style="--c:#52719d">
+              <div class="ob-rev__res"><div class="ob-rev__num">42 → 71%</div>
+                <div class="ob-rev__cap">загрузка в будни за сезон</div></div>
+              <p class="ob-rev__q">«Домики стояли пустыми с понедельника по четверг. Разобрали каналы продаж, пересобрали цены по сезонам и сценарий заезда.»</p>
+              <div class="ob-rev__w"><div class="ob-rev__av">О</div>
+                <div><div class="ob-rev__n">Образец подписи</div>
+                <div class="ob-rev__o">База «Название», Тверская область</div></div></div>
+            </div><div class="ob-rev__c" style="--c:#1e7268">
+              <div class="ob-rev__res"><div class="ob-rev__num">2 месяца</div>
+                <div class="ob-rev__cap">от идеи до готового проекта</div></div>
+              <p class="ob-rev__q">«Держал в голове десяток вариантов и не мог выбрать. Посчитали экономику до планировки — половина идей отпала сама.»</p>
+              <div class="ob-rev__w"><div class="ob-rev__av">О</div>
+                <div><div class="ob-rev__n">Образец подписи</div>
+                <div class="ob-rev__o">База «Название», Карелия</div></div></div>
+            </div><div class="ob-rev__vid" style="--c:#6c98bc">
+              <img src="assets/mat-hero.webp" alt="">
+              <div class="ob-rev__play">▶</div>
+              <div class="ob-rev__vt"><b>Образец: видеоотзыв</b>База «Название», Подмосковье</div>
+            </div></div>
+</div></section><div class="sk-lab" id="part"><i>Главная</i><span>партнёры, ждут логотипов</span></div><section class="ob-sec ob-sec--soft"><div class="ob-wrap">
+          <div class="ob-label">Партнёры</div>
+          <h2 class="ob-h2">С кем мы работаем</h2>
+          <p class="ob-lead">Список согласуем: покажем только тех, с кем работали и чьи решения стоят на наших объектах.</p>
+          <div class="ob-part"><div class="ob-part__c"><span>логотип</span></div><div class="ob-part__c"><span>логотип</span></div><div class="ob-part__c"><span>логотип</span></div><div class="ob-part__c"><span>логотип</span></div><div class="ob-part__c"><span>логотип</span></div><div class="ob-part__c"><span>логотип</span></div><div class="ob-part__c"><span>логотип</span></div><div class="ob-part__c"><span>логотип</span></div><div class="ob-part__c"><span>логотип</span></div><div class="ob-part__c"><span>логотип</span></div></div>
+</div></section><div class="sk-lab" id="price"><i>Страница материалов</i><span>единый прайс</span></div><section class="ob-sec"><div class="ob-wrap">
+          <div class="ob-label">Все материалы</div>
+          <h2 class="ob-h2">Что можно купить и за сколько</h2>
+          <p class="ob-lead">Десять продуктов в одном списке: комплекты документов, книги
+          под каждую роль и расчёты. Всё скачивается сразу после оплаты, ждать не нужно.</p>
+
+          <div class="ob-mat">
+            <div class="ob-mat__group">
+              <b>Комплекты документов</b>
+              <span>Готовые файлы под конкретную задачу. Скачиваете сразу после оплаты.</span>
+            </div>
+            <a class="ob-mat__row" href="#popup:zayavka">
+              <div><div class="ob-mat__n">Комплект документов для стройки</div></div>
+              <div class="ob-mat__d">Чек-лист проверки участка, договор с подрядчиком, форма приёмки этапа, таблица контроля сметы</div>
+              <div class="ob-mat__p"><b>15 000 ₽</b><span>файлы сразу</span></div>
+            </a>
+            <a class="ob-mat__row" href="#popup:zayavka">
+              <div><div class="ob-mat__n">Комплект документов для открытия</div></div>
+              <div class="ob-mat__d">Договор с гостем, правила проживания, пожарная и санитарная часть, штатное расписание</div>
+              <div class="ob-mat__p"><b>15 000 ₽</b><span>файлы сразу</span></div>
+            </a>
+            <a class="ob-mat__row" href="#popup:zayavka">
+              <div><div class="ob-mat__n">Система возвратных гостей</div></div>
+              <div class="ob-mat__d">Сценарии рассылок, механика лояльности, скрипт сбора отзывов, шаблон базы гостей</div>
+              <div class="ob-mat__p"><b>15 000 ₽</b><span>файлы сразу</span></div>
+            </a>
+            <a class="ob-mat__row" href="#popup:zayavka">
+              <div><div class="ob-mat__n">Закрытый практикум</div></div>
+              <div class="ob-mat__d">Живой разбор проектов участников, вопросы Александру, запись и материалы остаются у вас</div>
+              <div class="ob-mat__p"><b>20 000 ₽</b><span>раз в квартал</span></div>
+            </a>
+            <div class="ob-mat__group">
+              <b>Книги под роли</b>
+              <span>Каждая книга закрывает работу одного человека в команде.</span>
+            </div>
+            <a class="ob-mat__row" href="#popup:zayavka">
+              <div><div class="ob-mat__n">Книга управляющего базой отдыха</div></div>
+              <div class="ob-mat__d">Обязанности, персонал, сервис, контроль, безопасность, развитие объекта</div>
+              <div class="ob-mat__p"><b>25 000 ₽</b><span>PDF сразу</span></div>
+            </a>
+            <a class="ob-mat__row" href="#popup:zayavka">
+              <div><div class="ob-mat__n">Книга для отдела продаж</div></div>
+              <div class="ob-mat__d">Заявки, бронирования, акции, постоянные гости, дополнительные услуги, каналы продаж</div>
+              <div class="ob-mat__p"><b>25 000 ₽</b><span>PDF сразу</span></div>
+            </a>
+            <a class="ob-mat__row" href="#popup:zayavka">
+              <div><div class="ob-mat__n">Книга операционного менеджера</div></div>
+              <div class="ob-mat__d">Заселение, уборка, графики, задачи, отчёты, решение текущих проблем</div>
+              <div class="ob-mat__p"><b>25 000 ₽</b><span>PDF сразу</span></div>
+            </a>
+            <a class="ob-mat__row" href="#popup:zayavka">
+              <div><div class="ob-mat__n">Книга специалиста по закупкам</div></div>
+              <div class="ob-mat__d">Поставщики, остатки, инвентарь, расходные материалы, закупочные расходы</div>
+              <div class="ob-mat__p"><b>25 000 ₽</b><span>PDF сразу</span></div>
+            </a>
+            <div class="ob-mat__group">
+              <b>Расчёты и регламенты</b>
+              <span>То, с чего проще всего начать, если нужны цифры или правила для команды.</span>
+            </div>
+            <a class="ob-mat__row" href="#popup:zayavka">
+              <div><div class="ob-mat__n">Финансовая модель в Excel</div></div>
+              <div class="ob-mat__d">Инвестиции, доходы, расходы, загрузка, сезонность, точка безубыточности, окупаемость</div>
+              <div class="ob-mat__p"><b>25 000 ₽</b><span>файл сразу</span></div>
+            </a>
+            <a class="ob-mat__row ob-mat__row--hl" href="#popup:zayavka">
+              <div><div class="ob-mat__n">Все регламенты для управления базой</div><div class="ob-mat__tag">Выгодный набор</div></div>
+              <div class="ob-mat__d">Четыре книги и финансовая модель одним комплектом: сотрудники, сервис, продажи, закупки</div>
+              <div class="ob-mat__p"><s>75 000 ₽</s><b>40 000 ₽</b><span>выгоднее на 35 000</span></div>
+            </a>
+          </div>
+
+          <div class="ob-matnote">
+            <div>
+              <b>Не знаете, с чего начать</b>
+              <span>Возьмите книгу управляющего и регламенты: они закрывают самое частое,
+              когда всё держится на владельце.</span>
+            </div>
+            <div>
+              <b>Нужны цифры под банк или грант</b>
+              <span>Финансовая модель считает инвестиции, загрузку, прибыль
+              и срок окупаемости по вашим вводным.</span>
+            </div>
+            <div>
+              <b>Строите прямо сейчас</b>
+              <span>Комплект документов для стройки: договор с подрядчиком,
+              приёмка этапов и контроль сметы.</span>
+            </div>
+          </div></div></section></body></html>
