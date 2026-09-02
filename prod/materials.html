@@ -968,4 +968,68 @@ setTimeout(function(){(function(d,w,k,o,g) {var n=d.getElementsByTagName(o)[0],s
 			
 		}</style>
 		<div class="t396__tooltip-portal"></div>
-	<div class="t-input-phonemask__options-wrap" data-nosnippet=""></div></body></html>
+	<div class="t-input-phonemask__options-wrap" data-nosnippet=""></div><style>
+#ob-max{position:absolute;z-index:9999;display:flex;align-items:center;gap:10px;
+  text-decoration:none;white-space:nowrap;line-height:1.15}
+#ob-max .ob-max__i{width:35px;height:35px;flex:none;display:block}
+#ob-max .ob-max__t{font-family:var(--t-text-font,Arial);font-size:15px;color:#313a39}
+#ob-max:hover .ob-max__t{color:#52719d}
+@media screen and (max-width:1100px){#ob-max{display:none}}
+</style>
+<script>
+(function(){
+  var LINK = "https://max.ru/join/bATDWxSUu7dPxEyafZFkBu_St0pPuv6TNSYCXZsAot8";
+  var ICON = '<svg class="ob-max__i" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="17.5" cy="17.5" r="17" stroke="#6488BC"/><path fill="#6488BC" fill-rule="evenodd" clip-rule="evenodd" d="M17.9 8.8c-4.5 0-8.2 3.6-8.2 8.1 0 2 .7 3.8 1.9 5.2l-1.5 3.6c-.3.7.4 1.4 1.1 1.1l3.7-1.5c.9.3 1.9.5 3 .5 4.5 0 8.2-3.6 8.2-8.1s-3.7-8.9-8.2-8.9zm0 3.4c2.9 0 5.2 2.3 5.2 5.2s-2.3 5.2-5.2 5.2-5.2-2.3-5.2-5.2 2.3-5.2 5.2-5.2z"/></svg>';
+  var GAP  = 36;
+
+  function parts(){
+    // видимая пара «иконка + подпись» телеграма в шапке
+    var out = [];
+    document.querySelectorAll('.t396__artboard .tn-elem').forEach(function(e){
+      if (!e.querySelector('a[href*="t.me/openbaza"]')) return;
+      if (!e.offsetWidth || getComputedStyle(e).display === 'none') return;
+      if (e.getBoundingClientRect().top > 200) return;      // только шапка
+      out.push(e);
+    });
+    return out;
+  }
+
+  function place(){
+    var group = parts();
+    if (!group.length) return false;
+
+    var host = group[0].closest('.t396__artboard') || group[0].closest('.r');
+    if (!host) return false;
+    if (getComputedStyle(host).position === 'static') host.style.position = 'relative';
+
+    var el = document.getElementById('ob-max');
+    if (!el) {
+      el = document.createElement('a');
+      el.id = 'ob-max';
+      el.href = LINK;
+      el.target = '_blank';
+      el.rel = 'noopener';
+      el.innerHTML = ICON + '<span class="ob-max__t">Наше сообщество<br>в MAX</span>';
+    }
+    if (el.parentElement !== host) host.appendChild(el);
+
+    // всё в экранных координатах: масштаб Zero Block уже учтён в них
+    var hr = host.getBoundingClientRect();
+    var right = Math.max.apply(null, group.map(function(e){
+      return e.getBoundingClientRect().right;
+    }));
+    var top = Math.min.apply(null, group.map(function(e){
+      return e.getBoundingClientRect().top;
+    }));
+
+    el.style.left = Math.round(right - hr.left + GAP) + 'px';
+    el.style.top  = Math.round(top - hr.top) + 'px';
+    return true;
+  }
+
+  // шапка досчитывает размеры не сразу, поэтому повторяем и следим за окном
+  var n = 0, t = setInterval(function(){ place(); if (++n > 12) clearInterval(t); }, 400);
+  window.addEventListener('load', place);
+  window.addEventListener('resize', place);
+})();
+</script></body></html>
