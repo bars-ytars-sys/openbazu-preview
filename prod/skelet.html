@@ -598,6 +598,18 @@ body{font-family:'TildaSans',Arial,sans-serif}
 .ob-rev__cta p{margin:0 0 18px;font-family:var(--t-text-font,Arial);font-size:15px;
   line-height:1.45;color:rgba(49,58,57,.7);max-width:46ch}
 
+/* галерея скриншотов: живые отзывы, которые уже есть у компании */
+.ob-shots{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;
+  margin-top:26px}
+.ob-shots__k{grid-column:1/-1;font-family:var(--t-text-font,Arial);font-size:14px;
+  color:rgba(49,58,57,.6);margin:0 0 2px}
+.ob-shots__i{border:1px solid rgba(49,58,57,.12);border-radius:16px;overflow:hidden;
+  background:#fffffb;aspect-ratio:1/1;display:flex;align-items:center;
+  justify-content:center;padding:6px}
+.ob-shots__i img{max-width:100%;max-height:100%;object-fit:contain;display:block}
+@media screen and (max-width:960px){.ob-shots{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media screen and (max-width:560px){.ob-shots{grid-template-columns:1fr 1fr}}
+
 /* пустое состояние: показываем, что именно нужно собрать */
 .ob-rev__wait{border:1px dashed rgba(49,58,57,.26);border-radius:24px;padding:30px 28px;
   background:rgba(49,58,57,.04);display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
@@ -1012,6 +1024,7 @@ body{font-family:'TildaSans',Arial,sans-serif}
               она полезнее любых хороших слов.</p>
               <a class="ob-btn ob-btn--ghost" href="#popup:zayavka">Оставить отзыв</a>
             </div></div>
+          <div class="ob-shots"><p class="ob-shots__k">Что писали нам в переписке</p><div class="ob-shots__i"><img src="https://static.tildacdn.com/tild6337-6161-4361-b062-646439636637/Mask_group.png" alt="" loading="lazy"></div><div class="ob-shots__i"><img src="https://static.tildacdn.com/tild6663-6533-4531-a637-356239393534/__2025-09-18_144526.png" alt="" loading="lazy"></div><div class="ob-shots__i"><img src="https://static.tildacdn.com/tild6636-3232-4263-b166-353635363066/2.png" alt="" loading="lazy"></div><div class="ob-shots__i"><img src="https://static.tildacdn.com/tild6238-6638-4633-a162-386462356439/__2025-09-18_144640.png" alt="" loading="lazy"></div><div class="ob-shots__i"><img src="https://static.tildacdn.com/tild3630-3035-4634-b262-653264346137/1.png" alt="" loading="lazy"></div><div class="ob-shots__i"><img src="https://static.tildacdn.com/tild3033-6664-4062-a166-313764386138/__2025-09-18_144735.png" alt="" loading="lazy"></div><div class="ob-shots__i"><img src="https://static.tildacdn.com/tild6638-3231-4230-a465-363563373735/3.png" alt="" loading="lazy"></div><div class="ob-shots__i"><img src="https://static.tildacdn.com/tild3235-3464-4131-b131-376662643836/__2025-09-18_144806.png" alt="" loading="lazy"></div><div class="ob-shots__i"><img src="https://static.tildacdn.com/tild3635-6133-4564-a461-656137636638/4.png" alt="" loading="lazy"></div><div class="ob-shots__i"><img src="https://static.tildacdn.com/tild3665-6130-4066-a561-323533343635/__2025-09-18_151740.png" alt="" loading="lazy"></div><div class="ob-shots__i"><img src="https://static.tildacdn.com/tild6334-6137-4162-b262-633565366536/5.png" alt="" loading="lazy"></div><div class="ob-shots__i"><img src="https://static.tildacdn.com/tild6531-3237-4330-b461-353432376332/IMG_8512.jpg" alt="" loading="lazy"></div><div class="ob-shots__i"><img src="https://static.tildacdn.com/tild6239-6435-4461-a230-326536346263/61.png" alt="" loading="lazy"></div><div class="ob-shots__i"><img src="https://static.tildacdn.com/tild3966-6637-4230-b339-333062636331/6.png" alt="" loading="lazy"></div><div class="ob-shots__i"><img src="https://static.tildacdn.com/tild3636-3237-4433-b233-643231303161/8.png" alt="" loading="lazy"></div></div>
 </div></section><div class="sk-lab" id="part"><i>Главная</i><span>партнёры, ждут логотипов</span></div><section class="ob-sec ob-sec--soft"><div class="ob-wrap">
           <div class="ob-label">Партнёры</div>
           <h2 class="ob-h2">С кем мы работаем</h2>
