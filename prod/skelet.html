@@ -524,46 +524,82 @@ body{font-family:'TildaSans',Arial,sans-serif}
 .ob-diag__s b{width:30px;height:30px;border-radius:50%;display:flex;align-items:center;
   justify-content:center;background:rgba(255,255,251,.14);font-size:14px;color:#fffffb}
 
-/* ── отзывы: сначала результат, потом слова ── */
-.ob-rev{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
-.ob-rev__c{position:relative;border:1px solid rgba(49,58,57,.14);border-radius:26px;
-  padding:26px 26px 22px;background:#fffffb;display:flex;flex-direction:column;
-  overflow:hidden}
+/* ── отзывы: выписка из проекта, а не похвала ──
+   Язык тот же, что в блоке диагностики: горизонтали рельефа на подложке,
+   графит и синий. Первая карточка широкая, дальше компактные. */
+.ob-rev{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.ob-rev__c{position:relative;border:1px solid rgba(49,58,57,.16);border-radius:24px;
+  padding:26px 28px 22px;background:#fffffb;display:flex;flex-direction:column;
+  overflow:hidden;isolation:isolate}
+/* горизонтали рельефа: тонкие дуги в углу, почти незаметные */
+.ob-rev__c:after{content:"";position:absolute;right:-60px;bottom:-70px;
+  width:230px;height:230px;z-index:-1;opacity:.22;
+  background:radial-gradient(circle at 50% 50%,transparent 0 38%,
+    var(--c,#52719d) 38% 38.6%,transparent 38.6% 49%,
+    var(--c,#52719d) 49% 49.6%,transparent 49.6% 60%,
+    var(--c,#52719d) 60% 60.5%,transparent 60.5% 72%,
+    var(--c,#52719d) 72% 72.5%,transparent 72.5%);
+  -webkit-mask-image:radial-gradient(circle at 50% 50%,#000 40%,transparent 78%);
+  mask-image:radial-gradient(circle at 50% 50%,#000 40%,transparent 78%)}
 .ob-rev__c:before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;
   background:var(--c,#52719d)}
-.ob-rev__res{display:flex;align-items:baseline;gap:10px;margin-bottom:16px;
-  padding-bottom:16px;border-bottom:1px solid rgba(49,58,57,.12)}
+
+/* паспорт объекта: регион, домов, год */
+.ob-rev__p{font-family:var(--t-text-font,Arial);font-size:12px;letter-spacing:.09em;
+  text-transform:uppercase;color:rgba(49,58,57,.45);margin-bottom:16px;
+  display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.ob-rev__p i{font-style:normal;color:rgba(49,58,57,.28)}
+
 .ob-rev__num{font-family:var(--uc-typo-fontfamily-ZcDjuR,EngraversGothic);
-  font-size:34px;line-height:1;font-weight:700;color:var(--c,#52719d);white-space:nowrap}
-.ob-rev__cap{font-family:var(--t-text-font,Arial);font-size:14px;line-height:1.3;
-  color:rgba(49,58,57,.62)}
-.ob-rev__q{margin:0 0 20px;font-family:var(--t-text-font,Arial);font-size:16px;
-  line-height:1.5;color:#313a39;flex:1}
-.ob-rev__w{display:flex;align-items:center;gap:12px}
-.ob-rev__av{width:44px;height:44px;border-radius:50%;flex:none;
-  background:color-mix(in srgb, var(--c,#52719d) 14%, #fffffb);
-  display:flex;align-items:center;justify-content:center;
-  font-family:var(--uc-typo-fontfamily-ZcDjuR,EngraversGothic);font-size:17px;
-  color:var(--c,#52719d)}
+  font-size:40px;line-height:.95;font-weight:700;color:var(--c,#52719d);
+  letter-spacing:-.01em}
+.ob-rev__cap{font-family:var(--t-text-font,Arial);font-size:13px;line-height:1.35;
+  color:rgba(49,58,57,.6);margin:8px 0 18px;max-width:22ch}
+.ob-rev__q{margin:0 0 22px;font-family:var(--t-text-font,Arial);font-size:15px;
+  line-height:1.55;color:#313a39;flex:1}
+.ob-rev__w{display:flex;align-items:center;gap:11px;padding-top:16px;
+  border-top:1px solid rgba(49,58,57,.12)}
+.ob-rev__av{width:38px;height:38px;border-radius:50%;flex:none;
+  border:1px solid var(--c,#52719d);display:flex;align-items:center;
+  justify-content:center;font-family:var(--uc-typo-fontfamily-ZcDjuR,EngraversGothic);
+  font-size:15px;color:var(--c,#52719d)}
 .ob-rev__av img{width:100%;height:100%;object-fit:cover;border-radius:50%;display:block}
-.ob-rev__n{font-family:var(--t-text-font,Arial);font-size:15px;font-weight:600;color:#313a39}
-.ob-rev__o{font-family:var(--t-text-font,Arial);font-size:14px;color:rgba(49,58,57,.6)}
+.ob-rev__n{font-family:var(--t-text-font,Arial);font-size:14px;font-weight:600;color:#313a39}
+.ob-rev__o{font-family:var(--t-text-font,Arial);font-size:13px;color:rgba(49,58,57,.6)}
 .ob-rev__o a{color:#52719d;text-decoration:none;border-bottom:1px solid rgba(82,113,157,.4)}
-.ob-rev__vid{position:relative;border-radius:26px;overflow:hidden;background:#313a39;
-  min-height:220px;display:flex;align-items:flex-end;cursor:pointer}
+
+/* первая карточка шире и крупнее: у полосы появляется точка входа */
+.ob-rev__c--big{grid-column:span 2}
+.ob-rev__c--big .ob-rev__num{font-size:60px}
+.ob-rev__c--big .ob-rev__cap{font-size:15px;max-width:30ch}
+.ob-rev__c--big .ob-rev__q{font-size:18px;line-height:1.5;max-width:52ch}
+.ob-rev__c--big:after{width:330px;height:330px;right:-80px;bottom:-110px;opacity:.3}
+
+/* видеоотзыв */
+.ob-rev__vid{position:relative;border-radius:24px;overflow:hidden;background:#313a39;
+  min-height:240px;display:flex;align-items:flex-end;cursor:pointer}
 .ob-rev__vid img,.ob-rev__vid video{position:absolute;inset:0;width:100%;height:100%;
   object-fit:cover}
 .ob-rev__vid:after{content:"";position:absolute;inset:0;
-  background:linear-gradient(180deg,rgba(49,58,57,.1) 40%,rgba(49,58,57,.8) 100%)}
+  background:linear-gradient(180deg,rgba(49,58,57,0) 38%,rgba(49,58,57,.86) 100%)}
 .ob-rev__vt{position:relative;z-index:2;padding:22px 24px;color:#fffffb;
-  font-family:var(--t-text-font,Arial);font-size:15px;line-height:1.35}
-.ob-rev__vt b{display:block;font-size:17px;margin-bottom:4px}
-.ob-rev__play{position:absolute;z-index:2;left:24px;top:24px;width:44px;height:44px;
-  border-radius:50%;background:rgba(255,255,251,.9);display:flex;align-items:center;
-  justify-content:center;color:#313a39;font-size:15px}
+  font-family:var(--t-text-font,Arial);font-size:14px;line-height:1.35}
+.ob-rev__vt b{display:block;font-size:16px;margin-bottom:4px}
+.ob-rev__play{position:absolute;z-index:2;left:24px;top:24px;width:42px;height:42px;
+  border-radius:50%;border:1px solid rgba(255,255,251,.7);display:flex;
+  align-items:center;justify-content:center;color:#fffffb;font-size:13px}
+
+/* плитка в конец полосы: добивает ряд и зовёт оставить отзыв */
+.ob-rev__cta{grid-column:span 2;border:1px dashed rgba(82,113,157,.4);border-radius:24px;
+  padding:28px 30px;background:rgba(108,152,188,.07);display:flex;flex-direction:column;
+  justify-content:center}
+.ob-rev__cta h3{margin:0 0 8px;font-family:var(--uc-typo-fontfamily-ZcDjuR,EngraversGothic);
+  font-size:24px;line-height:1.1;font-weight:700;text-transform:uppercase;color:#313a39}
+.ob-rev__cta p{margin:0 0 18px;font-family:var(--t-text-font,Arial);font-size:15px;
+  line-height:1.45;color:rgba(49,58,57,.7);max-width:46ch}
 
 /* пустое состояние: показываем, что именно нужно собрать */
-.ob-rev__wait{border:1px dashed rgba(49,58,57,.26);border-radius:26px;padding:30px 28px;
+.ob-rev__wait{border:1px dashed rgba(49,58,57,.26);border-radius:24px;padding:30px 28px;
   background:rgba(49,58,57,.04);display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
 .ob-rev__wt{grid-column:1/-1;font-family:var(--t-text-font,Arial);font-size:15px;
   line-height:1.45;color:rgba(49,58,57,.62);margin:0}
@@ -950,24 +986,31 @@ body{font-family:'TildaSans',Arial,sans-serif}
 </div></section><div class="sk-lab" id="otz"><i>Главная</i><span>отзывы: сначала результат, потом слова</span></div><section class="ob-sec"><div class="ob-wrap">
           <div class="ob-label">Отзывы</div>
           <h2 class="ob-h2">Что говорят владельцы баз</h2>
-          <div class="ob-rev"><div class="ob-rev__c" style="--c:#52719d">
-              <div class="ob-rev__res"><div class="ob-rev__num">42 → 71%</div>
-                <div class="ob-rev__cap">загрузка в будни за сезон</div></div>
+          <div class="ob-rev"><div class="ob-rev__c ob-rev__c--big" style="--c:#52719d">
+              <div class="ob-rev__p">Тверская область <i>·</i> 8 домов <i>·</i> 2025</div>
+              <div class="ob-rev__num">42 → 71%</div>
+              <div class="ob-rev__cap">загрузка в будни за первый сезон</div>
               <p class="ob-rev__q">«Домики стояли пустыми с понедельника по четверг. Разобрали каналы продаж, пересобрали цены по сезонам и сценарий заезда.»</p>
               <div class="ob-rev__w"><div class="ob-rev__av">О</div>
                 <div><div class="ob-rev__n">Образец подписи</div>
-                <div class="ob-rev__o">База «Название», Тверская область</div></div></div>
-            </div><div class="ob-rev__c" style="--c:#1e7268">
-              <div class="ob-rev__res"><div class="ob-rev__num">2 месяца</div>
-                <div class="ob-rev__cap">от идеи до готового проекта</div></div>
-              <p class="ob-rev__q">«Держал в голове десяток вариантов и не мог выбрать. Посчитали экономику до планировки — половина идей отпала сама.»</p>
-              <div class="ob-rev__w"><div class="ob-rev__av">О</div>
-                <div><div class="ob-rev__n">Образец подписи</div>
-                <div class="ob-rev__o">База «Название», Карелия</div></div></div>
+                <div class="ob-rev__o">База «Название»</div></div></div>
             </div><div class="ob-rev__vid" style="--c:#6c98bc">
               <img src="assets/mat-hero.webp" alt="">
               <div class="ob-rev__play">▶</div>
               <div class="ob-rev__vt"><b>Образец: видеоотзыв</b>База «Название», Подмосковье</div>
+            </div><div class="ob-rev__c" style="--c:#1e7268">
+              <div class="ob-rev__p">Карелия <i>·</i> 1,4 Га <i>·</i> 2025</div>
+              <div class="ob-rev__num">2 месяца</div>
+              <div class="ob-rev__cap">от идеи до готового проекта</div>
+              <p class="ob-rev__q">«Держал в голове десяток вариантов и не мог выбрать. Посчитали экономику до планировки — половина идей отпала сама.»</p>
+              <div class="ob-rev__w"><div class="ob-rev__av">О</div>
+                <div><div class="ob-rev__n">Образец подписи</div>
+                <div class="ob-rev__o">База «Название»</div></div></div>
+            </div><div class="ob-rev__cta">
+              <h3>Работали с нами?</h3>
+              <p>Расскажите, что изменилось на объекте. Нам важна цифра до и после —
+              она полезнее любых хороших слов.</p>
+              <a class="ob-btn ob-btn--ghost" href="#popup:zayavka">Оставить отзыв</a>
             </div></div>
 </div></section><div class="sk-lab" id="part"><i>Главная</i><span>партнёры, ждут логотипов</span></div><section class="ob-sec ob-sec--soft"><div class="ob-wrap">
           <div class="ob-label">Партнёры</div>
