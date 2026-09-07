@@ -1,0 +1,422 @@
+<!doctype html><html lang='ru'><head><meta charset='utf-8'><meta name='viewport' content='width=device-width, initial-scale=1'><meta name='robots' content='noindex'><title>Отзывы: демонстрация вёрстки</title>
+<link rel="stylesheet" href="https://static.tildacdn.com/css/fonts-tildasans.css">
+<style>
+/* Заголовки сайта набраны EngraversGothic, текст — TildaSans.
+   На страницах вне Тильды их надо подключать руками, иначе браузер
+   подставляет засечки и вёрстка выглядит чужой. */
+@font-face{font-family:'EngraversGothic';font-weight:400;font-style:normal;
+  font-display:swap;
+  src:url('https://static.tildacdn.com/tild3861-6239-4636-b763-633732666261/EngraversGothic.woff') format('woff')}
+@font-face{font-family:'EngraversGothic';font-weight:700;font-style:normal;
+  font-display:swap;
+  src:url('https://static.tildacdn.com/tild6263-6433-4564-b031-653262643136/EngraversGothic-Bold.woff') format('woff')}
+:root{--t-text-font:'TildaSans';--uc-typo-fontfamily-ZcDjuR:'EngraversGothic'}
+body{font-family:'TildaSans',Arial,sans-serif}
+</style>
+<style>
+.ob-sec{width:100%;padding:80px 20px 76px;box-sizing:border-box;background:#fffffb}
+.ob-sec *{box-sizing:border-box}
+.ob-sec--soft{background:#f7f9f8}
+/* Подложка светлой секции: снимок сверху, почти прозрачный,
+   и мягко тающий книзу — чтобы текст оставался главным. */
+.ob-sec--fon{position:relative;overflow:hidden;isolation:isolate}
+.ob-sec--fon:before{content:"";position:absolute;inset:0;z-index:-1;
+  background:var(--ob-sec-fon) center/cover no-repeat;opacity:.14;
+  -webkit-mask-image:linear-gradient(180deg,#000 0%,transparent 70%);
+  mask-image:linear-gradient(180deg,#000 0%,transparent 70%)}
+.ob-wrap{width:100%;max-width:1200px;margin:0 auto}
+.ob-label{margin-bottom:14px;font-family:var(--t-text-font,Arial);font-size:16px;line-height:1.2;
+  font-weight:400;letter-spacing:.04em;text-transform:uppercase;color:#313a39}
+.ob-h2{margin:0 0 18px;font-family:var(--uc-typo-fontfamily-ZcDjuR,EngraversGothic);
+  font-size:42px;line-height:1;font-weight:700;letter-spacing:0;text-transform:uppercase;
+  color:transparent;background-image:var(--uc-typo-color-plt09,linear-gradient(0.25turn, rgba(70,104,153,1) 0%, rgba(30,114,104,1) 100%));
+  -webkit-background-clip:text;background-clip:text}
+.ob-lead{margin:0 0 40px;max-width:860px;font-family:var(--t-text-font,Arial);
+  font-size:18px;line-height:1.35;color:#313a39}
+
+/* ── услуги: коротко ── */
+.ob-serv{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.ob-serv a{display:flex;flex-direction:column;text-decoration:none;color:inherit;
+  border:1px solid rgba(49,58,57,.14);border-radius:30px;padding:32px 30px 28px;background:#fffffb;
+  transition:border-color .2s, transform .2s, box-shadow .2s}
+/* Кадр в карточке: как на карточках маршрутов — бледно, из угла,
+   не мешает тексту. Рендеры наши, из концепций. */
+.ob-serv a{position:relative;overflow:hidden;isolation:isolate}
+.ob-serv--fon:after{content:"";position:absolute;inset:0;z-index:-1;
+  border-radius:inherit;pointer-events:none;
+  background-image:var(--ob-serv-fon);background-size:cover;
+  background-position:center bottom;opacity:.15;
+  -webkit-mask-image:linear-gradient(200deg,transparent 32%,#000 100%);
+  mask-image:linear-gradient(200deg,transparent 32%,#000 100%);
+  transition:opacity .2s}
+.ob-serv a:hover.ob-serv--fon:after{opacity:.24}
+.ob-serv a:hover{border-color:#52719d;transform:translateY(-3px);
+  box-shadow:0 14px 34px rgba(49,58,57,.09)}
+.ob-serv .n{font-family:var(--t-text-font,Arial);font-size:13px;font-weight:600;letter-spacing:.1em;
+  color:rgba(49,58,57,.44);margin-bottom:14px}
+.ob-serv h3{margin:0 0 10px;font-family:var(--uc-typo-fontfamily-ZcDjuR,EngraversGothic);
+  font-size:26px;line-height:1.08;font-weight:700;text-transform:uppercase;color:#313a39}
+.ob-serv .ob-when{display:inline-block;margin:0 0 12px;padding:6px 11px;border-radius:9px;
+  background:rgba(82,113,157,.14);color:#313a39;font-family:var(--t-text-font,Arial);
+  box-shadow:inset 3px 0 0 #52719d;
+  font-size:13.5px;font-weight:600;line-height:1.3}
+.ob-serv p{margin:0;font-family:var(--t-text-font,Arial);font-size:16px;line-height:1.4;color:#313a39}
+.ob-serv .go{margin-top:22px;font-family:var(--t-text-font,Arial);font-size:15px;font-weight:600;
+  color:#52719d;display:flex;align-items:center;gap:8px}
+.ob-serv a:hover .go{gap:14px}
+.ob-serv .go i{font-style:normal;transition:transform .2s}
+
+/* Старый блок пути отсюда убран: его собирала устаревшая path_html(),
+   которую заменил модуль «путь». Имена классов совпадали, поэтому
+   старые правила перебивали новые, стоило переставить блоки местами. */
+
+/* ── развилка по участку ── */
+.ob-fork{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.ob-fork__card{border-radius:30px;padding:38px 36px 32px;display:flex;flex-direction:column;
+  border:1px solid rgba(49,58,57,.14);background:#fffffb}
+.ob-fork__card--b{background:linear-gradient(0.25turn,rgba(227,231,231,.58) 0%,rgba(217,225,234,.58) 100%);
+  border-color:transparent}
+.ob-fork__q{font-family:var(--t-text-font,Arial);font-size:14px;font-weight:600;letter-spacing:.1em;
+  text-transform:uppercase;color:#52719d;margin-bottom:12px}
+.ob-fork__card h3{margin:0 0 14px;font-family:var(--uc-typo-fontfamily-ZcDjuR,EngraversGothic);
+  font-size:32px;line-height:1.04;font-weight:700;text-transform:uppercase;color:#313a39}
+.ob-fork__card p{margin:0 0 20px;font-family:var(--t-text-font,Arial);font-size:17px;
+  line-height:1.4;color:#313a39}
+.ob-fork__card ul{margin:0 0 26px;padding:0;list-style:none}
+.ob-fork__card li{position:relative;padding-left:22px;margin-bottom:11px;
+  font-family:var(--t-text-font,Arial);font-size:16px;line-height:1.38;color:#313a39}
+.ob-fork__card li:before{content:"";position:absolute;left:0;top:8px;width:8px;height:8px;
+  border-radius:50%;background:#52719d}
+
+/* ── маршрут: карта этапов ── */
+.ob-map{position:relative;display:grid;grid-template-columns:repeat(5,1fr);gap:0;
+  margin-top:8px}
+.ob-map:before{content:"";position:absolute;left:8%;right:8%;top:34px;height:2px;
+  background:linear-gradient(90deg,rgba(82,113,157,.18),#52719d 22%,#52719d 78%,rgba(82,113,157,.18))}
+.ob-step{position:relative;padding:0 14px;text-align:center}
+.ob-step__dot{position:relative;width:68px;height:68px;margin:0 auto 18px;border-radius:50%;
+  background:#fffffb;border:2px solid #52719d;display:flex;align-items:center;justify-content:center;
+  font-family:var(--uc-typo-fontfamily-ZcDjuR,EngraversGothic);font-size:26px;font-weight:700;color:#52719d}
+.ob-step--done .ob-step__dot{background:#52719d;color:#fffffb}
+.ob-step h4{margin:0 0 8px;font-family:var(--uc-typo-fontfamily-ZcDjuR,EngraversGothic);
+  font-size:20px;line-height:1.08;font-weight:700;text-transform:uppercase;color:#313a39}
+.ob-step p{margin:0 0 10px;font-family:var(--t-text-font,Arial);font-size:15px;line-height:1.36;
+  color:rgba(49,58,57,.72)}
+.ob-step .w{display:inline-block;font-family:var(--t-text-font,Arial);font-size:13px;font-weight:600;
+  color:#52719d;background:rgba(108,152,188,.16);border-radius:20px;padding:5px 14px}
+
+/* ── путь для действующих: строки задач ── */
+.ob-fix{border:1px solid rgba(49,58,57,.14);border-radius:30px;overflow:hidden;background:#fffffb}
+.ob-fix__row{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr) 190px;gap:26px;
+  align-items:center;padding:26px 34px;border-bottom:1px solid rgba(49,58,57,.14)}
+.ob-fix__row:last-child{border-bottom:0}
+.ob-fix__row:hover{background:#f7f9f8}
+.ob-fix__p{font-family:var(--t-text-font,Arial);font-size:19px;font-weight:600;line-height:1.24;color:#313a39}
+.ob-fix__s{font-family:var(--t-text-font,Arial);font-size:16px;line-height:1.38;color:rgba(49,58,57,.72)}
+.ob-fix__a{text-align:right}
+.ob-fix__a b{display:block;font-family:var(--uc-typo-fontfamily-ZcDjuR,EngraversGothic);
+  font-size:19px;font-weight:700;text-transform:uppercase;color:#52719d;line-height:1.1}
+.ob-fix__a span{display:block;margin-top:5px;font-family:var(--t-text-font,Arial);
+  font-size:14px;color:rgba(49,58,57,.62)}
+
+.ob-btn{display:inline-flex;align-items:center;justify-content:center;width:100%;min-height:52px;
+  padding:0 24px;border:0;border-radius:30px;background:#52719d;color:#fffffb;cursor:pointer;
+  font-family:var(--uc-button-fontfamily-q6td2,EngraversGothic);font-size:15px;font-weight:700;
+  letter-spacing:.04em;text-transform:uppercase;text-decoration:none;transition:background .2s}
+.ob-btn:hover{background:#313a39;color:#fffffb}
+.ob-btn--ghost{background:transparent;color:#52719d;border:1px solid #52719d}
+.ob-btn--ghost:hover{background:rgba(108,152,188,.14);color:#313a39}
+.ob-btn--auto{width:auto;min-width:280px}
+.ob-after{margin-top:10px;font-family:var(--t-text-font,Arial);font-size:14px;
+  color:rgba(49,58,57,.62);text-align:center}
+.ob-cta{max-width:460px;margin:36px auto 0}
+
+@media screen and (max-width:1100px){
+  .ob-map{grid-template-columns:repeat(2,1fr);gap:34px 0}
+  .ob-map:before{display:none}
+}
+@media screen and (max-width:1100px){.ob-serv{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media screen and (max-width:960px){
+  .ob-sec{padding:56px 20px 54px}
+  .ob-h2{font-size:32px}
+  .ob-fork{grid-template-columns:1fr}
+  .ob-doors{grid-template-columns:1fr}
+  .ob-door{padding:28px 24px 24px;border-radius:20px}
+  .ob-door h3{font-size:26px}
+  .ob-panel__in{padding:28px 22px 24px;border-radius:20px}
+  .ob-fork__card{padding:30px 26px 26px;border-radius:20px}
+  .ob-fork__card h3{font-size:26px}
+  .ob-fix{border-radius:20px}
+  .ob-fix__row{grid-template-columns:1fr;gap:10px;padding:22px 24px}
+  .ob-fix__a{text-align:left}
+  .ob-serv a{padding:26px 24px;border-radius:20px}
+  .ob-serv{grid-template-columns:1fr}
+}
+@media screen and (max-width:640px){
+  .ob-map{grid-template-columns:1fr;gap:26px}
+  .ob-step{text-align:left;display:grid;grid-template-columns:56px 1fr;gap:16px;align-items:start;padding:0}
+  .ob-step__dot{width:56px;height:56px;margin:0;font-size:22px}
+}
+</style><style>
+/* ── диагностика: широкая плашка с кадром ── */
+.ob-diag{position:relative;border-radius:30px;overflow:hidden;background:#313a39;
+  min-height:340px;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);
+  align-items:center}
+.ob-diag:before{content:"";position:absolute;inset:0;
+  background-position:center;background-size:cover;background-repeat:no-repeat;
+  opacity:.85}
+.ob-diag--fon:before{background-image:var(--ob-diag-fon)}
+.ob-diag:after{content:"";position:absolute;inset:0;
+  background:linear-gradient(90deg,rgba(49,58,57,.88) 0%,rgba(49,58,57,.72) 46%,
+    rgba(49,58,57,.34) 100%)}
+.ob-diag__in{position:relative;z-index:2;padding:46px 44px}
+.ob-diag__k{font-family:var(--t-text-font,Arial);font-size:13px;letter-spacing:.1em;
+  text-transform:uppercase;color:rgba(255,255,251,.62);margin-bottom:14px}
+.ob-diag__t{margin:0 0 14px;font-family:var(--uc-typo-fontfamily-ZcDjuR,EngraversGothic);
+  font-size:38px;line-height:1.04;font-weight:700;text-transform:uppercase;color:#fffffb}
+.ob-diag__d{margin:0 0 26px;font-family:var(--t-text-font,Arial);font-size:17px;
+  line-height:1.45;color:rgba(255,255,251,.8);max-width:520px}
+.ob-diag__row{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.ob-diag__note{font-family:var(--t-text-font,Arial);font-size:14px;
+  color:rgba(255,255,251,.6);max-width:300px;line-height:1.4}
+.ob-diag .ob-btn{background:#fffffb;color:#313a39}
+.ob-diag .ob-btn:hover{background:rgba(255,255,251,.84)}
+/* Макет переписки: блок обещает разговор в мессенджере — покажем его.
+   Реплики условные, это иллюстрация механики, а не чей-то диалог. */
+.ob-chat{position:relative;z-index:2;padding:38px 44px 38px 0;display:grid;gap:10px;
+  justify-items:start}
+.ob-chat__m{max-width:88%;padding:13px 17px;border-radius:18px;
+  font-family:var(--t-text-font,Arial);font-size:15px;line-height:1.4;
+  background:rgba(255,255,251,.12);color:#fffffb;
+  border:1px solid rgba(255,255,251,.16)}
+.ob-chat__m--вы{justify-self:end;background:rgba(255,255,251,.92);color:#313a39;
+  border-color:transparent}
+.ob-chat__m b{display:block;font-size:12px;letter-spacing:.08em;text-transform:uppercase;
+  opacity:.55;margin-bottom:5px;font-weight:600}
+.ob-chat__t{margin-top:6px;font-family:var(--t-text-font,Arial);font-size:13px;
+  color:rgba(255,255,251,.55)}
+.ob-diag__steps{position:relative;z-index:2;padding:46px 44px 46px 0;display:grid;gap:12px}
+.ob-diag__s{display:grid;grid-template-columns:30px minmax(0,1fr);gap:14px;
+  align-items:start;font-family:var(--t-text-font,Arial);font-size:15px;line-height:1.4;
+  color:rgba(255,255,251,.9)}
+.ob-diag__s b{width:30px;height:30px;border-radius:50%;display:flex;align-items:center;
+  justify-content:center;background:rgba(255,255,251,.14);font-size:14px;color:#fffffb}
+
+/* ── отзывы: выписка из проекта, а не похвала ──
+   Язык тот же, что в блоке диагностики: горизонтали рельефа на подложке,
+   графит и синий. Первая карточка широкая, дальше компактные. */
+.ob-rev{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.ob-rev__c{position:relative;border:1px solid rgba(49,58,57,.16);border-radius:24px;
+  padding:26px 28px 22px;background:#fffffb;display:flex;flex-direction:column;
+  overflow:hidden;isolation:isolate}
+/* горизонтали рельефа: тонкие дуги в углу, почти незаметные */
+.ob-rev__c:after{content:"";position:absolute;right:-60px;bottom:-70px;
+  width:230px;height:230px;z-index:-1;opacity:.22;
+  background:radial-gradient(circle at 50% 50%,transparent 0 38%,
+    var(--c,#52719d) 38% 38.6%,transparent 38.6% 49%,
+    var(--c,#52719d) 49% 49.6%,transparent 49.6% 60%,
+    var(--c,#52719d) 60% 60.5%,transparent 60.5% 72%,
+    var(--c,#52719d) 72% 72.5%,transparent 72.5%);
+  -webkit-mask-image:radial-gradient(circle at 50% 50%,#000 40%,transparent 78%);
+  mask-image:radial-gradient(circle at 50% 50%,#000 40%,transparent 78%)}
+.ob-rev__c:before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;
+  background:var(--c,#52719d)}
+
+/* паспорт объекта: регион, домов, год */
+.ob-rev__p{font-family:var(--t-text-font,Arial);font-size:12px;letter-spacing:.09em;
+  text-transform:uppercase;color:rgba(49,58,57,.45);margin-bottom:16px;
+  display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.ob-rev__p i{font-style:normal;color:rgba(49,58,57,.28)}
+
+.ob-rev__num{font-family:var(--uc-typo-fontfamily-ZcDjuR,EngraversGothic);
+  font-size:40px;line-height:.95;font-weight:700;color:var(--c,#52719d);
+  letter-spacing:-.01em}
+.ob-rev__cap{font-family:var(--t-text-font,Arial);font-size:13px;line-height:1.35;
+  color:rgba(49,58,57,.6);margin:8px 0 18px;max-width:22ch}
+.ob-rev__q{margin:0 0 22px;font-family:var(--t-text-font,Arial);font-size:15px;
+  line-height:1.55;color:#313a39;flex:1}
+.ob-rev__w{display:flex;align-items:center;gap:11px;padding-top:16px;
+  border-top:1px solid rgba(49,58,57,.12)}
+.ob-rev__av{width:38px;height:38px;border-radius:50%;flex:none;
+  border:1px solid var(--c,#52719d);display:flex;align-items:center;
+  justify-content:center;font-family:var(--uc-typo-fontfamily-ZcDjuR,EngraversGothic);
+  font-size:15px;color:var(--c,#52719d)}
+.ob-rev__av img{width:100%;height:100%;object-fit:cover;border-radius:50%;display:block}
+.ob-rev__n{font-family:var(--t-text-font,Arial);font-size:14px;font-weight:600;color:#313a39}
+.ob-rev__o{font-family:var(--t-text-font,Arial);font-size:13px;color:rgba(49,58,57,.6)}
+.ob-rev__o a{color:#52719d;text-decoration:none;border-bottom:1px solid rgba(82,113,157,.4)}
+
+/* первая карточка шире и крупнее: у полосы появляется точка входа */
+.ob-rev__c--big{grid-column:span 2}
+.ob-rev__c--big .ob-rev__num{font-size:60px}
+.ob-rev__c--big .ob-rev__cap{font-size:15px;max-width:30ch}
+.ob-rev__c--big .ob-rev__q{font-size:18px;line-height:1.5;max-width:52ch}
+.ob-rev__c--big:after{width:330px;height:330px;right:-80px;bottom:-110px;opacity:.3}
+
+/* видеоотзыв */
+.ob-rev__vid{position:relative;border-radius:24px;overflow:hidden;background:#313a39;
+  min-height:240px;display:flex;align-items:flex-end;cursor:pointer}
+.ob-rev__vid img,.ob-rev__vid video{position:absolute;inset:0;width:100%;height:100%;
+  object-fit:cover}
+.ob-rev__vid:after{content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(49,58,57,0) 38%,rgba(49,58,57,.86) 100%)}
+.ob-rev__vt{position:relative;z-index:2;padding:22px 24px;color:#fffffb;
+  font-family:var(--t-text-font,Arial);font-size:14px;line-height:1.35}
+.ob-rev__vt b{display:block;font-size:16px;margin-bottom:4px}
+.ob-rev__play{position:absolute;z-index:2;left:24px;top:24px;width:42px;height:42px;
+  border-radius:50%;border:1px solid rgba(255,255,251,.7);display:flex;
+  align-items:center;justify-content:center;color:#fffffb;font-size:13px}
+
+/* плитка в конец полосы: добивает ряд и зовёт оставить отзыв */
+.ob-rev__cta{grid-column:span 2;border:1px dashed rgba(82,113,157,.4);border-radius:24px;
+  padding:28px 30px;background:rgba(108,152,188,.07);display:flex;flex-direction:column;
+  justify-content:center}
+.ob-rev__cta h3{margin:0 0 8px;font-family:var(--uc-typo-fontfamily-ZcDjuR,EngraversGothic);
+  font-size:24px;line-height:1.1;font-weight:700;text-transform:uppercase;color:#313a39}
+.ob-rev__cta p{margin:0 0 18px;font-family:var(--t-text-font,Arial);font-size:15px;
+  line-height:1.45;color:rgba(49,58,57,.7);max-width:46ch}
+
+/* галерея скриншотов: живые отзывы, которые уже есть у компании */
+.ob-shots{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;
+  margin-top:26px}
+.ob-shots__k{grid-column:1/-1;font-family:var(--t-text-font,Arial);font-size:14px;
+  color:rgba(49,58,57,.6);margin:0 0 2px}
+.ob-shots__i{border:1px solid rgba(49,58,57,.12);border-radius:16px;overflow:hidden;
+  background:#fffffb;aspect-ratio:1/1;display:flex;align-items:center;
+  justify-content:center;padding:6px}
+.ob-shots__i img{max-width:100%;max-height:100%;object-fit:contain;display:block}
+@media screen and (max-width:960px){.ob-shots{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media screen and (max-width:560px){.ob-shots{grid-template-columns:1fr 1fr}}
+
+/* пустое состояние: показываем, что именно нужно собрать */
+.ob-rev__wait{border:1px dashed rgba(49,58,57,.26);border-radius:24px;padding:30px 28px;
+  background:rgba(49,58,57,.04);display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+.ob-rev__wt{grid-column:1/-1;font-family:var(--t-text-font,Arial);font-size:15px;
+  line-height:1.45;color:rgba(49,58,57,.62);margin:0}
+.ob-rev__f{font-family:var(--t-text-font,Arial);font-size:14px;line-height:1.45;
+  color:rgba(49,58,57,.72)}
+.ob-rev__f b{display:block;font-size:13px;letter-spacing:.06em;text-transform:uppercase;
+  color:rgba(49,58,57,.45);margin-bottom:6px}
+
+/* Просмотр диплома во весь экран по клику */
+.ob-lupa{position:fixed;inset:0;z-index:9998;display:none;align-items:center;
+  justify-content:center;background:rgba(49,58,57,.92);padding:40px;cursor:zoom-out}
+.ob-lupa.открыт{display:flex}
+.ob-lupa img{max-width:92vw;max-height:88vh;object-fit:contain;border-radius:12px;
+  box-shadow:0 30px 80px rgba(0,0,0,.5)}
+.ob-lupa__x{position:absolute;top:22px;right:26px;width:44px;height:44px;
+  border-radius:50%;border:1px solid rgba(255,255,251,.5);color:#fffffb;
+  display:flex;align-items:center;justify-content:center;font-size:22px;
+  font-family:var(--t-text-font,Arial);background:transparent}
+
+/* ── партнёры: карточка с подписью ──
+   Мелкие плитки читались как случайные картинки: непонятно, кто это
+   и чем занимается. Возвращаем карточку — кадр, название, одна строка
+   про дело и ссылка на сайт. */
+.ob-pt{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px}
+.ob-pt__c{display:flex;flex-direction:column;overflow:hidden;text-decoration:none;
+  border:1px solid rgba(49,58,57,.14);border-radius:20px;background:#fffffb;
+  transition:border-color .18s, transform .18s}
+.ob-pt__c:hover{border-color:#52719d;transform:translateY(-3px)}
+.ob-pt__i{aspect-ratio:4/3;overflow:hidden;background:rgba(49,58,57,.06)}
+.ob-pt__i img{width:100%;height:100%;object-fit:cover;display:block}
+.ob-pt__b{padding:14px 16px 16px;display:flex;flex-direction:column;flex:1}
+.ob-pt__n{font-family:var(--uc-typo-fontfamily-ZcDjuR,EngraversGothic);font-size:17px;
+  line-height:1.1;font-weight:700;text-transform:uppercase;color:#313a39;margin-bottom:6px}
+.ob-pt__d{font-family:var(--t-text-font,Arial);font-size:13px;line-height:1.4;
+  color:rgba(49,58,57,.68);flex:1}
+.ob-pt__g{margin-top:12px;font-family:var(--t-text-font,Arial);font-size:13px;
+  font-weight:600;color:#52719d}
+@media screen and (max-width:1100px){.ob-pt{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media screen and (max-width:640px){.ob-pt{grid-template-columns:1fr 1fr}}
+
+/* ── партнёры ── */
+.ob-part{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px}
+.ob-part__c{border:1px solid rgba(49,58,57,.12);border-radius:20px;background:#fffffb;
+  aspect-ratio:3/2;display:flex;align-items:center;justify-content:center;padding:18px;
+  transition:border-color .18s, transform .18s}
+.ob-part__c:hover{border-color:#52719d;transform:translateY(-2px)}
+.ob-part__c img{max-width:100%;max-height:100%;object-fit:contain;display:block;
+  filter:grayscale(1);opacity:.75;transition:filter .18s, opacity .18s}
+.ob-part__c:hover img{filter:none;opacity:1}
+.ob-part__c span{font-family:var(--t-text-font,Arial);font-size:13px;
+  color:rgba(49,58,57,.45);text-align:center;line-height:1.3}
+
+@media screen and (max-width:960px){
+  .ob-diag{grid-template-columns:1fr;min-height:0}
+  .ob-diag__in{padding:32px 26px 8px}
+  .ob-diag__t{font-size:28px}
+  .ob-diag__steps{padding:16px 26px 32px}
+  .ob-rev{grid-template-columns:1fr}
+  .ob-part{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+@media screen and (max-width:640px){
+  .ob-part{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .ob-diag__d{font-size:16px}
+}
+
+.ob-demo{margin:0 0 34px;border:1px solid rgba(82,113,157,.34);border-radius:18px;
+  background:rgba(108,152,188,.10);padding:18px 22px;font-family:var(--t-text-font,Arial);
+  font-size:15px;line-height:1.45;color:#313a39}
+.ob-demo b{color:#52719d}
+</style></head><body style='background:#fffffb;margin:0'><section class='ob-sec'><div class='ob-wrap'>
+<div class="ob-demo">
+  <b>Это демонстрация вёрстки.</b> Отзывы придуманы, чтобы оценить, как блок
+  смотрится наполненным. На сайт такие не ставим — туда пойдут настоящие,
+  с именем, объектом и проверяемой цифрой.
+</div>
+
+          <div class="ob-label">Отзывы</div>
+          <h2 class="ob-h2">Что говорят владельцы баз</h2>
+          <div class="ob-rev"><div class="ob-rev__c ob-rev__c--big" style="--c:#52719d">
+              <div class="ob-rev__p">Тверская область <i>·</i> 8 домов <i>·</i> 2025</div>
+              <div class="ob-rev__num">42 → 71%</div>
+              <div class="ob-rev__cap">загрузка в будни за первый сезон</div>
+              <p class="ob-rev__q">«Домики стояли пустыми с понедельника по четверг. Разобрали каналы продаж, пересобрали цены по сезонам и сценарий заезда. К августу будни стали приносить больше, чем выходные годом раньше.»</p>
+              <div class="ob-rev__w"><div class="ob-rev__av">О</div>
+                <div><div class="ob-rev__n">Образец подписи</div>
+                <div class="ob-rev__o">База «Название»</div></div></div>
+            </div><div class="ob-rev__vid" style="--c:#6c98bc">
+              <img src="assets/mat-hero.webp" alt="">
+              <div class="ob-rev__play">▶</div>
+              <div class="ob-rev__vt"><b>Образец: видеоотзыв</b>База «Название», Подмосковье</div>
+            </div><div class="ob-rev__c" style="--c:#1e7268">
+              <div class="ob-rev__p">Карелия <i>·</i> 1,4 Га <i>·</i> 2025</div>
+              <div class="ob-rev__num">2 месяца</div>
+              <div class="ob-rev__cap">от идеи до готового проекта</div>
+              <p class="ob-rev__q">«Держал в голове десяток вариантов и не мог выбрать. Посчитали экономику до планировки — половина идей отпала сама.»</p>
+              <div class="ob-rev__w"><div class="ob-rev__av">О</div>
+                <div><div class="ob-rev__n">Образец подписи</div>
+                <div class="ob-rev__o">База «Название»</div></div></div>
+            </div><div class="ob-rev__c" style="--c:#52719d">
+              <div class="ob-rev__p">Ленобласть <i>·</i> первая очередь <i>·</i> 2024</div>
+              <div class="ob-rev__num">−1,4 млн</div>
+              <div class="ob-rev__cap">не потратили на лишние решения</div>
+              <p class="ob-rev__q">«Хотели ставить котельную и тянуть сети под будущие двадцать домов. Посчитали загрузку — на первую очередь хватает восьми.»</p>
+              <div class="ob-rev__w"><div class="ob-rev__av">О</div>
+                <div><div class="ob-rev__n">Образец подписи</div>
+                <div class="ob-rev__o">База «Название»</div></div></div>
+            </div><div class="ob-rev__c" style="--c:#1e7268">
+              <div class="ob-rev__p">Алтай <i>·</i> 12 домов <i>·</i> 2025</div>
+              <div class="ob-rev__num">3 категории</div>
+              <div class="ob-rev__cap">получили номер в реестре</div>
+              <p class="ob-rev__q">«Сами пробовали пройти классификацию и застряли на документах. Собрали самооценку и подали заново, вопросов у комиссии не осталось.»</p>
+              <div class="ob-rev__w"><div class="ob-rev__av">О</div>
+                <div><div class="ob-rev__n">Образец подписи</div>
+                <div class="ob-rev__o">База «Название»</div></div></div>
+            </div><div class="ob-rev__c" style="--c:#52719d">
+              <div class="ob-rev__p">Башкирия <i>·</i> 6 домов <i>·</i> 2024</div>
+              <div class="ob-rev__num">9 из 10</div>
+              <div class="ob-rev__cap">гостей возвращаются второй раз</div>
+              <p class="ob-rev__q">«Раньше всё держалось на мне: без меня персонал не знал, что делать. Появились регламенты под каждую роль.»</p>
+              <div class="ob-rev__w"><div class="ob-rev__av">О</div>
+                <div><div class="ob-rev__n">Образец подписи</div>
+                <div class="ob-rev__o">База «Название»</div></div></div>
+            </div><div class="ob-rev__cta">
+              <h3>Работали с нами?</h3>
+              <p>Расскажите, что изменилось на объекте. Нам важна цифра до и после —
+              она полезнее любых хороших слов.</p>
+              <a class="ob-btn ob-btn--ghost" href="#popup:zayavka">Оставить отзыв</a>
+            </div></div>
+          <div class="ob-shots"><p class="ob-shots__k">Что писали нам в переписке</p><div class="ob-shots__i"><img src="https://static.tildacdn.com/tild6337-6161-4361-b062-646439636637/Mask_group.png" alt="" loading="lazy"></div><div class="ob-shots__i"><img src="https://static.tildacdn.com/tild6663-6533-4531-a637-356239393534/__2025-09-18_144526.png" alt="" loading="lazy"></div><div class="ob-shots__i"><img src="https://static.tildacdn.com/tild6636-3232-4263-b166-353635363066/2.png" alt="" loading="lazy"></div><div class="ob-shots__i"><img src="https://static.tildacdn.com/tild6238-6638-4633-a162-386462356439/__2025-09-18_144640.png" alt="" loading="lazy"></div><div class="ob-shots__i"><img src="https://static.tildacdn.com/tild3630-3035-4634-b262-653264346137/1.png" alt="" loading="lazy"></div><div class="ob-shots__i"><img src="https://static.tildacdn.com/tild3033-6664-4062-a166-313764386138/__2025-09-18_144735.png" alt="" loading="lazy"></div><div class="ob-shots__i"><img src="https://static.tildacdn.com/tild6638-3231-4230-a465-363563373735/3.png" alt="" loading="lazy"></div><div class="ob-shots__i"><img src="https://static.tildacdn.com/tild3235-3464-4131-b131-376662643836/__2025-09-18_144806.png" alt="" loading="lazy"></div><div class="ob-shots__i"><img src="https://static.tildacdn.com/tild3635-6133-4564-a461-656137636638/4.png" alt="" loading="lazy"></div><div class="ob-shots__i"><img src="https://static.tildacdn.com/tild3665-6130-4066-a561-323533343635/__2025-09-18_151740.png" alt="" loading="lazy"></div><div class="ob-shots__i"><img src="https://static.tildacdn.com/tild6334-6137-4162-b262-633565366536/5.png" alt="" loading="lazy"></div><div class="ob-shots__i"><img src="https://static.tildacdn.com/tild6531-3237-4330-b461-353432376332/IMG_8512.jpg" alt="" loading="lazy"></div><div class="ob-shots__i"><img src="https://static.tildacdn.com/tild6239-6435-4461-a230-326536346263/61.png" alt="" loading="lazy"></div><div class="ob-shots__i"><img src="https://static.tildacdn.com/tild3966-6637-4230-b339-333062636331/6.png" alt="" loading="lazy"></div><div class="ob-shots__i"><img src="https://static.tildacdn.com/tild3636-3237-4433-b233-643231303161/8.png" alt="" loading="lazy"></div></div>
+</div></section></body></html>
