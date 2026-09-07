@@ -179,14 +179,11 @@ document.addEventListener('DOMContentLoaded',t_setvisRecs);}})();</script><style
 /* Тёмная полоса. В Тильде фон секции перебивается стилями блока, поэтому
    графит кладём не только на секцию, но и в сам слой с картинкой, а слои
    ставим над фоном родителя, а не под ним. */
-.ob-sec--bz{position:relative;overflow:hidden;background:#313a39 !important}
+.ob-sec--bz{position:relative;overflow:hidden;background:#313a39 !important;
+  padding-top:56px;padding-bottom:54px}
 .ob-sec--bz > *{position:relative;z-index:2}
 .ob-sec--bz:before{content:"";position:absolute;inset:0;z-index:0;
-  background-color:#313a39;
-  background-image:url(assets/birzha-fon.webp);background-size:cover;
-  background-position:right center;background-repeat:no-repeat;opacity:1;
-  -webkit-mask-image:linear-gradient(90deg,transparent 8%,#000 100%);
-  mask-image:linear-gradient(90deg,transparent 8%,#000 100%)}
+  background-color:#313a39}
 .ob-sec--bz:after{content:"";position:absolute;inset:0;z-index:1;
   background:linear-gradient(90deg,rgba(49,58,57,.94) 0%,rgba(49,58,57,.78) 46%,
     rgba(49,58,57,.42) 100%)}
@@ -197,16 +194,29 @@ document.addEventListener('DOMContentLoaded',t_setvisRecs);}})();</script><style
 .ob-sec--bz .ob-bz__num b{color:#fffffb}
 .ob-sec--bz .ob-bz__num span{color:rgba(255,255,251,.62)}
 .ob-sec--bz .ob-bz__note{background:rgba(255,255,251,.10);color:rgba(255,255,251,.86)}
-.ob-sec--bz .ob-bz__note a{color:#9fc0dc}
+.ob-sec--bz .ob-bz__note a{color:#c3d8ea}
 /* На тёмной секции полупрозрачная заливка карточки мутнеет и съедает
    контраст текста, поэтому здесь она плотная. */
 .ob-sec--bz .ob-bz__card--soft{background:#f7f9fa}
 .ob-sec--bz .ob-bz__card .ob-btn--ghost{color:#35496b;border-color:#35496b}
+.ob-sec--bz .ob-bz__act .ob-btn--ghost{color:#fffffb;border-color:rgba(255,255,251,.55);
+  background:transparent}
+.ob-sec--bz .ob-bz__act .ob-btn--ghost:hover{background:rgba(255,255,251,.14);color:#fffffb}
 /* Ссылки внутри светлых карточек: фирменный синий на светлой заливке
    давал контраст 3.06 при норме 4.5, поэтому берём его тёмный оттенок. */
 .ob-bz__card a:not(.ob-btn){color:#35496b}
-.ob-bz{display:grid;grid-template-columns:260px 1fr;gap:26px;align-items:start}
-.ob-bz__side{display:flex;flex-direction:column;gap:14px}
+.ob-bz{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:30px;
+  align-items:center}
+.ob-bz__left{display:flex;flex-direction:column;gap:22px}
+.ob-bz__act{display:flex;flex-wrap:wrap;gap:12px}
+.ob-bz__act .ob-btn{width:auto;min-width:210px}
+/* Живой кадр каталога вместо прежней сгенерированной карты: показываем
+   сам продукт, а не абстракцию. Рамка светлая — кадр лежит на графите. */
+.ob-bz__shot{border-radius:16px;overflow:hidden;background:#fffffb;
+  border:1px solid rgba(255,255,251,.18);box-shadow:0 26px 60px rgba(0,0,0,.38)}
+.ob-bz__shot img{display:block;width:100%;height:auto}
+.ob-bz__side{display:flex;flex-wrap:wrap;gap:12px 26px}
+.ob-bz__side .ob-bz__num{flex:1;min-width:150px}
 .ob-bz__num{border-left:3px solid #52719d;padding:6px 0 6px 18px}
 .ob-bz__num b{display:block;font-family:var(--uc-typo-fontfamily-ZcDjuR,EngraversGothic);
   font-size:34px;line-height:1;font-weight:700;color:#313a39}
@@ -225,8 +235,8 @@ document.addEventListener('DOMContentLoaded',t_setvisRecs);}})();</script><style
   font-family:var(--t-text-font,Arial);font-size:16px;line-height:1.45;color:#313a39}
 .ob-bz__note a{color:#52719d;font-weight:600;text-decoration:none;white-space:nowrap}
 @media screen and (max-width:960px){
-  .ob-bz{grid-template-columns:1fr;gap:20px}
-  .ob-bz__side{flex-direction:row;flex-wrap:wrap;gap:10px 24px}
+  .ob-bz{grid-template-columns:1fr;gap:22px}
+  .ob-bz__side{gap:10px 24px}
   .ob-bz__num{flex:1;min-width:150px}
   .ob-bz__num b{font-size:26px}
   .ob-bz__grid{grid-template-columns:1fr}
@@ -909,12 +919,12 @@ document.addEventListener('DOMContentLoaded',t_setvisRecs);}})();</script><style
             <a class="ob-price__r" href="/cons_classification">
               <div class="ob-price__n">Классификация и самооценка</div>
               <div class="ob-price__d">Номер в реестре: без него рекламу размещать нельзя</div>
-              <div class="ob-price__p"><b>от 50 000 ₽</b></div>
+              <div class="ob-price__p"><b>50 000 ₽</b><span>запись на почту</span></div>
             </a>
             <a class="ob-price__r" href="/cons_management">
-              <div class="ob-price__n">Управление</div>
-              <div class="ob-price__d">Разбор процессов с нашей управляющей: загрузка, персонал, отчётность</div>
-              <div class="ob-price__p"><b>по запросу</b></div>
+              <div class="ob-price__n">Консультация управляющего</div>
+              <div class="ob-price__d">Разбор с Мариной Годуновой на нашей базе в Берёзовой роще: персонал, графики, закупки, отчётность. Базу под управление не берём</div>
+              <div class="ob-price__p"><b>60 000 ₽</b><span>на нашей базе</span></div>
             </a>
             <a class="ob-price__r" href="/materials">
               <div class="ob-price__n">Материалы</div>
@@ -954,30 +964,23 @@ document.addEventListener('DOMContentLoaded',t_setvisRecs);}})();</script><style
           ещё до звонка продавцу.</p>
 
           <div class="ob-bz">
-            <div class="ob-bz__side">
-              <div class="ob-bz__num"><b>0 ₽</b><span>размещение объявления</span></div>
-              <div class="ob-bz__num"><b>5</b><span>пунктов проверки в каждой карточке</span></div>
-              <div class="ob-bz__num"><b>Прямые</b><span>контакты продавца, без посредников</span></div>
-            </div>
-            <div class="ob-bz__main">
-              <div class="ob-bz__grid">
-                <div class="ob-bz__card">
-                  <h3>Ищете землю</h3>
-                  <p>Фильтры по назначению, категории, площади и цене. Отдельно участки
-                  у воды, с электричеством и круглогодичным подъездом.</p>
-                  <a class="ob-btn" href="https://xn--e1adnd0h.xn--80abtjtnmcm9em.xn--p1ai/listings" target="_blank" rel="noopener">Смотреть участки</a>
-                </div>
-                <div class="ob-bz__card ob-bz__card--soft">
-                  <h3>Продаёте землю</h3>
-                  <p>Разместите объявление бесплатно. Покупатели пишут напрямую вам,
-                  комиссии за сделку нет.</p>
-                  <a class="ob-btn ob-btn--ghost" href="https://xn--e1adnd0h.xn--80abtjtnmcm9em.xn--p1ai/add" target="_blank" rel="noopener">Разместить участок</a>
-                </div>
+            <div class="ob-bz__left">
+              <div class="ob-bz__side">
+                <div class="ob-bz__num"><b>0 ₽</b><span>размещение объявления</span></div>
+                <div class="ob-bz__num"><b>5</b><span>пунктов проверки в карточке</span></div>
+                <div class="ob-bz__num"><b>Прямые</b><span>контакты продавца</span></div>
+              </div>
+              <div class="ob-bz__act">
+                <a class="ob-btn" href="https://xn--e1adnd0h.xn--80abtjtnmcm9em.xn--p1ai/listings" target="_blank" rel="noopener">Смотреть участки</a>
+                <a class="ob-btn ob-btn--ghost" href="https://xn--e1adnd0h.xn--80abtjtnmcm9em.xn--p1ai/add" target="_blank" rel="noopener">Разместить бесплатно</a>
               </div>
               <div class="ob-bz__note">Не уверены, что на участке можно строить базу?
-              На бирже есть проверка земли до сделки: смотрим категорию, ВРИ, ограничения
-              и говорим, что реально построить.
+              Смотрим категорию, ВРИ и ограничения до сделки.
               <a href="https://xn--e1adnd0h.xn--80abtjtnmcm9em.xn--p1ai/land-check" target="_blank" rel="noopener">Проверить землю &#8594;</a></div>
+            </div>
+            <div class="ob-bz__shot">
+              <img src="assets/birzha-widget.webp" loading="lazy"
+                   alt="Каталог участков на Бирже земли: фильтры и карточки объявлений">
             </div>
           </div></div></section></div></div><div id="rec9000000003" class="r t-rec" data-record-type="123" style="background-color:transparent"><div class="t123"><section class="ob-sec"><div class="ob-wrap">
           <div class="ob-label">С чего начать</div>
@@ -1160,7 +1163,7 @@ document.addEventListener('DOMContentLoaded',t_setvisRecs);}})();</script><style
               <a class="ob-job" href="/cons_classification">
                 <div class="ob-job__t">Нет номера в реестре</div>
                 <div class="ob-job__d">Классификация и самооценка</div>
-                <div class="ob-job__f"><b>Классификация</b><span>от 50 000 ₽</span></div>
+                <div class="ob-job__f"><b>Классификация</b><span>50 000 ₽</span></div>
               </a>
               <a class="ob-job" href="/consultations">
                 <div class="ob-job__t">Непонятно, куда уходят деньги</div>
@@ -1174,8 +1177,8 @@ document.addEventListener('DOMContentLoaded',t_setvisRecs);}})();</script><style
               </a>
               <a class="ob-job" href="/cons_management">
                 <div class="ob-job__t">Управляющий не тянет</div>
-                <div class="ob-job__d">Разбор процессов с нашей управляющей: загрузка, персонал, отчётность</div>
-                <div class="ob-job__f"><b>Управление</b><span>по запросу</span></div>
+                <div class="ob-job__d">Разбор с нашей управляющей на базе в Берёзовой роще: загрузка, персонал, отчётность</div>
+                <div class="ob-job__f"><b>Консультация управляющего</b><span>60 000 ₽</span></div>
               </a>
               </div>
               <div class="ob-pcta">
