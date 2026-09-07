@@ -1531,7 +1531,94 @@ setTimeout(function(){(function(d,w,k,o,g) {var n=d.getElementsByTagName(o)[0],s
 			<path fill="black" fill-rule="evenodd" clip-rule="evenodd" d="M12.1757 0.175732C12.4101 -0.0585748 12.7891 -0.0585799 13.0234 0.175732C13.2576 0.410053 13.2577 0.789111 13.0234 1.02339L7.44722 6.59956L13.0234 12.1757C13.2576 12.4101 13.2577 12.7891 13.0234 13.0234C12.7891 13.2577 12.4101 13.2576 12.1757 13.0234L6.59956 7.44722L1.02339 13.0234C0.789107 13.2576 0.410026 13.2576 0.175736 13.0234C-0.0585454 12.7891 -0.0584791 12.4101 0.175736 12.1757L5.75191 6.59956L0.175736 1.02339C-0.0585786 0.789074 -0.0585786 0.410047 0.175736 0.175732C0.410051 -0.0585748 0.78908 -0.0585799 1.02339 0.175732L6.59956 5.7519L12.1757 0.175732Z"></path>
 		</svg></div></div></div>
 		<div class="t396__tooltip-portal"></div>
-	<div class="t-input-phonemask__options-wrap" data-nosnippet=""></div><script src="https://static.tildacdn.com/js/tilda-errors-1.0.min.js" async=""></script>
+	<div class="t-input-phonemask__options-wrap" data-nosnippet=""></div><script src="https://static.tildacdn.com/js/tilda-errors-1.0.min.js" async=""></script><style>
+/* Прежний виджет гасим видимостью, а не display: нам нужен его
+   прямоугольник, чтобы встать на то же место на любой ширине. */
+#rec3452320701 [data-elem-id="1788117972192000004"],
+#rec3452320701 [data-elem-id="1788118281678000005"],
+#rec3452320701 [data-elem-id="1788118642217000011"],
+#rec3452320701 [data-elem-id="1788118531736000010"],
+#rec3452320701 [data-elem-id="1788118443280000008"]{visibility:hidden}
+
+#ob-bzw{position:absolute;z-index:60;display:block;text-decoration:none;
+  box-sizing:border-box;padding:18px 20px 16px;border-radius:18px;
+  background:#1e7268;color:#fffffb;pointer-events:auto;cursor:pointer;
+  box-shadow:0 18px 44px rgba(0,0,0,.28)}
+#ob-bzw *{pointer-events:none}
+#ob-bzw .ob-bzw__l{font-family:var(--t-text-font,Arial);font-size:11px;
+  letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,251,.72)}
+#ob-bzw .ob-bzw__n{margin-top:7px;font-family:var(--uc-typo-fontfamily-ZcDjuR,EngraversGothic);
+  font-size:23px;font-weight:700;text-transform:uppercase;line-height:1.05;color:#fffffb}
+#ob-bzw .ob-bzw__d{margin-top:7px;font-family:var(--t-text-font,Arial);font-size:13.5px;
+  line-height:1.35;color:rgba(255,255,251,.9)}
+#ob-bzw .ob-bzw__g{margin-top:12px;display:flex;align-items:center;gap:8px;
+  font-family:var(--t-text-font,Arial);font-size:13.5px;font-weight:600;color:#fffffb}
+#ob-bzw:hover{background:#313a39}
+#ob-bzw:hover .ob-bzw__g{gap:13px}
+@media screen and (max-width:960px){#ob-bzw{padding:14px 16px 13px;border-radius:14px}
+  #ob-bzw .ob-bzw__n{font-size:19px}
+  #ob-bzw .ob-bzw__d{font-size:12.5px}}
+</style>
+<script>
+(function(){
+  var LINK  = "https://xn----7sbcscidf0aj2b.xn--p1ai/";
+  var ПЛАШКА = '1788117972192000004';
+  var ДОЛЯ = 0.72;          // насколько виджет меньше прежнего
+
+  function место(){
+    var старая = document.querySelector('#rec3452320701 [data-elem-id="' + ПЛАШКА + '"]');
+    if (!старая) return false;
+    var хост = старая.closest('.t396__artboard') || старая.closest('.r');
+    if (!хост) return false;
+    var пр = старая.getBoundingClientRect();
+    if (!пр.width) return false;
+    if (getComputedStyle(хост).position === 'static') хост.style.position = 'relative';
+    var хр = хост.getBoundingClientRect();
+
+    var эл = document.getElementById('ob-bzw');
+    if (!эл) {
+      эл = document.createElement('a');
+      эл.id = 'ob-bzw';
+      эл.href = LINK;
+      эл.target = '_blank';
+      эл.rel = 'noopener';
+      эл.innerHTML =
+        '<div class="ob-bzw__l">Новый проект</div>' +
+        '<div class="ob-bzw__n">Биржа земли</div>' +
+        '<div class="ob-bzw__d">Купить или продать участок под базу отдыха</div>' +
+        '<div class="ob-bzw__g"><span>Открыть</span><span>&#8594;</span></div>';
+    }
+    if (эл.parentElement !== хост) хост.appendChild(эл);
+
+    // Встаём на место прежней плашки, но уже. Держимся её правого края:
+    // справа от виджета остаётся поле экрана, слева — кадр ролика.
+    var ширина = Math.round(пр.width * ДОЛЯ);
+    эл.style.width = ширина + 'px';
+    эл.style.left  = Math.round(пр.right - хр.left - ширина) + 'px';
+    эл.style.top   = Math.round(пр.top - хр.top) + 'px';
+    return true;
+  }
+
+  var n = 0, t = setInterval(function(){ место(); if (++n > 30) clearInterval(t); }, 400);
+  window.addEventListener('load', место);
+  window.addEventListener('resize', место);
+  window.addEventListener('orientationchange', место);
+  window.addEventListener('pageshow', место);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(место);
+
+  if (window.ResizeObserver) {
+    var ждём = setInterval(function(){
+      var старая = document.querySelector('#rec3452320701 [data-elem-id="' + ПЛАШКА + '"]');
+      if (!старая) return;
+      var хост = старая.closest('.t396__artboard');
+      if (!хост) return;
+      new ResizeObserver(function(){ место(); }).observe(хост);
+      clearInterval(ждём);
+    }, 300);
+    setTimeout(function(){ clearInterval(ждём); }, 20000);
+  }
+})();
+</script>
 <script>
 (function(){
   var SRC = "assets/hero-v7.mp4";
