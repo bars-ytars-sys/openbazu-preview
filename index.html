@@ -1590,12 +1590,32 @@ setTimeout(function(){(function(d,w,k,o,g) {var n=d.getElementsByTagName(o)[0],s
     }
     if (эл.parentElement !== хост) хост.appendChild(эл);
 
-    // Встаём на место прежней плашки, но уже. Держимся её правого края:
-    // справа от виджета остаётся поле экрана, слева — кадр ролика.
+    // По горизонтали держимся правого края прежней плашки: справа
+    // остаётся поле экрана, слева кадр ролика.
     var ширина = Math.round(пр.width * ДОЛЯ);
     эл.style.width = ширина + 'px';
     эл.style.left  = Math.round(пр.right - хр.left - ширина) + 'px';
-    эл.style.top   = Math.round(пр.top - хр.top) + 'px';
+
+    // По вертикали встаём на уровень кнопки заявки: у неё и у виджета
+    // общий нижний край, так они читаются одной строкой. Если кнопку
+    // не нашли, остаёмся на месте прежней плашки.
+    var кнопка = null;
+    var все = document.querySelectorAll('#rec3452320701 .tn-elem');
+    for (var i = 0; i < все.length; i++){
+      var a = все[i].querySelector('a[href*="popup:zayavka"]');
+      var пк = все[i].getBoundingClientRect();
+      if (a && пк.height > 24 && пк.height < 90 && пк.width > 120) { кнопка = все[i]; break; }
+    }
+    var верх = пр.top - хр.top;
+    if (кнопка) {
+      var кр = кнопка.getBoundingClientRect();
+      var лево = пр.right - ширина;
+      // На узких раскладках Тильда ставит кнопку шире, и виджет на одном
+      // с ней уровне наезжал бы сверху. Тогда остаёмся на месте прежней
+      // плашки: лучше не на уровне, чем внахлёст.
+      if (лево > кр.right + 16) верх = кр.bottom - хр.top - эл.offsetHeight;
+    }
+    эл.style.top = Math.round(верх) + 'px';
     return true;
   }
 
