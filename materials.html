@@ -1121,9 +1121,38 @@ setTimeout(function(){(function(d,w,k,o,g) {var n=d.getElementsByTagName(o)[0],s
     return true;
   }
 
-  // шапка досчитывает размеры не сразу, поэтому повторяем и следим за окном
-  var n = 0, t = setInterval(function(){ place(); if (++n > 12) clearInterval(t); }, 400);
+  // Шапка досчитывает размеры не сразу, поэтому повторяем и следим за окном.
+  // На маке ссылка съезжала: TildaSans подхватывается с их CDN уже после того,
+  // как мы посчитали место, подпись телеграма становится шире, а мы стоим
+  // по старым координатам. Поэтому ещё три страховки: ждём шрифты, слушаем
+  // изменение размеров самой шапки и пересчитываем при возврате «назад» —
+  // Safari достаёт страницу из своего кэша, не перезапуская скрипты.
+  var n = 0, t = setInterval(function(){ place(); if (++n > 30) clearInterval(t); }, 400);
   window.addEventListener('load', place);
   window.addEventListener('resize', place);
+  window.addEventListener('orientationchange', place);
+  window.addEventListener('pageshow', place);
+
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(place);
+    document.fonts.addEventListener &&
+      document.fonts.addEventListener('loadingdone', place);
+  }
+
+  if (window.ResizeObserver) {
+    var следим = new ResizeObserver(function(){ place(); });
+    var поставлен = false;
+    var ждём = setInterval(function(){
+      var group = parts();
+      if (!group.length) return;
+      var host = group[0].closest('.t396__artboard') || group[0].closest('.r');
+      if (!host || поставлен) return;
+      поставлен = true;
+      следим.observe(host);
+      group.forEach(function(e){ следим.observe(e); });
+      clearInterval(ждём);
+    }, 300);
+    setTimeout(function(){ clearInterval(ждём); }, 20000);
+  }
 })();
 </script></body></html>
