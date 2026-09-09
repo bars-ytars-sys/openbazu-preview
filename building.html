@@ -723,7 +723,35 @@ document.addEventListener('DOMContentLoaded',t_setvisRecs);}})();</script><scrip
 #rec9000000113 .ob-fold > summary:hover,
 #rec9000000060 .ob-fold > summary:hover,
 #rec9000000061 .ob-fold > summary:hover,
-#rec9000000062 .ob-fold > summary:hover{color:#961f25}</style><style>
+#rec9000000062 .ob-fold > summary:hover{color:#961f25}
+#rec9000000110 .ob-fold > summary:after,
+#rec9000000111 .ob-fold > summary:after,
+#rec9000000112 .ob-fold > summary:after,
+#rec9000000113 .ob-fold > summary:after,
+#rec9000000060 .ob-fold > summary:after,
+#rec9000000061 .ob-fold > summary:after,
+#rec9000000062 .ob-fold > summary:after{color:#961f25}
+#rec9000000110 .building-seo-more-btn,
+#rec9000000111 .building-seo-more-btn,
+#rec9000000112 .building-seo-more-btn,
+#rec9000000113 .building-seo-more-btn,
+#rec9000000060 .building-seo-more-btn,
+#rec9000000061 .building-seo-more-btn,
+#rec9000000062 .building-seo-more-btn{background:transparent!important;border:1.5px solid #961f25!important;color:#961f25!important}
+#rec9000000110 .building-seo-cta a,
+#rec9000000111 .building-seo-cta a,
+#rec9000000112 .building-seo-cta a,
+#rec9000000113 .building-seo-cta a,
+#rec9000000060 .building-seo-cta a,
+#rec9000000061 .building-seo-cta a,
+#rec9000000062 .building-seo-cta a{background:#961f25!important;color:#fffffb!important}
+#rec9000000110 .building-seo-cta a *,
+#rec9000000111 .building-seo-cta a *,
+#rec9000000112 .building-seo-cta a *,
+#rec9000000113 .building-seo-cta a *,
+#rec9000000060 .building-seo-cta a *,
+#rec9000000061 .building-seo-cta a *,
+#rec9000000062 .building-seo-cta a *{color:#fffffb!important}</style><style>
 .ob-sec{width:100%;padding:80px 20px 76px;box-sizing:border-box;background:#fffffb}
 .ob-sec *{box-sizing:border-box}
 .ob-sec.ob-sec--soft{background:#f7f9f8}
@@ -986,8 +1014,9 @@ document.addEventListener('DOMContentLoaded',t_setvisRecs);}})();</script><scrip
                 setInterval(function(){
                   if (стоп) return;
                   показать((текущий + 1) % виды.length);
-                }, 4200);
-              }, поряд * 900);
+                }, 3500);
+              }, поряд * 260);   // волна быстрая: иначе кажется,
+                                 // что часть карточек замерла
               function замереть(){ стоп = true; }
               к.addEventListener('mouseenter', замереть);
               к.addEventListener('touchstart', замереть, {passive: true});
