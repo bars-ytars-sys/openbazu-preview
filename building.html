@@ -1017,10 +1017,24 @@ document.addEventListener('DOMContentLoaded',t_setvisRecs);}})();</script><scrip
                 }, 3500);
               }, поряд * 260);   // волна быстрая: иначе кажется,
                                  // что часть карточек замерла
-              function замереть(){ стоп = true; }
-              к.addEventListener('mouseenter', замереть);
-              к.addEventListener('touchstart', замереть, {passive: true});
-              точки.forEach(function(т){ т.addEventListener('click', замереть); });
+              // Пауза, пока человек смотрит на карточку, — но временная.
+              // Раньше она была навсегда: провёл мышью по дому — и он
+              // замирал до перезагрузки страницы.
+              var отпустить = null;
+              function замереть(насколько){
+                стоп = true;
+                clearTimeout(отпустить);
+                отпустить = setTimeout(function(){ стоп = false; },
+                                       насколько || 6000);
+              }
+              к.addEventListener('mouseenter', function(){ стоп = true;
+                clearTimeout(отпустить); });
+              к.addEventListener('mouseleave', function(){ замереть(1200); });
+              к.addEventListener('touchstart', function(){ замереть(8000); },
+                                 {passive: true});
+              точки.forEach(function(т){
+                т.addEventListener('click', function(){ замереть(8000); });
+              });
             });
 
             // Листание стрелками.
