@@ -16,7 +16,7 @@ body{font-family:'TildaSans',Arial,sans-serif}
 <style>
 .ob-sec{width:100%;padding:80px 20px 76px;box-sizing:border-box;background:#fffffb}
 .ob-sec *{box-sizing:border-box}
-.ob-sec--soft{background:#f7f9f8}
+.ob-sec.ob-sec--soft{background:#f7f9f8}
 /* Подложка светлой секции: снимок сверху, почти прозрачный,
    и мягко тающий книзу — чтобы текст оставался главным. */
 .ob-sec--fon{position:relative;overflow:hidden;isolation:isolate}
@@ -52,14 +52,16 @@ body{font-family:'TildaSans',Arial,sans-serif}
 .ob-serv a:hover.ob-serv--fon:after{opacity:.24}
 .ob-serv a:hover{border-color:#52719d;transform:translateY(-3px);
   box-shadow:0 14px 34px rgba(49,58,57,.09)}
-.ob-serv .n{margin-bottom:12px;font-family:var(--t-text-font,Arial);font-size:13px;font-weight:600;letter-spacing:.1em;
+.ob-serv .n{margin-bottom:12px;font-family:var(--t-text-font,Arial);font-size:13px;font-weight:600;letter-spacing:.1em;line-height:1.5;
   color:rgba(49,58,57,.44);margin-bottom:14px}
 .ob-serv h3{margin:0 0 10px;font-family:var(--uc-typo-fontfamily-ZcDjuR,EngraversGothic);
   font-size:26px;line-height:1.08;font-weight:700;text-transform:uppercase;color:#313a39}
-.ob-serv .ob-when{align-self:flex-start;max-width:100%;margin:0 0 9px;
-  padding:5px 12px;border-radius:100px;
-  background:rgba(82,113,157,.16);color:#313a39;font-family:var(--t-text-font,Arial);
-  font-size:13px;font-weight:500;line-height:1.35;letter-spacing:.01em}
+/* Подпись «когда это вам» — не ярлык, а продолжение строки с номером:
+   точка-разделитель, обычный регистр, тот же кегль. Так она читается
+   как часть карточки, а не как наклейка поверх неё. */
+.ob-serv .ob-when{display:inline;text-transform:none;letter-spacing:0;
+  font-weight:400;color:rgba(49,58,57,.72)}
+.ob-serv .ob-when:before{content:" · ";color:rgba(49,58,57,.38)}
 .ob-serv p{margin:0;flex:1;font-family:var(--t-text-font,Arial);font-size:16px;line-height:1.4;color:#313a39}
 .ob-serv .go{margin-top:18px;font-family:var(--t-text-font,Arial);font-size:15px;font-weight:600;
   color:#52719d;display:flex;align-items:center;gap:8px}
@@ -408,8 +410,11 @@ body{font-family:'TildaSans',Arial,sans-serif}
   .ob-door__ico svg{width:22px;height:22px}
   .ob-door h3{grid-column:2;margin:1px 0 5px;font-size:19px}
   .ob-door p{grid-column:2;margin:0 0 10px;font-size:14px;line-height:1.34}
+  /* 12px читались мелко, а высота ссылки выходила 19px — палец
+     промахивается. Кегль 13, поля сверху и снизу дают 40px: столько
+     и нужно, чтобы попадать пальцем без прицеливания. */
   .ob-door__go{grid-column:2;width:auto;justify-content:flex-start;
-    padding-top:10px;font-size:12px}
+    padding:11px 0 10px;font-size:13px}
   .ob-doors{gap:12px}
 }
 @media screen and (max-width:700px){
@@ -452,6 +457,8 @@ body{font-family:'TildaSans',Arial,sans-serif}
 .ob-mat__tag{display:inline-block;margin-top:6px;padding:3px 10px;border-radius:20px;
   background:rgba(30,114,104,.07);color:#1e7268;font-family:var(--t-text-font,Arial);
   font-size:12px;font-weight:600}
+/* На телефоне 12px в плашке уже за гранью читаемости. */
+@media screen and (max-width:640px){.ob-mat__tag{font-size:13px;padding:4px 11px}}
 
 .ob-matnote{display:flex;flex-wrap:wrap;gap:26px;margin-top:26px;padding:22px 26px;
   border-radius:20px;background:#f7f9f8}
@@ -530,6 +537,10 @@ body{font-family:'TildaSans',Arial,sans-serif}
 .ob-bz__note{margin-top:18px;border-radius:20px;background:#f7f9f8;padding:20px 24px;
   font-family:var(--t-text-font,Arial);font-size:16px;line-height:1.45;color:#313a39}
 .ob-bz__note a{color:#52719d;font-weight:600;text-decoration:none;white-space:nowrap}
+/* Внутри абзаца ссылка высотой в строку — 19px, пальцем не попасть.
+   На телефоне разворачиваем её в отдельную строку с полями: 43px. */
+@media screen and (max-width:640px){
+  .ob-bz__note a{display:inline-block;margin-top:6px;padding:12px 0}}
 @media screen and (max-width:960px){
   .ob-bz{grid-template-columns:1fr;gap:22px}
   .ob-bz__side{gap:10px 24px}
@@ -545,6 +556,8 @@ body{font-family:'TildaSans',Arial,sans-serif}
   background:#313a39;aspect-ratio:16/10;display:flex;align-items:center;
   justify-content:center}
 .ob-case__media video,.ob-case__media img{width:100%;height:100%;object-fit:cover;display:block}
+/* Safari младше 15: кадр кейса без aspect-ratio схлопнется в ноль. */
+@supports not (aspect-ratio: 1 / 1){.ob-case__media{min-height:260px}}
 .ob-case__wait{padding:26px;text-align:center;font-family:var(--t-text-font,Arial);
   font-size:15px;line-height:1.45;color:rgba(255,255,251,.72)}
 .ob-case__wait b{display:block;margin-bottom:6px;font-size:17px;color:#fffffb}
@@ -603,6 +616,18 @@ body{font-family:'TildaSans',Arial,sans-serif}
    Реплики условные, это иллюстрация механики, а не чей-то диалог. */
 .ob-chat{position:relative;z-index:2;padding:38px 44px 38px 0;display:grid;gap:10px;
   justify-items:start}
+/* Когда переписка перестаёт стоять во второй колонке и занимает всю ширину
+   карточки, левого поля у неё нет — реплики упираются в край, справа 44,
+   слева 0. Возвращаем поле с обеих сторон, на телефоне поменьше. */
+@media screen and (max-width:960px){
+  .ob-chat{padding:0 44px 38px 44px}
+  .ob-diag__steps{padding:0 44px 38px 44px}
+}
+@media screen and (max-width:640px){
+  .ob-chat{padding:0 22px 30px 22px}
+  .ob-diag__steps{padding:0 22px 30px 22px}
+  .ob-chat__m{max-width:94%}
+}
 .ob-chat__m{max-width:88%;padding:13px 17px;border-radius:18px;
   font-family:var(--t-text-font,Arial);font-size:15px;line-height:1.4;
   background:rgba(255,255,251,.12);color:#fffffb;
@@ -695,19 +720,43 @@ body{font-family:'TildaSans',Arial,sans-serif}
   line-height:1.45;color:rgba(49,58,57,.7);max-width:46ch}
 
 /* галерея скриншотов: живые отзывы, которые уже есть у компании */
-.ob-shots{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;
+/* Кадры видео идут одной строкой: главное в блоке теперь цитаты,
+   а лента — доказательство рядом, а не половина экрана.
+   Раскладка гибкая, а не на восемь колонок: роликов девять, и девятый
+   срывался на второй ряд, оставляя рядом пустое место. Теперь строка
+   делится поровну на сколько угодно кадров. */
+.ob-shots{display:flex;flex-wrap:wrap;gap:10px;
   margin-top:26px}
-.ob-shots__k{grid-column:1/-1;font-family:var(--t-text-font,Arial);font-size:14px;
+.ob-shots__k{flex:1 0 100%;font-family:var(--t-text-font,Arial);font-size:14px;
   color:rgba(49,58,57,.6);margin:0 0 2px}
-.ob-shots__i{border:1px solid rgba(49,58,57,.12);border-radius:16px;overflow:hidden;
+.ob-shots__i{flex:1 1 0;min-width:0;
+  border:1px solid rgba(49,58,57,.12);border-radius:16px;overflow:hidden;
   background:#fffffb;aspect-ratio:1/1;display:flex;align-items:center;
   justify-content:center;padding:6px;cursor:zoom-in;
   transition:border-color .18s,transform .18s,box-shadow .18s}
 .ob-shots__i:hover{border-color:#52719d;transform:translateY(-3px);
   box-shadow:0 14px 32px rgba(49,58,57,.12)}
 .ob-shots__i img{max-width:100%;max-height:100%;object-fit:contain;display:block}
-@media screen and (max-width:960px){.ob-shots{grid-template-columns:repeat(3,minmax(0,1fr))}}
-@media screen and (max-width:560px){.ob-shots{grid-template-columns:1fr 1fr}}
+/* Safari младше 15 не знает aspect-ratio и схлопнул бы клетки в ноль.
+   Правило включается только там, где его нет. */
+/* Кадры с видео помечаем треугольником: без него непонятно, что клик
+   что-то запустит. Сам проигрыватель открывается в той же лупе. */
+.ob-shots__i--кино{position:relative;cursor:pointer}
+.ob-shots__play{position:absolute;left:50%;top:50%;width:42px;height:42px;
+  transform:translate(-50%,-50%);border-radius:50%;
+  background:rgba(49,58,57,.62);pointer-events:none;transition:background .18s}
+.ob-shots__play:before{content:"";position:absolute;left:52%;top:50%;
+  transform:translate(-50%,-50%);border-style:solid;border-width:8px 0 8px 13px;
+  border-color:transparent transparent transparent #fffffb}
+.ob-shots__i--кино:hover .ob-shots__play{background:#52719d}
+.ob-lupa__кино{flex:none;width:min(92vw,1100px);aspect-ratio:16/9;border:0;border-radius:12px;
+  background:#000}
+@supports not (aspect-ratio: 1 / 1){.ob-lupa__кино{height:62vh}}
+@supports not (aspect-ratio: 1 / 1){.ob-shots__i{min-height:120px}}
+/* На узких экранах в строку девять не влезает. Делим по три:
+   девять делится на три нацело, и последний ряд не остаётся
+   с одиноким кадром и пустотой рядом. */
+@media screen and (max-width:960px){.ob-shots__i{flex:0 0 calc(33.333% - 7px)}}
 
 /* пустое состояние: показываем, что именно нужно собрать */
 .ob-rev__wait{border:1px dashed rgba(49,58,57,.26);border-radius:24px;padding:30px 28px;
@@ -740,6 +789,8 @@ body{font-family:'TildaSans',Arial,sans-serif}
   transition:border-color .18s, transform .18s}
 .ob-pt__c:hover{border-color:#52719d;transform:translateY(-3px)}
 .ob-pt__i{aspect-ratio:4/3;overflow:hidden;background:rgba(49,58,57,.06)}
+/* Safari младше 15: без aspect-ratio карточка схлопнется в полоску. */
+@supports not (aspect-ratio: 1 / 1){.ob-pt__i{min-height:150px}}
 .ob-pt__i img{width:100%;height:100%;object-fit:cover;display:block}
 .ob-pt__b{padding:14px 16px 16px;display:flex;flex-direction:column;flex:1}
 .ob-pt__n{font-family:var(--uc-typo-fontfamily-ZcDjuR,EngraversGothic);font-size:17px;
@@ -756,6 +807,8 @@ body{font-family:'TildaSans',Arial,sans-serif}
 .ob-part__c{border:1px solid rgba(49,58,57,.12);border-radius:20px;background:#fffffb;
   aspect-ratio:3/2;display:flex;align-items:center;justify-content:center;padding:18px;
   transition:border-color .18s, transform .18s}
+/* Safari младше 15: карточка партнёра без aspect-ratio схлопнется. */
+@supports not (aspect-ratio: 1 / 1){.ob-part__c{min-height:120px}}
 .ob-part__c:hover{border-color:#52719d;transform:translateY(-2px)}
 .ob-part__c img{max-width:100%;max-height:100%;object-fit:contain;display:block;
   filter:grayscale(1);opacity:.75;transition:filter .18s, opacity .18s}
@@ -803,49 +856,37 @@ body{font-family:'TildaSans',Arial,sans-serif}
           до работающей базы с гостями.</p>
           <div class="ob-serv">
             <a href="/consultations" class="ob-serv--fon" style="--ob-serv-fon:url(assets/mat-hero.webp)">
-              <div class="n">01</div>
-              <div class="ob-when">когда нет земли либо только купили землю</div>
-
+              <div class="n">01<span class="ob-when">когда нет земли либо только купили землю</span></div>
               <h3>Консультации</h3>
               <p>Разбираем ваш участок, считаем деньги, говорим что делать</p>
               <div class="go">Подробнее <i>&#8594;</i></div>
             </a>
             <a href="/engineering" class="ob-serv--fon" style="--ob-serv-fon:url(assets/usluga-2.webp)">
-              <div class="n">02</div>
-              <div class="ob-when">когда есть земля и нужно действовать</div>
-
+              <div class="n">02<span class="ob-when">когда есть земля и нужно действовать</span></div>
               <h3>Проектирование</h3>
               <p>Генплан, дома, инженерия. Проект, по которому строят</p>
               <div class="go">Подробнее <i>&#8594;</i></div>
             </a>
             <a href="/building" class="ob-serv--fon" style="--ob-serv-fon:url(assets/usluga-3.webp)">
-              <div class="n">03</div>
-              <div class="ob-when">когда есть проект и готовы двигаться дальше</div>
-
+              <div class="n">03<span class="ob-when">когда есть проект и готовы двигаться дальше</span></div>
               <h3>Строительство</h3>
               <p>От подготовки участка до сдачи готовой базы</p>
               <div class="go">Подробнее <i>&#8594;</i></div>
             </a>
             <a href="/promotion" class="ob-serv--fon" style="--ob-serv-fon:url(assets/usluga-4.webp)">
-              <div class="n">04</div>
-              <div class="ob-when">когда упала загрузка</div>
-
+              <div class="n">04<span class="ob-when">когда упала загрузка</span></div>
               <h3>Продвижение</h3>
               <p>Загрузка 70% без сезонных провалов, реклама до 10% выручки</p>
               <div class="go">Подробнее <i>&#8594;</i></div>
             </a>
             <a href="/materials" class="ob-serv--fon" style="--ob-serv-fon:url(assets/usluga-5.webp)">
-              <div class="n">05</div>
-              <div class="ob-when">нужны всем, чтобы работать законно</div>
-
+              <div class="n">05<span class="ob-when">нужны всем, чтобы работать законно</span></div>
               <h3>Материалы</h3>
               <p>Регламенты, книги и финмодель для тех, кто делает сам</p>
               <div class="go">Подробнее <i>&#8594;</i></div>
             </a>
             <a href="/" class="ob-serv--fon" style="--ob-serv-fon:url(assets/usluga-6.webp)">
-              <div class="n">06</div>
-              <div class="ob-when">когда ищете землю или продаёте свою</div>
-
+              <div class="n">06<span class="ob-when">когда ищете землю или продаёте свою</span></div>
               <h3>Биржа земли</h3>
               <p>Участки под базы и глэмпинги по всей России</p>
               <div class="go">Подробнее <i>&#8594;</i></div>
@@ -1170,7 +1211,7 @@ body{font-family:'TildaSans',Arial,sans-serif}
               она полезнее любых хороших слов.</p>
               <a class="ob-btn ob-btn--ghost" href="#popup:zayavka">Оставить отзыв</a>
             </div></div>
-          <div class="ob-shots"><div class="ob-shots__i"><img src="https://static.tildacdn.com/tild6337-6161-4361-b062-646439636637/Mask_group.png" alt="" loading="lazy"></div><div class="ob-shots__i"><img src="https://static.tildacdn.com/tild6663-6533-4531-a637-356239393534/__2025-09-18_144526.png" alt="" loading="lazy"></div><div class="ob-shots__i"><img src="https://static.tildacdn.com/tild6636-3232-4263-b166-353635363066/2.png" alt="" loading="lazy"></div><div class="ob-shots__i"><img src="https://static.tildacdn.com/tild6238-6638-4633-a162-386462356439/__2025-09-18_144640.png" alt="" loading="lazy"></div><div class="ob-shots__i"><img src="https://static.tildacdn.com/tild3630-3035-4634-b262-653264346137/1.png" alt="" loading="lazy"></div><div class="ob-shots__i"><img src="https://static.tildacdn.com/tild3033-6664-4062-a166-313764386138/__2025-09-18_144735.png" alt="" loading="lazy"></div><div class="ob-shots__i"><img src="https://static.tildacdn.com/tild6638-3231-4230-a465-363563373735/3.png" alt="" loading="lazy"></div><div class="ob-shots__i"><img src="https://static.tildacdn.com/tild3235-3464-4131-b131-376662643836/__2025-09-18_144806.png" alt="" loading="lazy"></div><div class="ob-shots__i"><img src="https://static.tildacdn.com/tild3635-6133-4564-a461-656137636638/4.png" alt="" loading="lazy"></div><div class="ob-shots__i"><img src="https://static.tildacdn.com/tild3665-6130-4066-a561-323533343635/__2025-09-18_151740.png" alt="" loading="lazy"></div><div class="ob-shots__i"><img src="https://static.tildacdn.com/tild6334-6137-4162-b262-633565366536/5.png" alt="" loading="lazy"></div><div class="ob-shots__i"><img src="https://static.tildacdn.com/tild6531-3237-4330-b461-353432376332/IMG_8512.jpg" alt="" loading="lazy"></div><div class="ob-shots__i"><img src="https://static.tildacdn.com/tild6239-6435-4461-a230-326536346263/61.png" alt="" loading="lazy"></div><div class="ob-shots__i"><img src="https://static.tildacdn.com/tild3966-6637-4230-b339-333062636331/6.png" alt="" loading="lazy"></div><div class="ob-shots__i"><img src="https://static.tildacdn.com/tild3636-3237-4433-b233-643231303161/8.png" alt="" loading="lazy"></div></div>
+          <div class="ob-shots"><div class="ob-shots__i ob-shots__i--кино" data-полный="https://static.tildacdn.com/tild6337-6161-4361-b062-646439636637/Mask_group.png" data-кино="09AFdbr4BzEhsLd6VzrrE7"><img src="assets/otzyv-00.webp" alt="Кадр видеоотзыва клиента открытьбазу.рф" loading="lazy" decoding="async"><span class="ob-shots__play" aria-hidden="true"></span></div><div class="ob-shots__i ob-shots__i--кино" data-полный="https://static.tildacdn.com/tild6636-3232-4263-b166-353635363066/2.png" data-кино="0NfAr4zvvHgnE83dp2v5uK"><img src="assets/otzyv-02.webp" alt="Кадр видеоотзыва клиента открытьбазу.рф" loading="lazy" decoding="async"><span class="ob-shots__play" aria-hidden="true"></span></div><div class="ob-shots__i ob-shots__i--кино" data-полный="https://static.tildacdn.com/tild3630-3035-4634-b262-653264346137/1.png" data-кино="vGZ1pcfahEzTBJr1yay11d"><img src="assets/otzyv-04.webp" alt="Кадр видеоотзыва клиента открытьбазу.рф" loading="lazy" decoding="async"><span class="ob-shots__play" aria-hidden="true"></span></div><div class="ob-shots__i ob-shots__i--кино" data-полный="https://static.tildacdn.com/tild6638-3231-4230-a465-363563373735/3.png" data-кино="vHv6RvKbWd7cNoECrv3xkd"><img src="assets/otzyv-06.webp" alt="Кадр видеоотзыва клиента открытьбазу.рф" loading="lazy" decoding="async"><span class="ob-shots__play" aria-hidden="true"></span></div><div class="ob-shots__i ob-shots__i--кино" data-полный="https://static.tildacdn.com/tild3635-6133-4564-a461-656137636638/4.png" data-кино="gpNZLXgR4eRiN6cbgBCwcG"><img src="assets/otzyv-08.webp" alt="Кадр видеоотзыва клиента открытьбазу.рф" loading="lazy" decoding="async"><span class="ob-shots__play" aria-hidden="true"></span></div><div class="ob-shots__i ob-shots__i--кино" data-полный="https://static.tildacdn.com/tild6334-6137-4162-b262-633565366536/5.png" data-кино="mzUx3TB1D5BppzuKzXNKbz"><img src="assets/otzyv-10.webp" alt="Кадр видеоотзыва клиента открытьбазу.рф" loading="lazy" decoding="async"><span class="ob-shots__play" aria-hidden="true"></span></div><div class="ob-shots__i ob-shots__i--кино" data-полный="https://static.tildacdn.com/tild6239-6435-4461-a230-326536346263/61.png" data-кино="5WmyDz6SNoPM9aCFnVG4zG"><img src="assets/otzyv-12.webp" alt="Кадр видеоотзыва клиента открытьбазу.рф" loading="lazy" decoding="async"><span class="ob-shots__play" aria-hidden="true"></span></div><div class="ob-shots__i ob-shots__i--кино" data-полный="https://static.tildacdn.com/tild3966-6637-4230-b339-333062636331/6.png" data-кино="uyCT6XyFB2E6dJYoVj2ERD"><img src="assets/otzyv-13.webp" alt="Кадр видеоотзыва клиента открытьбазу.рф" loading="lazy" decoding="async"><span class="ob-shots__play" aria-hidden="true"></span></div><div class="ob-shots__i ob-shots__i--кино" data-полный="https://static.tildacdn.com/tild3636-3237-4433-b233-643231303161/8.png" data-кино="pg9uYsQo1b3zfPcrBLYxfq"><img src="assets/otzyv-14.webp" alt="Кадр видеоотзыва клиента открытьбазу.рф" loading="lazy" decoding="async"><span class="ob-shots__play" aria-hidden="true"></span></div></div>
 </div></section><div class="sk-lab" id="part"><i>Главная</i><span>партнёры, ждут логотипов</span></div><section class="ob-sec ob-sec--soft"><div class="ob-wrap">
           <div class="ob-label">Партнёры</div>
           <h2 class="ob-h2">С кем мы работаем</h2>

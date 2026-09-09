@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Виджет Биржи — четыре варианта</title>
+<style>
+  body{margin:0;background:#eef1f3;font:400 15px/1.5 Arial,sans-serif;color:#313a39}
+  .шапка{padding:26px 24px 18px;max-width:1180px;margin:0 auto}
+  .шапка h1{margin:0 0 8px;font-size:23px}
+  .шапка p{margin:0;color:rgba(49,58,57,.7);max-width:760px}
+  .вар{max-width:1180px;margin:0 auto 26px;padding:0 24px}
+  .вар__ш{display:flex;align-items:baseline;gap:12px;
+    padding:14px 2px 10px;border-bottom:1px solid rgba(49,58,57,.16);margin-bottom:12px}
+  .вар__б{display:inline-flex;align-items:center;justify-content:center;
+    width:26px;height:26px;border-radius:50%;background:#1e7268;color:#fffffb;
+    font-weight:700;font-size:14px;flex:none}
+  .вар__т{font-weight:600;font-size:17px}
+  .вар__д{color:rgba(49,58,57,.62);font-size:14px}
+  .рама{position:relative;width:100%;height:640px;border-radius:14px;
+    overflow:hidden;background:#313a39;box-shadow:0 4px 18px rgba(49,58,57,.14)}
+  .рама iframe{position:absolute;left:0;top:0;width:1440px;height:965px;border:0;
+    transform:scale(0.66);transform-origin:0 0}
+  @media(max-width:900px){.рама{height:430px}
+    .рама iframe{transform:scale(0.44)}}
+</style></head><body>
+<div class="шапка">
+  <h1>Виджет «Биржа земли» — четыре варианта посадки</h1>
+  <p>Сейчас виджет висит посреди кадра: под ним шестьдесят пикселей пустого
+  неба, справа отступ 30 против 40 у левой колонки, тень 44 пикселя.
+  Ниже четыре версии подряд. Кадры показывают первый экран в масштабе,
+  пропорции сохранены.</p>
+</div>
+<div class="вар">
+  <div class="вар__ш"><span class="вар__б">0</span>
+    <span class="вар__т">Сейчас — как на боевом</span>
+    <span class="вар__д">отступ справа 30 · снизу 60 · тень 18/44</span></div>
+  <div class="рама"><iframe src="герой.html?v=0" loading="lazy"
+       scrolling="no" title="Сейчас — как на боевом"></iframe></div>
+</div>
+<div class="вар">
+  <div class="вар__ш"><span class="вар__б">А</span>
+    <span class="вар__т">Ровные отступы и мягкая тень</span>
+    <span class="вар__д">отступ справа 40 · снизу 60 · тень 8/22</span></div>
+  <div class="рама"><iframe src="герой.html?v=А" loading="lazy"
+       scrolling="no" title="Ровные отступы и мягкая тень"></iframe></div>
+</div>
+<div class="вар">
+  <div class="вар__ш"><span class="вар__б">Б</span>
+    <span class="вар__т">Опущен к низу кадра</span>
+    <span class="вар__д">отступ справа 40 · снизу 24 · тень 8/22</span></div>
+  <div class="рама"><iframe src="герой.html?v=Б" loading="lazy"
+       scrolling="no" title="Опущен к низу кадра"></iframe></div>
+</div>
+<div class="вар">
+  <div class="вар__ш"><span class="вар__б">В</span>
+    <span class="вар__т">Без тени, полупрозрачный</span>
+    <span class="вар__д">отступ справа 40 · снизу 60 · без тени, фон 80%</span></div>
+  <div class="рама"><iframe src="герой.html?v=В" loading="lazy"
+       scrolling="no" title="Без тени, полупрозрачный"></iframe></div>
+</div>
+
+</body></html>
