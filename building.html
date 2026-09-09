@@ -175,12 +175,14 @@ document.addEventListener('DOMContentLoaded',t_setvisRecs);}})();</script><scrip
 }
 </style><style>
 /* ── дома ──────────────────────────────────────────────────────── */
-.ob-дом{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px}
+/* Три в ряд, а не пять: в пяти кадр выходил 250 пикселей —
+   дом на таком не разглядеть. */
+.ob-дом{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
 .ob-дом__c{border:1px solid rgba(49,58,57,.16);border-radius:20px;
   background:#fffffb;overflow:hidden;transition:border-color .18s,transform .18s}
 .ob-дом__c:hover{border-color:#52719d;transform:translateY(-3px)}
 .ob-дом__f{aspect-ratio:4/3;overflow:hidden;background:rgba(49,58,57,.06)}
-@supports not (aspect-ratio: 1 / 1){.ob-дом__f{height:150px}}
+@supports not (aspect-ratio: 1 / 1){.ob-дом__f{height:280px}}
 .ob-дом__f img{display:block;width:100%;height:100%;object-fit:cover}
 .ob-дом__f{position:relative;cursor:zoom-in}
 .ob-дом__f img{position:absolute;inset:0;opacity:0;transition:opacity .32s}
@@ -192,8 +194,8 @@ document.addEventListener('DOMContentLoaded',t_setvisRecs);}})();</script><scrip
 .ob-дом__т button{width:8px;height:8px;padding:0;border:0;border-radius:50%;
   background:rgba(255,255,251,.5);cursor:pointer;transition:background .18s,width .18s}
 .ob-дом__т button.тек{background:#fffffb;width:18px;border-radius:5px}
-.ob-дом__n{padding:14px 16px 16px;font-family:var(--uc-typo-fontfamily-ZcDjuR,EngraversGothic);
-  font-size:19px;font-weight:700;text-transform:uppercase;color:#313a39;line-height:1.1}
+.ob-дом__n{padding:18px 20px 20px;font-family:var(--uc-typo-fontfamily-ZcDjuR,EngraversGothic);
+  font-size:23px;font-weight:700;text-transform:uppercase;color:#313a39;line-height:1.1}
 
 /* ── форматы работы ────────────────────────────────────────────────
    Общие двенадцать пунктов печатались в каждом столбце — отсюда была
@@ -256,12 +258,12 @@ document.addEventListener('DOMContentLoaded',t_setvisRecs);}})();</script><scrip
   font-size:13.5px;font-weight:600;color:#52719d}
 
 @media screen and (max-width:1100px){
-  .ob-дом{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .ob-дом{grid-template-columns:repeat(2,minmax(0,1fr))}
   .ob-фор{grid-template-columns:1fr}
   .ob-вып{grid-template-columns:1fr}
 }
 @media screen and (max-width:640px){
-  .ob-дом{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+  .ob-дом{grid-template-columns:1fr;gap:14px}
   .ob-дом__n{padding:12px 13px 14px;font-size:17px}
   .ob-фор__c{padding:24px 22px 20px;border-radius:20px}
 }
@@ -668,7 +670,28 @@ document.addEventListener('DOMContentLoaded',t_setvisRecs);}})();</script><scrip
 #rec9000000113 .ob-shots__i:hover,
 #rec9000000060 .ob-shots__i:hover,
 #rec9000000061 .ob-shots__i:hover,
-#rec9000000062 .ob-shots__i:hover{border-color:#961f25}</style><style>
+#rec9000000062 .ob-shots__i:hover{border-color:#961f25}
+#rec9000000110 .ob-fold > summary,
+#rec9000000111 .ob-fold > summary,
+#rec9000000112 .ob-fold > summary,
+#rec9000000113 .ob-fold > summary,
+#rec9000000060 .ob-fold > summary,
+#rec9000000061 .ob-fold > summary,
+#rec9000000062 .ob-fold > summary{color:#961f25}
+#rec9000000110 .ob-fold > summary:hover,
+#rec9000000111 .ob-fold > summary:hover,
+#rec9000000112 .ob-fold > summary:hover,
+#rec9000000113 .ob-fold > summary:hover,
+#rec9000000060 .ob-fold > summary:hover,
+#rec9000000061 .ob-fold > summary:hover,
+#rec9000000062 .ob-fold > summary:hover{color:#313a39}
+#rec9000000110 .ob-fold > summary:after,
+#rec9000000111 .ob-fold > summary:after,
+#rec9000000112 .ob-fold > summary:after,
+#rec9000000113 .ob-fold > summary:after,
+#rec9000000060 .ob-fold > summary:after,
+#rec9000000061 .ob-fold > summary:after,
+#rec9000000062 .ob-fold > summary:after{color:#961f25}</style><style>
 .ob-sec{width:100%;padding:80px 20px 76px;box-sizing:border-box;background:#fffffb}
 .ob-sec *{box-sizing:border-box}
 .ob-sec.ob-sec--soft{background:#f7f9f8}
@@ -906,6 +929,33 @@ document.addEventListener('DOMContentLoaded',t_setvisRecs);}})();</script><scrip
                 лупа.classList.add('открыт');
               });
             });
+            // Виды меняются сами: человек видит оба, не нажимая.
+            // Как только он трогает точки или ведёт мышью — смена
+            // останавливается, чтобы не спорить с ним за управление.
+            корень.querySelectorAll('.ob-дом__c').forEach(function(к, поряд){
+              var виды = к.querySelectorAll('.ob-дом__f img');
+              var точки = к.querySelectorAll('.ob-дом__т button');
+              if (виды.length < 2) return;
+              var текущий = 0, стоп = false;
+              function показать(i){
+                виды.forEach(function(в, j){ в.classList.toggle('виден', i === j); });
+                точки.forEach(function(п, j){ п.classList.toggle('тек', i === j); });
+                текущий = i;
+              }
+              // Карточки переключаются не разом, а вразнобой:
+              // одновременная смена пяти кадров дёргает глаз.
+              setTimeout(function(){
+                setInterval(function(){
+                  if (стоп) return;
+                  показать((текущий + 1) % виды.length);
+                }, 4200);
+              }, поряд * 900);
+              function замереть(){ стоп = true; }
+              к.addEventListener('mouseenter', замереть);
+              к.addEventListener('touchstart', замереть, {passive: true});
+              точки.forEach(function(т){ т.addEventListener('click', замереть); });
+            });
+
             function закрыть(){ лупа.classList.remove('открыт'); }
             лупа.addEventListener('click', закрыть);
             document.addEventListener('keydown', function(e){
