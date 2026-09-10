@@ -404,6 +404,99 @@ body{font-family:'TildaSans',Arial,sans-serif}
   background:rgba(108,152,188,.10);padding:18px 22px;font-family:var(--t-text-font,Arial);
   font-size:15px;line-height:1.45;color:#313a39}
 .ob-demo b{color:#52719d}
+</style><style>/* ob-мобильные */
+/* ── телефоны и Safari: общее ────────────────────────────────────── */
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+a,button,[role="button"],input,select,textarea,label{
+  -webkit-tap-highlight-color:rgba(30,114,104,.16);
+  touch-action:manipulation}
+
+/* Safari зумит страницу, если шрифт в поле мельче 16px */
+@media screen and (max-width:900px){
+  input:not([type="checkbox"]):not([type="radio"]),
+  textarea, select{font-size:16px!important}
+}
+
+/* ── маки ────────────────────────────────────────────────────────
+   На macOS шрифты рисуются толще, чем задумано: подписи и метки
+   выглядят жирнее, чем на той же странице под Windows. Сглаживание
+   возвращает нужный вес. */
+body, .t-text, [class*="ob-"]{-webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale}
+
+/* Safari (и десктопный тоже) знает размытие подложки только
+   с приставкой. Без неё панель домов остаётся глухой. */
+.ob-дом__т, .ob-панель, .ob-lupa{-webkit-backdrop-filter:blur(6px)}
+
+/* Мелкие цели не только на телефоне: точки под лентой домов
+   и кнопка прайса малы и для мыши. Вид не меняется — растёт
+   область нажатия. */
+.ob-дом__т button{position:relative}
+.ob-дом__т button:after{content:"";position:absolute;left:50%;top:50%;
+  width:34px;height:34px;transform:translate(-50%,-50%)}
+.ob-price__btn{min-height:40px;display:inline-flex;align-items:center;
+  justify-content:center}
+
+/* Ленты листаются с инерцией и не тянут за собой страницу */
+[class*="ob-"][style*="overflow-x"], .ob-дом, .ob-shots, .ob-tags,
+.ob-раз2__с, .ob-lenta{-webkit-overflow-scrolling:touch;
+  overscroll-behavior-x:contain}
+
+@media screen and (max-width:640px){
+  /* Мельче 13px на телефоне не читается */
+  .ob-bzw__l, .ob-bzw__d, .ob-team__m, .ob-фор__k, .ob-общ__k,
+  .ob-q__p, .ob-ex__r, .ob-cs__p, .ob-mat__tag, .ob-hub__n,
+  .ob-label, .ob-гр__счёт, .ob-раз2__про{font-size:13px}
+
+  /* Палец не попадает в цель мельче 44 точек */
+  .ob-price__btn, .ob-btn, .ob-раз2__b, .ob-гер__b, .ob-ex__go,
+  .ob-hub__g, .ob-раз__g, .ob-cs__go, .ob-team__g{
+    min-height:44px;display:inline-flex;align-items:center}
+  .ob-tags a{min-height:44px;display:inline-flex;align-items:center}
+
+  /* Виджет Биржи несёт свой стиль внутри тела страницы, то есть
+     позже нашего. Одного адреса мало, нужен вес. */
+  #ob-bzw .ob-bzw__l, #ob-bzw .ob-bzw__d,
+  .ob-bzm__l, .ob-strip__тут{font-size:13px!important}
+
+  /* Таблица сравнения — родной блок Тильды, заголовки 12px. */
+  .t431__th, .t431__td{font-size:14px!important}
+
+  /* Ссылка внутри абзаца высотой со строку: задать ей 44px нельзя,
+     разорвёт текст. Расширяем только область нажатия — поле вверх
+     и вниз, а вычитанием отступа возвращаем строку на место. */
+  .ob-sec p a, .ob-wrap p a, .ob-bz__note a{
+    padding:11px 0;margin:-11px 0;display:inline-block}
+
+  /* Родные кнопки Тильды: 40px по высоте, четырёх не хватает. */
+  .t-btn, .t-submit, .t778__btn{min-height:44px!important}
+
+  /* Хлебные крошки в тёмной шапке страницы: строка 15px высотой,
+     пальцем в неё не попасть. */
+  .ob-гер__кр a{display:inline-block;padding:9px 0;min-height:44px;
+    line-height:26px}
+
+  /* Каталог материалов — родной блок Тильды: описания и цены 10px. */
+  .t778__descr, .t778__price-value, .t778__price-currency,
+  .t778__title{font-size:14px!important;line-height:1.4!important}
+
+  /* Точки под лентой домов были 8×8 — палец мажет. Кнопка
+     становится 44×44, а сама точка рисуется фоном по центру:
+     на вид ничего не изменилось, попадать стало можно. */
+  .ob-дом__т{gap:0}
+  .ob-дом__т button{width:44px!important;height:44px!important;
+    border-radius:0!important;background:none!important;
+    display:grid;place-items:center}
+  .ob-дом__т button:before{content:"";width:8px;height:8px;
+    border-radius:50%;background:rgba(255,255,251,.5);
+    transition:background .3s,width .3s}
+  .ob-дом__т button.тек:before{background:#fffffb;width:18px;
+    border-radius:5px}
+}
+
+@supports (height: 100dvh){
+  .ob-гер, .ob-hero, .ob-чертёж{min-height:auto}
+}
 </style></head><body style='background:#fffffb;margin:0'><section class='ob-sec'><div class='ob-wrap'>
 <div class="ob-demo">
   <b>Это демонстрация вёрстки.</b> Отзывы придуманы, чтобы оценить, как блок
