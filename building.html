@@ -218,44 +218,93 @@ document.addEventListener('DOMContentLoaded',t_setvisRecs);}})();</script><scrip
 .ob-дом__n{padding:18px 20px 20px;font-family:var(--uc-typo-fontfamily-ZcDjuR,EngraversGothic);
   font-size:23px;font-weight:700;text-transform:uppercase;color:#313a39;line-height:1.1}
 
-/* ── форматы работы ────────────────────────────────────────────────
-   Общие двенадцать пунктов печатались в каждом столбце — отсюда была
-   простыня. Теперь общее названо один раз, а в карточках только то,
-   что каждый формат добавляет. */
-.ob-фор{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;
-  margin-top:18px}
-.ob-фор__c{display:flex;flex-direction:column;padding:28px 26px 24px;
-  border:1px solid rgba(49,58,57,.16);border-radius:22px;background:#fffffb}
-.ob-фор__c--гл{background:rgba(108,152,188,.10);border-color:transparent}
-.ob-фор__n{margin:0 0 6px;font-family:var(--uc-typo-fontfamily-ZcDjuR,EngraversGothic);
-  font-size:25px;line-height:1.08;font-weight:700;text-transform:uppercase;color:#313a39}
-.ob-фор__d{margin:0 0 18px;font-family:var(--t-text-font,Arial);font-size:15px;
-  line-height:1.4;color:rgba(49,58,57,.72)}
-.ob-фор__k{margin:0 0 10px;font-family:var(--t-text-font,Arial);font-size:13px;
-  letter-spacing:.06em;text-transform:uppercase;color:rgba(49,58,57,.5)}
-.ob-фор__l{margin:0 0 18px;padding:0;list-style:none;flex:1}
-.ob-фор__l li{position:relative;padding-left:22px;margin-bottom:8px;
-  font-family:var(--t-text-font,Arial);font-size:15px;line-height:1.38;color:#313a39}
-.ob-фор__l li:before{content:"+";position:absolute;left:0;top:-1px;
-  font-weight:700;color:#1e7268}
-.ob-фор__b{margin:0 0 16px;padding:11px 14px;border-radius:14px;
-  background:rgba(30,114,104,.09);font-family:var(--t-text-font,Arial);
-  font-size:14px;line-height:1.35;color:#1e7268}
-.ob-фор__g{display:flex;align-items:center;justify-content:center;gap:9px;
-  min-height:48px;padding:0 20px;border-radius:14px;background:#52719d;
-  color:#fffffb;text-decoration:none;font-family:var(--t-text-font,Arial);
-  font-size:15px;font-weight:600;transition:background .18s}
-.ob-фор__g:hover{background:#313a39}
+/* ── форматы работы: чертёж ──────────────────────────────────────
+   Стройка — это этапы, и блок должен читаться как чертёж, а не как
+   три одинаковые карточки. Тёмный графит, поверх — миллиметровка
+   с сайта. Форматы стоят ступенями: каждый следующий выше, потому
+   что включает предыдущий целиком. Внизу общая часть — фундамент,
+   на котором стоят все три. */
+.ob-чертёж{position:relative;margin:0 -20px;padding:64px 20px 68px;
+  background:#232b2a;overflow:hidden;isolation:isolate}
+/* Фон снят под этот блок: каркас дома в сумерках, средняя яркость
+   53 из 255 — текст поверх читается без дополнительной вуали.
+   Сверху всё же кладём градиент к низу: там ступени, и они должны
+   отделяться от кадра. */
+.ob-чертёж:before{content:"";position:absolute;inset:0;z-index:-1;
+  background:url("assets/stroyka-fon.webp") center/cover no-repeat}
+.ob-чертёж:after{content:"";position:absolute;inset:0;z-index:-1;
+  background:linear-gradient(180deg,rgba(35,43,42,.42) 0%,
+    rgba(35,43,42,.78) 55%,rgba(35,43,42,.92) 100%)}
+/* Красное свечение из-за ступеней: отдельным слоем, потому что
+   оба псевдоэлемента уже заняты кадром и вуалью. */
+.ob-свеч{position:absolute;left:50%;bottom:-34%;z-index:-1;
+  width:min(1100px,120%);aspect-ratio:2/1;transform:translateX(-50%);
+  pointer-events:none;
+  background:radial-gradient(ellipse at center,rgba(150,31,37,.30) 0%,
+    rgba(150,31,37,0) 68%)}
+.ob-чертёж .ob-label{color:rgba(255,255,251,.58)}
+.ob-чертёж .ob-h2{background-image:none!important;color:#fffffb!important;
+  -webkit-text-fill-color:#fffffb!important}
+.ob-чертёж .ob-lead{color:rgba(255,255,251,.74)}
 
-/* Общая часть: один раз, крупно, чтобы не повторять в каждой карточке. */
-.ob-общ{padding:24px 26px;border-radius:20px;background:#f7f9f8;
-  border:1px solid rgba(49,58,57,.12)}
-.ob-общ__k{font-family:var(--t-text-font,Arial);font-size:13px;letter-spacing:.06em;
-  text-transform:uppercase;color:rgba(49,58,57,.5);margin-bottom:12px}
-.ob-общ__l{display:flex;flex-wrap:wrap;gap:8px 10px;margin:0;padding:0;list-style:none}
-.ob-общ__l li{padding:6px 13px;border-radius:20px;background:#fffffb;
-  border:1px solid rgba(49,58,57,.14);font-family:var(--t-text-font,Arial);
-  font-size:14px;color:#313a39}
+/* Ступени: общий низ, разная высота. */
+.ob-фор{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;
+  align-items:end;margin-top:34px}
+.ob-фор__c{position:relative;display:flex;flex-direction:column;
+  padding:30px 28px 26px;border-radius:20px;
+  background:rgba(255,255,251,.055);
+  border:1px solid rgba(255,255,251,.14);
+  -webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);
+  transition:border-color .22s,transform .22s,background .22s}
+/* Высоту задаём явно: иначе ступень с коротким списком выходит ниже
+   предыдущей и лестница ломается. */
+.ob-фор__c{min-height:300px}
+.ob-фор__c:nth-child(2){min-height:380px;padding-top:52px}
+.ob-фор__c:nth-child(3){min-height:460px;padding-top:74px;
+  background:rgba(150,31,37,.14);border-color:rgba(150,31,37,.5)}
+.ob-фор__c:hover{transform:translateY(-4px);border-color:rgba(150,31,37,.75);
+  background:rgba(255,255,251,.085)}
+
+/* Номер этапа — крупно и вполсилы, как отметка на чертеже. */
+.ob-фор__ном{position:absolute;top:18px;right:24px;
+  font-family:var(--uc-typo-fontfamily-ZcDjuR,EngraversGothic);
+  font-size:60px;line-height:1;font-weight:700;
+  color:rgba(255,255,251,.10);pointer-events:none}
+.ob-фор__c:nth-child(3) .ob-фор__ном{color:rgba(150,31,37,.5)}
+
+.ob-фор__n{margin:0 0 6px;font-family:var(--uc-typo-fontfamily-ZcDjuR,EngraversGothic);
+  font-size:27px;line-height:1.06;font-weight:700;text-transform:uppercase;
+  color:#fffffb}
+.ob-фор__d{margin:0 0 20px;font-family:var(--t-text-font,Arial);font-size:15px;
+  line-height:1.4;color:rgba(255,255,251,.68)}
+.ob-фор__k{margin:0 0 11px;font-family:var(--t-text-font,Arial);font-size:12.5px;
+  letter-spacing:.09em;text-transform:uppercase;color:rgba(255,255,251,.45)}
+.ob-фор__l{margin:0 0 20px;padding:0;list-style:none;flex:1}
+.ob-фор__l li{position:relative;padding-left:24px;margin-bottom:9px;
+  font-family:var(--t-text-font,Arial);font-size:15px;line-height:1.38;
+  color:rgba(255,255,251,.92)}
+.ob-фор__l li:before{content:"";position:absolute;left:2px;top:8px;
+  width:9px;height:9px;border-radius:2px;background:#961f25;
+  box-shadow:0 0 0 3px rgba(150,31,37,.22)}
+.ob-фор__b{margin:0 0 18px;padding:12px 15px;border-radius:12px;
+  background:rgba(150,31,37,.16);border:1px solid rgba(150,31,37,.35);
+  font-family:var(--t-text-font,Arial);font-size:14px;line-height:1.35;
+  color:#fffffb}
+.ob-фор__g{display:flex;align-items:center;justify-content:center;gap:9px;
+  min-height:50px;padding:0 20px;border-radius:13px;background:#961f25;
+  color:#fffffb;text-decoration:none;font-family:var(--t-text-font,Arial);
+  font-size:15px;font-weight:600;transition:background .18s,transform .18s}
+.ob-фор__g:hover{background:#b32730;transform:translateY(-2px)}
+
+/* Фундамент: общая часть под ступенями, одной полосой. */
+.ob-общ{margin-top:22px;padding:26px 28px;border-radius:18px;
+  background:rgba(255,255,251,.04);border:1px dashed rgba(255,255,251,.22)}
+.ob-общ__k{font-family:var(--t-text-font,Arial);font-size:12.5px;letter-spacing:.09em;
+  text-transform:uppercase;color:rgba(255,255,251,.5);margin-bottom:14px}
+.ob-общ__l{display:flex;flex-wrap:wrap;gap:9px 10px;margin:0;padding:0;list-style:none}
+.ob-общ__l li{padding:7px 14px;border-radius:20px;
+  background:rgba(255,255,251,.06);border:1px solid rgba(255,255,251,.16);
+  font-family:var(--t-text-font,Arial);font-size:14px;color:rgba(255,255,251,.88)}
 
 /* ── выпуски на YouTube ────────────────────────────────────────── */
 .ob-вып{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
@@ -731,6 +780,90 @@ document.addEventListener('DOMContentLoaded',t_setvisRecs);}})();</script><scrip
 #rec9000000060 .ob-fold > summary:after,
 #rec9000000061 .ob-fold > summary:after,
 #rec9000000062 .ob-fold > summary:after{color:#961f25}
+#rec9000000110 .ob-чертёж .ob-h2,
+#rec9000000111 .ob-чертёж .ob-h2,
+#rec9000000112 .ob-чертёж .ob-h2,
+#rec9000000113 .ob-чертёж .ob-h2,
+#rec9000000060 .ob-чертёж .ob-h2,
+#rec9000000061 .ob-чертёж .ob-h2,
+#rec9000000062 .ob-чертёж .ob-h2{color:#fffffb!important;-webkit-text-fill-color:#fffffb!important}
+#rec9000000110 .ob-чертёж .ob-label,
+#rec9000000111 .ob-чертёж .ob-label,
+#rec9000000112 .ob-чертёж .ob-label,
+#rec9000000113 .ob-чертёж .ob-label,
+#rec9000000060 .ob-чертёж .ob-label,
+#rec9000000061 .ob-чертёж .ob-label,
+#rec9000000062 .ob-чертёж .ob-label{color:rgba(255,255,251,.58)}
+#rec9000000110 .ob-чертёж .ob-lead,
+#rec9000000111 .ob-чертёж .ob-lead,
+#rec9000000112 .ob-чертёж .ob-lead,
+#rec9000000113 .ob-чертёж .ob-lead,
+#rec9000000060 .ob-чертёж .ob-lead,
+#rec9000000061 .ob-чертёж .ob-lead,
+#rec9000000062 .ob-чертёж .ob-lead{color:rgba(255,255,251,.74)}
+#rec9000000110 .ob-чертёж .ob-фор__n,
+#rec9000000111 .ob-чертёж .ob-фор__n,
+#rec9000000112 .ob-чертёж .ob-фор__n,
+#rec9000000113 .ob-чертёж .ob-фор__n,
+#rec9000000060 .ob-чертёж .ob-фор__n,
+#rec9000000061 .ob-чертёж .ob-фор__n,
+#rec9000000062 .ob-чертёж .ob-фор__n{color:#fffffb}
+#rec9000000110 .ob-чертёж .ob-фор__d,
+#rec9000000111 .ob-чертёж .ob-фор__d,
+#rec9000000112 .ob-чертёж .ob-фор__d,
+#rec9000000113 .ob-чертёж .ob-фор__d,
+#rec9000000060 .ob-чертёж .ob-фор__d,
+#rec9000000061 .ob-чертёж .ob-фор__d,
+#rec9000000062 .ob-чертёж .ob-фор__d{color:rgba(255,255,251,.68)}
+#rec9000000110 .ob-чертёж .ob-фор__k,
+#rec9000000111 .ob-чертёж .ob-фор__k,
+#rec9000000112 .ob-чертёж .ob-фор__k,
+#rec9000000113 .ob-чертёж .ob-фор__k,
+#rec9000000060 .ob-чертёж .ob-фор__k,
+#rec9000000061 .ob-чертёж .ob-фор__k,
+#rec9000000062 .ob-чертёж .ob-фор__k{color:rgba(255,255,251,.45)}
+#rec9000000110 .ob-чертёж .ob-фор__l li,
+#rec9000000111 .ob-чертёж .ob-фор__l li,
+#rec9000000112 .ob-чертёж .ob-фор__l li,
+#rec9000000113 .ob-чертёж .ob-фор__l li,
+#rec9000000060 .ob-чертёж .ob-фор__l li,
+#rec9000000061 .ob-чертёж .ob-фор__l li,
+#rec9000000062 .ob-чертёж .ob-фор__l li{color:rgba(255,255,251,.92)}
+#rec9000000110 .ob-чертёж .ob-фор__b,
+#rec9000000111 .ob-чертёж .ob-фор__b,
+#rec9000000112 .ob-чертёж .ob-фор__b,
+#rec9000000113 .ob-чертёж .ob-фор__b,
+#rec9000000060 .ob-чертёж .ob-фор__b,
+#rec9000000061 .ob-чертёж .ob-фор__b,
+#rec9000000062 .ob-чертёж .ob-фор__b{color:#fffffb}
+#rec9000000110 .ob-чертёж .ob-общ__k,
+#rec9000000111 .ob-чертёж .ob-общ__k,
+#rec9000000112 .ob-чертёж .ob-общ__k,
+#rec9000000113 .ob-чертёж .ob-общ__k,
+#rec9000000060 .ob-чертёж .ob-общ__k,
+#rec9000000061 .ob-чертёж .ob-общ__k,
+#rec9000000062 .ob-чертёж .ob-общ__k{color:rgba(255,255,251,.5)}
+#rec9000000110 .ob-чертёж .ob-общ__l li,
+#rec9000000111 .ob-чертёж .ob-общ__l li,
+#rec9000000112 .ob-чертёж .ob-общ__l li,
+#rec9000000113 .ob-чертёж .ob-общ__l li,
+#rec9000000060 .ob-чертёж .ob-общ__l li,
+#rec9000000061 .ob-чертёж .ob-общ__l li,
+#rec9000000062 .ob-чертёж .ob-общ__l li{color:rgba(255,255,251,.88)}
+#rec9000000110 .ob-чертёж .ob-фор__ном,
+#rec9000000111 .ob-чертёж .ob-фор__ном,
+#rec9000000112 .ob-чертёж .ob-фор__ном,
+#rec9000000113 .ob-чертёж .ob-фор__ном,
+#rec9000000060 .ob-чертёж .ob-фор__ном,
+#rec9000000061 .ob-чертёж .ob-фор__ном,
+#rec9000000062 .ob-чертёж .ob-фор__ном{color:rgba(255,255,251,.10)}
+#rec9000000110 .ob-чертёж .ob-фор__c:nth-child(3) .ob-фор__ном,
+#rec9000000111 .ob-чертёж .ob-фор__c:nth-child(3) .ob-фор__ном,
+#rec9000000112 .ob-чертёж .ob-фор__c:nth-child(3) .ob-фор__ном,
+#rec9000000113 .ob-чертёж .ob-фор__c:nth-child(3) .ob-фор__ном,
+#rec9000000060 .ob-чертёж .ob-фор__c:nth-child(3) .ob-фор__ном,
+#rec9000000061 .ob-чертёж .ob-фор__c:nth-child(3) .ob-фор__ном,
+#rec9000000062 .ob-чертёж .ob-фор__c:nth-child(3) .ob-фор__ном{color:rgba(150,31,37,.5)}
 #rec9000000110 .building-seo-more-btn,
 #rec9000000111 .building-seo-more-btn,
 #rec9000000112 .building-seo-more-btn,
@@ -751,7 +884,103 @@ document.addEventListener('DOMContentLoaded',t_setvisRecs);}})();</script><scrip
 #rec9000000113 .building-seo-cta a *,
 #rec9000000060 .building-seo-cta a *,
 #rec9000000061 .building-seo-cta a *,
-#rec9000000062 .building-seo-cta a *{color:#fffffb!important}</style><style>
+#rec9000000062 .building-seo-cta a *{color:#fffffb!important}/* Бумага под всей страницей.
+   Мелкая сетка в 16 пикселей на весь экран мерцала и резала глаз —
+   убрана. Осталась одна крупная, вчетверо бледнее прежней, и та
+   растворяется книзу: у первого экрана она читается как лист,
+   дальше не мешает. */
+#allrecords{position:relative;background:#faf9f5}
+#allrecords:before{content:"";position:fixed;inset:0;z-index:0;
+  pointer-events:none;
+  background-image:
+    linear-gradient(rgba(49,58,57,.028) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(49,58,57,.028) 1px,transparent 1px);
+  background-size:96px 96px,96px 96px;
+  -webkit-mask-image:linear-gradient(180deg,#000 0%,rgba(0,0,0,.35) 70%,transparent 100%);
+  mask-image:linear-gradient(180deg,#000 0%,rgba(0,0,0,.35) 70%,transparent 100%)}
+#allrecords > *{position:relative;z-index:1}
+/* Наши секции пропускают лист насквозь. */
+#rec9000000110 ,
+#rec9000000111 ,
+#rec9000000112 ,
+#rec9000000113 ,
+#rec9000000060 ,
+#rec9000000061 ,
+#rec9000000062 {background:transparent}
+#rec9000000110 .ob-sec,
+#rec9000000111 .ob-sec,
+#rec9000000112 .ob-sec,
+#rec9000000113 .ob-sec,
+#rec9000000060 .ob-sec,
+#rec9000000061 .ob-sec,
+#rec9000000062 .ob-sec{background:transparent}
+/* Чертёжные уголки: две короткие красные засечки по краям секции. */
+#rec9000000110 .ob-sec .ob-wrap,
+#rec9000000111 .ob-sec .ob-wrap,
+#rec9000000112 .ob-sec .ob-wrap,
+#rec9000000113 .ob-sec .ob-wrap,
+#rec9000000060 .ob-sec .ob-wrap,
+#rec9000000061 .ob-sec .ob-wrap,
+#rec9000000062 .ob-sec .ob-wrap{position:relative}
+#rec9000000110 .ob-sec .ob-wrap:before,
+#rec9000000111 .ob-sec .ob-wrap:before,
+#rec9000000112 .ob-sec .ob-wrap:before,
+#rec9000000113 .ob-sec .ob-wrap:before,
+#rec9000000060 .ob-sec .ob-wrap:before,
+#rec9000000061 .ob-sec .ob-wrap:before,
+#rec9000000062 .ob-sec .ob-wrap:before{content:"";position:absolute;
+  left:-14px;top:-18px;width:22px;height:22px;
+  border-left:1.5px solid rgba(150,31,37,.30);
+  border-top:1.5px solid rgba(150,31,37,.30);pointer-events:none}
+#rec9000000110 .ob-sec .ob-wrap:after,
+#rec9000000111 .ob-sec .ob-wrap:after,
+#rec9000000112 .ob-sec .ob-wrap:after,
+#rec9000000113 .ob-sec .ob-wrap:after,
+#rec9000000060 .ob-sec .ob-wrap:after,
+#rec9000000061 .ob-sec .ob-wrap:after,
+#rec9000000062 .ob-sec .ob-wrap:after{content:"";position:absolute;
+  right:-14px;bottom:-18px;width:22px;height:22px;
+  border-right:1.5px solid rgba(150,31,37,.30);
+  border-bottom:1.5px solid rgba(150,31,37,.30);pointer-events:none}
+/* Размерная засечка перед надзаголовком — как выноска на чертеже. */
+#rec9000000110 .ob-label,
+#rec9000000111 .ob-label,
+#rec9000000112 .ob-label,
+#rec9000000113 .ob-label,
+#rec9000000060 .ob-label,
+#rec9000000061 .ob-label,
+#rec9000000062 .ob-label{position:relative;padding-left:34px}
+#rec9000000110 .ob-label:before,
+#rec9000000111 .ob-label:before,
+#rec9000000112 .ob-label:before,
+#rec9000000113 .ob-label:before,
+#rec9000000060 .ob-label:before,
+#rec9000000061 .ob-label:before,
+#rec9000000062 .ob-label:before{content:"";position:absolute;left:0;top:50%;
+  width:24px;height:1px;background:#961f25}
+#rec9000000110 .ob-label:after,
+#rec9000000111 .ob-label:after,
+#rec9000000112 .ob-label:after,
+#rec9000000113 .ob-label:after,
+#rec9000000060 .ob-label:after,
+#rec9000000061 .ob-label:after,
+#rec9000000062 .ob-label:after{content:"";position:absolute;left:0;top:50%;
+  width:1px;height:9px;margin-top:-4px;background:#961f25}
+/* На тёмном чертеже уголки и засечка светлые. */
+#rec9000000110 .ob-чертёж .ob-label:before,
+#rec9000000111 .ob-чертёж .ob-label:before,
+#rec9000000112 .ob-чертёж .ob-label:before,
+#rec9000000113 .ob-чертёж .ob-label:before,
+#rec9000000060 .ob-чертёж .ob-label:before,
+#rec9000000061 .ob-чертёж .ob-label:before,
+#rec9000000062 .ob-чертёж .ob-label:before{background:rgba(255,255,251,.6)}
+#rec9000000110 .ob-чертёж .ob-label:after,
+#rec9000000111 .ob-чертёж .ob-label:after,
+#rec9000000112 .ob-чертёж .ob-label:after,
+#rec9000000113 .ob-чертёж .ob-label:after,
+#rec9000000060 .ob-чертёж .ob-label:after,
+#rec9000000061 .ob-чертёж .ob-label:after,
+#rec9000000062 .ob-чертёж .ob-label:after{background:rgba(255,255,251,.6)}</style><style>
 .ob-sec{width:100%;padding:80px 20px 76px;box-sizing:border-box;background:#fffffb}
 .ob-sec *{box-sizing:border-box}
 .ob-sec.ob-sec--soft{background:#f7f9f8}
@@ -1097,16 +1326,18 @@ document.addEventListener('DOMContentLoaded',t_setvisRecs);}})();</script><scrip
           })();
           </script>
         </div></section></div></div><div id="rec9000000111" class="r t-rec" data-record-type="123" style="background-color:transparent"><div class="t123"><section class="ob-sec ob-sec--soft"><div class="ob-wrap">
-          <div class="ob-label">Форматы работы</div>
-          <h2 class="ob-h2">Три формата, от контура до тапочек</h2>
-          <p class="ob-lead">Форматы вложены друг в друга: каждый следующий —
-          это предыдущий плюс несколько работ. Ниже общая часть, а в карточках
-          только то, что формат добавляет.</p>
-          <div class="ob-общ">
-            <div class="ob-общ__k">В каждом формате</div>
-            <ul class="ob-общ__l"><li>Фундамент на забивных сваях</li><li>Каркас и стены</li><li>Кровля</li><li>Утеплитель</li><li>Окна и двери</li><li>Готовый фасад</li><li>Электрика</li><li>Сантехника</li><li>Отопление: водяной тёплый пол</li><li>Стяжка пола 5–7 см</li><li>Внутренние стены: имитация бруса</li><li>Потолки: имитация бруса или ГКЛ</li></ul>
+          <div class="ob-чертёж">
+            <span class="ob-свеч" aria-hidden="true"></span>
+            <div class="ob-label">Форматы работы</div>
+            <h2 class="ob-h2">Три ступени: от контура до тапочек</h2>
+            <p class="ob-lead">Форматы вложены друг в друга — каждый следующий
+            стоит на предыдущем. Внизу то, что входит в любой из них.</p>
+            <div class="ob-фор"><div class="ob-фор__c"><span class="ob-фор__ном">01</span><h3 class="ob-фор__n">Тёплый контур</h3><p class="ob-фор__d">дом, готовый к отделке</p><div class="ob-фор__k">Базовый состав</div><div class="ob-фор__l"></div><div class="ob-фор__b">Проект дома (АР + КР) в подарок</div><a class="ob-фор__g" href="#popup:building">Запросить смету</a></div><div class="ob-фор__c"><span class="ob-фор__ном">02</span><h3 class="ob-фор__n">Под ключ</h3><p class="ob-фор__d">дом, в котором можно жить</p><div class="ob-фор__k">Всё из предыдущего, плюс</div><ul class="ob-фор__l"><li>Покрасочные работы внутри и снаружи</li><li>Напольное покрытие</li><li>Санузел с оборудованием</li><li>Кухонный гарнитур</li><li>Личное подключение Александра Резниченко</li></ul><a class="ob-фор__g" href="#popup:building">Запросить смету</a></div><div class="ob-фор__c"><span class="ob-фор__ном">03</span><h3 class="ob-фор__n">Под заезд</h3><p class="ob-фор__d">дом, готовый принимать гостей</p><div class="ob-фор__k">Всё из предыдущего, плюс</div><ul class="ob-фор__l"><li>Мебель</li><li>Текстиль и декор</li><li>Подготовка к аренде</li><li>Формат «под тапочки»</li></ul><a class="ob-фор__g" href="#popup:building">Запросить смету</a></div></div>
+            <div class="ob-общ">
+              <div class="ob-общ__k">Фундамент: входит в каждый формат</div>
+              <ul class="ob-общ__l"><li>Фундамент на забивных сваях</li><li>Каркас и стены</li><li>Кровля</li><li>Утеплитель</li><li>Окна и двери</li><li>Готовый фасад</li><li>Электрика</li><li>Сантехника</li><li>Отопление: водяной тёплый пол</li><li>Стяжка пола 5–7 см</li><li>Внутренние стены: имитация бруса</li><li>Потолки: имитация бруса или ГКЛ</li></ul>
+            </div>
           </div>
-          <div class="ob-фор"><div class="ob-фор__c"><h3 class="ob-фор__n">Тёплый контур</h3><p class="ob-фор__d">дом, готовый к отделке</p><div class="ob-фор__k">Базовый состав</div><div class="ob-фор__l"></div><div class="ob-фор__b">Проект дома (АР + КР) в подарок</div><a class="ob-фор__g" href="#popup:building">Запросить смету</a></div><div class="ob-фор__c ob-фор__c--гл"><h3 class="ob-фор__n">Под ключ</h3><p class="ob-фор__d">дом, в котором можно жить</p><div class="ob-фор__k">Всё из предыдущего, плюс</div><ul class="ob-фор__l"><li>Покрасочные работы внутри и снаружи</li><li>Напольное покрытие</li><li>Санузел с оборудованием</li><li>Кухонный гарнитур</li><li>Личное подключение Александра Резниченко</li></ul><a class="ob-фор__g" href="#popup:building">Запросить смету</a></div><div class="ob-фор__c"><h3 class="ob-фор__n">Под заезд</h3><p class="ob-фор__d">дом, готовый принимать гостей</p><div class="ob-фор__k">Всё из предыдущего, плюс</div><ul class="ob-фор__l"><li>Мебель</li><li>Текстиль и декор</li><li>Подготовка к аренде</li><li>Формат «под тапочки»</li></ul><a class="ob-фор__g" href="#popup:building">Запросить смету</a></div></div>
         </div></section></div></div><div id="rec2358048531" class="r t-rec" style="--zoom: 1;" data-animationappear="off" data-record-type="396"> <!-- T396 --> <style>#rec2358048531 .t396__artboard{height:233px;background-color:#ffffff;}#rec2358048531 .t396__filter{height:233px;}#rec2358048531 .t396__carrier{height:233px;background-position:center center;background-attachment:scroll;background-size:cover;background-repeat:no-repeat;}@media screen and (max-width:1439px){#rec2358048531 .t396__artboard,#rec2358048531 .t396__filter,#rec2358048531 .t396__carrier{height:180px;}#rec2358048531 .t396__artboard{background-color:var(--uc-color-color-DVMuxWW6jT,#fffffb);background-image:none;}#rec2358048531 .t396__filter{}#rec2358048531 .t396__carrier{background-attachment:scroll;}}@media screen and (max-width:959px){#rec2358048531 .t396__artboard,#rec2358048531 .t396__filter,#rec2358048531 .t396__carrier{height:200px;}#rec2358048531 .t396__filter{}#rec2358048531 .t396__carrier{background-attachment:scroll;}}@media screen and (max-width:639px){#rec2358048531 .t396__artboard,#rec2358048531 .t396__filter,#rec2358048531 .t396__carrier{height:158px;}#rec2358048531 .t396__filter{}#rec2358048531 .t396__carrier{background-attachment:scroll;}}@media screen and (max-width:479px){#rec2358048531 .t396__artboard,#rec2358048531 .t396__filter,#rec2358048531 .t396__carrier{height:140px;}#rec2358048531 .t396__filter{}#rec2358048531 .t396__carrier{background-attachment:scroll;}}#rec2358048531 .tn-elem[data-elem-id="1767883038895000001"]{z-index:3;top:0px;left:calc(50% - 720px + 251px);width:auto;height:auto;}#rec2358048531 .tn-elem[data-elem-id="1767883038895000001"] .tn-atom{vertical-align:middle;white-space:nowrap;color:transparent;background-image:var(--uc-typo-color-ZcDjuR,linear-gradient(0.25turn,rgba(70,104,153,1) 0%,rgba(30,114,104,1) 100%));-webkit-background-clip:text;will-change:transform;font-size:var(--uc-typo-fontsize-ZcDjuR,64px);font-family:var(--uc-typo-fontfamily-ZcDjuR,EngraversGothic);line-height:var(--uc-typo-lineheight-ZcDjuR,1);font-weight:var(--uc-typo-fontweight-ZcDjuR,700);text-transform:var(--uc-typo-uppercase-ZcDjuR,uppercase);opacity:var(--uc-typo-opacity-ZcDjuR,100%);background-position:center center;border-width:var(--t396-borderwidth,0);border-style:var(--t396-borderstyle,solid);border-color:var(--t396-bordercolor,transparent);transition:background-color var(--t396-speedhover,0s) ease-in-out,color var(--t396-speedhover,0s) ease-in-out,border-color var(--t396-speedhover,0s) ease-in-out,box-shadow var(--t396-shadowshoverspeed,0.2s) ease-in-out;--t396-shadow-text-opacity:100%;text-shadow:var(--t396-shadow-text-x,0px) var(--t396-shadow-text-y,0px) var(--t396-shadow-text-blur,0px) rgba(var(--t396-shadow-text-color),var(--t396-shadow-text-opacity,100%));}@media screen and (max-width:1439px){#rec2358048531 .tn-elem[data-elem-id="1767883038895000001"]{display:table;top:0px;left:calc(50% - 480px + 113px);width:373px;height:auto;}#rec2358048531 .tn-elem[data-elem-id="1767883038895000001"] .tn-atom{vertical-align:middle;white-space:normal;background-size:cover;}}@media screen and (max-width:959px){#rec2358048531 .tn-elem[data-elem-id="1767883038895000001"]{display:table;top:0px;left:calc(50% - 320px + 20px);width:361px;height:auto;}#rec2358048531 .tn-elem[data-elem-id="1767883038895000001"] .tn-atom{white-space:normal;background-size:cover;}}@media screen and (max-width:639px){#rec2358048531 .tn-elem[data-elem-id="1767883038895000001"]{display:table;top:78px;left:calc(50% - 240px + 20px);width:281px;height:auto;}#rec2358048531 .tn-elem[data-elem-id="1767883038895000001"] .tn-atom{white-space:normal;background-size:cover;}}@media screen and (max-width:479px){#rec2358048531 .tn-elem[data-elem-id="1767883038895000001"]{display:table;top:0px;left:calc(50% - 160px + 15px);width:290px;height:auto;}#rec2358048531 .tn-elem[data-elem-id="1767883038895000001"] .tn-atom{white-space:normal;background-size:cover;}}#rec2358048531 .tn-elem[data-elem-id="1767883079477000002"]{color:#961f25;z-index:3;top:65px;left:calc(50% - 720px + 698px);width:auto;height:auto;}#rec2358048531 .tn-elem[data-elem-id="1767883079477000002"] .tn-atom{vertical-align:middle;white-space:nowrap;color:#961f25;font-size:64px;font-family:'EngraversGothic',Arial,sans-serif;line-height:1;font-weight:700;text-transform:uppercase;background-position:center center;border-width:var(--t396-borderwidth,0);border-style:var(--t396-borderstyle,solid);border-color:var(--t396-bordercolor,transparent);transition:background-color var(--t396-speedhover,0s) ease-in-out,color var(--t396-speedhover,0s) ease-in-out,border-color var(--t396-speedhover,0s) ease-in-out,box-shadow var(--t396-shadowshoverspeed,0.2s) ease-in-out;--t396-shadow-text-opacity:100%;text-shadow:var(--t396-shadow-text-x,0px) var(--t396-shadow-text-y,0px) var(--t396-shadow-text-blur,0px) rgba(var(--t396-shadow-text-color),var(--t396-shadow-text-opacity,100%));}@media screen and (max-width:1439px){#rec2358048531 .tn-elem[data-elem-id="1767883079477000002"]{display:table;top:50px;left:calc(50% - 480px + 463px);width:383px;height:auto;}#rec2358048531 .tn-elem[data-elem-id="1767883079477000002"] .tn-atom{vertical-align:middle;white-space:normal;font-size:50px;background-size:cover;}}@media screen and (max-width:959px){#rec2358048531 .tn-elem[data-elem-id="1767883079477000002"]{display:table;top:100px;left:calc(50% - 320px + 20px);width:383px;height:auto;}#rec2358048531 .tn-elem[data-elem-id="1767883079477000002"] .tn-atom{white-space:normal;background-size:cover;}}@media screen and (max-width:639px){#rec2358048531 .tn-elem[data-elem-id="1767883079477000002"]{display:table;top:0px;left:calc(50% - 240px + 20px);width:px;height:auto;}#rec2358048531 .tn-elem[data-elem-id="1767883079477000002"] .tn-atom{white-space:normal;font-size:40px;background-size:cover;}}@media screen and (max-width:479px){#rec2358048531 .tn-elem[data-elem-id="1767883079477000002"]{display:table;top:70px;left:calc(50% - 160px + 15px);width:290px;height:auto;}#rec2358048531 .tn-elem[data-elem-id="1767883079477000002"] .tn-atom{white-space:normal;font-size:35px;background-size:cover;}}</style> <div class="t396"> <div class="t396__artboard rendered t396__artboard_scale" data-artboard-recid="2358048531" data-artboard-screens="320,480,640,960,1440" data-artboard-height="233" data-artboard-valign="top" data-artboard-upscale="window" data-artboard-height-res-320="140" data-artboard-height-res-480="158" data-artboard-height-res-640="200" data-artboard-height-res-960="180" data-artboard-proxy-min-offset-top="0" data-artboard-proxy-min-height="233" data-artboard-proxy-max-height="233"> <div class="t396__carrier" data-artboard-recid="2358048531"></div> <div class="t396__filter" data-artboard-recid="2358048531"></div> <div class="t396__elem tn-elem tn-elem__23580485311767883038895000001" data-elem-id="1767883038895000001" data-elem-type="text" data-field-top-value="0" data-field-left-value="251" data-field-height-value="128" data-field-width-value="430" data-field-axisy-value="top" data-field-axisx-value="left" data-field-container-value="grid" data-field-topunits-value="px" data-field-leftunits-value="px" data-field-heightunits-value="px" data-field-widthunits-value="px" data-field-textfit-value="autowidth" data-field-fontsize-value="var(--uc-typo-fontsize-ZcDjuR,64px)" data-field-top-res-320-value="0" data-field-left-res-320-value="15" data-field-width-res-320-value="290" data-field-widthmode-res-320-value="fixed" data-field-top-res-480-value="78" data-field-left-res-480-value="20" data-field-width-res-480-value="281" data-field-top-res-640-value="0" data-field-left-res-640-value="20" data-field-width-res-640-value="361" data-field-top-res-960-value="0" data-field-left-res-960-value="113" data-field-height-res-960-value="64" data-field-width-res-960-value="373" data-field-container-res-960-value="grid" data-field-heightunits-res-960-value="px" data-field-textfit-res-960-value="autoheight" data-fields="top,left,width,height,container,axisx,axisy,widthunits,leftunits,topunits" style="top: 0px; left: 251px; width: auto; height: auto; zoom: 1;"> <h2 class="tn-atom" field="tn_text_1767883038895000001" style="transform-origin: center center; --lh-px: 64px; line-height: 64px;"><span style="color: rgb(150, 31, 37);">за нашими </span><br><span style="color: rgb(150, 31, 37);">плечами</span> <span style="color: var(--uc-color-color-cPYWVKrTiQfG,#313a39);">126+</span></h2> </div> <div class="t396__elem tn-elem tn-elem__23580485311767883079477000002" data-elem-id="1767883079477000002" data-elem-type="text" data-field-top-value="65" data-field-left-value="698" data-field-height-value="128" data-field-width-value="491" data-field-axisy-value="top" data-field-axisx-value="left" data-field-container-value="grid" data-field-topunits-value="px" data-field-leftunits-value="px" data-field-heightunits-value="px" data-field-widthunits-value="px" data-field-textfit-value="autowidth" data-field-fontsize-value="64" data-field-top-res-320-value="70" data-field-left-res-320-value="15" data-field-width-res-320-value="290" data-field-widthmode-res-320-value="fixed" data-field-fontsize-res-320-value="35" data-field-top-res-480-value="0" data-field-left-res-480-value="20" data-field-fontsize-res-480-value="40" data-field-top-res-640-value="100" data-field-left-res-640-value="20" data-field-width-res-640-value="383" data-field-top-res-960-value="50" data-field-left-res-960-value="463" data-field-height-res-960-value="64" data-field-width-res-960-value="383" data-field-container-res-960-value="grid" data-field-heightunits-res-960-value="px" data-field-textfit-res-960-value="autoheight" data-field-fontsize-res-960-value="50" data-fields="top,left,width,height,container,axisx,axisy,widthunits,leftunits,topunits" style="top: 65px; left: 698px; width: auto; height: auto; zoom: 1;"> <h2 class="tn-atom" field="tn_text_1767883079477000002" style="transform-origin: center center; --lh-px: 64px; line-height: 64px;">реализованных <br>проектов</h2> </div> <style class="t396__scale-style">.t-rec#rec2358048531 { overflow: visible; }#rec2358048531 .t396__artboard:not(.t396__artboard-flex),#rec2358048531 .t396__artboard:not(.t396__artboard-flex) .t396__carrier,#rec2358048531 .t396__artboard:not(.t396__artboard-flex) .t396__filter { width: 100vw !important; max-width: 100%;}#rec2358048531 .t396__carrier,#rec2358048531 .t396__filter,#rec2358048531 .t396__artboard {height: 233px !important;}</style></div> </div> <script>t_onFuncLoad('t396_initialScale',function() {t396_initialScale('2358048531');});t_onReady(function() {t_onFuncLoad('t396_init',function() {t396_init('2358048531');});});</script> <!-- /T396 --> </div> <div id="rec9000000061" class="r t-rec" data-record-type="123" style="background-color:transparent"><div class="t123"><section class="ob-sec ob-sec--soft"><div class="ob-wrap">
           <div class="ob-label">Концепции</div>
           <h2 class="ob-h2">Проекты, которые мы придумали</h2>
