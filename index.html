@@ -192,7 +192,7 @@ document.addEventListener('DOMContentLoaded',t_setvisRecs);}})();</script><style
 .ob-sec--bz .ob-label{color:rgba(255,255,251,.62)}
 .ob-sec--bz .ob-h2{color:#fffffb;background-image:none;-webkit-text-fill-color:#fffffb}
 .ob-sec--bz .ob-lead{color:rgba(255,255,251,.82)}
-.ob-sec--bz .ob-bz__num{border-left-color:#6c98bc}
+/* цвет черты — общий акцент страницы, отдельный оттенок не нужен */
 .ob-sec--bz .ob-bz__num b{color:#fffffb}
 .ob-sec--bz .ob-bz__num span{color:rgba(255,255,251,.62)}
 .ob-sec--bz .ob-bz__note{background:rgba(255,255,251,.10);color:rgba(255,255,251,.86)}
@@ -279,9 +279,12 @@ document.addEventListener('DOMContentLoaded',t_setvisRecs);}})();</script><style
 /* --c красит рамки и полоски, --ct — текст. У голубого маршрута текст
    темнее: #6c98bc на бумаге даёт 3.06 и мелкий шрифт им красить нельзя. */
 .ob-doors,.ob-panel{--c:#52719d;--ct:#52719d}
-[data-ob-door="nozem"],[data-ob-panel="nozem"]{--c:#6c98bc;--ct:#52719d}
+/* Пути различаются словами, а не цветом: три цвета в одном экране
+   читались разнобоем. Переменные оставлены — вернуть цвет пути
+   можно одной строкой. */
+[data-ob-door="nozem"],[data-ob-panel="nozem"]{--c:#52719d;--ct:#52719d}
 [data-ob-door="zem"],[data-ob-panel="zem"]{--c:#52719d;--ct:#52719d}
-[data-ob-door="work"],[data-ob-panel="work"]{--c:#1e7268;--ct:#1e7268}
+[data-ob-door="work"],[data-ob-panel="work"]{--c:#52719d;--ct:#52719d}
 
 /* ── три двери ── */
 /* Двери и панели живут в одной сетке. На широком экране панели идут
@@ -780,7 +783,7 @@ document.addEventListener('DOMContentLoaded',t_setvisRecs);}})();</script><style
    и чем занимается. Возвращаем карточку — кадр, название, одна строка
    про дело и ссылка на сайт. */
 .ob-pt{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px}
-.ob-pt__c{display:flex;flex-direction:column;overflow:hidden;text-decoration:none;
+.ob-pt__c{display:flex;flex-direction:column;overflow:hidden;text-decoration:none;color:inherit;
   border:1px solid rgba(49,58,57,.14);border-radius:20px;background:#fffffb;
   transition:border-color .18s, transform .18s}
 .ob-pt__c:hover{border-color:#52719d;transform:translateY(-3px)}
@@ -880,7 +883,7 @@ document.addEventListener('DOMContentLoaded',t_setvisRecs);}})();</script><style
 }
 
 .ob-cn{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
-.ob-cn__c{display:flex;flex-direction:column;overflow:hidden;text-decoration:none;
+.ob-cn__c{display:flex;flex-direction:column;overflow:hidden;text-decoration:none;color:inherit;
   border:1px solid rgba(49,58,57,.14);border-radius:24px;background:#fffffb;
   transition:border-color .18s, transform .18s}
 .ob-cn__c:hover{border-color:#52719d;transform:translateY(-3px)}
@@ -1710,13 +1713,13 @@ var tildaMode=document.querySelector('.t-records').getAttribute('data-tilda-mode
                 <span class="ob-soc__a">t.me/openbaza</span></span>
               <span class="ob-soc__g">&#8594;</span>
             </a>            <a class="ob-soc__c" href="https://max.ru/join/bATDWxSUu7dPxEyafZFkBu_St0pPuv6TNSYCXZsAot8" target="_blank" rel="noopener"
-               style="--c:#1e7268">
+               style="--c:#52719d">
               <span class="ob-soc__d"></span>
               <span class="ob-soc__t"><span class="ob-soc__n">MAX</span>
                 <span class="ob-soc__a">сообщество в MAX</span></span>
               <span class="ob-soc__g">&#8594;</span>
             </a>            <a class="ob-soc__c" href="https://vk.ru/open_bazu" target="_blank" rel="noopener"
-               style="--c:#6c98bc">
+               style="--c:#52719d">
               <span class="ob-soc__d"></span>
               <span class="ob-soc__t"><span class="ob-soc__n">ВКонтакте</span>
                 <span class="ob-soc__a">vk.ru/open_bazu</span></span>

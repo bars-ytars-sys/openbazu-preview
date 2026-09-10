@@ -166,9 +166,12 @@ body{font-family:'TildaSans',Arial,sans-serif}
 /* --c красит рамки и полоски, --ct — текст. У голубого маршрута текст
    темнее: #6c98bc на бумаге даёт 3.06 и мелкий шрифт им красить нельзя. */
 .ob-doors,.ob-panel{--c:#52719d;--ct:#52719d}
-[data-ob-door="nozem"],[data-ob-panel="nozem"]{--c:#6c98bc;--ct:#52719d}
+/* Пути различаются словами, а не цветом: три цвета в одном экране
+   читались разнобоем. Переменные оставлены — вернуть цвет пути
+   можно одной строкой. */
+[data-ob-door="nozem"],[data-ob-panel="nozem"]{--c:#52719d;--ct:#52719d}
 [data-ob-door="zem"],[data-ob-panel="zem"]{--c:#52719d;--ct:#52719d}
-[data-ob-door="work"],[data-ob-panel="work"]{--c:#1e7268;--ct:#1e7268}
+[data-ob-door="work"],[data-ob-panel="work"]{--c:#52719d;--ct:#52719d}
 
 /* ── три двери ── */
 /* Двери и панели живут в одной сетке. На широком экране панели идут
@@ -455,7 +458,7 @@ body{font-family:'TildaSans',Arial,sans-serif}
 .ob-mat__row--hl:hover{background:rgba(108,152,188,.16)}
 
 .ob-mat__tag{display:inline-block;margin-top:6px;padding:3px 10px;border-radius:20px;
-  background:rgba(30,114,104,.07);color:#1e7268;font-family:var(--t-text-font,Arial);
+  background:rgba(82,113,157,.08);color:#52719d;font-family:var(--t-text-font,Arial);
   font-size:12px;font-weight:600}
 /* На телефоне 12px в плашке уже за гранью читаемости. */
 @media screen and (max-width:640px){.ob-mat__tag{font-size:13px;padding:4px 11px}}
@@ -493,7 +496,7 @@ body{font-family:'TildaSans',Arial,sans-serif}
 .ob-sec--bz .ob-label{color:rgba(255,255,251,.62)}
 .ob-sec--bz .ob-h2{color:#fffffb;background-image:none;-webkit-text-fill-color:#fffffb}
 .ob-sec--bz .ob-lead{color:rgba(255,255,251,.82)}
-.ob-sec--bz .ob-bz__num{border-left-color:#6c98bc}
+/* цвет черты — общий акцент страницы, отдельный оттенок не нужен */
 .ob-sec--bz .ob-bz__num b{color:#fffffb}
 .ob-sec--bz .ob-bz__num span{color:rgba(255,255,251,.62)}
 .ob-sec--bz .ob-bz__note{background:rgba(255,255,251,.10);color:rgba(255,255,251,.86)}
@@ -784,7 +787,7 @@ body{font-family:'TildaSans',Arial,sans-serif}
    и чем занимается. Возвращаем карточку — кадр, название, одна строка
    про дело и ссылка на сайт. */
 .ob-pt{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px}
-.ob-pt__c{display:flex;flex-direction:column;overflow:hidden;text-decoration:none;
+.ob-pt__c{display:flex;flex-direction:column;overflow:hidden;text-decoration:none;color:inherit;
   border:1px solid rgba(49,58,57,.14);border-radius:20px;background:#fffffb;
   transition:border-color .18s, transform .18s}
 .ob-pt__c:hover{border-color:#52719d;transform:translateY(-3px)}
