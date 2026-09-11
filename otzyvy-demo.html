@@ -417,6 +417,15 @@ a,button,[role="button"],input,select,textarea,label{
   textarea, select{font-size:16px!important}
 }
 
+/* ── общая мелочь по сайту ───────────────────────────────────────
+   Блок rec2463520171 в подвале — одна картинка на 936 пикселей
+   «Мы есть в Telegram, VK и MAX». На главной её давно заменила
+   строка из четырёх карточек, а на остальных восьми страницах она
+   так и висит: почти экран высотой, без текста и без ссылок.
+   Ссылки на сообщества есть в самом подвале, дублировать нечем. */
+/* Свой стиль блок объявляет ниже нашего, поэтому нужен вес. */
+#rec2463520171{display:none!important}
+
 /* ── маки ────────────────────────────────────────────────────────
    На macOS шрифты рисуются толще, чем задумано: подписи и метки
    выглядят жирнее, чем на той же странице под Windows. Сглаживание
@@ -480,18 +489,14 @@ body, .t-text, [class*="ob-"]{-webkit-font-smoothing:antialiased;
   .t778__descr, .t778__price-value, .t778__price-currency,
   .t778__title{font-size:14px!important;line-height:1.4!important}
 
-  /* Точки под лентой домов были 8×8 — палец мажет. Кнопка
-     становится 44×44, а сама точка рисуется фоном по центру:
-     на вид ничего не изменилось, попадать стало можно. */
-  .ob-дом__т{gap:0}
-  .ob-дом__т button{width:44px!important;height:44px!important;
-    border-radius:0!important;background:none!important;
-    display:grid;place-items:center}
-  .ob-дом__т button:before{content:"";width:8px;height:8px;
-    border-radius:50%;background:rgba(255,255,251,.5);
-    transition:background .3s,width .3s}
-  .ob-дом__т button.тек:before{background:#fffffb;width:18px;
-    border-radius:5px}
+  /* Точки под лентой домов — 8×8, палец мажет. Растянуть саму
+     кнопку до 44px нельзя: ряд точек становится втрое шире и наезжает
+     на плашку «Визуализация». Поэтому кнопка остаётся прежней,
+     а зона нажатия расширяется невидимым полем вокруг неё. */
+  .ob-дом__т button{position:relative}
+  .ob-дом__т button:after{content:"";position:absolute;
+    left:50%;top:50%;transform:translate(-50%,-50%);
+    width:40px;height:40px}
 }
 
 @supports (height: 100dvh){
