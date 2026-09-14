@@ -459,6 +459,96 @@ document.addEventListener('DOMContentLoaded',t_setvisRecs);}})();</script><scrip
   .ob-глава--ш .ob-глава__ф:after{background:linear-gradient(0deg,rgba(49,58,57,.97) 0%,rgba(49,58,57,.93) 62%,rgba(49,58,57,.35) 100%)}
   .ob-итог-плашка{padding:44px 18px 40px;border-radius:24px}
 }
+
+/* ═══ v6 («давай лучше сделаем») ═══ */
+/* первый экран: высокий кадр, приглашение наезжает на его левый край */
+.ob-кл{grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);gap:90px}
+.ob-кл__кадр{overflow:visible;aspect-ratio:5/6;box-shadow:none;border-radius:0}
+.ob-кл__кадр > img{border-radius:32px;box-shadow:0 40px 80px rgba(49,58,57,.22)}
+.ob-кл__кадр .ob-илл{top:18px;right:18px}
+.ob-кл__кадр .ob-пригл{left:-48px;right:auto;bottom:44px;width:360px;padding:26px 26px 20px;border-radius:22px;
+  background:rgba(49,58,57,.9);box-shadow:0 24px 50px rgba(49,58,57,.3)}
+.ob-кл__кадр .ob-места{grid-template-columns:repeat(5,1fr);gap:8px}
+.ob-кл__кадр .ob-места span{font-size:14px}
+.ob-кл__кадр .ob-пригл__з{font-size:26px}
+
+.ob-кл__факты{grid-template-columns:repeat(3,minmax(0,auto))}
+.ob-кл__ф{padding-right:22px}
+.ob-кл__ф + .ob-кл__ф{padding-left:22px}
+.ob-кл__ф b{font-size:22px}
+
+/* главы плотнее */
+.ob-глава{padding:56px 0;gap:60px}
+.ob-плитки{padding-bottom:56px}
+.ob-плитки--одна{padding-top:56px}
+
+/* ── с какого этапа можно прийти ───────────────────────────────────── */
+#rec9000000183 .ob-sec{padding-top:40px;padding-bottom:70px}
+.ob-этапы__шапка{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:16px 40px;
+  margin-bottom:40px}
+.ob-этапы__шапка .ob-h2{margin:0}
+.ob-этапы__л{margin:0;max-width:44ch;font-family:var(--t-text-font,'TildaSans',Arial,sans-serif);font-size:18px;line-height:1.55;color:rgba(49,58,57,.8)}
+.ob-этапы{position:relative;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;counter-reset:эт}
+.ob-этапы:before{content:"";position:absolute;left:40px;right:40px;top:40px;height:2px;
+  background:linear-gradient(90deg,#52719d 0 50%,transparent 50%) 0 0/16px 2px repeat-x}
+.ob-этап{position:relative;display:flex;flex-direction:column;padding:0 0 4px;text-decoration:none;color:inherit}
+.ob-этап__точка{position:relative;z-index:1;width:80px;height:80px;margin-bottom:22px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;background:#fffffb;border:2px solid #52719d;font-family:var(--uc-typo-fontfamily-ZcDjuR,EngraversGothic);font-variant-numeric:lining-nums tabular-nums;
+  font-size:26px;color:#52719d;transition:background .25s,color .25s,transform .25s}
+.ob-этап__к{display:block;flex:1;padding:24px 24px 26px;border-radius:24px;border:1px solid rgba(49,58,57,.12);background:#fffffb;
+  transition:border-color .25s,transform .25s,box-shadow .25s}
+.ob-этап__т{display:block;margin:0 0 10px;font-family:var(--uc-typo-fontfamily-ZcDjuR,EngraversGothic);font-size:24px;line-height:1.08;text-transform:uppercase;color:#313a39}
+.ob-этап__д{display:block;margin:0 0 18px;font-family:var(--t-text-font,'TildaSans',Arial,sans-serif);font-size:16px;line-height:1.5;color:rgba(49,58,57,.78)}
+.ob-этап__go{font-family:var(--t-text-font,'TildaSans',Arial,sans-serif);font-size:15px;font-weight:600;color:#52719d}
+.ob-этап:hover .ob-этап__точка{background:#52719d;color:#fffffb;transform:scale(1.06)}
+.ob-этап:hover .ob-этап__к{border-color:#52719d;transform:translateY(-4px);box-shadow:0 20px 40px rgba(49,58,57,.1)}
+.ob-этапы__свой{margin:22px 0 0;font-family:var(--t-text-font,'TildaSans',Arial,sans-serif);font-size:16px;color:rgba(49,58,57,.72)}
+.ob-этапы__свой a{color:#52719d;font-weight:600}
+
+/* ── итог: три билета ──────────────────────────────────────────────── */
+.ob-билеты{display:flex;flex-wrap:wrap;justify-content:center;align-items:stretch;gap:14px;margin:0 auto 26px}
+.ob-билет{position:relative;min-width:190px;padding:18px 26px 16px;border-radius:14px;text-align:left;
+  background:rgba(255,255,251,.07);border:1px dashed rgba(255,255,251,.35)}
+.ob-билет:before,.ob-билет:after{content:"";position:absolute;top:50%;width:16px;height:16px;margin-top:-8px;
+  border-radius:50%;background:#313a39}
+.ob-билет:before{left:-9px}
+.ob-билет:after{right:-9px}
+.ob-билет span{display:block;font-family:var(--t-text-font,'TildaSans',Arial,sans-serif);font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,251,.72)}
+.ob-билет b{display:block;margin-top:6px;font-family:var(--uc-typo-fontfamily-ZcDjuR,EngraversGothic);font-variant-numeric:lining-nums tabular-nums;font-size:26px;color:#fffffb}
+.ob-билеты__рав{align-self:center;font-family:var(--uc-typo-fontfamily-ZcDjuR,EngraversGothic);font-size:26px;color:rgba(255,255,251,.6)}
+.ob-билет--всего{background:#fffffb;border:0}
+.ob-билет--всего span{color:rgba(49,58,57,.7)}
+.ob-билет--всего b{color:#313a39}
+.ob-билет--всего:before,.ob-билет--всего:after{display:none}
+
+@media screen and (max-width:1100px){
+  .ob-этапы{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:34px}
+  .ob-этапы:before{display:none}
+}
+@media screen and (max-width:960px){
+  .ob-кл{grid-template-columns:1fr;gap:34px}
+  .ob-глава,.ob-глава--п{grid-template-columns:1fr;gap:30px;padding:46px 0}
+  .ob-кл__кадр{aspect-ratio:4/5}
+  .ob-кл__кадр .ob-пригл{left:14px;right:14px;width:auto;bottom:14px}
+}
+@media screen and (max-width:640px){
+  .ob-этапы{grid-template-columns:1fr;row-gap:14px}
+  .ob-этап{display:grid;grid-template-columns:56px minmax(0,1fr);gap:14px;align-items:start}
+  .ob-этап__точка{width:56px;height:56px;margin:0;font-size:20px}
+  .ob-этап__к{padding:18px 18px 20px}
+  .ob-этап__т{font-size:20px}
+  .ob-билет{min-width:0;flex:1 1 40%;padding:14px 18px 12px}
+  .ob-билет b{font-size:22px}
+  .ob-билеты__рав{display:none}
+  .ob-кл__кадр .ob-места{grid-template-columns:repeat(5,1fr)}
+  .ob-кл__кадр{aspect-ratio:3/4}
+  .ob-кл__факты{grid-template-columns:1fr 1fr}
+  .ob-кл__ф{padding:14px 12px 14px 0}
+  .ob-кл__ф + .ob-кл__ф{padding-left:14px}
+  .ob-кл__ф:nth-child(2){border-left:0;padding-left:0}
+  .ob-кл__ф b{font-size:21px}
+  .ob-глава,.ob-глава--п{padding:40px 0;gap:24px}
+}
 @media (prefers-reduced-motion:reduce){
   .ob-кл__фон img{animation:none}
   .ob-ритм__д i,.ob-ритм__д--линия:after,.ob-места span,.ob-глава__ф img{transition:none;transform:none}
@@ -485,16 +575,20 @@ document.addEventListener('DOMContentLoaded',t_setvisRecs);}})();</script><scrip
   #allrecords:after{width:760px;height:760px;left:-460px;top:1900px}}
 #rec9000000180,
 #rec9000000181,
+#rec9000000183,
 #rec9000000182{background:transparent}
 #rec9000000180 .ob-sec,
 #rec9000000181 .ob-sec,
+#rec9000000183 .ob-sec,
 #rec9000000182 .ob-sec{background:transparent}
 #rec9000000180,#rec9000000181,#rec9000000182{color:#313a39}
 #rec9000000180 .ob-label,
 #rec9000000181 .ob-label,
+#rec9000000183 .ob-label,
 #rec9000000182 .ob-label{color:#52719d}
 #rec9000000180 .ob-h2,
 #rec9000000181 .ob-h2,
+#rec9000000183 .ob-h2,
 #rec9000000182 .ob-h2{background-image:none!important;color:#313a39!important;
   -webkit-text-fill-color:#313a39!important}</style><style>/* подвал в графите */
 #rec1855638161 .t396__artboard,
@@ -681,14 +775,31 @@ body, .t-text, [class*="ob-"]{-webkit-font-smoothing:antialiased;
             <h2 class="ob-h2">Что входит в программу?</h2>
             <div class="ob-ритм" aria-label="Ритм программы на три месяца"><div class="ob-ритм__шапка"><span>Ритм</span><span>Месяц 1</span><span>Месяц 2</span><span>Месяц 3</span></div><div class="ob-ритм__р"><div class="ob-ритм__н">Telegram‑канал<small>всё время</small></div><div class="ob-ритм__д ob-ритм__д--линия"></div></div><div class="ob-ритм__р"><div class="ob-ритм__н">Zoom‑разбор<small>каждые две недели</small></div><div class="ob-ритм__д"><i style="left:8.33%;transition-delay:0ms"></i><i style="left:25.00%;transition-delay:120ms"></i><i style="left:41.67%;transition-delay:240ms"></i><i style="left:58.33%;transition-delay:360ms"></i><i style="left:75.00%;transition-delay:480ms"></i><i style="left:91.67%;transition-delay:600ms"></i></div></div><div class="ob-ритм__р"><div class="ob-ритм__н">Офлайн‑встреча<small>раз в месяц</small></div><div class="ob-ритм__д"><i style="left:16.67%;transition-delay:0ms"></i><i style="left:50.00%;transition-delay:120ms"></i><i style="left:83.33%;transition-delay:240ms"></i></div></div></div>
           </div>
-          <div class="ob-глава ob-глава--л"><figure class="ob-глава__ф"><img src="assets/club3-plan.webp" alt="Иллюстрация: формат поэтапной работы" loading="lazy" decoding="async"><span class="ob-илл">Иллюстрация</span></figure><div class="ob-глава__текст"><span class="ob-глава__н">01</span><p class="ob-глава__т">Формат поэтапной работы</p><p class="ob-глава__д">Весь объём информации подаётся постепенно, чтобы участники успевали внедрять знания в свои проекты. Акцент на практике: каждое занятие связано с конкретными задачами, которые решают участники.</p></div></div><div class="ob-плитки"><div class="ob-плитка"><div class="ob-плитка__з"><svg viewBox="0 0 24 24"><path d="M21 4 3 11l6 2 2 6 3-4 5 4z"/><path d="m9 13 8-6"/></svg></div><div><span class="ob-плитка__н">02</span><p class="ob-плитка__т">Закрытый Telegram‑канал</p><p class="ob-плитка__д">Доступ для обмена опытом, вопросов и ответов. Команда «Открыть базу .рф» помогает оперативно решать проблемы.</p></div></div><div class="ob-плитка"><div class="ob-плитка__з"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="12" height="12" rx="3"/><path d="m15 10 6-3v10l-6-3"/></svg></div><div><span class="ob-плитка__н">03</span><p class="ob-плитка__т">Регулярные Zoom‑встречи</p><p class="ob-плитка__д">Каждые две недели проводится общий онлайн‑разбор, где участники получают обратную связь по своим проектам и обсуждают текущие вопросы.</p></div></div></div><div class="ob-глава ob-глава--п"><figure class="ob-глава__ф"><img src="assets/club3-vyezd.webp" alt="Иллюстрация: выезды и живые разборы" loading="lazy" decoding="async"><span class="ob-илл">Иллюстрация</span></figure><div class="ob-глава__текст"><span class="ob-глава__н">04</span><p class="ob-глава__т">Выезды и живые разборы</p><p class="ob-глава__д">В рамках программы организуются поездки на действующие базы отдыха (в частности, в «Берёзовую рощу» и на объекты участников). Весь клуб выезжает и анализирует реальные проекты: планировку территории, логистику, дома, бани, чаны, инфраструктуру, ошибки и сильные стороны. Эти выезды помогают участникам видеть лучшие решения и избегать распространённых ошибок.</p></div></div><div class="ob-глава ob-глава--л"><figure class="ob-глава__ф"><img src="assets/club3-syomka.webp" alt="Иллюстрация: участие в съёмках" loading="lazy" decoding="async"><span class="ob-илл">Иллюстрация</span></figure><div class="ob-глава__текст"><span class="ob-глава__н">05</span><p class="ob-глава__т">Участие в съёмках</p><p class="ob-глава__д">Во время выездов проводятся записи для канала Александра Резниченко. Участники могут попасть в одну‑две съёмки со своим проектом, получить публичный разбор и использовать видео как маркетинговый актив.</p></div></div><div class="ob-плитки ob-плитки--одна"><div class="ob-плитка"><div class="ob-плитка__з"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><circle cx="17" cy="9" r="2.5"/><path d="M15.5 14.2A5 5 0 0 1 21 19"/></svg></div><div><span class="ob-плитка__н">06</span><p class="ob-плитка__т">Встречи с экспертами</p><p class="ob-плитка__д">Юристы, кадастровые инженеры, проектировщики, специалисты по рекламе и грантам проводят тематические сессии. Каждая встреча связана с практической задачей участников.</p></div></div></div><div class="ob-глава ob-глава--ш"><figure class="ob-глава__ф"><img src="assets/club3-banya.webp" alt="Иллюстрация: офлайн‑мероприятия" loading="lazy" decoding="async"><span class="ob-илл">Иллюстрация</span></figure><div class="ob-глава__текст"><span class="ob-глава__н">07</span><p class="ob-глава__т">Офлайн‑мероприятия</p><p class="ob-глава__д">Раз в месяц клуб собирается на офлайн‑встречу (мастермайнд, стратегическая сессия или совместный отдых — например, баня). В стоимость программы входит участие в этих мероприятиях (участник оплачивает только дорогу до места).</p></div></div></div></section></div></div><div id="rec9000000182" class="r t-rec" data-record-type="123" style="background-color:transparent"><div class="t123"><section class="ob-sec"><div class="ob-wrap">
+          <div class="ob-глава ob-глава--л"><figure class="ob-глава__ф"><img src="assets/club3-plan.webp" alt="Иллюстрация: формат поэтапной работы" loading="lazy" decoding="async"><span class="ob-илл">Иллюстрация</span></figure><div class="ob-глава__текст"><span class="ob-глава__н">01</span><p class="ob-глава__т">Формат поэтапной работы</p><p class="ob-глава__д">Весь объём информации подаётся постепенно, чтобы участники успевали внедрять знания в свои проекты. Акцент на практике: каждое занятие связано с конкретными задачами, которые решают участники.</p></div></div><div class="ob-плитки"><div class="ob-плитка"><div class="ob-плитка__з"><svg viewBox="0 0 24 24"><path d="M21 4 3 11l6 2 2 6 3-4 5 4z"/><path d="m9 13 8-6"/></svg></div><div><span class="ob-плитка__н">02</span><p class="ob-плитка__т">Закрытый Telegram‑канал</p><p class="ob-плитка__д">Доступ для обмена опытом, вопросов и ответов. Команда «Открыть базу .рф» помогает оперативно решать проблемы.</p></div></div><div class="ob-плитка"><div class="ob-плитка__з"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="12" height="12" rx="3"/><path d="m15 10 6-3v10l-6-3"/></svg></div><div><span class="ob-плитка__н">03</span><p class="ob-плитка__т">Регулярные Zoom‑встречи</p><p class="ob-плитка__д">Каждые две недели проводится общий онлайн‑разбор, где участники получают обратную связь по своим проектам и обсуждают текущие вопросы.</p></div></div></div><div class="ob-глава ob-глава--п"><figure class="ob-глава__ф"><img src="assets/club3-vyezd.webp" alt="Иллюстрация: выезды и живые разборы" loading="lazy" decoding="async"><span class="ob-илл">Иллюстрация</span></figure><div class="ob-глава__текст"><span class="ob-глава__н">04</span><p class="ob-глава__т">Выезды и живые разборы</p><p class="ob-глава__д">В рамках программы организуются поездки на действующие базы отдыха (в частности, в «Берёзовую рощу» и на объекты участников). Весь клуб выезжает и анализирует реальные проекты: планировку территории, логистику, дома, бани, чаны, инфраструктуру, ошибки и сильные стороны. Эти выезды помогают участникам видеть лучшие решения и избегать распространённых ошибок.</p></div></div><div class="ob-глава ob-глава--л"><figure class="ob-глава__ф"><img src="assets/club3-syomka.webp" alt="Иллюстрация: участие в съёмках" loading="lazy" decoding="async"><span class="ob-илл">Иллюстрация</span></figure><div class="ob-глава__текст"><span class="ob-глава__н">05</span><p class="ob-глава__т">Участие в съёмках</p><p class="ob-глава__д">Во время выездов проводятся записи для канала Александра Резниченко. Участники могут попасть в одну‑две съёмки со своим проектом, получить публичный разбор и использовать видео как маркетинговый актив.</p></div></div><div class="ob-плитки ob-плитки--одна"><div class="ob-плитка"><div class="ob-плитка__з"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><circle cx="17" cy="9" r="2.5"/><path d="M15.5 14.2A5 5 0 0 1 21 19"/></svg></div><div><span class="ob-плитка__н">06</span><p class="ob-плитка__т">Встречи с экспертами</p><p class="ob-плитка__д">Юристы, кадастровые инженеры, проектировщики, специалисты по рекламе и грантам проводят тематические сессии. Каждая встреча связана с практической задачей участников.</p></div></div></div><div class="ob-глава ob-глава--ш"><figure class="ob-глава__ф"><img src="assets/club3-banya.webp" alt="Иллюстрация: офлайн‑мероприятия" loading="lazy" decoding="async"><span class="ob-илл">Иллюстрация</span></figure><div class="ob-глава__текст"><span class="ob-глава__н">07</span><p class="ob-глава__т">Офлайн‑мероприятия</p><p class="ob-глава__д">Раз в месяц клуб собирается на офлайн‑встречу (мастермайнд, стратегическая сессия или совместный отдых — например, баня). В стоимость программы входит участие в этих мероприятиях (участник оплачивает только дорогу до места).</p></div></div></div></section></div></div><div id="rec9000000183" class="r t-rec" data-record-type="123" style="background-color:transparent"><div class="t123"><section class="ob-sec"><div class="ob-wrap">
+          <div class="ob-этапы__шапка">
+            <div>
+              <div class="ob-label">Для кого</div>
+              <h2 class="ob-h2">С какого этапа можно прийти</h2>
+            </div>
+            <p class="ob-этапы__л">Клуб помогает пройти путь от выбора участка и проектирования
+              до управления действующей базой отдыха.</p>
+          </div>
+          <div class="ob-этапы"><a class="ob-этап" href="#popup:zayavka-club"><span class="ob-этап__точка">01</span><span class="ob-этап__к"><span class="ob-этап__т">Есть идея</span><span class="ob-этап__д">разработка концепции</span><span class="ob-этап__go">Оставить заявку &#8594;</span></span></a><a class="ob-этап" href="#popup:zayavka-club"><span class="ob-этап__точка">02</span><span class="ob-этап__к"><span class="ob-этап__т">Есть участок</span><span class="ob-этап__д">выбор участка, проверка юридической чистоты</span><span class="ob-этап__go">Оставить заявку &#8594;</span></span></a><a class="ob-этап" href="#popup:zayavka-club"><span class="ob-этап__точка">03</span><span class="ob-этап__к"><span class="ob-этап__т">Есть готовый проект</span><span class="ob-этап__д">проектирование, подбор подрядчиков</span><span class="ob-этап__go">Оставить заявку &#8594;</span></span></a><a class="ob-этап" href="#popup:zayavka-club"><span class="ob-этап__точка">04</span><span class="ob-этап__к"><span class="ob-этап__т">Есть действующая база</span><span class="ob-этап__д">маркетинг и управление готовым объектом</span><span class="ob-этап__go">Оставить заявку &#8594;</span></span></a></div>
+          <p class="ob-этапы__свой">Другая ситуация? В заявке есть вариант «Свой вариант» —
+            <a href="#popup:zayavka-club">оставить заявку</a>.</p></div></section></div></div><div id="rec9000000182" class="r t-rec" data-record-type="123" style="background-color:transparent"><div class="t123"><section class="ob-sec"><div class="ob-wrap">
           <div class="ob-итог-плашка"><div class="ob-итог__фон"><img src="assets/club3-noch.webp" alt="Иллюстрация: база отдыха ночью сверху" loading="lazy" decoding="async"><span class="ob-итог__пометка">Иллюстрация</span></div>
           <div class="ob-итог">
             <p class="ob-итог__над">Итог трёх месяцев</p>
             <h2>В результате вы получаете</h2>
             <div class="ob-итог__сп"><div class="ob-итог__п"><i>01</i><b>Полное сопровождение проекта</b><span>помощь в выборе участка, проверке юридической чистоты, разработке концепции, проектировании, подборе подрядчиков, маркетинге и управлении готовым объектом</span></div><div class="ob-итог__п"><i>02</i><b>Общение с экспертами и сообществом</b><span>участники получают живой диалог с теми, кто уже прошёл путь создания баз отдыха, и могут обмениваться опытом</span></div><div class="ob-итог__п"><i>03</i><b>Актуальные документы и материалы</b><span>финансовые модели, регламенты, чек‑листы, примеры договоров и техзаданий</span></div><div class="ob-итог__п"><i>04</i><b>Продвижение проекта</b><span>возможность попасть в публичные разборы и медиа‑форматы (канал Александра Резниченко), что повышает узнаваемость и доверие</span></div></div>
             <div class="ob-итог__низ">
-              <div class="ob-итог__ц"><b>200 000 ₽ в месяц</b>всего 600 000 ₽ за три месяца</div>
+              <div class="ob-билеты" aria-label="Стоимость: 200 000 ₽ в месяц, всего 600 000 ₽ за три месяца">
+                <div class="ob-билет"><span>Месяц 1</span><b>200 000 ₽</b></div>
+                <div class="ob-билет"><span>Месяц 2</span><b>200 000 ₽</b></div>
+                <div class="ob-билет"><span>Месяц 3</span><b>200 000 ₽</b></div>
+                <span class="ob-билеты__рав">=</span>
+                <div class="ob-билет ob-билет--всего"><span>Всего</span><b>600 000 ₽</b></div>
+              </div>
               <a class="ob-кл__b" href="#popup:zayavka-club">Оставить заявку</a>
             </div>
           </div></div><script>(function(){
