@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Форма заявки — варианты</title>
+<link rel="stylesheet" href="https://static.tildacdn.com/css/fonts-tildasans.css">
+<style>
+@font-face{font-family:"EngraversGothic";src:url("https://static.tildacdn.com/tild3861-6239-4636-b763-633732666261/EngraversGothic.woff") format("woff");font-weight:400;font-display:swap}
+@font-face{font-family:"EngraversGothic";src:url("https://static.tildacdn.com/tild6263-6433-4564-b031-653262643136/EngraversGothic-Bold.woff") format("woff");font-weight:700;font-display:swap}
+/* Демо: три варианта общей формы заявки (#popup:zayavka). Поля и тексты — как на живом сайте 19.09.
+   Исправлены только опечатки «Заяка» и «хауса». Слово «бесплатно» убрано (вопрос 10 к заказчику). */
+:root{--синий:#52719d;--голубой:#6c98bc;--графит:#313a39;--бумага:#fffffb;--линия:rgba(49,58,57,.18);
+  --заг:'EngraversGothic','TildaSans',Arial,sans-serif;--текст:'TildaSans',Arial,sans-serif}
+*{box-sizing:border-box}
+/* #e9eef3 — только подложка страницы демо-превью, в блок Тильды не переносится */
+body{margin:0;background:#e9eef3;color:var(--графит);font:16px/1.5 var(--текст)}
+.шапка{max-width:1180px;margin:0 auto;padding:40px 20px 8px}
+.шапка h1{font-family:var(--заг);text-transform:uppercase;font-size:30px;line-height:1.1;margin:0 0 10px;color:var(--синий)}
+.шапка p{margin:0 0 6px;max-width:760px;color:rgba(49,58,57,.8)}
+.варианты{max-width:1180px;margin:0 auto;padding:10px 20px 60px;display:grid;gap:44px}
+.вар{display:grid;gap:14px}
+.вар__метка{display:flex;gap:12px;align-items:baseline;flex-wrap:wrap}
+.вар__метка b{font-family:var(--заг);text-transform:uppercase;font-size:20px;color:var(--графит)}
+.вар__метка span{color:rgba(49,58,57,.7);font-size:15px}
+.сцена{background:rgba(49,58,57,.55);border-radius:34px;padding:40px 20px;display:flex;justify-content:center}
+h2{font-family:var(--заг);text-transform:uppercase;font-weight:700;line-height:1.1;margin:0}
+.поле{display:grid;gap:6px}
+.поле label,.поле .подп{font-size:13px;letter-spacing:.06em;text-transform:uppercase;font-weight:600;color:rgba(49,58,57,.75)}
+.поле input,.поле textarea{width:100%;font:16px/1.3 var(--текст);color:var(--графит);background:var(--бумага);border:1px solid var(--линия);
+  border-radius:14px;padding:13px 14px;outline:none;transition:border-color .15s,box-shadow .15s}
+.поле input:focus,.поле textarea:focus{border-color:var(--синий);box-shadow:0 0 0 3px rgba(82,113,157,.18)}
+.тел{display:grid;grid-template-columns:auto 1fr;gap:8px}
+.тел .код{display:flex;align-items:center;gap:6px;padding:0 12px;border:1px solid var(--линия);border-radius:14px;background:var(--бумага);font-size:16px}
+.чипы{display:flex;flex-wrap:wrap;gap:8px}
+.чип{font:15px/1 var(--текст);color:var(--графит);background:var(--бумага);border:1px solid var(--линия);border-radius:999px;padding:11px 16px;cursor:pointer;min-height:44px}
+.чип[aria-pressed=true]{background:var(--синий);border-color:var(--синий);color:#fffffb}
+.чип:focus-visible,.кнопка:focus-visible{outline:3px solid var(--голубой);outline-offset:2px}
+.согласие{display:flex;gap:10px;align-items:flex-start;font-size:14px;color:rgba(49,58,57,.8)}
+.согласие input{width:20px;height:20px;margin:1px 0 0;accent-color:var(--синий);flex:none}
+.согласие a{color:var(--синий)}
+.кнопка{font:700 15px/1 var(--заг);text-transform:uppercase;letter-spacing:.04em;color:#fffffb;background:var(--синий);border:0;
+  border-radius:16px 16px 0 16px;padding:18px 26px;min-height:54px;cursor:pointer;transition:background .15s,transform .15s}
+.кнопка:hover{background:var(--голубой);transform:translateY(-1px)}
+.кнопка--контур{background:transparent;color:var(--синий);box-shadow:inset 0 0 0 1.5px var(--синий)}
+.кнопка--контур:hover{background:rgba(82,113,157,.08)}
+.мелко{font-size:14px;color:rgba(49,58,57,.65)}
+
+/* ── А: одна колонка, как сейчас, но аккуратнее ─────────────────── */
+.а{width:min(560px,100%);background:var(--бумага);border-radius:34px;padding:36px 34px 32px;display:grid;gap:18px}
+.а h2{font-size:26px;color:var(--синий)}
+.а .лид{margin:-6px 0 0;color:rgba(49,58,57,.8);font-size:15px}
+.а .ряд2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+
+/* ── Б: два шага ─────────────────────────────────────────────────── */
+.б{width:min(520px,100%);background:var(--бумага);border-radius:34px;padding:32px 32px 30px;display:grid;gap:18px}
+.б__шаги{display:flex;gap:8px;align-items:center;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:rgba(49,58,57,.6)}
+.б__шаги i{flex:1;height:4px;border-radius:4px;background:rgba(82,113,157,.18);font-style:normal}
+.б__шаги i.да{background:var(--синий)}
+.б h2{font-size:24px;color:var(--графит)}
+.б .шаг[hidden]{display:none}
+.б .шаг{display:grid;gap:16px}
+.б .низ{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+
+/* ── В: панель «что будет дальше» + форма ────────────────────────── */
+.в{width:min(980px,100%);background:var(--бумага);border-radius:34px;overflow:hidden;display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr)}
+.в__лево{background:var(--синий);color:#fffffb;padding:36px 34px;display:grid;align-content:start;gap:18px}
+.в__лево h2{font-size:28px;color:#fffffb}
+.в__лево ol{margin:0;padding:0;list-style:none;display:grid;gap:14px;counter-reset:ш}
+.в__лево li{position:relative;padding-left:42px;font-size:15px;line-height:1.45;color:rgba(255,255,251,.92)}
+.в__лево li:before{counter-increment:ш;content:counter(ш);position:absolute;left:0;top:-2px;width:28px;height:28px;border-radius:50%;
+  display:grid;place-items:center;font:700 14px/1 var(--текст);background:rgba(255,255,251,.16)}
+.в__гайд{margin-top:4px;padding:14px 16px;border-radius:22px;background:rgba(255,255,251,.1);font-size:14px;line-height:1.45}
+.в__право{padding:34px;display:grid;gap:16px}
+.в .ряд2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+
+@media (max-width:760px){
+  .в{grid-template-columns:1fr}
+  .а,.б{padding:28px 20px 24px;border-radius:24px}
+  .в__лево,.в__право{padding:26px 20px}
+  .а .ряд2,.в .ряд2{grid-template-columns:1fr}
+  .сцена{padding:18px 10px;border-radius:24px}
+  .шапка h1{font-size:24px}
+}
+</style>
+</head>
+<body>
+<header class="шапка">
+  <h1>Форма заявки — три варианта</h1>
+  <p>Это общая форма «Оставить заявку» (открывается кнопками на всех страницах). Поля те же, что на сайте сейчас:
+  имя, телефон, мессенджер, почта, город, этап, согласие. Отличается подача.</p>
+  <p class="мелко">Демо, не на живом сайте. Кнопки здесь ничего не отправляют.</p>
+</header>
+
+<main class="варианты">
+
+  <!-- А -->
+  <section class="вар" aria-label="Вариант А">
+    <div class="вар__метка"><b>А. Одна колонка</b><span>как сейчас, но аккуратнее: этапы и мессенджер — кнопками, телефон и почта в ряд</span></div>
+    <div class="сцена">
+      <form class="а" onsubmit="return false">
+        <h2>Заявка на обратную связь</h2>
+        <p class="лид">Оставьте данные — менеджер свяжется с вами. Гайды «База отдыха начинается с земли: системный запуск без ошибок и лишних трат» и «Как вернуть заявки и предоплаты без скидок и хаоса» отправим на почту.</p>
+        <div class="поле"><label for="а-имя">Ваше имя</label><input id="а-имя" placeholder="Имя" autocomplete="name"></div>
+        <div class="ряд2">
+          <div class="поле"><label for="а-тел">Ваш телефон</label><div class="тел"><span class="код">🇷🇺 +7</span><input id="а-тел" inputmode="tel" placeholder="900 000-00-00" autocomplete="tel-national"></div></div>
+          <div class="поле"><label for="а-почта">Ваша почта</label><input id="а-почта" type="email" placeholder="example@site.com" autocomplete="email"></div>
+        </div>
+        <div class="поле"><span class="подп">Где удобнее ответить</span>
+          <div class="чипы" data-один><button type="button" class="чип" aria-pressed="true">Telegram</button><button type="button" class="чип" aria-pressed="false">WhatsApp</button><button type="button" class="чип" aria-pressed="false">Max</button></div></div>
+        <div class="поле"><label for="а-город">Из какого вы города?</label><input id="а-город" autocomplete="address-level2"></div>
+        <div class="поле"><span class="подп">На каком вы этапе?</span>
+          <div class="чипы" data-один><button type="button" class="чип" aria-pressed="false">Есть идея</button><button type="button" class="чип" aria-pressed="false">Есть участок</button><button type="button" class="чип" aria-pressed="false">Есть готовый проект</button><button type="button" class="чип" aria-pressed="false">Есть действующая база</button><button type="button" class="чип" aria-pressed="false">Свой вариант</button></div></div>
+        <label class="согласие"><input type="checkbox" checked><span>Я даю согласие на обработку персональных данных в соответствии с&nbsp;<a href="#">политикой конфиденциальности</a></span></label>
+        <button class="кнопка">Оставить заявку</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Б -->
+  <section class="вар" aria-label="Вариант Б">
+    <div class="вар__метка"><b>Б. Два шага</b><span>сначала только имя, телефон и мессенджер — заявка уже уходит; город, этап и почта для гайдов — вторым шагом</span></div>
+    <div class="сцена">
+      <form class="б" onsubmit="return false">
+        <div class="б__шаги"><span>Шаг <b data-номер>1</b> из 2</span><i class="да"></i><i data-второй></i></div>
+        <div class="шаг" data-шаг="1">
+          <h2>Оставьте контакт — перезвоним</h2>
+          <div class="поле"><label for="б-имя">Ваше имя</label><input id="б-имя" placeholder="Имя" autocomplete="name"></div>
+          <div class="поле"><label for="б-тел">Ваш телефон</label><div class="тел"><span class="код">🇷🇺 +7</span><input id="б-тел" inputmode="tel" placeholder="900 000-00-00" autocomplete="tel-national"></div></div>
+          <div class="поле"><span class="подп">Где удобнее ответить</span>
+            <div class="чипы" data-один><button type="button" class="чип" aria-pressed="true">Telegram</button><button type="button" class="чип" aria-pressed="false">WhatsApp</button><button type="button" class="чип" aria-pressed="false">Max</button></div></div>
+          <label class="согласие"><input type="checkbox" checked><span>Я даю согласие на обработку персональных данных в соответствии с&nbsp;<a href="#">политикой конфиденциальности</a></span></label>
+          <button class="кнопка" type="button" data-дальше>Отправить</button>
+        </div>
+        <div class="шаг" data-шаг="2" hidden>
+          <h2>Заявка принята. Пару уточнений?</h2>
+          <p class="мелко" style="margin:-6px 0 0">Ответы помогут менеджеру подготовиться к разговору. Можно пропустить.</p>
+          <div class="поле"><span class="подп">На каком вы этапе?</span>
+            <div class="чипы" data-один><button type="button" class="чип" aria-pressed="false">Есть идея</button><button type="button" class="чип" aria-pressed="false">Есть участок</button><button type="button" class="чип" aria-pressed="false">Есть готовый проект</button><button type="button" class="чип" aria-pressed="false">Есть действующая база</button><button type="button" class="чип" aria-pressed="false">Свой вариант</button></div></div>
+          <div class="поле"><label for="б-город">Из какого вы города?</label><input id="б-город" autocomplete="address-level2"></div>
+          <div class="поле"><label for="б-почта">Почта — пришлём гайды</label><input id="б-почта" type="email" placeholder="example@site.com" autocomplete="email"></div>
+          <div class="низ"><button class="кнопка" type="button">Готово</button><button class="кнопка кнопка--контур" type="button" data-назад>Пропустить</button></div>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- В -->
+  <section class="вар" aria-label="Вариант В">
+    <div class="вар__метка"><b>В. С пояснением</b><span>слева — что будет после заявки и какие гайды придут на почту, справа — компактная форма</span></div>
+    <div class="сцена">
+      <form class="в" onsubmit="return false">
+        <div class="в__лево">
+          <h2>Заявка на обратную связь</h2>
+          <ol>
+            <li>Оставляете имя, телефон и где удобнее ответить.</li>
+            <li>Менеджер связывается с вами в выбранном мессенджере.</li>
+            <li>Если укажете почту — отправим два гайда.</li>
+          </ol>
+          <div class="в__гайд">«База отдыха начинается с земли: системный запуск без ошибок и лишних трат»<br>«Как вернуть заявки и предоплаты без скидок и хаоса»</div>
+        </div>
+        <div class="в__право">
+          <div class="ряд2">
+            <div class="поле"><label for="в-имя">Ваше имя</label><input id="в-имя" placeholder="Имя" autocomplete="name"></div>
+            <div class="поле"><label for="в-город">Ваш город</label><input id="в-город" autocomplete="address-level2"></div>
+          </div>
+          <div class="поле"><label for="в-тел">Ваш телефон</label><div class="тел"><span class="код">🇷🇺 +7</span><input id="в-тел" inputmode="tel" placeholder="900 000-00-00" autocomplete="tel-national"></div></div>
+          <div class="поле"><span class="подп">Где удобнее ответить</span>
+            <div class="чипы" data-один><button type="button" class="чип" aria-pressed="true">Telegram</button><button type="button" class="чип" aria-pressed="false">WhatsApp</button><button type="button" class="чип" aria-pressed="false">Max</button></div></div>
+          <div class="поле"><span class="подп">На каком вы этапе?</span>
+            <div class="чипы" data-один><button type="button" class="чип" aria-pressed="false">Есть идея</button><button type="button" class="чип" aria-pressed="false">Есть участок</button><button type="button" class="чип" aria-pressed="false">Есть готовый проект</button><button type="button" class="чип" aria-pressed="false">Есть действующая база</button><button type="button" class="чип" aria-pressed="false">Свой вариант</button></div></div>
+          <div class="поле"><label for="в-почта">Почта для гайдов</label><input id="в-почта" type="email" placeholder="example@site.com" autocomplete="email"></div>
+          <label class="согласие"><input type="checkbox" checked><span>Я даю согласие на обработку персональных данных в соответствии с&nbsp;<a href="#">политикой конфиденциальности</a></span></label>
+          <button class="кнопка">Оставить заявку</button>
+        </div>
+      </form>
+    </div>
+  </section>
+</main>
+<script>
+document.querySelectorAll('[data-один]').forEach(function(г){г.addEventListener('click',function(e){var b=e.target.closest('.чип');if(!b)return;
+  г.querySelectorAll('.чип').forEach(function(x){x.setAttribute('aria-pressed',String(x===b))})})});
+var б=document.querySelector('.б');
+function шаг(n){б.querySelectorAll('[data-шаг]').forEach(function(s){s.hidden=s.dataset.шаг!==String(n)});
+  б.querySelector('[data-номер]').textContent=n;б.querySelector('[data-второй]').classList.toggle('да',n===2)}
+б.querySelector('[data-дальше]').addEventListener('click',function(){шаг(2)});
+б.querySelector('[data-назад]').addEventListener('click',function(){шаг(1)});
+</script>
+</body>
+</html>
