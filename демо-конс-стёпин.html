@@ -1,0 +1,276 @@
+<!doctype html><html lang=ru><head><meta charset=utf-8><meta name=viewport content='width=device-width, initial-scale=1'><title>Демо: /cons_engineering</title><link rel=stylesheet href='https://static.tildacdn.com/css/fonts-tildasans.css'><style>@font-face{font-family:'EngraversGothic';src:url('https://static.tildacdn.com/tild3861-6239-4636-b763-633732666261/EngraversGothic.woff') format('woff');font-weight:400;font-display:swap}@font-face{font-family:'EngraversGothic';src:url('https://static.tildacdn.com/tild6263-6433-4564-b031-653262643136/EngraversGothic-Bold.woff') format('woff');font-weight:700;font-display:swap}body{margin:0;background:#fffffb}</style><style>
+/* ── страницы консультаций (20.09) ── */
+.ob-кс{font-family:'TildaSans',Arial,sans-serif;color:#313a39}
+.ob-кс *{box-sizing:border-box}
+.ob-кс a{text-decoration:none}
+.ob-кс__об{max-width:1180px;margin:0 auto;padding:0 20px}
+.ob-кс-сек{padding:64px 0}
+.ob-кс-сек--мягко{background:rgba(30,114,104,.06)}
+.ob-кс__метка{display:inline-flex;align-items:center;gap:10px;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:#1e7268}
+.ob-кс__метка::before{content:"";width:22px;height:1.5px;background:currentColor}
+.ob-кс__метка--св{color:rgba(255,255,251,.75)}
+.ob-кс__h2{font:700 34px/1.08 'EngraversGothic',Arial,sans-serif;text-transform:uppercase;margin:12px 0 18px}
+.ob-кс__b{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 26px;border-radius:16px 16px 0 16px;
+  background:#1e7268;color:#fffffb!important;font:700 14px/1 'EngraversGothic',Arial,sans-serif;text-transform:uppercase;letter-spacing:.05em;
+  transition:filter .15s,transform .15s}
+.ob-кс__b:hover{filter:brightness(1.12);transform:translateY(-1px)}
+.ob-кс__b--св{background:#fffffb;color:#1e7268!important}
+
+/* первый экран */
+.ob-кс-герой{background:#313a39;color:#fffffb;padding:118px 0 64px}
+.ob-кс__кр{font-size:14px;color:rgba(255,255,251,.65);margin-bottom:26px}
+.ob-кс__кр a{display:inline-block;padding:12px 0;margin:-12px 0;color:rgba(255,255,251,.85)}
+.ob-кс__кр i{font-style:normal;margin:0 8px;opacity:.6}
+.ob-кс-герой__сетка{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,.8fr);gap:40px;align-items:start}
+.ob-кс-герой__над{margin:0 0 12px;font-size:16px;color:rgba(255,255,251,.75);max-width:620px}
+.ob-кс-герой h1{font:700 44px/1.05 'EngraversGothic',Arial,sans-serif;text-transform:uppercase;margin:0 0 24px;max-width:700px;color:#fffffb}
+.ob-кс-герой__кто{display:flex;align-items:center;gap:14px;margin-bottom:26px}
+.ob-кс-герой__кто img{width:72px;height:72px;border-radius:50%;object-fit:cover}
+.ob-кс-герой__кто b{display:block;font:700 19px/1.1 'EngraversGothic',Arial,sans-serif;text-transform:uppercase}
+.ob-кс-герой__кто em{display:block;font-style:normal;font-size:14.5px;color:rgba(255,255,251,.7);margin-top:4px}
+.ob-кс-герой__цены{background:rgba(255,255,251,.08);border:1px solid rgba(255,255,251,.18);border-radius:24px;padding:22px 24px;display:grid;gap:14px}
+.ob-кс__ф{display:flex;justify-content:space-between;align-items:baseline;gap:14px;padding-bottom:12px;border-bottom:1px solid rgba(255,255,251,.14)}
+.ob-кс__ф:last-child{border-bottom:0;padding-bottom:0}
+.ob-кс__ф span{font-size:15px;color:rgba(255,255,251,.8)}
+.ob-кс__ф b{font:600 20px/1 'TildaSans',Arial,sans-serif;font-variant-numeric:tabular-nums;white-space:nowrap}
+
+/* что разберём и что получите */
+.ob-кс__две{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,.85fr);gap:34px;align-items:start}
+.ob-кс__список{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.ob-кс__список li{position:relative;padding-left:26px;font-size:16.5px;line-height:1.45}
+.ob-кс__список li::before{content:"";position:absolute;left:0;top:9px;width:10px;height:10px;border-radius:50%;
+  border:2px solid #1e7268}
+.ob-кс__низ{margin:18px 0 0;font-size:15.5px;color:rgba(49,58,57,.7);max-width:640px}
+.ob-кс__итог{background:#fffffb;border:1px solid rgba(49,58,57,.12);border-radius:24px;padding:24px}
+.ob-кс__итог ul{list-style:none;margin:14px 0 20px;padding:0;display:grid;gap:10px}
+.ob-кс__итог li{position:relative;padding-left:24px;font-size:16px;line-height:1.4}
+.ob-кс__итог li::before{content:"✓";position:absolute;left:0;color:#1e7268;font-weight:700}
+
+/* как проходит */
+.ob-кс__шаги{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+.ob-кс__шаги li{padding-top:16px;border-top:2px solid rgba(30,114,104,.25);position:relative}
+.ob-кс__шаги li::before{content:"";position:absolute;left:0;top:-2px;width:52px;height:2px;background:#1e7268}
+.ob-кс__н{display:block;font:700 40px/1 'EngraversGothic',Arial,sans-serif;color:transparent;-webkit-text-stroke:1.2px #1e7268;margin-bottom:8px}
+.ob-кс__шаги p{margin:0;font-size:16px;line-height:1.45;color:rgba(49,58,57,.8)}
+
+/* тарифы */
+.ob-кс__тарифы{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
+.ob-кс__тариф{background:#fffffb;border:1px solid rgba(49,58,57,.12);border-radius:24px;padding:24px;display:grid;align-content:start;gap:10px}
+.ob-кс__тариф b{font:700 20px/1.1 'EngraversGothic',Arial,sans-serif;text-transform:uppercase}
+.ob-кс__тариф p{margin:0;font-size:15px;color:rgba(49,58,57,.7)}
+.ob-кс__тариф ul{list-style:none;margin:6px 0 0;padding:0;display:grid;gap:8px}
+.ob-кс__тариф li{position:relative;padding-left:22px;font-size:15.5px;line-height:1.4}
+.ob-кс__тариф li::before{content:"+";position:absolute;left:0;color:#1e7268;font-weight:700}
+.ob-кс__цена{font:600 22px/1.2 'TildaSans',Arial,sans-serif;font-variant-numeric:tabular-nums;margin-top:6px}
+.ob-кс__тариф .ob-кс__b{justify-self:start;margin-top:6px}
+
+/* форматы (Александр) */
+.ob-кс__форматы{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
+.ob-кс__формат{background:#fffffb;border:1px solid rgba(49,58,57,.12);border-radius:24px;padding:22px;display:grid;gap:8px;align-content:start}
+.ob-кс__формат b{font:700 19px/1.1 'EngraversGothic',Arial,sans-serif;text-transform:uppercase}
+.ob-кс__формат .ob-кс__b{justify-self:start;margin-top:6px}
+
+/* чек-лист (Марина) */
+.ob-кс__чек{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:0 26px}
+.ob-кс__чек li{position:relative;padding:12px 0 12px 30px;border-bottom:1px solid rgba(49,58,57,.1);font-size:16.5px;line-height:1.4}
+.ob-кс__чек li::before{content:"✓";position:absolute;left:4px;color:#1e7268;font-weight:700}
+
+/* плитки тем (Стёпин) */
+.ob-кс__плитки{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+.ob-кс__плитка{background:#fffffb;border:1px solid rgba(49,58,57,.12);border-radius:20px;padding:18px 20px;display:grid;gap:8px;align-content:start}
+.ob-кс__плитка span{font:700 22px/1 'EngraversGothic',Arial,sans-serif;color:transparent;-webkit-text-stroke:1px #1e7268}
+.ob-кс__плитка p{margin:0;font-size:16px;line-height:1.4}
+.ob-кс-герой--кадр{position:relative;overflow:hidden}
+.ob-кс-герой__кадр{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 35%;opacity:.3}
+.ob-кс-герой--кадр .ob-кс-герой__in{position:relative;z-index:1}
+
+/* вкладки тем */
+.ob-кс__вкладки{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}
+.ob-кс__т{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 16px;border-radius:999px;border:1px solid rgba(49,58,57,.16);
+  background:#fffffb;font:15px/1 'TildaSans',Arial,sans-serif;color:#313a39;cursor:pointer;transition:background .15s,border-color .15s}
+.ob-кс__т span{font-size:13px;color:rgba(49,58,57,.5)}
+.ob-кс__т:hover{border-color:#1e7268}
+.ob-кс__т[aria-selected=true]{background:#1e7268;border-color:#1e7268;color:#fffffb}
+.ob-кс__т[aria-selected=true] span{color:rgba(255,255,251,.75)}
+.ob-кс__т:focus-visible{outline:2px solid #1e7268;outline-offset:3px}
+.ob-кс__панель[hidden]{display:none}
+.ob-кс__панель{animation:ob-кс-в .25s ease}
+@keyframes ob-кс-в{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+
+/* раскрывающиеся группы */
+.ob-кс__гр{border-bottom:1px solid rgba(49,58,57,.12);padding:6px 0}
+.ob-кс__гр summary{display:flex;align-items:center;gap:10px;min-height:52px;cursor:pointer;list-style:none}
+.ob-кс__гр summary::-webkit-details-marker{display:none}
+.ob-кс__гр summary::after{content:"+";margin-left:auto;font-size:22px;color:#1e7268}
+.ob-кс__гр[open] summary::after{content:"–"}
+.ob-кс__гр b{font:700 18px/1.1 'EngraversGothic',Arial,sans-serif;text-transform:uppercase}
+.ob-кс__гр summary span{font-size:13px;color:rgba(49,58,57,.5)}
+.ob-кс__гр .ob-кс__список{padding:2px 0 16px}
+
+/* путь до QR */
+.ob-кс__путь{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px;position:relative}
+.ob-кс__путь li{position:relative;padding-top:26px}
+.ob-кс__путь li::before{content:"";position:absolute;left:0;right:-18px;top:9px;height:2px;background:rgba(30,114,104,.25)}
+.ob-кс__путь li:last-child::before{right:0}
+.ob-кс__точка{position:absolute;left:0;top:3px;width:14px;height:14px;border-radius:50%;background:#1e7268}
+.ob-кс__путь b{display:block;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:#1e7268;margin-bottom:6px}
+.ob-кс__путь p{margin:0;font-size:16px;line-height:1.45}
+
+/* сравнение тарифов */
+.ob-кс__таблица-обёртка{max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}
+.ob-кс__таблица{border-collapse:collapse;width:100%;min-width:560px;background:#fffffb;border-radius:22px;overflow:hidden}
+.ob-кс__таблица th,.ob-кс__таблица td{padding:14px 16px;text-align:left;border-bottom:1px solid rgba(49,58,57,.1);font-size:15.5px;vertical-align:top}
+.ob-кс__таблица thead th{font:700 17px/1.15 'EngraversGothic',Arial,sans-serif;text-transform:uppercase;background:rgba(30,114,104,.06)}
+.ob-кс__таблица thead th em{display:block;font:400 13.5px/1.35 'TildaSans',Arial,sans-serif;text-transform:none;color:rgba(49,58,57,.65);margin-top:6px}
+.ob-кс__таблица tbody th{font-weight:400;color:rgba(49,58,57,.85)}
+.ob-кс__таблица td{text-align:center;font-size:17px;color:#1e7268}
+.ob-кс__итого td{font:600 18px/1.2 'TildaSans',Arial,sans-serif;font-variant-numeric:tabular-nums;color:#313a39}
+
+/* видео */
+.ob-кс__лид2{margin:0 0 20px;font-size:16.5px;color:rgba(49,58,57,.72);max-width:520px}
+.ob-кс__видео-ряд{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:30px;align-items:center}
+.ob-кс__видео{position:relative;aspect-ratio:16/9;border-radius:24px;overflow:hidden;background:#313a39}
+.ob-кс__видео iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+
+/* кому подойдёт */
+.ob-кс__кому-сетка{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px}
+.ob-кс__кому{border:1px solid rgba(49,58,57,.14);border-radius:20px;padding:18px 20px;display:grid;gap:6px;align-content:start}
+.ob-кс__кому b{font:700 17px/1.1 'EngraversGothic',Arial,sans-serif;text-transform:uppercase}
+.ob-кс__кому p{margin:0;font-size:15.5px;line-height:1.4;color:rgba(49,58,57,.72)}
+
+/* другие эксперты */
+.ob-кс__други{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px}
+.ob-кс__друг{display:flex;gap:14px;align-items:center;background:#fffffb;border:1px solid rgba(49,58,57,.12);border-radius:20px;padding:14px 16px;
+  color:#313a39;transition:border-color .15s,transform .2s}
+.ob-кс__друг:hover{border-color:#1e7268;transform:translateY(-2px)}
+.ob-кс__друг img{width:60px;height:60px;border-radius:50%;object-fit:cover;flex:none}
+.ob-кс__друг b{display:block;font:700 17px/1.1 'EngraversGothic',Arial,sans-serif;text-transform:uppercase}
+.ob-кс__друг em{display:block;font-style:normal;font-size:14px;color:rgba(49,58,57,.65);margin:3px 0 4px}
+.ob-кс__друг i{font-style:normal;font-size:15px;font-weight:600;color:#1e7268}
+
+/* также входит */
+.ob-кс__тоже-сетка{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}
+.ob-кс__тоже{background:rgba(30,114,104,.06);border-radius:22px;padding:20px 22px;display:grid;gap:10px;align-content:start}
+.ob-кс__тоже b{font:700 17px/1.15 'EngraversGothic',Arial,sans-serif;text-transform:uppercase}
+.ob-кс__тоже ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.ob-кс__тоже li{position:relative;padding-left:20px;font-size:15.5px;line-height:1.4}
+.ob-кс__тоже li::before{content:"·";position:absolute;left:6px;color:#1e7268;font-weight:700}
+.ob-кс__стр{color:#1e7268;font-size:15px;display:inline-flex;align-items:center;min-height:44px}
+
+@media (max-width:980px){
+  .ob-кс-герой__сетка,.ob-кс__две,.ob-кс__видео-ряд{grid-template-columns:1fr}
+}
+@media (max-width:760px){
+  .ob-кс__путь li::before{right:0}   /* линия между шагами не выносится за край */
+  /* на телефоне таблица сравнения не читается — показываем тарифы карточками */
+  .ob-кс__таблица{min-width:0;display:block}
+  .ob-кс__таблица thead{display:none}
+  .ob-кс__таблица tbody,.ob-кс__таблица tr{display:block}
+  .ob-кс__таблица tr{border-bottom:1px solid rgba(49,58,57,.1);padding:4px 0}
+  .ob-кс__таблица th,.ob-кс__таблица td{display:inline-block;border:0;padding:8px 10px;text-align:left}
+  .ob-кс__таблица tbody th{display:block;font-weight:600}
+  .ob-кс__таблица td::before{content:attr(data-к) ": ";color:rgba(49,58,57,.55);font-size:14px}
+}
+@media (max-width:640px){
+  .ob-кс-сек{padding:44px 0}
+  .ob-кс-герой{padding:96px 0 44px}
+  .ob-кс-герой h1{font-size:30px}
+  .ob-кс__h2{font-size:26px}
+  .ob-кс__об{padding:0 16px}
+  .ob-кс__ф{flex-wrap:wrap;gap:4px}
+  .ob-кс__ф b{font-size:18px}
+}
+</style></head><body class='ob-кс'>
+<section class="ob-кс-герой ob-кс-герой--кадр"><img class="ob-кс-герой__кадр" src="assets/proekt-territoriya-2x.webp" alt="" loading="eager">
+  <div class="ob-кс__об ob-кс-герой__in">
+    <div class="ob-кс__кр"><a href="index.html">Главная</a><i>›</i>
+      <a href="consultations.html">Консультации и разборы</a><i>›</i>Проектирование баз отдыха (консультация)</div>
+    <div class="ob-кс-герой__сетка">
+      <div>
+        <p class="ob-кс-герой__над">Главный проектировщик бюро, ландшафтный дизайнер ответит на все ваши вопросы</p>
+        <h1>Консультация по проектированию баз отдыха</h1>
+        <div class="ob-кс-герой__кто">
+          <img src="assets/cons-ava-stepin.webp" alt="Александр Стёпин" loading="eager">
+          <span><b>Александр Стёпин</b><em>Главный проектировщик бюро, ландшафтный дизайнер</em></span>
+        </div>
+        <a class="ob-кс__b ob-кс__b--св" href="#popup:zayavka">Оставить заявку</a>
+      </div>
+      <div class="ob-кс-герой__цены">
+        <span class="ob-кс__метка ob-кс__метка--св">Стоимость</span>
+        <div class="ob-кс__ф"><span>Онлайн до 2 часов, запись на почту</span><b>60 000 ₽</b></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="ob-кс-сек">
+  <div class="ob-кс__об ob-кс__две">
+    <div class="ob-кс__вкл">
+      <span class="ob-кс__метка">Что разберём</span>
+      <h2 class="ob-кс__h2">Вопросы по участку и проекту</h2>
+      <div class="ob-кс__вкладки" role="tablist" aria-label="Темы"><button type="button" class="ob-кс__т" role="tab" aria-selected="true" aria-controls="кс-0" id="кс-т0">Старт по участку<span>3</span></button><button type="button" class="ob-кс__т" role="tab" aria-selected="false" aria-controls="кс-1" id="кс-т1">Планировка<span>3</span></button><button type="button" class="ob-кс__т" role="tab" aria-selected="false" aria-controls="кс-2" id="кс-т2">Дома и примеры<span>3</span></button></div>
+      <div class="ob-кс__панель" role="tabpanel" id="кс-0" aria-labelledby="кс-т0"><ul class="ob-кс__список"><li>С чего начать после покупки участка</li><li>Работа с водоохранной зоной</li><li>Как сделать проект под грантовую поддержку</li></ul></div><div class="ob-кс__панель" role="tabpanel" id="кс-1" aria-labelledby="кс-т1" hidden><ul class="ob-кс__список"><li>Правильное зонирование и расстановка строений</li><li>Онлайн-планировка дорожек, зон и ландшафта</li><li>Ландшафт: какие деревья и кусты лучше посадить</li></ul></div><div class="ob-кс__панель" role="tabpanel" id="кс-2" aria-labelledby="кс-т2" hidden><ul class="ob-кс__список"><li>Какие дома лучше поставить и где взять проекты</li><li>Тренды в проектировании баз отдыха 2026 года</li><li>Показ примеров проектов, близких к вашей площади и региону</li></ul></div>
+    </div>
+    <div class="ob-кс__итог"><span class="ob-кс__метка">После встречи у вас</span><ul><li>Запись консультации на почту</li><li>Примеры проектов, близких к вашей площади и региону</li></ul><a class="ob-кс__b" href="#popup:zayavka">Записаться</a></div>
+  </div>
+</section>
+<section class="ob-кс-сек ob-кс-сек--мягко">
+  <div class="ob-кс__об ob-кс__две">
+    <div><span class="ob-кс__метка">Как проходит</span>
+      <h2 class="ob-кс__h2">Порядок работы</h2>
+      <ol class="ob-кс__шаги"><li><span class="ob-кс__н">01</span><p>Вы присылаете участок и вопросы.</p></li><li><span class="ob-кс__н">02</span><p>Назначаем онлайн-встречу до 2 часов.</p></li><li><span class="ob-кс__н">03</span><p>После встречи отправляем запись на почту.</p></li></ol></div>
+    <div class="ob-кс__итог"><span class="ob-кс__метка">Что получите</span><ul><li>Запись консультации на почту</li><li>Примеры проектов, близких к вашей площади и региону</li></ul><a class="ob-кс__b" href="#popup:zayavka">Записаться</a></div>
+  </div>
+</section>
+<section class="ob-кс-сек">
+  <div class="ob-кс__об ob-кс__видео-ряд">
+    <div>
+      <span class="ob-кс__метка">Видео</span>
+      <h2 class="ob-кс__h2">Знакомство с экспертом</h2>
+      <p class="ob-кс__лид2">Александр Стёпин — главный проектировщик бюро, ландшафтный дизайнер.</p>
+      <a class="ob-кс__b" href="#popup:zayavka">Записаться на консультацию</a>
+    </div>
+    <div class="ob-кс__видео">
+      <iframe src="https://rutube.ru/play/embed/e699b66d40908689ef21906de1411aa4?p=N_Fg37g8hl9-JLble2kDCA" title="Видео: Александр Стёпин"
+        loading="lazy" frameborder="0" allow="clipboard-write; autoplay"
+        webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
+<section class="ob-кс-сек">
+  <div class="ob-кс__об">
+    <span class="ob-кс__метка">Кому подойдёт</span>
+    <h2 class="ob-кс__h2">С чем сюда приходят</h2>
+    <div class="ob-кс__кому-сетка"><div class="ob-кс__кому"><b>Есть участок</b><p>Земля куплена, что с ней делать — непонятно</p></div><div class="ob-кс__кому"><b>Есть идея</b><p>Земли пока нет или только смотрите участки</p></div></div>
+  </div>
+</section>
+<section class="ob-кс-сек ob-кс-сек--мягко">
+  <div class="ob-кс__об">
+    <span class="ob-кс__метка">Другие эксперты</span>
+    <h2 class="ob-кс__h2">Кто ещё может помочь</h2>
+    <div class="ob-кс__други"><a class="ob-кс__друг" href="/cons_alexander_rezhichenko"><img src="assets/cons-ava-reznichenko.webp" alt="" loading="lazy"><span><b>Александр Резниченко</b><em>Основатель проекта · стратегия и полный аудит</em><i>от 140 000 ₽</i></span></a><a class="ob-кс__друг" href="/cons_management"><img src="assets/cons-ava-godunova.webp" alt="" loading="lazy"><span><b>Марина Годунова</b><em>Действующий управляющий, опыт более 4 лет</em><i>от 60 000 ₽</i></span></a><a class="ob-кс__друг" href="/cons_classification"><img src="assets/cons-ava-kravchenko.webp" alt="" loading="lazy"><span><b>Юлия Кравченко</b><em>Эксперт по классификации, опыт более 60 объектов</em><i>от 50 000 ₽</i></span></a></div>
+    <p class="ob-кс__низ">Можно взять одного эксперта, можно собрать сессию из нескольких —
+    <a class="ob-кс__стр" href="consultations.html">все консультации и цены →</a></p>
+  </div>
+</section><script>
+(function(){
+  function вкладки(корень){
+    var т=[].slice.call(корень.querySelectorAll('.ob-кс__т'));
+    if(!т.length)return;
+    function выбрать(i,фокус){
+      т.forEach(function(x,j){var да=i===j;x.setAttribute('aria-selected',да);x.tabIndex=да?0:-1;
+        var п=document.getElementById(x.getAttribute('aria-controls'));if(п)п.hidden=!да;});
+      if(фокус)т[i].focus();
+    }
+    т.forEach(function(x,i){
+      x.addEventListener('click',function(){выбрать(i)});
+      x.addEventListener('keydown',function(e){var к={ArrowRight:1,ArrowDown:1,ArrowLeft:-1,ArrowUp:-1}[e.key];
+        if(к){e.preventDefault();выбрать((i+к+т.length)%т.length,true)}});
+    });
+    выбрать(0);
+  }
+  function старт(){document.querySelectorAll('.ob-кс__вкл:not([data-ok]), .ob-кс-сек:not([data-ok])').forEach(function(к){
+    if(к.querySelector('.ob-кс__т')){к.setAttribute('data-ok','');вкладки(к)}})}
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',старт);else старт();
+  window.addEventListener('load',старт);
+})();
+</script></body></html>

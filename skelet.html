@@ -63,6 +63,10 @@ body{font-family:'TildaSans',Arial,sans-serif}
   font-weight:400;color:rgba(49,58,57,.72)}
 .ob-serv .ob-when:before{content:" · ";color:rgba(49,58,57,.38)}
 .ob-serv p{margin:0;flex:1;font-family:var(--t-text-font,Arial);font-size:16px;line-height:1.4;color:#313a39}
+.ob-serv__цена{margin-top:16px;display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 8px}
+.ob-serv__цена span{font-family:var(--t-text-font,Arial);font-size:14px;color:rgba(49,58,57,.66)}
+.ob-serv__цена b{font-family:var(--uc-typo-fontfamily-ZcDjuR,EngraversGothic);font-size:22px;font-weight:700;
+  line-height:1.1;color:#313a39;white-space:nowrap}
 .ob-serv .go{margin-top:18px;font-family:var(--t-text-font,Arial);font-size:15px;font-weight:600;
   color:#52719d;display:flex;align-items:center;gap:8px}
 .ob-serv a:hover .go{gap:14px}
@@ -950,6 +954,13 @@ body, .t-text, [class*="ob-"]{-webkit-font-smoothing:antialiased;
 @supports (height: 100dvh){
   .ob-гер, .ob-hero, .ob-чертёж{min-height:auto}
 }
+
+@media screen and (max-width:640px){
+  #rec665311340 .t396__elem[data-elem-id="1699352042925"]{transform:translateY(-74px)!important}
+  #rec665311340 .t396__elem[data-elem-id="1699268959149"]{transform:translateY(-100px)!important}
+}
+
+a,button,[role="button"],input,select,textarea,label{-webkit-tap-highlight-color:rgba(49,58,57,.14)}
 </style></head><body style='background:#fffffb;margin:0'><div class="sk-top"><b>Скелет</b><a href="#uslugi">Услуги</a> <a href="#birzha">Биржа земли</a> <a href="#put">Маршруты</a> <a href="#diag">Диагностика</a> <a href="#case">Кейс</a> <a href="#otz">Отзывы</a> <a href="#part">Партнёры</a> <a href="#price">Прайс материалов</a></div><p class="sk-note"><b>Это рабочая раскладка, а не страница сайта.</b> Здесь собраны все новые блоки подряд, чтобы видеть их вместе. Отзывы наполнены условными примерами, кейс ждёт материалов. На боевых страницах блоки стоят на своих местах и вперемешку со старыми.</p><div class="sk-lab" id="uslugi"><i>Главная</i><span>блок услуг вместо шести старых карточек</span></div><section class="ob-sec"><div class="ob-wrap">
           <div class="ob-label">Что мы делаем</div>
           <h2 class="ob-h2">Шесть направлений, одна команда</h2>
@@ -959,37 +970,37 @@ body, .t-text, [class*="ob-"]{-webkit-font-smoothing:antialiased;
             <a href="consultations.html" class="ob-serv--fon" style="--ob-serv-fon:url(assets/mat-hero.webp)">
               <div class="n">01<span class="ob-when">когда нет земли либо только купили землю</span></div>
               <h3>Консультации</h3>
-              <p>Разбираем ваш участок, считаем деньги, говорим что делать</p>
+              <p>Разбираем ваш участок, считаем деньги, говорим что делать</p><div class="ob-serv__цена"><b>от 140 000 ₽</b></div>
               <div class="go">Подробнее <i>&#8594;</i></div>
             </a>
             <a href="engineering.html" class="ob-serv--fon" style="--ob-serv-fon:url(assets/usluga-2.webp)">
               <div class="n">02<span class="ob-when">когда есть земля и нужно действовать</span></div>
               <h3>Проектирование</h3>
-              <p>Генплан, дома, инженерия. Проект, по которому строят</p>
+              <p>Генплан, дома, инженерия. Проект, по которому строят</p><div class="ob-serv__цена"><b>от 580 000 ₽</b></div>
               <div class="go">Подробнее <i>&#8594;</i></div>
             </a>
             <a href="building.html" class="ob-serv--fon" style="--ob-serv-fon:url(assets/usluga-3.webp)">
               <div class="n">03<span class="ob-when">когда есть проект и готовы двигаться дальше</span></div>
               <h3>Строительство</h3>
-              <p>От подготовки участка до сдачи готовой базы</p>
+              <p>От подготовки участка до сдачи готовой базы</p><div class="ob-serv__цена"><b>по смете</b></div>
               <div class="go">Подробнее <i>&#8594;</i></div>
             </a>
             <a href="promotion.html" class="ob-serv--fon" style="--ob-serv-fon:url(assets/usluga-4.webp)">
               <div class="n">04<span class="ob-when">когда упала загрузка</span></div>
               <h3>Продвижение</h3>
-              <p>Загрузка 70% без сезонных провалов, реклама до 10% выручки</p>
+              <p>Загрузка 70% без сезонных провалов, реклама до 10% выручки</p><div class="ob-serv__цена"><b>от 100 000 ₽</b></div>
               <div class="go">Подробнее <i>&#8594;</i></div>
             </a>
             <a href="materials.html" class="ob-serv--fon" style="--ob-serv-fon:url(assets/usluga-5.webp)">
               <div class="n">05<span class="ob-when">нужны всем, чтобы работать законно</span></div>
               <h3>Материалы</h3>
-              <p>Регламенты, книги и финмодель для тех, кто делает сам</p>
+              <p>Регламенты, книги и финмодель для тех, кто делает сам</p><div class="ob-serv__цена"><b>от 15 000 ₽</b></div>
               <div class="go">Подробнее <i>&#8594;</i></div>
             </a>
             <a href="https://xn--e1adnd0h.xn--80abtjtnmcm9em.xn--p1ai/" class="ob-serv--fon" style="--ob-serv-fon:url(assets/usluga-6.webp)" target="_blank" rel="noopener">
               <div class="n">06<span class="ob-when">когда ищете землю или продаёте свою</span></div>
               <h3>Биржа земли</h3>
-              <p>Участки под базы и глэмпинги по всей России</p>
+              <p>Участки под базы и глэмпинги по всей России и проверка участка до покупки</p><div class="ob-serv__цена"><span>проверка участка</span><b>от 2 900 ₽</b></div>
               <div class="go">Подробнее <i>&#8594;</i></div>
             </a>
           </div></div></section><div class="sk-lab" id="birzha"><i>Главная</i><span>Биржа земли сразу под услугами</span></div><section class="ob-sec ob-sec--soft"><div class="ob-wrap">
@@ -1010,9 +1021,14 @@ body, .t-text, [class*="ob-"]{-webkit-font-smoothing:antialiased;
                 <a class="ob-btn" href="https://xn--e1adnd0h.xn--80abtjtnmcm9em.xn--p1ai/listings" target="_blank" rel="noopener">Смотреть участки</a>
                 <a class="ob-btn ob-btn--ghost" href="https://xn--e1adnd0h.xn--80abtjtnmcm9em.xn--p1ai/add" target="_blank" rel="noopener">Разместить бесплатно</a>
               </div>
-              <div class="ob-bz__note">Не уверены, что на участке можно строить базу?
-              Смотрим категорию, ВРИ и ограничения до сделки.
-              <a href="https://xn--e1adnd0h.xn--80abtjtnmcm9em.xn--p1ai/land-check" target="_blank" rel="noopener">Проверить землю &#8594;</a></div>
+              <div class="ob-пу">
+                <div class="ob-пу__верх"><div><div class="ob-пу__н">Проверка участка до покупки</div>
+                  <div class="ob-пу__п">Планируете купить землю? Проверьте её до сделки — на Бирже земли</div></div>
+                  <div class="ob-пу__ц"><span>от</span><b>2 900 ₽</b></div></div>
+                <ul class="ob-пу__сп"><li><b>Кадастровые данные</b><span> — границы, площадь, сведения ЕГРН</span></li><li><b>Категория и ВРИ</b><span> — что реально можно строить</span></li><li><b>Обременения</b><span> — аресты, залоги, сервитуты</span></li><li><b>Зоны с ограничениями</b><span> — водоохранные, охранные, санитарные</span></li><li><b>Подходит ли под базу</b><span> — возможности использования участка</span></li><li><b>Риски до сделки</b><span> — и итоговое заключение</span></li></ul>
+                <a class="ob-btn ob-пу__b" href="https://xn--e1adnd0h.xn--80abtjtnmcm9em.xn--p1ai/land-check" target="_blank" rel="noopener">Проверить участок &#8594;</a>
+                <div class="ob-пу__м">Кадастровый номер знать не обязательно. Отметка проверки не заменяет выписку ЕГРН и юридическую экспертизу сделки.</div>
+              </div>
             </div>
             <div class="ob-bz__shot">
               <img src="assets/birzha-widget.webp" loading="lazy"
@@ -1056,9 +1072,9 @@ body, .t-text, [class*="ob-"]{-webkit-font-smoothing:antialiased;
               <div class="ob-chainx">
               <a class="ob-chainx__s ob-chainx__s--first" href="https://xn--e1adnd0h.xn--80abtjtnmcm9em.xn--p1ai" target="_blank" rel="noopener">
                 <div class="ob-chainx__n">1</div>
-                <div class="ob-chainx__t">Подбор земли</div>
-                <div class="ob-chainx__d">Считаем, где база будет зарабатывать, и ищем участок под ваш формат</div>
-                <div class="ob-chainx__w">Биржа земли</div>
+                <div class="ob-chainx__t">Подбор и проверка земли</div>
+                <div class="ob-chainx__d">Ищем участок под ваш формат и проверяем его до сделки: категория, ВРИ, ограничения</div>
+                <div class="ob-chainx__w">Биржа земли · проверка от 2 900 ₽</div>
               </a>
               <a class="ob-chainx__s" href="consultations.html">
                 <div class="ob-chainx__n">2</div>
@@ -1420,4 +1436,92 @@ body, .t-text, [class*="ob-"]{-webkit-font-smoothing:antialiased;
               <span>Комплект документов для стройки: договор с подрядчиком,
               приёмка этапов и контроль сметы.</span>
             </div>
-          </div></div></section></body></html>
+          </div></div></section><script>(function(){
+if(window.__obMob)return;window.__obMob=1;
+var st=document.createElement('style');
+st.textContent='.ob-hit{position:relative}.ob-hit:after{content:"";position:absolute;left:50%;top:50%;'+
+ 'width:44px;width:max(100%,44px);height:44px;height:max(100%,44px);transform:translate(-50%,-50%)}';
+document.head.appendChild(st);
+function видим(e,r){var c=getComputedStyle(e);return c.display!=='none'&&c.visibility!=='hidden'&&r.width>0&&r.height>0}
+
+function пер(a,b){return Math.min(a.right,b.right)-Math.max(a.left,b.left)>1&&Math.min(a.bottom,b.bottom)-Math.max(a.top,b.top)>1}
+function мешает(рамка,т0,r0){
+ var арт=рамка.closest('.t396__artboard');if(!арт)return true;
+ var r=рамка.getBoundingClientRect(),тr=т0.getBoundingClientRect();
+ var r1={left:Math.min(r.left,тr.left),top:Math.min(r.top,тr.top),right:Math.max(r.right,тr.left+т0.scrollWidth),bottom:Math.max(r.bottom,тr.top+т0.scrollHeight)};
+ var ар=арт.getBoundingClientRect(),рос=r1.right>r0.right+1||r1.bottom>r0.bottom+1;
+ if(!рос)return false;
+ if(r1.right>Math.min(ар.right,innerWidth)+1||r1.bottom>ар.bottom+1)return true;
+ var все=арт.querySelectorAll('.t396__elem');
+ for(var i=0;i<все.length;i++){var s=все[i];if(s===рамка||s.contains(рамка)||рамка.contains(s))continue;
+  var c=getComputedStyle(s);if(c.display==='none'||c.visibility==='hidden'||+c.opacity<.05)continue;
+  var q=s.getBoundingClientRect();if(q.width<1||q.height<1)continue;
+  if(q.left<=r0.left+1&&q.right>=r0.right-1&&q.top<=r0.top+1&&q.bottom>=r0.bottom-1){
+   if(r1.right>q.right-2||r1.bottom>q.bottom-2)return true;continue}
+  if(!пер(r0,q)&&пер(r1,q))return true}
+ return false}
+
+function сброс_раздвиг(){
+ var мои=document.querySelectorAll('[data-ob-push]');
+ for(var i=0;i<мои.length;i++){var e=мои[i];e.getAttribute('data-ob-push').split(' ').forEach(function(p){e.style.removeProperty(p)});e.removeAttribute('data-ob-push')}}
+function зум(x){return parseFloat(getComputedStyle(x).zoom)||1}
+function метка(x,p,v){x.style.setProperty(p,v,'important');var s=x.getAttribute('data-ob-push')||'';if((' '+s+' ').indexOf(' '+p+' ')<0)x.setAttribute('data-ob-push',(s+' '+p).trim())}
+function раздвинуть(){
+ сброс_раздвиг();
+ var арты=document.querySelectorAll('#allrecords .t396__artboard');
+ for(var a=0;a<арты.length;a++){var арт=арты[a];
+  if(арт.getBoundingClientRect().height<200||getComputedStyle(арт).position==='fixed')continue;
+  var атомы=[].slice.call(арт.querySelectorAll('.t396__elem')).filter(function(x){var c=getComputedStyle(x),q=x.getBoundingClientRect();return c.display!=='none'&&c.visibility!=='hidden'&&+c.opacity>.05&&q.width>0&&q.height>0});
+  // носитель — ближайший абсолютно позиционированный предок внутри артборда (текст Тильда кладёт в группу потоком)
+  var носители=[];атомы.forEach(function(x){var n=x;
+   while(n.parentElement&&n.parentElement!==арт&&/^(relative|static)$/.test(getComputedStyle(n).position))n=n.parentElement;
+   if(носители.indexOf(n)<0)носители.push(n)});
+  // всё меряем по исходной раскладке, до любых правок
+  var рек=носители.map(function(x){return x.getBoundingClientRect()});
+  var события=[];
+  атомы.forEach(function(T){if(T.getAttribute('data-elem-type')!=='text')return;
+   var ат=T.querySelector('.tn-atom')||T,rg=document.createRange();rg.selectNodeContents(ат);var L=rg.getClientRects();if(!L.length)return;
+   var tr=T.getBoundingClientRect(),низ=L[L.length-1].bottom,B=null,bq=null;
+   атомы.forEach(function(x){if(x.getAttribute('data-elem-type')!=='button'||x.contains(T)||T.contains(x))return;var q=x.getBoundingClientRect();
+    if(q.top>tr.top+4&&q.top<низ+8&&Math.min(q.right,tr.right)-Math.max(q.left,tr.left)>8&&(!bq||q.top<bq.top)){B=x;bq=q}});
+   if(!B)return;var d=Math.ceil(низ+12-bq.top);if(d>0&&d<=120)события.push({T:T,tr:tr,bt:bq.top,d:d})});
+  if(!события.length)continue;
+  var всего=0;события.forEach(function(с){всего+=с.d});
+  носители.forEach(function(x,k){var q=рек[k],сдвиг=0,рост=0;
+   события.forEach(function(с){
+    if(x.contains(с.T))return;
+    if(q.top>=с.bt-1)сдвиг+=с.d;
+    else if(x.getAttribute('data-elem-type')==='shape'&&q.top<=с.tr.top+1&&q.bottom>=с.tr.bottom-1&&q.left<=с.tr.left+1&&q.right>=с.tr.right-1)рост+=с.d});
+   if(сдвиг)метка(x,'margin-top',(сдвиг/зум(x))+'px');
+   if(рост){метка(x,'height',((q.height+рост)/зум(x))+'px');var ша=x.querySelector('.tn-atom');if(ша)метка(ша,'height','100%')}});
+  var ah=арт.getBoundingClientRect().height+всего;
+  [арт,арт.querySelector('.t396__carrier'),арт.querySelector('.t396__filter')].forEach(function(y){if(y)метка(y,'height',ah+'px')});
+ }
+}
+function текст(){
+ var все=document.querySelectorAll('#allrecords *');
+ for(var i=0;i<все.length;i++){var e=все[i];
+  if(e.children.length||(e.getAttribute('data-ob-fs')&&e.getAttribute('data-ob-fs')!=='вернул'&&e.style.getPropertyValue('font-size'))||!(e.textContent||'').trim())continue;
+  if(e.closest('sup,.ob-тар__зв,svg'))continue;
+  var fs=parseFloat(getComputedStyle(e).fontSize);if(!(fs>=7&&fs<20))continue;var зум=1;if(e.closest('.t396__elem'))for(var п=e;п&&п!==document.body;п=п.parentElement){var z=parseFloat(getComputedStyle(п).zoom);if(z>0)зум*=z}if(!(fs*зум>=9&&fs*зум<12.95))continue;
+  var рамка=e.closest('.t396__elem'), r0=(рамка||e).getBoundingClientRect();
+  if(!видим(e,r0))continue;
+  var т0=(рамка?рамка.querySelector('.tn-atom')||e:e), h0=т0.scrollHeight, w0=т0.scrollWidth;
+  e.setAttribute('data-ob-fs',fs);e.style.setProperty('font-size',(Math.ceil(13/зум*4)/4)+'px','important');
+  if(рамка){var r1=рамка.getBoundingClientRect();
+   // в Нулевом блоке рамка может не расти, а текст — вылезать за неё и наезжать на соседей
+   if(мешает(рамка,т0,r0)){
+    e.style.removeProperty('font-size');e.setAttribute('data-ob-fs','вернул')}}
+ }}
+function цели(){
+ var все=document.querySelectorAll('#allrecords a,#allrecords button,#allrecords [role=button]');
+ for(var i=0;i<все.length;i++){var e=все[i];if(e.classList.contains('ob-hit'))continue;
+  var r=e.getBoundingClientRect();if(!видим(e,r))continue;
+  if(r.height<44||r.width<44){var p=getComputedStyle(e).position;
+   if(p==='static'||p==='relative')e.classList.add('ob-hit');
+   else e.classList.add('ob-hit','ob-hit--поз')}}}
+function ход(){if(innerWidth>640){сброс_раздвиг();return}текст();раздвинуть();цели()}
+if(document.readyState!=='loading')ход();else document.addEventListener('DOMContentLoaded',ход);
+setTimeout(ход,1500);setTimeout(ход,3500);setTimeout(ход,6500);setTimeout(ход,10000);if(document.fonts){document.fonts.ready.then(function(){setTimeout(ход,200)});document.fonts.addEventListener&&document.fonts.addEventListener('loadingdone',function(){setTimeout(ход,200)})}window.addEventListener('load',function(){setTimeout(ход,300);setTimeout(ход,1800);setTimeout(ход,4000)});
+var т;window.addEventListener('resize',function(){clearTimeout(т);т=setTimeout(ход,400)});
+})();</script></body></html>
