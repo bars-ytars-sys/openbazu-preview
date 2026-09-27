@@ -1224,6 +1224,20 @@ html.ob-nm-lock,html.ob-nm-lock body{overflow:hidden!important}
 }
 @media screen and (max-width:640px){.ob-гды__книги--одна .ob-гды__обл{right:10px!important;top:2px}}
 
+
+/* ob-карточки-сбоку (26.09) */
+@media screen and (max-width:640px){
+  #ob-гды,#ob-bzw{left:auto!important;right:12px!important;width:190px!important;max-width:calc(100% - 24px)!important;
+    height:auto!important;display:block!important;box-sizing:border-box!important;padding:9px 34px 10px 12px!important;
+    border-radius:12px!important;box-shadow:0 10px 26px rgba(0,0,0,.3)!important}
+  #ob-гды{top:var(--об-гды-верх,auto)!important}
+  #ob-bzw{top:var(--об-bzw-верх,auto)!important}
+  #ob-гды .ob-гды__л,#ob-bzw .ob-bzw__l{display:block;max-width:none;font-size:13px!important;line-height:1.2!important;letter-spacing:.08em}   /* 13 px — правило сайта для телефона (мобильные.py) */
+  #ob-гды .ob-гды__н,#ob-bzw .ob-bzw__n{display:block;max-width:none;margin-top:3px!important;font-size:14px!important;line-height:1.1!important;white-space:nowrap}
+  #ob-гды .ob-гды__д,#ob-bzw .ob-bzw__d,#ob-гды .ob-гды__книги{display:none!important}
+  #ob-гды .ob-гды__g,#ob-bzw .ob-bzw__g{position:absolute;right:12px;top:50%;margin:0;padding:0;transform:translateY(-50%);font-size:16px}
+  #ob-гды .ob-гды__g span:first-child,#ob-bzw .ob-bzw__g span:first-child{display:none}
+}
 </style><style>
 /* ── 20.09: надписи шапки по одной середине ── */
 #rec1855532261 .tn-elem__18555322611769796007296000001{transform:translateY(3.5px)}   /* логотип сидел выше остальных */
@@ -2412,6 +2426,30 @@ var т;window.addEventListener('resize',function(){clearTimeout(т);т=setTimeou
     window.addEventListener('load',место); window.addEventListener('resize',function(){setTimeout(место,60)});
   })();
 })();
+
+(function(){   /* ob-карточки-сбоку (26.09): место пары на телефоне */
+  var мм=window.matchMedia&&matchMedia('(max-width:640px)');
+  function полоса(){   /* высота фиксированной полосы заявки внизу экрана */
+    var e=document.elementFromPoint(innerWidth/2,innerHeight-3);
+    while(e&&e!==document.body&&e!==document.documentElement){
+      if(getComputedStyle(e).position==='fixed'){var r=e.getBoundingClientRect();return (r.bottom>=innerHeight-2&&r.height<innerHeight/3)?r.height:0}
+      e=e.parentElement}
+    return 0}
+  function компакт(){
+    if(!мм||!мм.matches)return;
+    var б=document.getElementById('ob-bzw'),п=document.getElementById('ob-гды');if(!б||!п)return;
+    var хост=б.parentElement;if(!хост||п.parentElement!==хост)return;
+    var у=window.pageYOffset||0,хр=хост.getBoundingClientRect(),верхХоста=хр.top+у,шаг=8,нб=б.offsetHeight,нп=п.offsetHeight;
+    var низ=Math.min(верхХоста+хост.offsetHeight-16,innerHeight-полоса()-14);
+    var текстНиз=0;[].slice.call(хост.querySelectorAll('.tn-elem')).forEach(function(e){
+      if((e.innerText||'').trim().length<20)return;var r=e.getBoundingClientRect();if(r.height)текстНиз=Math.max(текстНиз,r.bottom+у)});
+    var верх=Math.max(низ-нб-шаг-нп,текстНиз+16);
+    хост.style.setProperty('--об-гды-верх',Math.round(верх-верхХоста)+'px');
+    хост.style.setProperty('--об-bzw-верх',Math.round(верх-верхХоста+нп+шаг)+'px')}
+  var n=0,т=setInterval(function(){компакт();if(++n>30)clearInterval(т)},400);
+  window.addEventListener('load',компакт);window.addEventListener('resize',function(){setTimeout(компакт,80)});
+  window.addEventListener('orientationchange',function(){setTimeout(компакт,300)});
+})();
 </script><style>
 /* ── короткая форма заявки (22.09) ── */
 #rec1934397191 .t-input-group_in,#rec1934397191 .t-contact-method__value-container{display:none!important}
@@ -2597,9 +2635,9 @@ var т;window.addEventListener('resize',function(){clearTimeout(т);т=setTimeou
   window.__obWebinarOpen = open;   // для проверок: открыть окно без ожидания
   // Не ждём полной загрузки страницы (событие load): у посетителей из России она шла 40–60 с или не
   // заканчивалась — CDN Тильды static.tildacdn.com рвал соединения (замер 24.09), и окно не всплывало.
-  // Отсчёт — от захода на страницу (performance.now), 20 с (Арсений: «через секунд 20–30»).
+  // Отсчёт — от захода на страницу (performance.now), 8 с (26.09 Арсений: «через 8 давай»; было 20 с).
   // ?webinar — для проверки: через 1,5 с; ?obwdelay=мс — задержка для автопроверок.
-  var DELAY = force ? 1500 : 20000, md = location.search.match(/[?&]obwdelay=(\d+)/);
+  var DELAY = force ? 1500 : 8000, md = location.search.match(/[?&]obwdelay=(\d+)/);
   if (md) DELAY = +md[1];
   function go(){
     if (document.visibilityState === 'hidden') {   // вкладка в фоне — покажем, когда на неё вернутся

@@ -1789,9 +1789,9 @@ var т;window.addEventListener('resize',function(){clearTimeout(т);т=setTimeou
   window.__obWebinarOpen = open;   // для проверок: открыть окно без ожидания
   // Не ждём полной загрузки страницы (событие load): у посетителей из России она шла 40–60 с или не
   // заканчивалась — CDN Тильды static.tildacdn.com рвал соединения (замер 24.09), и окно не всплывало.
-  // Отсчёт — от захода на страницу (performance.now), 20 с (Арсений: «через секунд 20–30»).
+  // Отсчёт — от захода на страницу (performance.now), 8 с (26.09 Арсений: «через 8 давай»; было 20 с).
   // ?webinar — для проверки: через 1,5 с; ?obwdelay=мс — задержка для автопроверок.
-  var DELAY = force ? 1500 : 20000, md = location.search.match(/[?&]obwdelay=(\d+)/);
+  var DELAY = force ? 1500 : 8000, md = location.search.match(/[?&]obwdelay=(\d+)/);
   if (md) DELAY = +md[1];
   function go(){
     if (document.visibilityState === 'hidden') {   // вкладка в фоне — покажем, когда на неё вернутся
