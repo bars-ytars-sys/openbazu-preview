@@ -300,46 +300,38 @@ html.obw-lock,html.obw-lock body{overflow:hidden!important}
 }
 @media (prefers-reduced-motion:reduce){.obw.is-open .obw__box{animation:none}.obw__btn{transition:none}}
 
-/* ob-вебинар-плашка (28.09) */
-.obw-chip[hidden],.obw-chip.obw-chip--ждёт{display:none!important}
-html.obw-lock .obw-chip{display:none!important}
-/* z 9980: над элементами страниц (Нулевые блоки до 60), под открытым меню (rec1991854501 — 9990, журнал 19.09) и попапами Тильды */
-.obw-chip{position:fixed;left:20px;bottom:20px;z-index:9980;display:flex;align-items:stretch;max-width:calc(100vw - 40px);
-  border-radius:18px;background:#52719D;color:#FFFFFB;box-shadow:0 14px 34px rgba(49,58,57,.32);
-  font-family:'TildaSans',Arial,sans-serif;-webkit-font-smoothing:antialiased}
-/* Без анимаций: замер 28.09 на живой главной, мобильный WebKit — окно, открытое плашкой на 2–4-й секунде (страница ещё грузится),
-   стояло на первом кадре obwUp (translateY 14px) 3,4 с и потом прыгало вверх: кнопка «Записаться» сдвигалась под пальцем. */
-.obw.is-open .obw__box{animation:none}
-/* Кнопка «Записаться» без сдвига при наведении: после нажатия плашки на телефоне палец/курсор оказывается на нижнем
-   краю кнопки — hover поднимал её на 1 px, курсор выходил за край, она опускалась — дрожь по кругу (замер 28.09, WebKit). */
-.obw__btn{transition:none}
-.obw__btn:hover{transform:none;box-shadow:inset 0 0 0 2px #6C98BC}
-.obw-chip__go{display:flex;align-items:center;gap:12px;min-height:56px;margin:0;padding:8px;border:0;border-radius:18px 0 0 18px;
-  background:none;color:inherit;font:inherit;text-align:left;cursor:pointer;-webkit-tap-highlight-color:transparent}
-.obw-chip__д{display:flex;flex-direction:column;align-items:center;justify-content:center;width:46px;height:46px;flex:none;
-  border-radius:12px;background:#FFFFFB;color:#52719D;line-height:1}
-.obw-chip__д b{font:700 20px/1 'TildaSans',Arial,sans-serif}
-.obw-chip__д i{margin-top:2px;font:700 13px/1 'TildaSans',Arial,sans-serif;font-style:normal;text-transform:lowercase}
-.obw-chip__т{display:flex;flex-direction:column;gap:3px;min-width:0}
-.obw-chip__т small{font:700 13px/1.2 'TildaSans',Arial,sans-serif;color:rgba(255,255,251,.85)}
-.obw-chip__т b{font:700 16px/1.2 'TildaSans',Arial,sans-serif;color:#FFFFFB}
-.obw-chip__зап{margin-left:6px;display:flex;align-items:center;justify-content:center;min-height:40px;padding:0 14px;border-radius:12px;
-  background:rgba(255,255,251,.16);font:700 13px/1 'TildaSans',Arial,sans-serif;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap}
-.obw-chip__go:hover .obw-chip__зап{background:#FFFFFB;color:#52719D}
-.obw-chip__x{display:flex;align-items:center;justify-content:center;width:40px;flex:none;margin:0;padding:0;border:0;
-  border-left:1px solid rgba(255,255,251,.2);border-radius:0 18px 18px 0;background:none;color:rgba(255,255,251,.85);cursor:pointer;
-  -webkit-tap-highlight-color:transparent}
-.obw-chip__x svg{width:14px;height:14px}
-.obw-chip__go:focus-visible,.obw-chip__x:focus-visible{outline:3px solid #6C98BC;outline-offset:2px}
+/* ob-вебинар-полоса (29.09) */
+.obw-bar[hidden]{display:none!important}
+html.obw-lock .obw-bar{display:none!important}
+html.obw-bar-on body{padding-top:var(--obw-bar-h,44px)!important}
+.obw-bar{position:fixed;left:0;right:0;top:55px;z-index:989;display:flex;align-items:stretch;background:#52719D;color:#FFFFFB;
+  box-shadow:0 8px 20px rgba(49,58,57,.22);font-family:'TildaSans',Arial,sans-serif;-webkit-font-smoothing:antialiased}
+.obw-bar__go{flex:1;min-width:0;display:flex;align-items:center;justify-content:center;gap:14px;min-height:46px;margin:0;padding:6px 10px 6px 18px;
+  border:0;background:none;color:inherit;font:inherit;text-align:left;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.obw-bar__точка{position:relative;flex:none;width:10px;height:10px;border-radius:50%;background:#FFFFFB}
+.obw-bar__точка:after{content:"";position:absolute;inset:-5px;border-radius:50%;border:2px solid rgba(255,255,251,.75);animation:obwPulse 1.6s ease-out infinite}
+@keyframes obwPulse{from{transform:scale(.6);opacity:1}to{transform:scale(1.7);opacity:0}}
+.obw-bar__т{min-width:0;font-size:16px;line-height:1.25}
+.obw-bar__т b{font-weight:700}
+.obw-bar__до{opacity:.92}
+.obw-bar__тел{display:none}
+.obw-bar__зап{flex:none;display:inline-flex;align-items:center;min-height:34px;padding:0 16px;border-radius:999px;background:#FFFFFB;color:#52719D;
+  font-size:14px;font-weight:700;letter-spacing:.02em;white-space:nowrap}
+.obw-bar__go:hover .obw-bar__зап{background:#313A39;color:#FFFFFB}
+.obw-bar__x{flex:none;display:flex;align-items:center;justify-content:center;width:46px;margin:0;padding:0;border:0;background:none;
+  color:rgba(255,255,251,.85);cursor:pointer;-webkit-tap-highlight-color:transparent}
+.obw-bar__x svg{width:14px;height:14px}
+.obw-bar__go:focus-visible,.obw-bar__x:focus-visible{outline:3px solid #6C98BC;outline-offset:-3px}
+@media (max-width:900px){.obw-bar__тема{display:none}}
 @media (max-width:640px){
-  .obw-chip{left:12px;max-width:calc(100vw - 24px);border-radius:16px}
-  .obw-chip__go{min-height:52px;gap:10px;padding:6px;border-radius:16px 0 0 16px}
-  .obw-chip__д{width:40px;height:40px}
-  .obw-chip__д b{font-size:18px}
-  .obw-chip__т b{font-size:15px}
-  .obw-chip__зап{display:none}
-  .obw-chip__x{width:44px;border-radius:0 16px 16px 0}
+  .obw-bar__go{gap:10px;padding:6px 6px 6px 14px;justify-content:flex-start}
+  .obw-bar__пк{display:none}
+  .obw-bar__тел{display:inline}
+  .obw-bar__т{font-size:14px}
+  .obw-bar__зап{min-height:32px;padding:0 12px;font-size:13px;margin-left:auto}
+  .obw-bar__x{width:44px}
 }
+@media (prefers-reduced-motion:reduce){.obw-bar__точка:after{animation:none}}
 
 /* ob-вебинар-окно: отсчёт и пункты (28.09) */
 .obw__до{white-space:nowrap}
@@ -733,7 +725,7 @@ var т;window.addEventListener('resize',function(){clearTimeout(т);т=setTimeou
       </nav>
       <div class="ob-nm__право">
         <div class="ob-nm__метка">Услуги · выберите по своей ситуации</div>
-        <div class="ob-nm__карты"><a class="ob-nm__card" href="consultations.html" data-путь="/consultations"><span class="ob-nm__cn">01</span><span class="ob-nm__ct">Консультации и разборы</span><span class="ob-nm__cw">Когда нужен ответ на конкретный вопрос</span></a><a class="ob-nm__card" href="engineering.html" data-путь="/engineering"><span class="ob-nm__cn">02</span><span class="ob-nm__ct">Проектирование баз отдыха</span><span class="ob-nm__cw">Когда есть земля и нужен план застройки</span></a><a class="ob-nm__card" href="building.html" data-путь="/building"><span class="ob-nm__cn">03</span><span class="ob-nm__ct">Строительство баз отдыха</span><span class="ob-nm__cw">Когда есть проект и пора строить</span></a><a class="ob-nm__card" href="promotion.html" data-путь="/promotion"><span class="ob-nm__cn">04</span><span class="ob-nm__ct">Продвижение баз отдыха</span><span class="ob-nm__cw">Когда база построена, но пустует</span></a><a class="ob-nm__card" href="materials.html" data-путь="/materials"><span class="ob-nm__cn">05</span><span class="ob-nm__ct">Обучающие материалы</span><span class="ob-nm__cw">Когда хотите разобраться своими силами</span></a><a class="ob-nm__card" href="club.html" data-путь="/club"><span class="ob-nm__cn">06</span><span class="ob-nm__ct">Закрытый клуб</span><span class="ob-nm__cw">Когда нужно сопровождение на всём пути</span></a><a class="ob-nm__card" href="shop-projects.html" data-путь="/shop-projects"><span class="ob-nm__cn">07</span><span class="ob-nm__ct">Готовые проекты</span><span class="ob-nm__cw">Когда нужен дом, а не весь комплекс</span></a><a class="ob-nm__card ob-nm__card--дом" href="house-design.html" data-путь="/house-design"><span class="ob-nm__cn">08</span><span class="ob-nm__ct">Индивидуальный проект дома</span><span class="ob-nm__cw">Когда нужен свой дом, а не готовый</span></a><a class="ob-nm__card ob-nm__card--bz" href="https://xn----7sbcscidf0aj2b.xn--p1ai/" target="_blank" rel="noopener"><span class="ob-nm__cn">новый проект</span><span class="ob-nm__ct">Биржа земли</span><span class="ob-nm__cw">Купить или продать участок под базу отдыха ↗</span></a></div>
+        <div class="ob-nm__карты"><a class="ob-nm__card" href="consultations.html" data-путь="/consultations"><span class="ob-nm__cn">01</span><span class="ob-nm__ct">Консультации и разборы</span><span class="ob-nm__cw">Когда нужен ответ на конкретный вопрос</span></a><a class="ob-nm__card" href="engineering.html" data-путь="/engineering"><span class="ob-nm__cn">02</span><span class="ob-nm__ct">Проектирование баз отдыха</span><span class="ob-nm__cw">Когда есть земля и нужен план застройки</span></a><a class="ob-nm__card" href="building.html" data-путь="/building"><span class="ob-nm__cn">03</span><span class="ob-nm__ct">Строительство баз отдыха</span><span class="ob-nm__cw">Когда есть проект и пора строить</span></a><a class="ob-nm__card" href="promotion.html" data-путь="/promotion"><span class="ob-nm__cn">04</span><span class="ob-nm__ct">Продвижение баз отдыха</span><span class="ob-nm__cw">Когда база построена, но пустует</span></a><a class="ob-nm__card" href="materials.html" data-путь="/materials"><span class="ob-nm__cn">05</span><span class="ob-nm__ct">Обучающие материалы</span><span class="ob-nm__cw">Когда хотите разобраться своими силами</span></a><a class="ob-nm__card" href="club.html" data-путь="/club"><span class="ob-nm__cn">06</span><span class="ob-nm__ct">Закрытый клуб</span><span class="ob-nm__cw">Когда нужно сопровождение на всём пути</span></a><a class="ob-nm__card" href="shop-projects.html" data-путь="/shop-projects"><span class="ob-nm__cn">07</span><span class="ob-nm__ct">Готовые проекты</span><span class="ob-nm__cw">Когда нужен дом, а не весь комплекс</span></a><a class="ob-nm__card ob-nm__card--дом" href="house-design.html" data-путь="/house-design"><span class="ob-nm__cn">08</span><span class="ob-nm__ct">Индивидуальный проект дома</span><span class="ob-nm__cw">Когда готовый не подошёл</span></a><a class="ob-nm__card ob-nm__card--bz" href="https://xn----7sbcscidf0aj2b.xn--p1ai/" target="_blank" rel="noopener"><span class="ob-nm__cn">новый проект</span><span class="ob-nm__ct">Биржа земли</span><span class="ob-nm__cw">Купить или продать участок под базу отдыха ↗</span></a></div>
       </div>
     </div>
   </div>
@@ -990,13 +982,13 @@ var т;window.addEventListener('resize',function(){clearTimeout(т);т=setTimeou
     </div>
   </div>
 </div>
-<div class="obw-chip" id="obWebinarChip" hidden>
-  <button class="obw-chip__go" type="button" data-obw-chip-open aria-label="Бесплатный вебинар 3 октября: как купить или продать участок под базу отдыха — записаться">
-    <span class="obw-chip__д" aria-hidden="true"><b>3</b><i>окт</i></span>
-    <span class="obw-chip__т"><small>Бесплатный вебинар<span data-obw-до></span></small><b>Как купить или продать участок</b></span>
-    <span class="obw-chip__зап" aria-hidden="true">Записаться &#8594;</span>
+<div class="obw-bar" id="obWebinarBar" hidden>
+  <button class="obw-bar__go" type="button" data-obw-bar-open aria-label="Бесплатный вебинар 3 октября в 11:00 МСК: как купить или продать участок под базу отдыха — записаться">
+    <span class="obw-bar__точка" aria-hidden="true"></span>
+    <span class="obw-bar__т"><span class="obw-bar__пк"><b>Бесплатный вебинар 3 октября, 11:00 МСК</b><span class="obw-bar__до" data-obw-до></span><span class="obw-bar__тема"> — как купить или продать участок под базу отдыха</span></span><span class="obw-bar__тел"><b>Вебинар 3 октября</b> · бесплатно</span></span>
+    <span class="obw-bar__зап" aria-hidden="true">Записаться&nbsp;&#8594;</span>
   </button>
-  <button class="obw-chip__x" type="button" aria-label="Скрыть напоминание о вебинаре" data-obw-chip-x>
+  <button class="obw-bar__x" type="button" aria-label="Скрыть полосу вебинара" data-obw-bar-x>
     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg>
   </button>
 </div><script>
@@ -1062,45 +1054,26 @@ var т;window.addEventListener('resize',function(){clearTimeout(т);т=setTimeou
   };
   [].forEach.call(document.querySelectorAll('[data-obw-до]'), function(e){ e.textContent = ' · ' + доЭфира(); });
 
-  // 28.09 «вебинар-плашка»: второй шанс — плашка внизу слева открывает окно, даже если его закрывали
-  var chip = document.getElementById('obWebinarChip');
-  var chipСкрыт = function(){ try { return sessionStorage.getItem(KEY + 'Chip'); } catch (e) { return null; } };
-  if (chip && !chipСкрыт()) {
-    var бар = null, ждёмБар = false;
-    var найтиБар = function(){   // нижняя полоса заявки Тильды (телефон): её фиксированный элемент
-      var r = document.getElementById('rec1992766661'); if (!r) return null;
-      var все = r.querySelectorAll('*');
-      for (var i = 0; i < все.length; i++) { if (getComputedStyle(все[i]).position === 'fixed') return все[i]; }
-      return null;
+  // 29.09 «вебинар-полоса»: полоса во всю ширину под закреплённой шапкой, видна сразу; открывает окно, даже если его закрывали
+  var bar = document.getElementById('obWebinarBar');
+  var barСкрыт = function(){ try { return sessionStorage.getItem(KEY + 'Bar'); } catch (e) { return null; } };
+  if (bar && !barСкрыт()) {
+    var полоса = function(){
+      var ш = document.querySelector('#rec1855532261 .t396__artboard');
+      var низ = 0;
+      if (ш) { var r = ш.getBoundingClientRect(); if (getComputedStyle(ш).position === 'fixed' && r.top <= 1 && r.height < 200) низ = Math.max(0, Math.round(r.bottom)); }
+      bar.style.top = низ + 'px';
+      document.documentElement.style.setProperty('--obw-bar-h', bar.offsetHeight + 'px');
     };
-    var поднять = function(){
-      if (!бар || !document.documentElement.contains(бар)) бар = найтиБар();
-      var низ = window.innerWidth <= 640 ? 12 : 20;
-      if (бар) {
-        var р = бар.getBoundingClientRect();
-        if (р.height > 0 && р.top < window.innerHeight && р.bottom > window.innerHeight - 6) низ = Math.round(window.innerHeight - р.top) + 10;
-      }
-      chip.style.bottom = низ + 'px';
-    };
-    // телефон: на первом экране плашка закрыла бы карточки героя («Биржа земли» на главной, замер 28.09) —
-    // показываем, когда прокрутили больше 60 % экрана; вернулись наверх — прячем. ПК — сразу.
-    var показать = function(){
-      var y = window.pageYOffset || document.documentElement.scrollTop || 0;
-      var нужно = window.innerWidth > 640 || y > window.innerHeight * 0.6;
-      if (нужно) chip.classList.remove('obw-chip--ждёт'); else chip.classList.add('obw-chip--ждёт');
-    };
-    var обновить = function(){ поднять(); показать(); };
-    window.addEventListener('scroll', function(){ if (ждёмБар) return; ждёмБар = true;
-      requestAnimationFrame(function(){ ждёмБар = false; обновить(); }); }, { passive: true });
-    window.addEventListener('resize', обновить);
-    setTimeout(обновить, 1500); setTimeout(обновить, 4000);
-    обновить();
-    chip.hidden = false;
-    chip.addEventListener('click', function(e){
-      if (e.target.closest('[data-obw-chip-x]')) { chip.hidden = true; try { sessionStorage.setItem(KEY + 'Chip', '1'); } catch (_) {} return; }
-      if (e.target.closest('[data-obw-chip-open]')) { goal('webinar_chip_click'); shown = false; open(); }
+    var убрать = function(){ bar.hidden = true; document.documentElement.classList.remove('obw-bar-on'); };
+    bar.hidden = false; document.documentElement.classList.add('obw-bar-on');
+    полоса(); setTimeout(полоса, 1500); setTimeout(полоса, 4000);
+    window.addEventListener('resize', полоса);
+    bar.addEventListener('click', function(e){
+      if (e.target.closest('[data-obw-bar-x]')) { убрать(); try { sessionStorage.setItem(KEY + 'Bar', '1'); } catch (_) {} return; }
+      if (e.target.closest('[data-obw-bar-open]')) { goal('webinar_chip_click_bar'); shown = false; open(); }
     });
-    btn.addEventListener('click', function(){ chip.hidden = true; });
+    btn.addEventListener('click', убрать);
   }
   // Не ждём полной загрузки страницы (событие load): у посетителей из России она шла 40–60 с или не
   // заканчивалась — CDN Тильды static.tildacdn.com рвал соединения (замер 24.09), и окно не всплывало.
