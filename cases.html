@@ -661,6 +661,7 @@ html.obw-bar-on body{padding-top:var(--obw-bar-h,44px)!important}
 .obw-bar__т b{font-weight:700}
 .obw-bar__до{opacity:.92}
 .obw-bar__тел{display:none}
+.obw-bar__тел2{display:block;opacity:.92}
 .obw-bar__зап{flex:none;display:inline-flex;align-items:center;min-height:34px;padding:0 16px;border-radius:999px;background:#FFFFFB;color:#52719D;
   font-size:14px;font-weight:700;letter-spacing:.02em;white-space:nowrap}
 .obw-bar__go:hover .obw-bar__зап{background:#313A39;color:#FFFFFB}
@@ -670,7 +671,7 @@ html.obw-bar-on body{padding-top:var(--obw-bar-h,44px)!important}
 .obw-bar__go:focus-visible,.obw-bar__x:focus-visible{outline:3px solid #6C98BC;outline-offset:-3px}
 @media (max-width:900px){.obw-bar__тема{display:none}}
 @media (max-width:640px){
-  .obw-bar__go{gap:10px;padding:6px 6px 6px 14px;justify-content:flex-start}
+  .obw-bar__go{gap:12px;padding:6px 6px 6px 22px;justify-content:flex-start}
   .obw-bar__пк{display:none}
   .obw-bar__тел{display:inline}
   .obw-bar__т{font-size:14px}
@@ -1503,7 +1504,7 @@ var т;window.addEventListener('resize',function(){clearTimeout(т);т=setTimeou
 <div class="obw-bar" id="obWebinarBar" hidden>
   <button class="obw-bar__go" type="button" data-obw-bar-open aria-label="Бесплатный вебинар 3 октября в 11:00 МСК: как купить или продать участок под базу отдыха — записаться">
     <span class="obw-bar__точка" aria-hidden="true"></span>
-    <span class="obw-bar__т"><span class="obw-bar__пк"><b>Бесплатный вебинар 3 октября, 11:00 МСК</b><span class="obw-bar__до" data-obw-до></span><span class="obw-bar__тема"> — как купить или продать участок под базу отдыха</span></span><span class="obw-bar__тел"><b>Вебинар 3 октября</b> · бесплатно</span></span>
+    <span class="obw-bar__т"><span class="obw-bar__пк"><b>Бесплатный вебинар 3 октября, 11:00 МСК</b><span class="obw-bar__до" data-obw-до></span><span class="obw-bar__тема"> — как купить или продать участок под базу отдыха</span></span><span class="obw-bar__тел"><b>Вебинар 3 октября</b><span class="obw-bar__тел2">бесплатно, 11:00 МСК</span></span></span>
     <span class="obw-bar__зап" aria-hidden="true">Записаться&nbsp;&#8594;</span>
   </button>
   <button class="obw-bar__x" type="button" aria-label="Скрыть полосу вебинара" data-obw-bar-x>

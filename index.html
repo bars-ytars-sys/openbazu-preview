@@ -696,6 +696,9 @@ document.addEventListener('DOMContentLoaded',t_setvisRecs);}})();</script><style
   /* кнопки одна под другой во всю ширину: раньше две разной длины висели у левого края */
   .ob-bz--к .ob-bz__act{grid-template-columns:1fr;gap:10px}
 }
+
+.ob-пу3--т .ob-пу3__b{color:#fffffb;border-color:#52719d;background:#52719d}
+.ob-пу3--т .ob-пу3__b:hover{color:#fffffb;border-color:#6c98bc;background:#6c98bc}
 </style><style>@media screen and (max-width:1100px){.ob-panel[data-ob-panel].is-open{max-height:2600px}}@media screen and (max-width:640px){.ob-panel[data-ob-panel].is-open{max-height:4000px}}</style><style>
 /* ── диагностика: широкая плашка с кадром ── */
 .ob-diag{position:relative;border-radius:30px;overflow:hidden;background:#313a39;
@@ -1153,6 +1156,22 @@ document.addEventListener('DOMContentLoaded',t_setvisRecs);}})();</script><style
 @media screen and (max-width:700px){
   .ob-vid{grid-template-columns:1fr;gap:16px}
   .ob-vid__n{font-size:20px}
+}
+/* 29.09 вечер: два видеоотзыва рядом (Максим и Кристина, Алексей). На телефоне — строками: кадр слева,
+   текст справа, иначе две карточки с кадром во всю ширину растягивают блок на лишний экран. */
+.ob-vids{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-bottom:18px}
+.ob-vids .ob-vid{margin-bottom:0;grid-template-columns:minmax(0,230px) minmax(0,1fr)}
+@media screen and (max-width:1000px){
+  .ob-vids{grid-template-columns:minmax(0,1fr);gap:14px}
+}
+@media screen and (max-width:700px){
+  .ob-vids .ob-vid{grid-template-columns:minmax(0,132px) minmax(0,1fr);gap:14px;padding:12px}
+  .ob-vids .ob-vid__k{border-radius:12px}
+  .ob-vids .ob-vid__play{width:40px;height:40px}
+  .ob-vids .ob-vid__play:before{border-width:8px 0 8px 12px}
+  .ob-vids .ob-vid__n{font-size:18px}
+  .ob-vids .ob-vid__p{margin-top:4px;font-size:14px;line-height:1.35}
+  .ob-vids .ob-vid__g{margin-top:8px}
 }
 /* Свой ролик снят на телефон и стоит вертикально: 406x720. Общая рамка
    лупы 16:9 обрезала бы его в узкую полосу посреди чёрного поля, поэтому
@@ -1900,6 +1919,7 @@ html.obw-bar-on body{padding-top:var(--obw-bar-h,44px)!important}
 .obw-bar__т b{font-weight:700}
 .obw-bar__до{opacity:.92}
 .obw-bar__тел{display:none}
+.obw-bar__тел2{display:block;opacity:.92}
 .obw-bar__зап{flex:none;display:inline-flex;align-items:center;min-height:34px;padding:0 16px;border-radius:999px;background:#FFFFFB;color:#52719D;
   font-size:14px;font-weight:700;letter-spacing:.02em;white-space:nowrap}
 .obw-bar__go:hover .obw-bar__зап{background:#313A39;color:#FFFFFB}
@@ -1909,7 +1929,7 @@ html.obw-bar-on body{padding-top:var(--obw-bar-h,44px)!important}
 .obw-bar__go:focus-visible,.obw-bar__x:focus-visible{outline:3px solid #6C98BC;outline-offset:-3px}
 @media (max-width:900px){.obw-bar__тема{display:none}}
 @media (max-width:640px){
-  .obw-bar__go{gap:10px;padding:6px 6px 6px 14px;justify-content:flex-start}
+  .obw-bar__go{gap:12px;padding:6px 6px 6px 22px;justify-content:flex-start}
   .obw-bar__пк{display:none}
   .obw-bar__тел{display:inline}
   .obw-bar__т{font-size:14px}
@@ -2572,7 +2592,7 @@ if(Math.abs(d)>50)show(cur+(d<0?1:-1));x0=null})})();</script>
           <h2 class="ob-h2">Что говорят владельцы баз</h2>
           <p class="ob-lead">Слова перепечатаны из сообщений дословно. У каждой цитаты
           можно открыть исходный скриншот и проверить.</p>
-          <a class="ob-vid" href="#" hidden><span class="ob-vid__k"><img src="assets/otzyv-maksim.webp" alt="Видеоотзыв: Максим и Кристина, выездная консультация с проектировщиком, Белорецк" loading="lazy"><span class="ob-vid__play" aria-hidden="true"></span></span><span class="ob-vid__t"><span class="ob-vid__n">Максим и Кристина</span><span class="ob-vid__p">выездная консультация с проектировщиком, Белорецк</span><span class="ob-vid__g">Смотреть отзыв · 4 минуты</span></span></a>
+          <div class="ob-vids"><a class="ob-vid" href="#" hidden><span class="ob-vid__k"><img src="assets/otzyv-maksim.webp" alt="Видеоотзыв: Максим и Кристина, выездная консультация с проектировщиком, Белорецк" loading="lazy"><span class="ob-vid__play" aria-hidden="true"></span></span><span class="ob-vid__t"><span class="ob-vid__n">Максим и Кристина</span><span class="ob-vid__p">выездная консультация с проектировщиком, Белорецк</span><span class="ob-vid__g">Смотреть отзыв · 4 минуты</span></span></a><a class="ob-vid" href="#" data-видео="assets/otzyv-aleksey-web.mp4"><span class="ob-vid__k"><img src="assets/otzyv-aleksey.webp" alt="Видеоотзыв: Алексей, выездная консультация, Уктур, Хабаровский край" loading="lazy"><span class="ob-vid__play" aria-hidden="true"></span></span><span class="ob-vid__t"><span class="ob-vid__n">Алексей</span><span class="ob-vid__p">выездная консультация, Уктур, Хабаровский край</span><span class="ob-vid__g">Смотреть отзыв · 1,5 минуты</span></span></a></div>
           <div class="ob-q"><div class="ob-q__c">
               <p class="ob-q__t">Сотрудничество нам понравилось. Александр очень отзывчивый и на многие вопросы помог найти ответ. Нам сделали классный проект базы и мы остались довольны, сейчас строим. По фин модели нам показалось, что расходы завышены, если честно, но как база от чего отталкиваться — супер</p>
               <div class="ob-q__f">
@@ -3847,7 +3867,7 @@ var т;window.addEventListener('resize',function(){clearTimeout(т);т=setTimeou
 <div class="obw-bar" id="obWebinarBar" hidden>
   <button class="obw-bar__go" type="button" data-obw-bar-open aria-label="Бесплатный вебинар 3 октября в 11:00 МСК: как купить или продать участок под базу отдыха — записаться">
     <span class="obw-bar__точка" aria-hidden="true"></span>
-    <span class="obw-bar__т"><span class="obw-bar__пк"><b>Бесплатный вебинар 3 октября, 11:00 МСК</b><span class="obw-bar__до" data-obw-до></span><span class="obw-bar__тема"> — как купить или продать участок под базу отдыха</span></span><span class="obw-bar__тел"><b>Вебинар 3 октября</b> · бесплатно</span></span>
+    <span class="obw-bar__т"><span class="obw-bar__пк"><b>Бесплатный вебинар 3 октября, 11:00 МСК</b><span class="obw-bar__до" data-obw-до></span><span class="obw-bar__тема"> — как купить или продать участок под базу отдыха</span></span><span class="obw-bar__тел"><b>Вебинар 3 октября</b><span class="obw-bar__тел2">бесплатно, 11:00 МСК</span></span></span>
     <span class="obw-bar__зап" aria-hidden="true">Записаться&nbsp;&#8594;</span>
   </button>
   <button class="obw-bar__x" type="button" aria-label="Скрыть полосу вебинара" data-obw-bar-x>

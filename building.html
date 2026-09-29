@@ -702,6 +702,22 @@ document.addEventListener('DOMContentLoaded',t_setvisRecs);}})();</script><scrip
   .ob-vid{grid-template-columns:1fr;gap:16px}
   .ob-vid__n{font-size:20px}
 }
+/* 29.09 вечер: два видеоотзыва рядом (Максим и Кристина, Алексей). На телефоне — строками: кадр слева,
+   текст справа, иначе две карточки с кадром во всю ширину растягивают блок на лишний экран. */
+.ob-vids{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-bottom:18px}
+.ob-vids .ob-vid{margin-bottom:0;grid-template-columns:minmax(0,230px) minmax(0,1fr)}
+@media screen and (max-width:1000px){
+  .ob-vids{grid-template-columns:minmax(0,1fr);gap:14px}
+}
+@media screen and (max-width:700px){
+  .ob-vids .ob-vid{grid-template-columns:minmax(0,132px) minmax(0,1fr);gap:14px;padding:12px}
+  .ob-vids .ob-vid__k{border-radius:12px}
+  .ob-vids .ob-vid__play{width:40px;height:40px}
+  .ob-vids .ob-vid__play:before{border-width:8px 0 8px 12px}
+  .ob-vids .ob-vid__n{font-size:18px}
+  .ob-vids .ob-vid__p{margin-top:4px;font-size:14px;line-height:1.35}
+  .ob-vids .ob-vid__g{margin-top:8px}
+}
 /* Свой ролик снят на телефон и стоит вертикально: 406x720. Общая рамка
    лупы 16:9 обрезала бы его в узкую полосу посреди чёрного поля, поэтому
    ему отдельная — по высоте экрана, ширина считается от неё сама.
