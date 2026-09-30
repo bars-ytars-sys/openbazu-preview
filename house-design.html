@@ -971,6 +971,84 @@ document.addEventListener('DOMContentLoaded',t_setvisRecs);}})();</script><scrip
   .ob-пд-хс2__подр{order:4}
   .ob-пд-хс2__цс{font-size:32px}
 }
+
+/* хоум-стейджинг «живо» (30.09): макет книги, шаги линией со значками, цена полосой */
+.ob-хсж{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:28px 56px;align-items:center}
+.ob-хсж__т .ob-h2{margin-bottom:14px}
+.ob-хсж__т .ob-lead{margin:0;max-width:640px}
+.ob-хсж__девиз{margin:18px 0 0;font-family:var(--uc-typo-fontfamily-ZcDjuR,EngraversGothic);font-size:18px;font-weight:700;
+  letter-spacing:.04em;text-transform:uppercase;color:var(--акц)}
+/* макет: два листа, передний чуть наклонён — статично */
+.ob-хсж__макет{position:relative;min-height:330px;padding:18px 26px 18px 0}
+.ob-хсж__лист{position:absolute;box-sizing:border-box;border-radius:20px;background:#fffffb;border:1px solid rgba(49,58,57,.12);
+  box-shadow:0 18px 40px rgba(49,58,57,.12)}
+.ob-хсж__лист--зад{top:10px;right:16px;width:70%;height:250px;padding:20px 22px;transform:rotate(4deg);background:#eef2f6}   /* наклонённый угол — внутри колонки */
+.ob-хсж__лист--зад b{display:block;font-family:var(--uc-typo-fontfamily-ZcDjuR,EngraversGothic);font-size:15px;font-weight:700;
+  text-transform:uppercase;letter-spacing:.04em;color:rgba(49,58,57,.55);text-align:right}
+.ob-хсж__лист--зад span{display:block;margin-top:4px;font-family:var(--t-text-font,Arial);font-size:13px;color:rgba(49,58,57,.5);text-align:right}
+.ob-хсж__лист--пер{position:relative;width:84%;padding:24px 24px 22px 40px;transform:rotate(-2deg)}
+.ob-хсж__корешок{position:absolute;left:0;top:0;bottom:0;width:14px;border-radius:20px 0 0 20px;background:var(--акц)}
+.ob-хсж__мт{display:inline-block;padding:3px 10px 4px;border-radius:999px;background:rgba(82,113,157,.12);color:var(--акц);
+  font-family:var(--t-text-font,Arial);font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+.ob-хсж__кн{display:block;margin:12px 0 2px;font-family:var(--uc-typo-fontfamily-ZcDjuR,EngraversGothic);font-size:22px;
+  font-weight:700;line-height:1.05;text-transform:uppercase;color:#313a39}
+.ob-хсж__пд{display:block;font-family:var(--t-text-font,Arial);font-size:14px;color:rgba(49,58,57,.65)}
+.ob-хсж__сп{margin:14px 0 16px;padding:0;list-style:none;font-family:var(--t-text-font,Arial);font-size:15px;line-height:1.35;color:#313a39}
+.ob-хсж__сп li{position:relative;padding:7px 0 7px 26px;border-bottom:1px dashed rgba(49,58,57,.14)}
+.ob-хсж__сп li:last-child{border-bottom:0}
+.ob-хсж__сп li:before{content:"";position:absolute;left:3px;top:.95em;width:10px;height:5px;border-left:2px solid var(--акц);
+  border-bottom:2px solid var(--акц);transform:rotate(-45deg)}
+.ob-хсж__ярл{display:inline-block;padding:7px 14px;border-radius:999px;background:var(--акц);color:#fffffb;
+  font-family:var(--t-text-font,Arial);font-size:13.5px;font-weight:600}
+/* шаги линией */
+.ob-хсж__шаги{grid-column:1/-1;position:relative;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;margin:6px 0 0;padding:0;list-style:none}
+.ob-хсж__шаги:before{content:"";position:absolute;left:28px;right:28px;top:27px;height:2px;
+  background:repeating-linear-gradient(90deg,rgba(82,113,157,.45) 0 8px,transparent 8px 14px)}
+.ob-хсж__ш{position:relative;display:flex;flex-direction:column;align-items:flex-start;gap:4px}
+.ob-хсж__зн{position:relative;display:flex;align-items:center;justify-content:center;width:56px;height:56px;margin-bottom:8px;
+  border-radius:50%;background:#fffffb;border:2px solid var(--акц)}
+.ob-хсж__зн svg{width:26px;height:26px;fill:none;stroke:var(--акц);stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.ob-хсж__нш{font-family:var(--t-text-font,Arial);font-size:12.5px;font-weight:700;letter-spacing:.08em;color:var(--акц)}
+.ob-хсж__ш b{font-family:var(--t-text-font,Arial);font-size:16px;font-weight:600;line-height:1.25;color:#313a39}
+.ob-хсж__д{font-family:var(--t-text-font,Arial);font-size:14px;line-height:1.4;color:rgba(49,58,57,.78)}
+/* цена полосой */
+.ob-хсж__цена{grid-column:1/-1;display:flex;align-items:center;justify-content:space-between;gap:18px 28px;flex-wrap:wrap;
+  padding:20px 22px 20px 28px;border-radius:22px;background:var(--акц);color:#fffffb}
+.ob-хсж__цл{display:flex;align-items:baseline;gap:8px 18px;flex-wrap:wrap}
+.ob-хсж__цл b{font-family:var(--t-text-font,Arial);font-size:34px;font-weight:700;line-height:1;white-space:nowrap}
+.ob-хсж__цл span{font-family:var(--t-text-font,Arial);font-size:15px;color:rgba(255,255,251,.86)}
+.ob-хсж__цена .ob-пд-b{background:#fffffb;color:#313a39;border-color:#fffffb}
+.ob-хсж__цена .ob-пд-b:hover{background:rgba(255,255,251,.86);border-color:rgba(255,255,251,.86)}
+.ob-хсж__подр{grid-column:1/-1;margin-top:-10px}
+@media screen and (max-width:1100px){
+  .ob-хсж{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px 32px}
+  .ob-хсж__шаги{grid-template-columns:1fr 1fr;row-gap:24px}
+  .ob-хсж__шаги:before{display:none}
+}
+@media screen and (max-width:760px){
+  /* телефон: текст → макет книги (без заднего листа) → шаги столбиком с линией слева → цена → подробности */
+  .ob-хсж{grid-template-columns:minmax(0,1fr);gap:22px}
+  .ob-хсж__девиз{font-size:16px;margin-top:14px}
+  .ob-хсж__макет{min-height:0;padding:4px 6px 6px 2px}
+  .ob-хсж__лист--зад{display:none}
+  .ob-хсж__лист--пер{width:100%;padding:20px 18px 18px 32px;transform:rotate(-1deg)}
+  .ob-хсж__корешок{width:12px}
+  .ob-хсж__кн{font-size:19px}
+  .ob-хсж__сп{font-size:14.5px;margin:10px 0 14px}
+  .ob-хсж__сп li{padding:5px 0 5px 24px}
+  .ob-хсж__нш{display:none}   /* порядок и так виден по линии со значками — блок короче */
+  .ob-хсж__шаги{grid-template-columns:minmax(0,1fr);gap:14px}
+  .ob-хсж__шаги:before{display:block;left:21px;right:auto;top:22px;bottom:22px;width:2px;height:auto;
+    background:repeating-linear-gradient(180deg,rgba(82,113,157,.45) 0 8px,transparent 8px 14px)}
+  .ob-хсж__ш{display:grid;grid-template-columns:44px minmax(0,1fr);column-gap:14px;row-gap:2px;align-items:start}
+  .ob-хсж__зн{grid-row:1/span 3;width:44px;height:44px;margin:0}
+  .ob-хсж__зн svg{width:21px;height:21px}
+  .ob-хсж__нш,.ob-хсж__ш b,.ob-хсж__д{grid-column:2}
+  .ob-хсж__цена{flex-direction:column;align-items:stretch;padding:20px}
+  .ob-хсж__цл b{font-size:30px}
+  .ob-хсж__цена .ob-пд-b{width:100%;box-sizing:border-box}
+  .ob-хсж__подр{margin-top:-6px}
+}
 </style><style>/* ob-мобильные */
 /* ── телефоны и Safari: общее ────────────────────────────────────── */
 html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
@@ -1371,20 +1449,31 @@ html.ob-зш-кивок #rec1855532261 .tn-elem[data-elem-id="1769795874967"] .t
   </div></section>
 
   <section class="ob-sec ob-sec--soft" id="home-staging"><div class="ob-wrap">
-    <div class="ob-пд-хс2">
-      <div class="ob-пд-хс2__т">
+    <div class="ob-хсж">
+      <div class="ob-хсж__т">
         <div class="ob-label">Для готового объекта</div>
         <h2 class="ob-h2">Хоум-стейджинг</h2>
         <p class="ob-lead">Объект уже есть, а интерьер не радует? Эксперт онлайн разберёт каждое помещение и подскажет,
         что оставить, что переставить и что докупить, — обновить интерьер без ремонта.</p>
+        <p class="ob-хсж__девиз">Больше стиля — больше ценности</p>
       </div>
-      <div class="ob-пд-хс2__цена">
-        <b class="ob-пд-хс2__цс">80&nbsp;000&nbsp;₽</b>
-        <span class="ob-пд-хс2__мета">Онлайн · видеоконсультация 2,5&nbsp;часа · материалы до 14&nbsp;дней</span>
+      <div class="ob-хсж__макет" aria-label="Что вы получите: книга консультации и шпаргалка">
+        <div class="ob-хсж__лист ob-хсж__лист--зад" aria-hidden="true"><b>Шпаргалка</b></div>
+        <div class="ob-хсж__лист ob-хсж__лист--пер">
+          <span class="ob-хсж__корешок" aria-hidden="true"></span>
+          <span class="ob-хсж__мт">Через 14 дней</span>
+          <b class="ob-хсж__кн">Книга консультации</b>
+          <span class="ob-хсж__пд">по каждому помещению</span>
+          <ul class="ob-хсж__сп"><li>Что оставить, что убрать</li><li>Что переставить и заменить</li><li>Подбор декора, мебели, света</li><li>Куда повесить картину</li><li>Какие выбрать шторы</li></ul>
+          <span class="ob-хсж__ярл">Ссылки на товары &#8594;</span>
+        </div>
+      </div>
+      <ol class="ob-хсж__шаги"><li class="ob-хсж__ш"><span class="ob-хсж__зн" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 8h3l2-2.5h6L17 8h3v11H4z"/><circle cx="12" cy="13" r="3.6"/></svg></span><span class="ob-хсж__нш">1</span><b>Фото и видео</b><span class="ob-хсж__д">Присылаете фото и видео объекта, план — если есть</span></li><li class="ob-хсж__ш"><span class="ob-хсж__зн" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="6"/><path d="M15.5 15.5 20 20"/></svg></span><span class="ob-хсж__нш">2</span><b>Подготовка</b><span class="ob-хсж__д">Эксперт разбирает материалы и подбирает референсы</span></li><li class="ob-хсж__ш"><span class="ob-хсж__зн" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="12.5" height="12" rx="2"/><path d="m15.5 10.5 5-3v9l-5-3"/></svg></span><span class="ob-хсж__нш">3</span><b>Видеоконсультация</b><span class="ob-хсж__д">2,5 часа вместе с экспертом по каждому помещению</span></li><li class="ob-хсж__ш"><span class="ob-хсж__зн" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 6.5C10.3 5.2 7.9 4.6 4 4.6v13.2c3.9 0 6.3.6 8 1.9 1.7-1.3 4.1-1.9 8-1.9V4.6c-3.9 0-6.3.6-8 1.9z"/><path d="M12 6.5v12.7"/></svg></span><span class="ob-хсж__нш">4</span><b>Итоговые материалы</b><span class="ob-хсж__д">Через 14 дней — книга консультации со ссылками на товары</span></li></ol>
+      <div class="ob-хсж__цена">
+        <div class="ob-хсж__цл"><b>80&nbsp;000&nbsp;₽</b><span>Онлайн · видеоконсультация 2,5&nbsp;часа · материалы до 14&nbsp;дней</span></div>
         <a class="ob-пд-b" href="#popup:zayavka" data-ob-услуга="Хоум-стейджинг (декорирование объекта, 80 000 ₽)">Заказать консультацию</a>
       </div>
-      <ol class="ob-пд-хс2__шаги"><li class="ob-пд-хс2__ш"><span class="ob-пд-хс2__н">1</span><span><b>Фото и видео</b><span>Присылаете фото и видео объекта, план — если есть</span></span></li><li class="ob-пд-хс2__ш"><span class="ob-пд-хс2__н">2</span><span><b>Подготовка</b><span>Эксперт разбирает материалы и подбирает референсы</span></span></li><li class="ob-пд-хс2__ш"><span class="ob-пд-хс2__н">3</span><span><b>Видеоконсультация</b><span>2,5 часа вместе с экспертом по каждому помещению</span></span></li><li class="ob-пд-хс2__ш"><span class="ob-пд-хс2__н">4</span><span><b>Итоговые материалы</b><span>Через 14 дней — книга консультации со ссылками на товары</span></span></li></ol>
-      <details class="ob-пд-хс2__подр">
+      <details class="ob-пд-хс2__подр ob-хсж__подр">
         <summary>Что входит и кому подойдёт</summary>
         <div class="ob-пд-хс__списки"><div class="ob-пд-хс__сп"><b>Что вы получаете</b><ul><li>Концепция преобразования вашего объекта</li><li>Референсы интерьера и стилевые решения</li><li>Подбор конкретных элементов декора</li><li>Рекомендации по текстилю и шторам</li><li>Подбор освещения</li><li>Куда повесить картины и как оформить стены</li><li>Ссылки на конкретные товары на маркетплейсах</li></ul></div><div class="ob-пд-хс__сп"><b>Для кого</b><ul><li>Владельцы баз отдыха</li><li>Сдающие недвижимость (аренда)</li><li>Собственники апартаментов и гостевых домов</li><li>Кто готовит объект к сезону</li><li>Кто хочет повысить привлекательность объекта и увеличить доход</li><li>Владельцы существующих объектов, которые хотят обновить интерьер без ремонта</li></ul></div><div class="ob-пд-хс__сп"><b>Результат</b><ul><li>Стильный и гармоничный интерьер</li><li>Конкретные решения, а не общие идеи</li><li>Пошаговый план действий</li><li>Ссылки на реальные товары</li><li>Экономия времени и бюджета</li><li>Повышение привлекательности объекта для гостей и роста доходности</li></ul></div></div>
       </details>
