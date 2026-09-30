@@ -1312,6 +1312,58 @@ html.ob-nm-lock,html.ob-nm-lock body{overflow:hidden!important}
 #rec9000000001,#rec9000000032,#rec9000000034,#rec9000000031{scroll-margin-top:84px}.t-skiplink:not(:focus){position:absolute!important;top:-200px!important}</style><style>
 /* ── 28.09 меню: «Индивидуальный проект дома» за «Готовыми проектами» ── */
 @media (min-width:641px){.ob-nm .ob-nm__card--bz{grid-column:1/-1}}
+</style><style>/* меню проще (30.09) */
+.ob-nm--проще .ob-nm__сетка{grid-template-columns:minmax(0,.72fr) minmax(0,1.5fr);gap:28px;padding-top:16px}
+.ob-nm--проще .ob-nm__право{grid-column:2;grid-row:1;min-width:0}
+.ob-nm--проще .ob-nm__лево{grid-column:1;grid-row:1;min-width:0}
+.ob-nm--проще .ob-nm__топ{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-bottom:16px}
+.ob-nm--проще .ob-nm__плитка{display:grid;align-content:space-between;gap:6px;min-height:78px;padding:13px 15px 12px;
+  border:1px solid rgba(49,58,57,.22);border-radius:14px;background:#fffffb;color:#313a39;transition:border-color .15s,box-shadow .2s}
+.ob-nm--проще .ob-nm__плитка:hover,.ob-nm--проще .ob-nm__плитка:focus-visible{border-color:var(--акц);box-shadow:0 10px 24px rgba(49,58,57,.08)}
+.ob-nm--проще a.ob-nm__плитка--бз{background:#313a39;border-color:#313a39;color:#fffffb}
+.ob-nm--проще a.ob-nm__плитка--бз:hover{border-color:#313a39;box-shadow:0 10px 24px rgba(49,58,57,.25)}
+.ob-nm--проще .ob-nm__пт{font:700 15px/1.15 'EngraversGothic',Arial,sans-serif;text-transform:uppercase;letter-spacing:.01em}
+.ob-nm--проще .ob-nm__пп{font-size:13.5px;line-height:1.3;color:rgba(49,58,57,.72)}
+.ob-nm--проще .ob-nm__плитка--бз .ob-nm__пп{color:rgba(255,255,251,.78)}
+.ob-nm--проще .ob-nm__плитка[aria-current]{border-color:var(--акц)}
+.ob-nm--проще .ob-nm__плитка[aria-current] .ob-nm__пт{color:var(--акц)}
+.ob-nm--проще .ob-nm__услуги{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:20px}
+.ob-nm--проще .ob-nm__усл{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;column-gap:10px;row-gap:3px;
+  min-height:48px;padding:9px 0;border-bottom:1px solid rgba(49,58,57,.1);transition:color .15s}
+.ob-nm--проще .ob-nm__ут{grid-column:1;font:700 14px/1.15 'EngraversGothic',Arial,sans-serif;text-transform:uppercase;letter-spacing:.01em}
+.ob-nm--проще .ob-nm__ук{grid-column:1;font-size:13px;line-height:1.3;color:rgba(49,58,57,.66)}
+.ob-nm--проще .ob-nm__уа{grid-column:2;grid-row:1/span 2;font-size:16px;color:rgba(49,58,57,.32);transition:color .15s}
+.ob-nm--проще .ob-nm__усл:hover .ob-nm__ут,.ob-nm--проще .ob-nm__усл:focus-visible .ob-nm__ут,
+.ob-nm--проще .ob-nm__усл:hover .ob-nm__уа,.ob-nm--проще .ob-nm__усл[aria-current] .ob-nm__ут{color:var(--акц)}
+.ob-nm--проще .ob-nm__разделы{list-style:none;margin:0;padding:0}
+.ob-nm--проще .ob-nm__разделы a{display:flex;align-items:center;min-height:48px;padding:8px 0;border-bottom:1px solid rgba(49,58,57,.1);
+  font:700 19px/1.1 'EngraversGothic',Arial,sans-serif;text-transform:uppercase;letter-spacing:.01em;transition:color .15s}
+.ob-nm--проще .ob-nm__разделы a:hover,.ob-nm--проще .ob-nm__разделы a:focus-visible,.ob-nm--проще .ob-nm__разделы a[aria-current]{color:var(--акц)}
+.ob-nm--проще .ob-nm__якоря{display:flex;flex-wrap:wrap;align-items:center;column-gap:16px;margin-top:8px}
+.ob-nm--проще .ob-nm__якоря-м{font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;color:rgba(49,58,57,.55)}
+.ob-nm--проще .ob-nm__якоря a{display:inline-flex;align-items:center;min-height:44px;font-size:15px;color:rgba(49,58,57,.86);transition:color .15s}
+.ob-nm--проще .ob-nm__якоря a:hover,.ob-nm--проще .ob-nm__якоря a:focus-visible{color:var(--акц)}
+.ob-nm--проще .ob-nm__связь{margin-top:14px}
+/* ПК: левая колонка ~240 px — подпись «На главной» строкой над ссылками, иначе «Партнёры» падают на вторую строку */
+@media (min-width:981px){.ob-nm--проще .ob-nm__якоря-м{flex-basis:100%;padding-top:10px}}
+@media (max-width:980px){
+  .ob-nm--проще .ob-nm__сетка{grid-template-columns:1fr;gap:16px}
+  .ob-nm--проще .ob-nm__право,.ob-nm--проще .ob-nm__лево{grid-column:1;grid-row:auto}
+}
+@media (max-width:640px){
+  .ob-nm--проще .ob-nm__сетка{gap:10px;padding-top:12px}
+  .ob-nm--проще .ob-nm__топ{margin-bottom:12px}
+  .ob-nm--проще .ob-nm__плитка{min-height:72px;padding:12px 13px 11px}
+  .ob-nm--проще .ob-nm__пт{font-size:14.5px}
+  .ob-nm--проще .ob-nm__пп{font-size:13px}
+  .ob-nm--проще .ob-nm__услуги{grid-template-columns:1fr}
+  .ob-nm--проще .ob-nm__метка--разд{display:none}
+  .ob-nm--проще .ob-nm__разделы{display:flex;flex-wrap:wrap;column-gap:22px;border-bottom:1px solid rgba(49,58,57,.1)}
+  .ob-nm--проще .ob-nm__разделы a{border:0;min-height:48px;padding:0;font-size:17px}
+  .ob-nm--проще .ob-nm__якоря{margin-top:2px;column-gap:14px}
+  .ob-nm--проще .ob-nm__связь{margin-top:8px;gap:8px}
+}
+@media (prefers-reduced-motion:reduce){.ob-nm--проще .ob-nm__плитка,.ob-nm--проще .ob-nm__усл,.ob-nm--проще .ob-nm__уа{transition:none}}
 </style><style>
 /* ── 20.09: надписи шапки по одной середине ── */
 #rec1855532261 .tn-elem__18555322611769796007296000001{transform:translateY(3.5px)}   /* логотип сидел выше остальных */
@@ -1499,7 +1551,7 @@ html.ob-зш-кивок #rec1855532261 .tn-elem[data-elem-id="1769795874967"] .t
         <div class="ob-хсс__т">
           <div class="ob-label">Для готового объекта</div>
           <h2 class="ob-h2">Хоум-стейджинг</h2>
-          <p class="ob-хсс__суть">Обновить интерьер без ремонта — онлайн-консультация эксперта</p>
+          <p class="ob-хсс__суть">Декорирование объекта: обновить интерьер без ремонта — онлайн-консультация эксперта</p>
         </div>
         <div class="ob-хсс__справа">
           <b class="ob-хсс__цена">80&nbsp;000&nbsp;₽</b>
@@ -2068,6 +2120,22 @@ var т;window.addEventListener('resize',function(){clearTimeout(т);т=setTimeou
   });
   document.addEventListener('keydown',function(e){if(e.key==='Escape')закрыть()});
 })();
+</script><script>/* меню проще (30.09): «Готовые проекты» и Биржа — сверху, якоря главной — строкой внизу */
+(function(){var НОВОЕ="<div class=\"ob-nm__право\"><div class=\"ob-nm__топ\"><a class=\"ob-nm__плитка\" href=\"shop-projects.html\" data-путь=\"/shop-projects\"><span class=\"ob-nm__пт\">Готовые проекты</span><span class=\"ob-nm__пп\">Когда нужен дом, а не весь комплекс</span></a><a class=\"ob-nm__плитка ob-nm__плитка--бз\" href=\"https://xn----7sbcscidf0aj2b.xn--p1ai/\" target=\"_blank\" rel=\"noopener\"><span class=\"ob-nm__пт\">Биржа земли</span><span class=\"ob-nm__пп\">Купить или продать участок&nbsp;↗</span></a></div><div class=\"ob-nm__метка\">Услуги</div><ul class=\"ob-nm__услуги\"><li><a class=\"ob-nm__усл\" href=\"consultations.html\" data-путь=\"/consultations\"><span class=\"ob-nm__ут\">Консультации и разборы</span><span class=\"ob-nm__ук\">Когда нужен ответ на конкретный вопрос</span><span class=\"ob-nm__уа\" aria-hidden=\"true\">→</span></a></li><li><a class=\"ob-nm__усл\" href=\"engineering.html\" data-путь=\"/engineering\"><span class=\"ob-nm__ут\">Проектирование баз отдыха</span><span class=\"ob-nm__ук\">Когда есть земля и нужен план застройки</span><span class=\"ob-nm__уа\" aria-hidden=\"true\">→</span></a></li><li><a class=\"ob-nm__усл\" href=\"building.html\" data-путь=\"/building\"><span class=\"ob-nm__ут\">Строительство баз отдыха</span><span class=\"ob-nm__ук\">Когда есть проект и пора строить</span><span class=\"ob-nm__уа\" aria-hidden=\"true\">→</span></a></li><li><a class=\"ob-nm__усл\" href=\"promotion.html\" data-путь=\"/promotion\"><span class=\"ob-nm__ут\">Продвижение баз отдыха</span><span class=\"ob-nm__ук\">Когда база построена, но пустует</span><span class=\"ob-nm__уа\" aria-hidden=\"true\">→</span></a></li><li><a class=\"ob-nm__усл\" href=\"materials.html\" data-путь=\"/materials\"><span class=\"ob-nm__ут\">Обучающие материалы</span><span class=\"ob-nm__ук\">Когда хотите разобраться своими силами</span><span class=\"ob-nm__уа\" aria-hidden=\"true\">→</span></a></li><li><a class=\"ob-nm__усл\" href=\"club.html\" data-путь=\"/club\"><span class=\"ob-nm__ут\">Закрытый клуб</span><span class=\"ob-nm__ук\">Когда нужно сопровождение на всём пути</span><span class=\"ob-nm__уа\" aria-hidden=\"true\">→</span></a></li><li><a class=\"ob-nm__усл\" href=\"house-design.html\" data-путь=\"/house-design\"><span class=\"ob-nm__ут\">Индивидуальный проект дома</span><span class=\"ob-nm__ук\">Когда готовый не подошёл</span><span class=\"ob-nm__уа\" aria-hidden=\"true\">→</span></a></li></ul></div><nav class=\"ob-nm__лево\" aria-label=\"Разделы\"><div class=\"ob-nm__метка ob-nm__метка--разд\">Разделы</div><ul class=\"ob-nm__разделы\"><li><a href=\"https://xn--80abtjtnmcm9em.xn--p1ai/blog\" data-путь=\"/blog\">Блог</a></li><li><a href=\"about.html\" data-путь=\"/about\">Об Александре</a></li><li><a href=\"news.html\" data-путь=\"/news\">Новости</a></li></ul><div class=\"ob-nm__якоря\"><span class=\"ob-nm__якоря-м\">На главной:</span><a href=\"index.html#rec9000000032\" data-путь=\"/\" data-якорь=\"rec9000000032\">Отзывы</a><a href=\"index.html#rec9000000034\" data-путь=\"/\" data-якорь=\"rec9000000034\">Проекты</a><a href=\"index.html#rec9000000031\" data-путь=\"/\" data-якорь=\"rec9000000031\">Партнёры</a></div><div class=\"ob-nm__связь\"><a class=\"ob-nm__тел\" href=\"tel:+79019608069\">+7 (901) 960-80-69</a><div class=\"ob-nm__мессы\"><a href=\"https://t.me/ReznichenkoOpenbaza\" target=\"_blank\" rel=\"noopener\">Telegram</a><a href=\"https://max.ru/join/bATDWxSUu7dPxEyafZFkBu_St0pPuv6TNSYCXZsAot8\" target=\"_blank\" rel=\"noopener\">MAX</a></div><a class=\"ob-nm__заявка\" href=\"#popup:zayavka\">Оставить заявку</a></div></nav>";
+  function путь(){var п=location.pathname.replace(/\/$/,'').split('/').pop().replace(/\.html$/,'');return (п===''||п==='index')?'/':'/'+п}
+  function собрать(){
+    var м=document.getElementById('ob-nm');if(!м)return false;
+    if(м.classList.contains('ob-nm--проще'))return true;
+    var с=м.querySelector('.ob-nm__сетка');if(!с)return false;
+    с.innerHTML=НОВОЕ;м.classList.add('ob-nm--проще');
+    var п=путь();
+    [].forEach.call(с.querySelectorAll('[data-путь]'),function(a){
+      if(a.getAttribute('data-путь')===п&&!a.getAttribute('data-якорь'))a.setAttribute('aria-current','page');
+    });
+    return true;
+  }
+  if(!собрать()){document.addEventListener('DOMContentLoaded',собрать);window.addEventListener('load',собрать);}
+})();
 </script><style>
 /* ── короткая форма заявки (22.09) ── */
 #rec1934397191 .t-input-group_in,#rec1934397191 .t-contact-method__value-container{display:none!important}
@@ -2196,6 +2264,178 @@ var т;window.addEventListener('resize',function(){clearTimeout(т);т=setTimeou
     сб.setAttribute('data-success-btn',ЗАКР);
     и.value=новыйКод();   /* следующая заявка с этой страницы — со своим кодом */
   });
+})();
+</script><style>/* ob-связь-телефон */
+/* ── связь с телефона: Telegram и телефон рядом с «МЕНЮ» (30.09) ── */
+#ob-свз{position:absolute;z-index:9999;display:flex;align-items:center;height:44px;margin:0;padding:0;pointer-events:auto}
+#ob-свз[hidden]{display:none!important}
+#ob-свз .ob-свз__a{box-sizing:border-box;display:flex;align-items:center;justify-content:center;flex:0 0 44px;
+  width:44px;height:44px;margin:0;padding:0;border-radius:50%;color:#313a39!important;text-decoration:none!important;
+  -webkit-tap-highlight-color:transparent;pointer-events:auto;cursor:pointer}
+#ob-свз .ob-свз__к{box-sizing:border-box;display:flex;align-items:center;justify-content:center;
+  width:var(--ob-свз-к,36px);height:var(--ob-свз-к,36px);border-radius:50%;border:1px solid rgba(49,58,57,.32);
+  background:rgba(255,255,251,.6);pointer-events:none}
+#ob-свз .ob-свз__a svg{display:block;width:18px;height:18px;pointer-events:none}
+#ob-свз .ob-свз__тг svg{margin-left:-1px}
+#ob-свз .ob-свз__a:active .ob-свз__к{background:rgba(49,58,57,.1)}
+#ob-свз .ob-свз__a:focus-visible{outline:2px solid #313a39;outline-offset:-3px}
+#ob-свз[data-n="1"] .ob-свз__тел{display:none}
+@media (min-width:640px){#ob-свз{display:none!important}}
+
+/* ── после заявки: что дальше (30.09) ── */
+#tildaformsuccesspopup-new .ob-чд{margin:0 0 16px;text-align:center;font-family:var(--t-text-font,Arial)}
+#tildaformsuccesspopup-new .ob-зг:has(.ob-чд) .ob-зг__т{margin-bottom:2px}
+#tildaformsuccesspopup-new .ob-чд__т{margin:0 0 12px;font-size:14.5px;line-height:1.4;color:rgba(49,58,57,.74)}
+#tildaformsuccesspopup-new .ob-чд__b{box-sizing:border-box;display:flex;align-items:center;justify-content:center;width:100%;
+  min-height:48px;padding:0 20px;border-radius:14px;border:1.5px solid var(--ob-чд-акц,#52719d);background:transparent;
+  color:var(--ob-чд-акц,#52719d)!important;text-decoration:none!important;font-size:16px;font-weight:600;line-height:1.2;
+  transition:background-color .18s}
+#tildaformsuccesspopup-new .ob-чд__b:hover{background:rgba(49,58,57,.05)}
+#tildaformsuccesspopup-new .ob-чд__b:focus-visible{outline:2px solid var(--ob-чд-акц,#52719d);outline-offset:3px}
+#tildaformsuccesspopup-new .ob-чд__b svg{width:20px;height:20px;margin-right:10px;flex:0 0 auto}
+/* телефон: шторка Тильды — max-height 80vh (верх на 20% экрана) и прокрутка внутри; с нашей строкой и кнопкой на 390×664
+   «Закрыть» уходила под край (замер 30.09: 673 > 664). Шторка растёт по содержимому до края экрана, поля чуть уже */
+@media screen and (max-width:640px){
+  #tildaformsuccesspopup-new:has(.ob-чд) .t-form-success-popup__wrapper{max-height:calc(100% - 16px);padding-top:36px;
+    padding-bottom:calc(24px + env(safe-area-inset-bottom,0px))}
+  #tildaformsuccesspopup-new .ob-чд{margin-bottom:12px}
+  #tildaformsuccesspopup-new .ob-чд__т{margin-bottom:10px}
+}
+/* без окна бота гайдов: наше — единственное действие, кнопка залитая, родная «Закрыть» тихая */
+#tildaformsuccesspopup-new .ob-чд-окно{margin:2px auto 0;max-width:380px;color:#313a39;font-family:var(--t-text-font,Arial)}
+#tildaformsuccesspopup-new .ob-чд-окно .ob-чд__свяж{margin:0 0 2px;font-size:16px;line-height:1.45;text-align:center;color:#313a39}
+#tildaformsuccesspopup-new .ob-чд--главная{margin-bottom:0}
+#tildaformsuccesspopup-new .ob-чд--главная .ob-чд__b{background:var(--ob-чд-акц,#52719d);border-color:transparent;color:#fffffb!important}
+#tildaformsuccesspopup-new .ob-чд--главная .ob-чд__b:hover{background:var(--ob-чд-навед,#6c98bc)}
+#tildaformsuccesspopup-new:has(.ob-чд--главная) button.t-form-success-popup__button{background:transparent!important;
+  color:#313a39!important;border:1px solid rgba(49,58,57,.25)!important;box-shadow:none!important}
+#tildaformsuccesspopup-new:has(.ob-чд--главная) .t-form-success-popup__content-icon-background{fill:var(--ob-чд-акц,#52719d)!important}
+</style><script>
+(function(){   /* связь с телефона: Telegram и телефон рядом с «МЕНЮ» (30.09) */
+  var ШАПКА='#rec1855532261', МЕНЮ='1769795571592', ЛОГО='1769796007296000001', ПЛАШКА='1769796208141',
+      ТЕЛ_ПК='1777313207550000002', ТГ="https://t.me/ReznichenkoOpenbaza", ТЕЛ="tel:+79019608069", ТЕЛ_Т="+7 (901) 960-80-69", ЗНАК_ТГ="<svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path fill=\"currentColor\" d=\"M21.4 4.1 2.9 11.3c-1.3.5-1.2 1.2-.2 1.5l4.7 1.5 1.8 5.6c.2.6.4.8.9.8.4 0 .6-.2.9-.4l2.3-2.2 4.7 3.5c.9.5 1.5.2 1.7-.8l3.1-14.6c.3-1.3-.5-1.9-1.4-1.5ZM9.7 14.4l-.4 4.2-1.5-4.8 10.8-6.8-8.9 7.4Z\"/><\/svg>", ЗНАК_ТЕЛ="<svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path fill=\"currentColor\" d=\"M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.61 21 3 13.39 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1.02l-2.2 2.2Z\"/><\/svg>", Ш=44;
+  function эл(id){var r=document.querySelector(ШАПКА);return r&&r.querySelector('.tn-elem[data-elem-id="'+id+'"]')}
+  function видно(e){if(!e)return false;var cs=getComputedStyle(e);if(cs.display==='none'||cs.visibility==='hidden')return false;
+    var r=e.getBoundingClientRect();return r.width>0&&r.height>0&&r.right>0&&r.left<window.innerWidth}
+  /* рамка самих букв, а не блока Тильды: у надписей блоки шире текста */
+  function буквы(e){var a=e.querySelector('.tn-atom')||e;try{var г=document.createRange();г.selectNodeContents(a);
+    var r=г.getBoundingClientRect();if(r.width)return r}catch(_){}return e.getBoundingClientRect()}
+  function группа(){var г=document.getElementById('ob-свз');if(г)return г;
+    г=document.createElement('div');г.id='ob-свз';г.className='ob-свз';г.hidden=true;
+    г.innerHTML='<a class="ob-свз__a ob-свз__тг" href="'+ТГ+'" target="_blank" rel="noopener" aria-label="Написать в Telegram">'
+      +'<span class="ob-свз__к">'+ЗНАК_ТГ+'</span></a>'
+      +'<a class="ob-свз__a ob-свз__тел" href="'+ТЕЛ+'" aria-label="Позвонить: '+ТЕЛ_Т+'">'
+      +'<span class="ob-свз__к">'+ЗНАК_ТЕЛ+'</span></a>';
+    return г}
+  function поставить(){
+    var меню=эл(МЕНЮ),лого=эл(ЛОГО),плашка=эл(ПЛАШКА),г=document.getElementById('ob-свз');
+    var холст=меню&&меню.closest('.t396__artboard');
+    /* ПК и планшет: в шапке свой номер или кнопка заявки рядом с «МЕНЮ» — значки не ставим */
+    if(!холст||!видно(меню)||window.innerWidth>=640||видно(эл(ТЕЛ_ПК))){if(г)г.hidden=true;return}
+    г=группа();if(г.parentNode!==холст)холст.appendChild(г);
+    var х=холст.getBoundingClientRect(),м=буквы(меню),л=видно(лого)?буквы(лого):null,
+        п=видно(плашка)?плашка.getBoundingClientRect():м;
+    var место=м.left-(л?л.right:х.left),n=место>=2*Ш+6?2:(место>=Ш+6?1:0);
+    if(!n){г.hidden=true;return}
+    var отступ=Math.min(6,(место-n*Ш)/2);   /* от «М» до края зоны нажатия */
+    г.setAttribute('data-n',n);
+    г.style.setProperty('--ob-свз-к',Math.max(28,Math.min(36,Math.round(п.height)-10))+'px');
+    г.style.left=Math.round(м.left-отступ-n*Ш-х.left)+'px';
+    г.style.top=Math.round(п.top+п.height/2-Ш/2-х.top)+'px';
+    г.hidden=false;
+  }
+  /* шапка досчитывает размеры не сразу (шрифты с CDN, zoom Тильды) — повторяем и следим, как в макс.py */
+  var раз=0,т=setInterval(function(){поставить();if(++раз>30)clearInterval(т)},400);
+  if(document.readyState!=='loading')поставить();else document.addEventListener('DOMContentLoaded',поставить);
+  window.addEventListener('load',поставить);window.addEventListener('resize',поставить);
+  window.addEventListener('orientationchange',function(){setTimeout(поставить,300)});window.addEventListener('pageshow',поставить);
+  if(document.fonts&&document.fonts.ready){document.fonts.ready.then(поставить);
+    if(document.fonts.addEventListener)document.fonts.addEventListener('loadingdone',поставить)}
+  if(window.ResizeObserver){var сл=new ResizeObserver(function(){поставить()}),есть=false,
+    ж=setInterval(function(){var м=эл(МЕНЮ);if(!м)return;сл.observe(м);var л=эл(ЛОГО);if(л)сл.observe(л);есть=true;clearInterval(ж)},300);
+    setTimeout(function(){if(!есть)clearInterval(ж)},15000)}
+})();
+
+(function(){   /* после заявки: что дальше (30.09) */
+  var Ф='#rec1934397191', ТГ="https://t.me/ReznichenkoOpenbaza", ФРАЗА="Отвечаем в мессенджере, обычно в тот же день.", КНОПКА="Написать сразу в Telegram", ЗНАК="<svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path fill=\"currentColor\" d=\"M21.4 4.1 2.9 11.3c-1.3.5-1.2 1.2-.2 1.5l4.7 1.5 1.8 5.6c.2.6.4.8.9.8.4 0 .6-.2.9-.4l2.3-2.2 4.7 3.5c.9.5 1.5.2 1.7-.8l3.1-14.6c.3-1.3-.5-1.9-1.4-1.5ZM9.7 14.4l-.4 4.2-1.5-4.8 10.8-6.8-8.9 7.4Z\"/><\/svg>", ЗАГ="Заявка принята", СВЯЖ="Команда Александра свяжется с вами.", ЗЕЛ=["115491986", "115948776", "115971636", "115972016", "115971356", "115973026", "115976516"], КРАС=["123821646"];
+  /* акцент — как у формы (заявка_гайд_бот.py): её переменная, а без неё — по номеру страницы */
+  function акцент(ф){var кс=getComputedStyle(ф.closest(Ф)),а=(кс.getPropertyValue('--ob-ф-акц')||'').trim(),
+      н=(кс.getPropertyValue('--ob-ф-навед')||'').trim();if(а)return [а,н||а];
+    var ar=document.getElementById('allrecords'),id=ar?ar.getAttribute('data-tilda-page-id'):'';
+    if(ЗЕЛ.indexOf(id)>=0)return ['#1e7268','rgba(30,114,104,.85)'];
+    if(КРАС.indexOf(id)>=0)return ['#961f25','rgba(150,31,37,.85)'];
+    return ['#52719d','#6c98bc']}
+  function блок(главная){return '<div class="ob-чд'+(главная?' ob-чд--главная':'')+'"><p class="ob-чд__т">'+ФРАЗА+'</p>'
+    +'<a class="ob-чд__b" href="'+ТГ+'" target="_blank" rel="noopener">'+ЗНАК+КНОПКА+'</a></div>'}
+  /* на window: событие Тильды всплывает сюда после document, где текст окна ставит бот гайдов */
+  window.addEventListener('tildaform:aftersuccess',function(e){
+    var ф=e.target;if(!ф||!ф.closest||!ф.closest(Ф))return;
+    var сб=ф.querySelector('.js-successbox');if(!сб)return;
+    var ак=акцент(ф),кор=document.documentElement.style;
+    кор.setProperty('--ob-чд-акц',ак[0]);кор.setProperty('--ob-чд-навед',ак[1]);
+    var т=сб.getAttribute('data-success-message')||'';
+    if(т.indexOf('ob-чд')>=0)return;
+    if(т.indexOf('ob-зг__т')>=0){   /* окно «Заявка принята» с ботом гайдов — строка и кнопка под «свяжется с вами» */
+      т=т.replace(/(<p class="ob-зг__т">[\s\S]*?<\/p>)/,function(м){return м+блок(false)});
+    }else{
+      т='<div class="ob-чд-окно"><p class="ob-чд__свяж">'+СВЯЖ+'</p>'+блок(true)+'</div>';
+      сб.setAttribute('data-success-title',ЗАГ);
+    }
+    сб.setAttribute('data-success-message',т);
+  });
+})();
+
+(function(){   /* цели Метрики: форма, звонок, Telegram, MAX (30.09) */
+  if(window.obЦелиПуть)return;window.obЦелиПуть=1;
+  var М=108184957, КОРНИ={"zayavka_open": "Заявка: форма открыта", "zayavka_sent": "Заявка: отправлена", "phone_click": "Звонок", "tg_personal": "Telegram личный", "tg_community": "Telegram сообщество", "max_click": "MAX"}, Ф='#rec1934397191', очередь=[], ждём=null, тиков=0, последний=null, кнопка_формы='';
+  var журнал=window.obЦели=window.obЦели||[];
+  function страница(){var п=location.pathname.replace(/\/index\.html$/,'/').replace(/\.html$/,'');return п||'/'}
+  function сброс(){
+    if(typeof window.ym!=='function'){if(!ждём)ждём=setInterval(сброс,500);if(++тиков>60){clearInterval(ждём);ждём=null}return}
+    if(ждём){clearInterval(ждём);ждём=null}
+    while(очередь.length){var з=очередь.shift();try{window.ym(М,'reachGoal',з[0],з[1])}catch(_){}}
+  }
+  function цель(ид,что){var п={},в={};в[страница()]=что;п[КОРНИ[ид]]=в;журнал.push([ид,п]);очередь.push([ид,п]);сброс()}
+  function где(e){
+    if(e.closest('#ob-свз'))return 'шапка · значок';
+    if(e.closest('#tildaformsuccesspopup-new'))return 'после заявки';
+    if(e.closest(Ф))return 'форма';
+    if(e.closest('#ob-nm,#rec1991854501'))return 'меню';   /* своё меню (демо) и родное Нулевым блоком */
+    if(e.closest('#rec1855532261'))return 'шапка';
+    if(e.closest('#rec1992766661'))return 'нижняя полоса';
+    if(e.closest('#rec1855638161'))return 'подвал';
+    if(e.closest('#obWebinar,#obWebinarBar'))return 'вебинар';
+    return 'страница'}
+  /* видимая надпись: у нижней полосы родной текст спрятан, новый нарисован в ::after (текст-кнопки.py) */
+  function надпись(e){var т=(e.getAttribute('aria-label')||e.innerText||'').replace(/\s+/g,' ').trim();
+    if(!т){var с=[e].concat([].slice.call(e.querySelectorAll('*'),0,8));
+      for(var i=0;i<с.length&&!т;i++){try{var к=getComputedStyle(с[i],'::after').content;if(к&&/^["']/.test(к))т=к.slice(1,-1)}catch(_){}}}
+    if(!т){var и=e.querySelector('img[alt]');т=и?и.getAttribute('alt'):''}
+    if(!т)т=(e.getAttribute('title')||e.textContent||'').replace(/\s+/g,' ').trim();
+    return (т||'значок').slice(0,60)}
+  /* захват на window — раньше всех обработчиков страницы: чужой stopPropagation цель не съест */
+  window.addEventListener('click',function(e){
+    var a=e.target&&e.target.closest?e.target.closest('a[href],button,[role="button"]'):null;if(!a)return;
+    if(e.isTrusted!==false)последний={эл:a,к:Date.now()};
+    var h=a.getAttribute('href')||'',ид=null;
+    if(/^tel:/i.test(h))ид='phone_click';
+    else if(/t\.me\/reznichenkoopenbaza/i.test(h))ид='tg_personal';
+    else if(/t\.me\/openbaza(?:[\/?#]|$)/i.test(h))ид='tg_community';
+    else if(/^https?:\/\/(www\.)?max\.ru\//i.test(h))ид='max_click';
+    if(ид)цель(ид,где(a));
+  },true);
+  /* форма открылась — любым путём (кнопка, призыв после отзывов, меню, адрес с #popup); кнопка — последнее нажатие ≤3 с */
+  function следить(){
+    var r=document.querySelector(Ф),п=r&&r.querySelector('.t-popup');if(!п)return false;
+    var было=п.classList.contains('t-popup_show');
+    new MutationObserver(function(){var есть=п.classList.contains('t-popup_show');if(есть===было)return;было=есть;if(!есть)return;
+      var e=последний&&Date.now()-последний.к<3000?последний.эл:null;
+      кнопка_формы=e?где(e)+' · '+надпись(e):'без кнопки';
+      цель('zayavka_open',кнопка_формы)}).observe(п,{attributes:true,attributeFilter:['class']});
+    return true}
+  if(!следить()){var раз=0,т=setInterval(function(){if(следить()||++раз>40)clearInterval(т)},250)}
+  window.addEventListener('tildaform:aftersuccess',function(e){var ф=e.target;
+    if(ф&&ф.closest&&ф.closest(Ф))цель('zayavka_sent',кнопка_формы||'без кнопки')});
 })();
 </script><script>
 (function(){

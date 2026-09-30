@@ -886,6 +886,58 @@ html.ob-nm-lock,html.ob-nm-lock body{overflow:hidden!important}
 #rec9000000001,#rec9000000032,#rec9000000034,#rec9000000031{scroll-margin-top:84px}.t-skiplink:not(:focus){position:absolute!important;top:-200px!important}</style><style>
 /* ── 28.09 меню: «Индивидуальный проект дома» за «Готовыми проектами» ── */
 @media (min-width:641px){.ob-nm .ob-nm__card--bz{grid-column:1/-1}}
+</style><style>/* меню проще (30.09) */
+.ob-nm--проще .ob-nm__сетка{grid-template-columns:minmax(0,.72fr) minmax(0,1.5fr);gap:28px;padding-top:16px}
+.ob-nm--проще .ob-nm__право{grid-column:2;grid-row:1;min-width:0}
+.ob-nm--проще .ob-nm__лево{grid-column:1;grid-row:1;min-width:0}
+.ob-nm--проще .ob-nm__топ{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-bottom:16px}
+.ob-nm--проще .ob-nm__плитка{display:grid;align-content:space-between;gap:6px;min-height:78px;padding:13px 15px 12px;
+  border:1px solid rgba(49,58,57,.22);border-radius:14px;background:#fffffb;color:#313a39;transition:border-color .15s,box-shadow .2s}
+.ob-nm--проще .ob-nm__плитка:hover,.ob-nm--проще .ob-nm__плитка:focus-visible{border-color:var(--акц);box-shadow:0 10px 24px rgba(49,58,57,.08)}
+.ob-nm--проще a.ob-nm__плитка--бз{background:#313a39;border-color:#313a39;color:#fffffb}
+.ob-nm--проще a.ob-nm__плитка--бз:hover{border-color:#313a39;box-shadow:0 10px 24px rgba(49,58,57,.25)}
+.ob-nm--проще .ob-nm__пт{font:700 15px/1.15 'EngraversGothic',Arial,sans-serif;text-transform:uppercase;letter-spacing:.01em}
+.ob-nm--проще .ob-nm__пп{font-size:13.5px;line-height:1.3;color:rgba(49,58,57,.72)}
+.ob-nm--проще .ob-nm__плитка--бз .ob-nm__пп{color:rgba(255,255,251,.78)}
+.ob-nm--проще .ob-nm__плитка[aria-current]{border-color:var(--акц)}
+.ob-nm--проще .ob-nm__плитка[aria-current] .ob-nm__пт{color:var(--акц)}
+.ob-nm--проще .ob-nm__услуги{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:20px}
+.ob-nm--проще .ob-nm__усл{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;column-gap:10px;row-gap:3px;
+  min-height:48px;padding:9px 0;border-bottom:1px solid rgba(49,58,57,.1);transition:color .15s}
+.ob-nm--проще .ob-nm__ут{grid-column:1;font:700 14px/1.15 'EngraversGothic',Arial,sans-serif;text-transform:uppercase;letter-spacing:.01em}
+.ob-nm--проще .ob-nm__ук{grid-column:1;font-size:13px;line-height:1.3;color:rgba(49,58,57,.66)}
+.ob-nm--проще .ob-nm__уа{grid-column:2;grid-row:1/span 2;font-size:16px;color:rgba(49,58,57,.32);transition:color .15s}
+.ob-nm--проще .ob-nm__усл:hover .ob-nm__ут,.ob-nm--проще .ob-nm__усл:focus-visible .ob-nm__ут,
+.ob-nm--проще .ob-nm__усл:hover .ob-nm__уа,.ob-nm--проще .ob-nm__усл[aria-current] .ob-nm__ут{color:var(--акц)}
+.ob-nm--проще .ob-nm__разделы{list-style:none;margin:0;padding:0}
+.ob-nm--проще .ob-nm__разделы a{display:flex;align-items:center;min-height:48px;padding:8px 0;border-bottom:1px solid rgba(49,58,57,.1);
+  font:700 19px/1.1 'EngraversGothic',Arial,sans-serif;text-transform:uppercase;letter-spacing:.01em;transition:color .15s}
+.ob-nm--проще .ob-nm__разделы a:hover,.ob-nm--проще .ob-nm__разделы a:focus-visible,.ob-nm--проще .ob-nm__разделы a[aria-current]{color:var(--акц)}
+.ob-nm--проще .ob-nm__якоря{display:flex;flex-wrap:wrap;align-items:center;column-gap:16px;margin-top:8px}
+.ob-nm--проще .ob-nm__якоря-м{font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;color:rgba(49,58,57,.55)}
+.ob-nm--проще .ob-nm__якоря a{display:inline-flex;align-items:center;min-height:44px;font-size:15px;color:rgba(49,58,57,.86);transition:color .15s}
+.ob-nm--проще .ob-nm__якоря a:hover,.ob-nm--проще .ob-nm__якоря a:focus-visible{color:var(--акц)}
+.ob-nm--проще .ob-nm__связь{margin-top:14px}
+/* ПК: левая колонка ~240 px — подпись «На главной» строкой над ссылками, иначе «Партнёры» падают на вторую строку */
+@media (min-width:981px){.ob-nm--проще .ob-nm__якоря-м{flex-basis:100%;padding-top:10px}}
+@media (max-width:980px){
+  .ob-nm--проще .ob-nm__сетка{grid-template-columns:1fr;gap:16px}
+  .ob-nm--проще .ob-nm__право,.ob-nm--проще .ob-nm__лево{grid-column:1;grid-row:auto}
+}
+@media (max-width:640px){
+  .ob-nm--проще .ob-nm__сетка{gap:10px;padding-top:12px}
+  .ob-nm--проще .ob-nm__топ{margin-bottom:12px}
+  .ob-nm--проще .ob-nm__плитка{min-height:72px;padding:12px 13px 11px}
+  .ob-nm--проще .ob-nm__пт{font-size:14.5px}
+  .ob-nm--проще .ob-nm__пп{font-size:13px}
+  .ob-nm--проще .ob-nm__услуги{grid-template-columns:1fr}
+  .ob-nm--проще .ob-nm__метка--разд{display:none}
+  .ob-nm--проще .ob-nm__разделы{display:flex;flex-wrap:wrap;column-gap:22px;border-bottom:1px solid rgba(49,58,57,.1)}
+  .ob-nm--проще .ob-nm__разделы a{border:0;min-height:48px;padding:0;font-size:17px}
+  .ob-nm--проще .ob-nm__якоря{margin-top:2px;column-gap:14px}
+  .ob-nm--проще .ob-nm__связь{margin-top:8px;gap:8px}
+}
+@media (prefers-reduced-motion:reduce){.ob-nm--проще .ob-nm__плитка,.ob-nm--проще .ob-nm__усл,.ob-nm--проще .ob-nm__уа{transition:none}}
 </style><style>
 /* ── 20.09: надписи шапки по одной середине ── */
 #rec1855532261 .tn-elem__18555322611769796007296000001{transform:translateY(3.5px)}   /* логотип сидел выше остальных */
@@ -1078,6 +1130,393 @@ html.ob-nm-lock,html.ob-nm-lock body{overflow:hidden!important}
 }
 @media (prefers-reduced-motion:reduce){.ob-к2п__панель,.ob-к2ц__панель{animation:none}}
 </style><style>
+/* Крупная карточка именного видеоотзыва: постер слева, кто и повод справа.
+   Открывается по клику, до клика ничего не грузится. */
+/* hidden — это всего лишь display:none из стилей браузера, и наш
+   собственный display:grid ниже его перебивает. Без этой строки
+   карточка вылезала бы на страницу с нерабочим кликом. */
+.ob-vid[hidden]{display:none}
+.ob-vid{display:grid;grid-template-columns:minmax(0,320px) minmax(0,1fr);gap:22px;
+  align-items:center;margin-bottom:18px;padding:18px;border-radius:22px;
+  border:1px solid rgba(49,58,57,.16);background:#fffffb;text-decoration:none;color:inherit;
+  transition:border-color .18s,transform .18s,box-shadow .18s}
+.ob-vid:hover{border-color:#52719d;transform:translateY(-3px);
+  box-shadow:0 18px 40px rgba(49,58,57,.12)}
+.ob-vid__k{position:relative;display:block;border-radius:16px;overflow:hidden;
+  background:rgba(49,58,57,.08);aspect-ratio:16/10}
+@supports not (aspect-ratio: 1 / 1){.ob-vid__k{min-height:180px}}
+.ob-vid__k img{display:block;width:100%;height:100%;object-fit:cover}
+.ob-vid__play{position:absolute;left:50%;top:50%;width:56px;height:56px;
+  transform:translate(-50%,-50%);border-radius:50%;background:rgba(49,58,57,.66)}
+.ob-vid__play:before{content:"";position:absolute;left:53%;top:50%;
+  transform:translate(-50%,-50%);border-style:solid;border-width:11px 0 11px 17px;
+  border-color:transparent transparent transparent #fffffb}
+.ob-vid:hover .ob-vid__play{background:#52719d}
+.ob-vid__n{display:block;font-family:var(--uc-typo-fontfamily-ZcDjuR,EngraversGothic);
+  font-size:24px;font-weight:700;text-transform:uppercase;color:#313a39;line-height:1.1}
+.ob-vid__p{display:block;margin-top:7px;font-family:var(--t-text-font,Arial);
+  font-size:15px;line-height:1.4;color:rgba(49,58,57,.7)}
+.ob-vid__g{display:block;margin-top:14px;font-family:var(--t-text-font,Arial);
+  font-size:14px;font-weight:600;color:#52719d}
+@media screen and (max-width:700px){
+  .ob-vid{grid-template-columns:1fr;gap:16px}
+  .ob-vid__n{font-size:20px}
+}
+/* 29.09 вечер: два видеоотзыва рядом (Максим и Кристина, Алексей). На телефоне — строками: кадр слева,
+   текст справа, иначе две карточки с кадром во всю ширину растягивают блок на лишний экран. */
+.ob-vids{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-bottom:18px}
+.ob-vids .ob-vid{margin-bottom:0;grid-template-columns:minmax(0,230px) minmax(0,1fr)}
+@media screen and (max-width:1000px){
+  .ob-vids{grid-template-columns:minmax(0,1fr);gap:14px}
+}
+@media screen and (max-width:700px){
+  .ob-vids .ob-vid{grid-template-columns:minmax(0,132px) minmax(0,1fr);gap:14px;padding:12px}
+  .ob-vids .ob-vid__k{border-radius:12px}
+  .ob-vids .ob-vid__play{width:40px;height:40px}
+  .ob-vids .ob-vid__play:before{border-width:8px 0 8px 12px}
+  .ob-vids .ob-vid__n{font-size:18px}
+  .ob-vids .ob-vid__p{margin-top:4px;font-size:14px;line-height:1.35}
+  .ob-vids .ob-vid__g{margin-top:8px}
+}
+/* Свой ролик снят на телефон и стоит вертикально: 406x720. Общая рамка
+   лупы 16:9 обрезала бы его в узкую полосу посреди чёрного поля, поэтому
+   ему отдельная — по высоте экрана, ширина считается от неё сама.
+   Чёрный фон затем, чтобы поля по краям не читались как рамка.
+   На телефоне высоту считаем от ширины (163vw = 92vw x 16/9): иначе
+   ролик упирается в поля экрана и сверху-снизу остаётся пустота. */
+.ob-lupa__видео{height:min(86vh,163vw);max-height:86vh;max-width:92vw;aspect-ratio:9/16;
+  object-fit:contain;background:#000;border:0;border-radius:12px;
+  box-shadow:0 30px 80px rgba(0,0,0,.5)}
+@supports not (aspect-ratio: 1 / 1){.ob-lupa__видео{height:600px;width:338px}}
+
+.ob-q{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:26px}
+.ob-q__c{display:flex;flex-direction:column;border:1px solid rgba(49,58,57,.16);
+  border-radius:20px;background:#fffffb;padding:24px 24px 20px}
+.ob-q__t{flex:1;margin:0 0 16px;font-family:var(--t-text-font,Arial);font-size:15px;
+  line-height:1.5;color:#313a39}
+.ob-q__t:before{content:"«"}
+.ob-q__t:after{content:"»"}
+.ob-q__f{display:flex;align-items:center;justify-content:space-between;gap:12px;
+  padding-top:14px;border-top:1px solid rgba(49,58,57,.14)}
+.ob-q__n{font-family:var(--t-text-font,Arial);font-size:14px;font-weight:600;color:#313a39}
+.ob-q__p{display:block;margin-top:3px;font-family:var(--t-text-font,Arial);font-size:12.5px;
+  color:rgba(49,58,57,.6)}
+/* Кусочек исходного сообщения прямо в карточке: понятнее слова «скриншот»
+   и сразу видно, что за отзывом стоит настоящая переписка. */
+.ob-q__s{flex:none;width:74px;height:56px;padding:0;border-radius:10px;overflow:hidden;
+  border:1px solid rgba(49,58,57,.18);background:#f7f9f8;cursor:zoom-in;position:relative;
+  transition:border-color .18s,transform .18s,box-shadow .18s}
+/* Подпись поверх миниатюры: без неё тёмный прямоугольник читается как клякса,
+   а не как «тут исходное сообщение». */
+.ob-q__s:after{content:"скриншот";position:absolute;left:0;right:0;bottom:0;
+  padding:2px 0 3px;font-family:var(--t-text-font,Arial);font-size:9px;
+  letter-spacing:.04em;text-transform:uppercase;text-align:center;
+  color:#fffffb;background:rgba(49,58,57,.72)}
+.ob-q__s img{display:block;width:100%;height:100%;object-fit:cover;object-position:left top}
+.ob-q__s:hover{border-color:#52719d;transform:translateY(-2px);
+  box-shadow:0 10px 22px rgba(49,58,57,.14)}
+.ob-q__s:focus-visible{outline:2px solid #52719d;outline-offset:3px}
+/* Строка над лентой. Раньше называлась ob-vid__k и совпала с именем постера
+   новой видеокарточки — строка получила его стили и превратилась в пустой
+   серый прямоугольник во всю ширину. */
+.ob-shots__k{flex:1 0 100%;margin:34px 0 12px;font-family:var(--t-text-font,Arial);
+  font-size:14px;color:rgba(49,58,57,.6)}
+@media screen and (max-width:1100px){.ob-q{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media screen and (max-width:700px){.ob-q{grid-template-columns:1fr}}
+
+/* ── диагностика: широкая плашка с кадром ── */
+.ob-diag{position:relative;border-radius:30px;overflow:hidden;background:#313a39;
+  min-height:340px;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);
+  align-items:center}
+.ob-diag:before{content:"";position:absolute;inset:0;
+  background-position:center;background-size:cover;background-repeat:no-repeat;
+  opacity:.85}
+.ob-diag--fon:before{background-image:var(--ob-diag-fon)}
+.ob-diag:after{content:"";position:absolute;inset:0;
+  background:linear-gradient(90deg,rgba(49,58,57,.88) 0%,rgba(49,58,57,.72) 46%,
+    rgba(49,58,57,.34) 100%)}
+.ob-diag__in{position:relative;z-index:2;padding:46px 44px}
+.ob-diag__k{font-family:var(--t-text-font,Arial);font-size:13px;letter-spacing:.1em;
+  text-transform:uppercase;color:rgba(255,255,251,.62);margin-bottom:14px}
+.ob-diag__t{margin:0 0 14px;font-family:var(--uc-typo-fontfamily-ZcDjuR,EngraversGothic);
+  font-size:38px;line-height:1.04;font-weight:700;text-transform:uppercase;color:#fffffb}
+.ob-diag__d{margin:0 0 26px;font-family:var(--t-text-font,Arial);font-size:17px;
+  line-height:1.45;color:rgba(255,255,251,.8);max-width:520px}
+.ob-diag__row{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.ob-diag__note{font-family:var(--t-text-font,Arial);font-size:14px;
+  color:rgba(255,255,251,.6);max-width:300px;line-height:1.4}
+.ob-diag .ob-btn{background:#fffffb;color:#313a39}
+.ob-diag .ob-btn:hover{background:rgba(255,255,251,.84)}
+/* Макет переписки: блок обещает разговор в мессенджере — покажем его.
+   Реплики условные, это иллюстрация механики, а не чей-то диалог. */
+.ob-chat{position:relative;z-index:2;padding:38px 44px 38px 0;display:grid;gap:10px;
+  justify-items:start}
+/* Когда переписка перестаёт стоять во второй колонке и занимает всю ширину
+   карточки, левого поля у неё нет — реплики упираются в край, справа 44,
+   слева 0. Возвращаем поле с обеих сторон, на телефоне поменьше. */
+@media screen and (max-width:960px){
+  .ob-chat{padding:0 44px 38px 44px}
+  .ob-diag__steps{padding:0 44px 38px 44px}
+}
+@media screen and (max-width:640px){
+  .ob-chat{padding:0 22px 30px 22px}
+  .ob-diag__steps{padding:0 22px 30px 22px}
+  .ob-chat__m{max-width:94%}
+}
+.ob-chat__m{max-width:88%;padding:13px 17px;border-radius:18px;
+  font-family:var(--t-text-font,Arial);font-size:15px;line-height:1.4;
+  background:rgba(255,255,251,.12);color:#fffffb;
+  border:1px solid rgba(255,255,251,.16)}
+.ob-chat__m--вы{justify-self:end;background:rgba(255,255,251,.92);color:#313a39;
+  border-color:transparent}
+.ob-chat__m b{display:block;font-size:12px;letter-spacing:.08em;text-transform:uppercase;
+  opacity:.55;margin-bottom:5px;font-weight:600}
+.ob-chat__t{margin-top:6px;font-family:var(--t-text-font,Arial);font-size:13px;
+  color:rgba(255,255,251,.55)}
+.ob-diag__steps{position:relative;z-index:2;padding:46px 44px 46px 0;display:grid;gap:12px}
+.ob-diag__s{display:grid;grid-template-columns:30px minmax(0,1fr);gap:14px;
+  align-items:start;font-family:var(--t-text-font,Arial);font-size:15px;line-height:1.4;
+  color:rgba(255,255,251,.9)}
+.ob-diag__s b{width:30px;height:30px;border-radius:50%;display:flex;align-items:center;
+  justify-content:center;background:rgba(255,255,251,.14);font-size:14px;color:#fffffb}
+
+/* ── отзывы: выписка из проекта, а не похвала ──
+   Язык тот же, что в блоке диагностики: горизонтали рельефа на подложке,
+   графит и синий. Первая карточка широкая, дальше компактные. */
+.ob-rev{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.ob-rev__c{position:relative;border:1px solid rgba(49,58,57,.16);border-radius:24px;
+  padding:26px 28px 22px;background:#fffffb;display:flex;flex-direction:column;
+  overflow:hidden;isolation:isolate}
+/* горизонтали рельефа: тонкие дуги в углу, почти незаметные */
+.ob-rev__c:after{content:"";position:absolute;right:-60px;bottom:-70px;
+  width:230px;height:230px;z-index:-1;opacity:.22;
+  background:radial-gradient(circle at 50% 50%,transparent 0 38%,
+    var(--c,#52719d) 38% 38.6%,transparent 38.6% 49%,
+    var(--c,#52719d) 49% 49.6%,transparent 49.6% 60%,
+    var(--c,#52719d) 60% 60.5%,transparent 60.5% 72%,
+    var(--c,#52719d) 72% 72.5%,transparent 72.5%);
+  -webkit-mask-image:radial-gradient(circle at 50% 50%,#000 40%,transparent 78%);
+  mask-image:radial-gradient(circle at 50% 50%,#000 40%,transparent 78%)}
+.ob-rev__c:before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;
+  background:var(--c,#52719d)}
+
+/* паспорт объекта: регион, домов, год */
+.ob-rev__p{font-family:var(--t-text-font,Arial);font-size:12px;letter-spacing:.09em;
+  text-transform:uppercase;color:rgba(49,58,57,.45);margin-bottom:16px;
+  display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.ob-rev__p i{font-style:normal;color:rgba(49,58,57,.28)}
+
+.ob-rev__num{font-family:var(--uc-typo-fontfamily-ZcDjuR,EngraversGothic);
+  font-size:40px;line-height:.95;font-weight:700;color:var(--c,#52719d);
+  letter-spacing:-.01em}
+.ob-rev__cap{font-family:var(--t-text-font,Arial);font-size:13px;line-height:1.35;
+  color:rgba(49,58,57,.6);margin:8px 0 18px;max-width:22ch}
+.ob-rev__q{margin:0 0 22px;font-family:var(--t-text-font,Arial);font-size:15px;
+  line-height:1.55;color:#313a39;flex:1}
+.ob-rev__w{display:flex;align-items:center;gap:11px;padding-top:16px;
+  border-top:1px solid rgba(49,58,57,.12)}
+.ob-rev__av{width:38px;height:38px;border-radius:50%;flex:none;
+  border:1px solid var(--c,#52719d);display:flex;align-items:center;
+  justify-content:center;font-family:var(--uc-typo-fontfamily-ZcDjuR,EngraversGothic);
+  font-size:15px;color:var(--c,#52719d)}
+.ob-rev__av img{width:100%;height:100%;object-fit:cover;border-radius:50%;display:block}
+.ob-rev__n{font-family:var(--t-text-font,Arial);font-size:14px;font-weight:600;color:#313a39}
+.ob-rev__o{font-family:var(--t-text-font,Arial);font-size:13px;color:rgba(49,58,57,.6)}
+.ob-rev__o a{color:#52719d;text-decoration:none;border-bottom:1px solid rgba(82,113,157,.4)}
+
+/* первая карточка шире и крупнее: у полосы появляется точка входа */
+.ob-rev__c--big{grid-column:span 2}
+.ob-rev__c--big .ob-rev__num{font-size:60px}
+.ob-rev__c--big .ob-rev__cap{font-size:15px;max-width:30ch}
+.ob-rev__c--big .ob-rev__q{font-size:18px;line-height:1.5;max-width:52ch}
+.ob-rev__c--big:after{width:330px;height:330px;right:-80px;bottom:-110px;opacity:.3}
+
+/* видеоотзыв */
+.ob-rev__vid{position:relative;border-radius:24px;overflow:hidden;background:#313a39;
+  min-height:240px;display:flex;align-items:flex-end;cursor:pointer}
+.ob-rev__vid img,.ob-rev__vid video{position:absolute;inset:0;width:100%;height:100%;
+  object-fit:cover}
+.ob-rev__vid:after{content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(49,58,57,0) 38%,rgba(49,58,57,.86) 100%)}
+.ob-rev__vt{position:relative;z-index:2;padding:22px 24px;color:#fffffb;
+  font-family:var(--t-text-font,Arial);font-size:14px;line-height:1.35}
+.ob-rev__vt b{display:block;font-size:16px;margin-bottom:4px}
+.ob-rev__play{position:absolute;z-index:2;left:24px;top:24px;width:42px;height:42px;
+  border-radius:50%;border:1px solid rgba(255,255,251,.7);display:flex;
+  align-items:center;justify-content:center;color:#fffffb;font-size:13px}
+
+/* плитка в конец полосы: добивает ряд и зовёт оставить отзыв */
+.ob-rev__cta{grid-column:span 2;border:1px dashed rgba(82,113,157,.4);border-radius:24px;
+  padding:28px 30px;background:rgba(108,152,188,.07);display:flex;flex-direction:column;
+  justify-content:center}
+.ob-rev__cta h3{margin:0 0 8px;font-family:var(--uc-typo-fontfamily-ZcDjuR,EngraversGothic);
+  font-size:24px;line-height:1.1;font-weight:700;text-transform:uppercase;color:#313a39}
+.ob-rev__cta p{margin:0 0 18px;font-family:var(--t-text-font,Arial);font-size:15px;
+  line-height:1.45;color:rgba(49,58,57,.7);max-width:46ch}
+
+/* галерея скриншотов: живые отзывы, которые уже есть у компании */
+/* Кадры видео идут одной строкой: главное в блоке теперь цитаты,
+   а лента — доказательство рядом, а не половина экрана.
+   Раскладка гибкая, а не на восемь колонок: роликов девять, и девятый
+   срывался на второй ряд, оставляя рядом пустое место. Теперь строка
+   делится поровну на сколько угодно кадров. */
+.ob-shots{display:flex;flex-wrap:wrap;gap:10px;
+  margin-top:26px}
+.ob-shots__k{flex:1 0 100%;font-family:var(--t-text-font,Arial);font-size:14px;
+  color:rgba(49,58,57,.6);margin:0 0 2px}
+.ob-shots__i{flex:1 1 0;min-width:0;
+  border:1px solid rgba(49,58,57,.12);border-radius:16px;overflow:hidden;
+  background:#fffffb;aspect-ratio:1/1;display:flex;align-items:center;
+  justify-content:center;padding:6px;cursor:zoom-in;
+  transition:border-color .18s,transform .18s,box-shadow .18s}
+.ob-shots__i:hover{border-color:#52719d;transform:translateY(-3px);
+  box-shadow:0 14px 32px rgba(49,58,57,.12)}
+.ob-shots__i img{max-width:100%;max-height:100%;object-fit:contain;display:block}
+/* Safari младше 15 не знает aspect-ratio и схлопнул бы клетки в ноль.
+   Правило включается только там, где его нет. */
+/* Кадры с видео помечаем треугольником: без него непонятно, что клик
+   что-то запустит. Сам проигрыватель открывается в той же лупе. */
+.ob-shots__i--кино{position:relative;cursor:pointer}
+.ob-shots__play{position:absolute;left:50%;top:50%;width:42px;height:42px;
+  transform:translate(-50%,-50%);border-radius:50%;
+  background:rgba(49,58,57,.62);pointer-events:none;transition:background .18s}
+.ob-shots__play:before{content:"";position:absolute;left:52%;top:50%;
+  transform:translate(-50%,-50%);border-style:solid;border-width:8px 0 8px 13px;
+  border-color:transparent transparent transparent #fffffb}
+.ob-shots__i--кино:hover .ob-shots__play{background:#52719d}
+.ob-lupa__кино{flex:none;width:min(92vw,1100px);aspect-ratio:16/9;border:0;border-radius:12px;
+  background:#000}
+@supports not (aspect-ratio: 1 / 1){.ob-lupa__кино{height:62vh}}
+@supports not (aspect-ratio: 1 / 1){.ob-shots__i{min-height:120px}}
+/* На узких экранах в строку девять не влезает. Делим по три:
+   девять делится на три нацело, и последний ряд не остаётся
+   с одиноким кадром и пустотой рядом. */
+@media screen and (max-width:960px){.ob-shots__i{flex:0 0 calc(33.333% - 7px)}}
+
+/* пустое состояние: показываем, что именно нужно собрать */
+.ob-rev__wait{border:1px dashed rgba(49,58,57,.26);border-radius:24px;padding:30px 28px;
+  background:rgba(49,58,57,.04);display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+.ob-rev__wt{grid-column:1/-1;font-family:var(--t-text-font,Arial);font-size:15px;
+  line-height:1.45;color:rgba(49,58,57,.62);margin:0}
+.ob-rev__f{font-family:var(--t-text-font,Arial);font-size:14px;line-height:1.45;
+  color:rgba(49,58,57,.72)}
+.ob-rev__f b{display:block;font-size:13px;letter-spacing:.06em;text-transform:uppercase;
+  color:rgba(49,58,57,.45);margin-bottom:6px}
+
+/* Просмотр диплома во весь экран по клику */
+.ob-lupa{position:fixed;inset:0;z-index:9998;display:none;align-items:center;
+  justify-content:center;background:rgba(49,58,57,.92);padding:40px;cursor:zoom-out}
+.ob-lupa.открыт{display:flex}
+.ob-lupa img{max-width:92vw;max-height:88vh;object-fit:contain;border-radius:12px;
+  box-shadow:0 30px 80px rgba(0,0,0,.5)}
+.ob-lupa__x{position:absolute;top:22px;right:26px;width:44px;height:44px;
+  border-radius:50%;border:1px solid rgba(255,255,251,.5);color:#fffffb;
+  display:flex;align-items:center;justify-content:center;font-size:22px;
+  font-family:var(--t-text-font,Arial);background:transparent}
+
+/* ── партнёры: карточка с подписью ──
+   Мелкие плитки читались как случайные картинки: непонятно, кто это
+   и чем занимается. Возвращаем карточку — кадр, название, одна строка
+   про дело и ссылка на сайт. */
+.ob-pt{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px}
+.ob-pt__c{display:flex;flex-direction:column;overflow:hidden;text-decoration:none;color:inherit;
+  border:1px solid rgba(49,58,57,.14);border-radius:20px;background:#fffffb;
+  transition:border-color .18s, transform .18s}
+.ob-pt__c:hover{border-color:#52719d;transform:translateY(-3px)}
+.ob-pt__i{aspect-ratio:4/3;overflow:hidden;background:rgba(49,58,57,.06)}
+/* Safari младше 15: без aspect-ratio карточка схлопнется в полоску. */
+@supports not (aspect-ratio: 1 / 1){.ob-pt__i{min-height:150px}}
+.ob-pt__i img{width:100%;height:100%;object-fit:cover;display:block}
+.ob-pt__b{padding:14px 16px 16px;display:flex;flex-direction:column;flex:1}
+.ob-pt__n{font-family:var(--uc-typo-fontfamily-ZcDjuR,EngraversGothic);font-size:17px;
+  line-height:1.1;font-weight:700;text-transform:uppercase;color:#313a39;margin-bottom:6px}
+.ob-pt__d{font-family:var(--t-text-font,Arial);font-size:13px;line-height:1.4;
+  color:rgba(49,58,57,.68);flex:1}
+.ob-pt__g{margin-top:12px;font-family:var(--t-text-font,Arial);font-size:13px;
+  font-weight:600;color:#52719d}
+@media screen and (max-width:1100px){.ob-pt{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media screen and (max-width:640px){.ob-pt{grid-template-columns:1fr 1fr}}
+
+/* ── партнёры ── */
+.ob-part{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px}
+.ob-part__c{border:1px solid rgba(49,58,57,.12);border-radius:20px;background:#fffffb;
+  aspect-ratio:3/2;display:flex;align-items:center;justify-content:center;padding:18px;
+  transition:border-color .18s, transform .18s}
+/* Safari младше 15: карточка партнёра без aspect-ratio схлопнется. */
+@supports not (aspect-ratio: 1 / 1){.ob-part__c{min-height:120px}}
+.ob-part__c:hover{border-color:#52719d;transform:translateY(-2px)}
+.ob-part__c img{max-width:100%;max-height:100%;object-fit:contain;display:block;
+  filter:grayscale(1);opacity:.75;transition:filter .18s, opacity .18s}
+.ob-part__c:hover img{filter:none;opacity:1}
+.ob-part__c span{font-family:var(--t-text-font,Arial);font-size:13px;
+  color:rgba(49,58,57,.45);text-align:center;line-height:1.3}
+
+@media screen and (max-width:960px){
+  .ob-diag{grid-template-columns:1fr;min-height:0}
+  .ob-diag__in{padding:32px 26px 8px}
+  .ob-diag__t{font-size:28px}
+  .ob-diag__steps{padding:16px 26px 32px}
+  .ob-rev{grid-template-columns:1fr}
+  .ob-part{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+@media screen and (max-width:640px){
+  .ob-part{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .ob-diag__d{font-size:16px}
+}
+
+/* 30.09 агент 5: строка цифр в тёмном первом экране (консультации-доказательства).
+   Цифры — текстовым шрифтом: у EngraversGothic «1» как «I», «0» как «O». */
+.ob-рд-ц{display:flex;flex-wrap:wrap;gap:12px 28px;margin:26px 0 0;max-width:600px}
+.ob-рд-ц__к{flex:0 1 auto;min-width:0;padding:2px 0 2px 14px;border-left:2px solid rgba(255,255,251,.32)}
+.ob-рд-ц__к b{display:block;font-family:'TildaSans',Arial,sans-serif;font-variant-numeric:lining-nums tabular-nums;
+  font-weight:700;font-size:28px;line-height:1.05;color:#fffffb;white-space:nowrap}
+.ob-рд-ц__к span{display:block;margin-top:4px;font-family:'TildaSans',Arial,sans-serif;font-size:14px;line-height:1.3;
+  color:rgba(255,255,251,.74)}
+.ob-кс-герой .ob-рд-ц{margin:0 0 26px}
+@media (max-width:640px){
+  .ob-рд-ц{gap:10px 16px;margin-top:22px}
+  .ob-рд-ц__к{flex:1 1 auto;padding-left:10px}
+  .ob-рд-ц__к b{font-size:22px}
+  .ob-рд-ц__к span{font-size:13px}
+  .ob-кс-герой .ob-рд-ц{margin:0 0 22px}
+}
+
+/* 30.09 агент 5: отзывы с главной на зелёной странице (консультации-доказательства) */
+.ob-рд-отзывы .ob-label{display:inline-flex;align-items:center;gap:10px;margin:0;
+  font-family:'TildaSans',Arial,sans-serif;font-size:13px;line-height:1.2;letter-spacing:.12em;
+  text-transform:uppercase;color:#1e7268}
+.ob-рд-отзывы .ob-label::before{content:"";width:22px;height:1.5px;background:currentColor}
+.ob-рд-отзывы .ob-h2{margin:12px 0 10px;font:700 36px/1.08 'EngraversGothic',Arial,sans-serif;text-transform:uppercase;
+  color:#313a39!important;background:none!important;-webkit-text-fill-color:#313a39!important}
+.ob-рд-отзывы .ob-lead{margin:0 0 26px;max-width:680px;font-family:'TildaSans',Arial,sans-serif;font-size:17px;
+  line-height:1.5;color:rgba(49,58,57,.75)}
+.ob-рд-отзывы .ob-vid:hover{border-color:#1e7268;transform:none}
+.ob-рд-отзывы .ob-vid:hover .ob-vid__play{background:#1e7268}
+.ob-рд-отзывы .ob-vid__g{color:#1e7268}
+.ob-рд-отзывы .ob-q__s:hover{border-color:#1e7268;transform:none}
+.ob-рд-отзывы .ob-q__s:focus-visible{outline-color:#1e7268}
+.ob-рд-отзывы .ob-shots__i:hover{border-color:#1e7268;transform:none}
+.ob-рд-отзывы .ob-shots__i--кино:hover .ob-shots__play{background:#1e7268}
+@media (max-width:640px){.ob-рд-отзывы .ob-h2{font-size:27px}}
+/* На телефоне цитаты — лентой вбок, как на главной (мобильная_главная.py): шесть карточек столбиком
+   растягивали страницу на лишние два экрана. Следующая карточка видна краем, под лентой — счётчик. */
+@media screen and (max-width:640px){
+  .ob-рд-отзывы .ob-q{display:flex;flex-wrap:nowrap;gap:12px;overflow-x:auto;overflow-y:hidden;
+    scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;
+    margin-right:-16px;padding:0 16px 4px 0;grid-template-columns:none}
+  .ob-рд-отзывы .ob-q::-webkit-scrollbar{display:none}
+  .ob-рд-отзывы .ob-q>.ob-q__c{flex:0 0 84%;min-width:0;scroll-snap-align:start}
+  .ob-рд-сч{display:flex;align-items:center;gap:8px;margin:10px 0 0;font-family:'TildaSans',Arial,sans-serif;
+    font-size:13px;color:rgba(49,58,57,.62)}
+  .ob-рд-сч b{font-weight:600;color:#313a39;font-variant-numeric:tabular-nums}
+}
+@media screen and (min-width:641px){.ob-рд-сч{display:none!important}}
+
+#rec9000000660{background:transparent!important}
+#rec9000000660 .ob-sec{padding:0 20px 72px;background:transparent!important}
+#rec9000000660 .ob-wrap{max-width:1180px}
+@media (max-width:640px){#rec9000000660 .ob-sec{padding:0 16px 52px}}
+</style><style>
 /* ── заявка: кнопка шапки после первого экрана (28.09) ── */
 #rec1855532261{--ob-зш-акц:#52719d}
 #allrecords[data-tilda-page-id="115491986"] #rec1855532261,#allrecords[data-tilda-page-id="115948776"] #rec1855532261,#allrecords[data-tilda-page-id="115971636"] #rec1855532261,#allrecords[data-tilda-page-id="115972016"] #rec1855532261,#allrecords[data-tilda-page-id="115971356"] #rec1855532261,#allrecords[data-tilda-page-id="115973026"] #rec1855532261,#allrecords[data-tilda-page-id="115976516"] #rec1855532261{--ob-зш-акц:#1e7268}
@@ -1097,7 +1536,7 @@ html.ob-зш-кивок #rec1855532261 .tn-elem[data-elem-id="1769795874967"] .t
     <p class="ob-к2г__l">От экспертов, которые ежедневно создают и масштабируют прибыльные базы
     отдыха в России и СНГ. Разбираем ваш проект по косточкам и показываем, где вы теряете деньги.</p>
     <p class="ob-к2г__x">Это не «разговор» — это профессиональный разбор бизнеса,
-    который экономит миллионы и снижает риски.</p>
+    который экономит миллионы и снижает риски.</p><div class="ob-рд-ц" aria-label="Цифры проекта"><div class="ob-рд-ц__к"><b>130+</b><span>сделанных проектов</span></div><div class="ob-рд-ц__к"><b>46</b><span>регионов</span></div><div class="ob-рд-ц__к"><b>9 лет</b><span>в гостеприимстве</span></div></div>
     <span class="ob-к2г__cap">Международный муниципальный форум БРИКС, Москва, 2025</span>
   </div>
 </div></section></div></div><div id="rec9000000241" class="r t-rec" data-record-type="123" style="background-color:transparent"><div class="t123"><section class="ob-к2-стр ob-к2-сек ob-к2-сек--подбор">
@@ -1261,7 +1700,198 @@ $(function() {
   <ol class="ob-к2ш"><li><span class="ob-к2ш__н">01</span><b>Присылаете, что есть</b><p>Кадастровый номер, план участка, проект, расчёты. Нет ничего — начинаем с идеи.</p></li><li><span class="ob-к2ш__н">02</span><b>Разбираем вашу задачу</b><p>Запуск, проверка участка, стройка, управление, маркетинг. Разговор собираем под вас, а не по общему сценарию.</p></li><li><span class="ob-к2ш__н">03</span><b>Остаётся план действий</b><p>Что проверить, что посчитать и в каком порядке двигаться.</p></li></ol>
   <div class="ob-к2ш__прислать"><span>Что прислать заранее:</span>
     <i>Кадастровый номер</i><i>План участка</i><i>Проект</i><i>Расчёты</i><i>Или просто идею</i></div>
-</div></section></div></div><div id="rec9000000245" class="r t-rec" data-record-type="123" style="background-color:transparent"><div class="t123"><section class="ob-к2-стр ob-к2-сек">
+</div></section></div></div><div id="rec9000000660" class="r t-rec" data-record-type="123" style="background-color:transparent"><div class="t123"><section class="ob-sec ob-рд-отзывы"><div class="ob-wrap">
+          <div class="ob-label">Отзывы</div>
+          <h2 class="ob-h2">Что говорят владельцы баз</h2>
+          <p class="ob-lead">Слова перепечатаны из сообщений дословно. У каждой цитаты
+          можно открыть исходный скриншот и проверить.</p>
+          <div class="ob-vids"><a class="ob-vid" href="#" hidden><span class="ob-vid__k"><img src="assets/otzyv-maksim.webp" alt="Видеоотзыв: Максим и Кристина, выездная консультация с проектировщиком, Белорецк" loading="lazy"><span class="ob-vid__play" aria-hidden="true"></span></span><span class="ob-vid__t"><span class="ob-vid__n">Максим и Кристина</span><span class="ob-vid__p">выездная консультация с проектировщиком, Белорецк</span><span class="ob-vid__g">Смотреть отзыв · 4 минуты</span></span></a><a class="ob-vid" href="#" data-видео="https://cdn.jsdelivr.net/gh/bars-ytars-sys/openbazu-preview@532de19/assets/otzyv-aleksey-web.mp4"><span class="ob-vid__k"><img src="assets/otzyv-aleksey.webp" alt="Видеоотзыв: Алексей, выездная консультация, Уктур, Хабаровский край" loading="lazy"><span class="ob-vid__play" aria-hidden="true"></span></span><span class="ob-vid__t"><span class="ob-vid__n">Алексей</span><span class="ob-vid__p">выездная консультация, Уктур, Хабаровский край</span><span class="ob-vid__g">Смотреть отзыв · 1,5 минуты</span></span></a></div>
+          <div class="ob-q"><div class="ob-q__c">
+              <p class="ob-q__t">Сотрудничество нам понравилось. Александр очень отзывчивый и на многие вопросы помог найти ответ. Нам сделали классный проект базы и мы остались довольны, сейчас строим. По фин модели нам показалось, что расходы завышены, если честно, но как база от чего отталкиваться — супер</p>
+              <div class="ob-q__f">
+                <span><span class="ob-q__n">Из переписки</span>
+                  <span class="ob-q__p">проект базы, сейчас строят</span></span>
+                <button class="ob-q__s" type="button" data-скрин="https://static.tildacdn.com/tild6531-3237-4330-b461-353432376332/IMG_8512.jpg"
+                        aria-label="Открыть исходное сообщение">
+                  <img src="assets/otzyv-11.webp"
+                       alt="Скриншот отзыва: Из переписки, проект базы, сейчас строят"
+                       loading="lazy" decoding="async">
+                </button>
+              </div>
+            </div><div class="ob-q__c">
+              <p class="ob-q__t">Спасибо за встречу, массу полезной информации и твою энергию. Откуда в тебе её столько? Спасибо всей команде за организацию. Всё очень вкусно, классно и гостеприимно. Вы красавчики, с удовольствием приеду на следующее мероприятие</p>
+              <div class="ob-q__f">
+                <span><span class="ob-q__n">Илья Бузункин</span>
+                  <span class="ob-q__p">выездная консультация</span></span>
+                <button class="ob-q__s" type="button" data-скрин="https://static.tildacdn.com/tild3033-6664-4062-a166-313764386138/__2025-09-18_144735.png"
+                        aria-label="Открыть исходное сообщение">
+                  <img src="assets/otzyv-05.webp"
+                       alt="Скриншот отзыва: Илья Бузункин, выездная консультация"
+                       loading="lazy" decoding="async">
+                </button>
+              </div>
+            </div><div class="ob-q__c">
+              <p class="ob-q__t">Спасибо огромное за такой прекрасный день, за кучу полезной информации! Всё было очень полезно, в тему, я уверен, что все унесли с собой багаж каких-то новых знаний и получили буст энергии для новых начинаний</p>
+              <div class="ob-q__f">
+                <span><span class="ob-q__n">Макс</span>
+                  <span class="ob-q__p">выездная консультация, Берёзовая Роща</span></span>
+                <button class="ob-q__s" type="button" data-скрин="https://static.tildacdn.com/tild6238-6638-4633-a162-386462356439/__2025-09-18_144640.png"
+                        aria-label="Открыть исходное сообщение">
+                  <img src="assets/otzyv-03.webp"
+                       alt="Скриншот отзыва: Макс, выездная консультация, Берёзовая Роща"
+                       loading="lazy" decoding="async">
+                </button>
+              </div>
+            </div><div class="ob-q__c">
+              <p class="ob-q__t">Спасибо за такое продуктивное, супер-информативное и душевное мероприятие! Я только в начале пути, понимаю, сколько всего ещё предстоит, и получить на таком этапе заряд энергии и полезные практические советы от таких профессионалов — это невероятно мощно</p>
+              <div class="ob-q__f">
+                <span><span class="ob-q__n">Angelina</span>
+                  <span class="ob-q__p">выездная консультация</span></span>
+                <button class="ob-q__s" type="button" data-скрин="https://static.tildacdn.com/tild3235-3464-4131-b131-376662643836/__2025-09-18_144806.png"
+                        aria-label="Открыть исходное сообщение">
+                  <img src="assets/otzyv-07.webp"
+                       alt="Скриншот отзыва: Angelina, выездная консультация"
+                       loading="lazy" decoding="async">
+                </button>
+              </div>
+            </div><div class="ob-q__c">
+              <p class="ob-q__t">Большое тебе спасибо за отдачу и любовь к своему делу. Было очень круто. Уже начали кое-что внедрять</p>
+              <div class="ob-q__f">
+                <span><span class="ob-q__n">Олег Киров</span>
+                  <span class="ob-q__p">консультация</span></span>
+                <button class="ob-q__s" type="button" data-скрин="https://static.tildacdn.com/tild6663-6533-4531-a637-356239393534/__2025-09-18_144526.png"
+                        aria-label="Открыть исходное сообщение">
+                  <img src="assets/otzyv-01.webp"
+                       alt="Скриншот отзыва: Олег Киров, консультация"
+                       loading="lazy" decoding="async">
+                </button>
+              </div>
+            </div><div class="ob-q__c">
+              <p class="ob-q__t">Каждый разговор с ним — это всегда качественный, честный и душевный диалог, в котором можно быть самим собой… Результат Саши в его направлении впечатляет. Я ценю людей, которые умеют пройти путь от точки А до точки Б самостоятельно</p>
+              <div class="ob-q__f">
+                <span><span class="ob-q__n">Илья Ивлев</span>
+                  <span class="ob-q__p">пост в своём канале</span></span>
+                <button class="ob-q__s" type="button" data-скрин="https://static.tildacdn.com/tild3665-6130-4066-a561-323533343635/__2025-09-18_151740.png"
+                        aria-label="Открыть исходное сообщение">
+                  <img src="assets/otzyv-09.webp"
+                       alt="Скриншот отзыва: Илья Ивлев, пост в своём канале"
+                       loading="lazy" decoding="async">
+                </button>
+              </div>
+            </div></div>
+          <p class="ob-shots__k">Видеоотзывы: нажмите, чтобы открыть кадр целиком</p>
+          <div class="ob-shots"><div class="ob-shots__i ob-shots__i--кино" data-полный="https://static.tildacdn.com/tild6337-6161-4361-b062-646439636637/Mask_group.png" data-кино="09AFdbr4BzEhsLd6VzrrE7"><img src="assets/otzyv-00.webp" alt="Кадр видеоотзыва клиента открытьбазу.рф" loading="lazy" decoding="async"><span class="ob-shots__play" aria-hidden="true"></span></div><div class="ob-shots__i ob-shots__i--кино" data-полный="https://static.tildacdn.com/tild6636-3232-4263-b166-353635363066/2.png" data-кино="0NfAr4zvvHgnE83dp2v5uK"><img src="assets/otzyv-02.webp" alt="Кадр видеоотзыва клиента открытьбазу.рф" loading="lazy" decoding="async"><span class="ob-shots__play" aria-hidden="true"></span></div><div class="ob-shots__i ob-shots__i--кино" data-полный="https://static.tildacdn.com/tild3630-3035-4634-b262-653264346137/1.png" data-кино="vGZ1pcfahEzTBJr1yay11d"><img src="assets/otzyv-04.webp" alt="Кадр видеоотзыва клиента открытьбазу.рф" loading="lazy" decoding="async"><span class="ob-shots__play" aria-hidden="true"></span></div><div class="ob-shots__i ob-shots__i--кино" data-полный="https://static.tildacdn.com/tild6638-3231-4230-a465-363563373735/3.png" data-кино="vHv6RvKbWd7cNoECrv3xkd"><img src="assets/otzyv-06.webp" alt="Кадр видеоотзыва клиента открытьбазу.рф" loading="lazy" decoding="async"><span class="ob-shots__play" aria-hidden="true"></span></div><div class="ob-shots__i ob-shots__i--кино" data-полный="https://static.tildacdn.com/tild3635-6133-4564-a461-656137636638/4.png" data-кино="gpNZLXgR4eRiN6cbgBCwcG"><img src="assets/otzyv-08.webp" alt="Кадр видеоотзыва клиента открытьбазу.рф" loading="lazy" decoding="async"><span class="ob-shots__play" aria-hidden="true"></span></div><div class="ob-shots__i ob-shots__i--кино" data-полный="https://static.tildacdn.com/tild6334-6137-4162-b262-633565366536/5.png" data-кино="mzUx3TB1D5BppzuKzXNKbz"><img src="assets/otzyv-10.webp" alt="Кадр видеоотзыва клиента открытьбазу.рф" loading="lazy" decoding="async"><span class="ob-shots__play" aria-hidden="true"></span></div><div class="ob-shots__i ob-shots__i--кино" data-полный="https://static.tildacdn.com/tild6239-6435-4461-a230-326536346263/61.png" data-кино="5WmyDz6SNoPM9aCFnVG4zG"><img src="assets/otzyv-12.webp" alt="Кадр видеоотзыва клиента открытьбазу.рф" loading="lazy" decoding="async"><span class="ob-shots__play" aria-hidden="true"></span></div><div class="ob-shots__i ob-shots__i--кино" data-полный="https://static.tildacdn.com/tild3966-6637-4230-b339-333062636331/6.png" data-кино="uyCT6XyFB2E6dJYoVj2ERD"><img src="assets/otzyv-13.webp" alt="Кадр видеоотзыва клиента открытьбазу.рф" loading="lazy" decoding="async"><span class="ob-shots__play" aria-hidden="true"></span></div><div class="ob-shots__i ob-shots__i--кино" data-полный="https://static.tildacdn.com/tild3636-3237-4433-b233-643231303161/8.png" data-кино="pg9uYsQo1b3zfPcrBLYxfq"><img src="assets/otzyv-14.webp" alt="Кадр видеоотзыва клиента открытьбазу.рф" loading="lazy" decoding="async"><span class="ob-shots__play" aria-hidden="true"></span></div></div>
+          <div class="ob-lupa" id="ob-lupa-rev"><div class="ob-lupa__x">&#10005;</div>
+            <img alt="" hidden></div>
+          <script>
+          (function(){
+            var лупа = document.getElementById('ob-lupa-rev');
+            if (!лупа) return;
+            var корень = лупа.closest('section') || document;
+            var кадр = лупа.querySelector('img');
+            var рамка = null;
+
+            /* ─────────────────────────────────────────────────────────
+               ВИДЕООТЗЫВ МАКСИМА И КРИСТИНЫ
+               Сам файл лежит не здесь. Загрузите его в Тильде:
+               Настройки сайта → Файлы → Загрузить, скопируйте адрес
+               и вставьте между кавычками ниже. Карточка появится сама.
+               Пока строка пустая, карточки на странице нет.
+               ───────────────────────────────────────────────────────── */
+            var ВИДЕО = "https://cdn.jsdelivr.net/gh/bars-ytars-sys/openbazu-preview@c1cb72a/assets/otzyv-maksim-web.mp4";
+
+            var карточка = корень.querySelector('.ob-vid');
+            if (карточка && ВИДЕО) {
+              карточка.setAttribute('data-видео', ВИДЕО);
+              карточка.hidden = false;
+            }
+            function показать(адрес){
+              if (рамка) { рамка.remove(); рамка = null; }
+              кадр.src = адрес;
+              кадр.hidden = false;
+              лупа.classList.add('открыт');
+            }
+            function смотреть(идентификатор){
+              кадр.hidden = true;
+              if (рамка) рамка.remove();
+              рамка = document.createElement('iframe');
+              рамка.className = 'ob-lupa__кино';
+              рамка.src = 'https://kinescope.io/embed/' + идентификатор + '?autoplay=1';
+              рамка.setAttribute('allow',
+                'autoplay; fullscreen; picture-in-picture; encrypted-media');
+              рамка.setAttribute('allowfullscreen', '');
+              рамка.setAttribute('frameborder', '0');
+              лупа.appendChild(рамка);
+              лупа.classList.add('открыт');
+            }
+            корень.querySelectorAll('.ob-shots__i').forEach(function(к){
+              к.addEventListener('click', function(){
+                var кино = к.getAttribute('data-кино');
+                if (кино) { смотреть(кино); return; }
+                var полный = к.getAttribute('data-полный');
+                var кар = к.querySelector('img');
+                показать(полный || (кар && (кар.currentSrc || кар.src)));
+              });
+            });
+            function свой(адрес){
+              кадр.hidden = true;
+              if (рамка) рамка.remove();
+              рамка = document.createElement('video');
+              рамка.className = 'ob-lupa__видео';   // свой ролик вертикальный
+              рамка.setAttribute('preload', 'metadata');
+              // По умолчанию считаем ролик снятым на телефон: Safari в момент
+              // открытия ещё не знает его размеров и с width:auto растягивал
+              // рамку на всю ширину экрана. Как только размеры известны —
+              // ставим настоящие, чтобы кадр подошёл и горизонтальному.
+              рамка.addEventListener('loadedmetadata', function(){
+                if (рамка && рамка.videoWidth && рамка.videoHeight)
+                  рамка.style.aspectRatio = рамка.videoWidth + ' / ' + рамка.videoHeight;
+              });
+              рамка.src = адрес;
+              рамка.controls = true;
+              рамка.autoplay = true;
+              рамка.playsInline = true;
+              рамка.setAttribute('playsinline', '');
+              лупа.appendChild(рамка);
+              лупа.classList.add('открыт');
+            }
+            корень.querySelectorAll('[data-видео]').forEach(function(a){
+              a.addEventListener('click', function(e){
+                e.preventDefault();
+                свой(a.getAttribute('data-видео'));
+              });
+            });
+            корень.querySelectorAll('.ob-q__s').forEach(function(b){
+              b.addEventListener('click', function(){
+                показать(b.getAttribute('data-скрин'));
+              });
+            });
+            function закрыть(){
+              лупа.classList.remove('открыт');
+              if (рамка) { рамка.remove(); рамка = null; }   // иначе звук идёт дальше
+            }
+            лупа.addEventListener('click', закрыть);
+            document.addEventListener('keydown', function(e){
+              if (e.key === 'Escape') закрыть();
+            });
+          })();
+          </script>
+<script>
+(function(){
+  /* 30.09 агент 5: счётчик «2 / 6 · листайте» под лентой цитат (лента — только на телефоне, по CSS) */
+  function лента(л){
+    if(л.getAttribute('data-рд-лента'))return; л.setAttribute('data-рд-лента','1');
+    var сч=document.createElement('div'); сч.className='ob-рд-сч'; сч.setAttribute('aria-hidden','true');
+    л.parentNode.insertBefore(сч,л.nextSibling);
+    function обн(){var к=л.children,всего=к.length;if(!всего)return;
+      var ш=(к[0].getBoundingClientRect().width+12)||1, н=Math.min(всего,Math.round(л.scrollLeft/ш)+1);
+      сч.innerHTML='<b>'+н+' / '+всего+'</b><span>'+(н<всего?'· листайте &#8594;':'· это последний')+'</span>';}
+    л.addEventListener('scroll',function(){requestAnimationFrame(обн)},{passive:true}); обн();
+  }
+  function старт(){[].forEach.call(document.querySelectorAll('.ob-рд-отзывы .ob-q'),лента)}
+  if(document.readyState!=='loading')старт(); else document.addEventListener('DOMContentLoaded',старт);
+})();
+</script></div></section></div></div><div id="rec9000000245" class="r t-rec" data-record-type="123" style="background-color:transparent"><div class="t123"><section class="ob-к2-стр ob-к2-сек">
 <div class="ob-к2з">
   <div>
     <h2>Не узнали себя?</h2>
@@ -1688,6 +2318,22 @@ var т;window.addEventListener('resize',function(){clearTimeout(т);т=setTimeou
   });
   document.addEventListener('keydown',function(e){if(e.key==='Escape')закрыть()});
 })();
+</script><script>/* меню проще (30.09): «Готовые проекты» и Биржа — сверху, якоря главной — строкой внизу */
+(function(){var НОВОЕ="<div class=\"ob-nm__право\"><div class=\"ob-nm__топ\"><a class=\"ob-nm__плитка\" href=\"shop-projects.html\" data-путь=\"/shop-projects\"><span class=\"ob-nm__пт\">Готовые проекты</span><span class=\"ob-nm__пп\">Когда нужен дом, а не весь комплекс</span></a><a class=\"ob-nm__плитка ob-nm__плитка--бз\" href=\"https://xn----7sbcscidf0aj2b.xn--p1ai/\" target=\"_blank\" rel=\"noopener\"><span class=\"ob-nm__пт\">Биржа земли</span><span class=\"ob-nm__пп\">Купить или продать участок&nbsp;↗</span></a></div><div class=\"ob-nm__метка\">Услуги</div><ul class=\"ob-nm__услуги\"><li><a class=\"ob-nm__усл\" href=\"consultations.html\" data-путь=\"/consultations\"><span class=\"ob-nm__ут\">Консультации и разборы</span><span class=\"ob-nm__ук\">Когда нужен ответ на конкретный вопрос</span><span class=\"ob-nm__уа\" aria-hidden=\"true\">→</span></a></li><li><a class=\"ob-nm__усл\" href=\"engineering.html\" data-путь=\"/engineering\"><span class=\"ob-nm__ут\">Проектирование баз отдыха</span><span class=\"ob-nm__ук\">Когда есть земля и нужен план застройки</span><span class=\"ob-nm__уа\" aria-hidden=\"true\">→</span></a></li><li><a class=\"ob-nm__усл\" href=\"building.html\" data-путь=\"/building\"><span class=\"ob-nm__ут\">Строительство баз отдыха</span><span class=\"ob-nm__ук\">Когда есть проект и пора строить</span><span class=\"ob-nm__уа\" aria-hidden=\"true\">→</span></a></li><li><a class=\"ob-nm__усл\" href=\"promotion.html\" data-путь=\"/promotion\"><span class=\"ob-nm__ут\">Продвижение баз отдыха</span><span class=\"ob-nm__ук\">Когда база построена, но пустует</span><span class=\"ob-nm__уа\" aria-hidden=\"true\">→</span></a></li><li><a class=\"ob-nm__усл\" href=\"materials.html\" data-путь=\"/materials\"><span class=\"ob-nm__ут\">Обучающие материалы</span><span class=\"ob-nm__ук\">Когда хотите разобраться своими силами</span><span class=\"ob-nm__уа\" aria-hidden=\"true\">→</span></a></li><li><a class=\"ob-nm__усл\" href=\"club.html\" data-путь=\"/club\"><span class=\"ob-nm__ут\">Закрытый клуб</span><span class=\"ob-nm__ук\">Когда нужно сопровождение на всём пути</span><span class=\"ob-nm__уа\" aria-hidden=\"true\">→</span></a></li><li><a class=\"ob-nm__усл\" href=\"house-design.html\" data-путь=\"/house-design\"><span class=\"ob-nm__ут\">Индивидуальный проект дома</span><span class=\"ob-nm__ук\">Когда готовый не подошёл</span><span class=\"ob-nm__уа\" aria-hidden=\"true\">→</span></a></li></ul></div><nav class=\"ob-nm__лево\" aria-label=\"Разделы\"><div class=\"ob-nm__метка ob-nm__метка--разд\">Разделы</div><ul class=\"ob-nm__разделы\"><li><a href=\"https://xn--80abtjtnmcm9em.xn--p1ai/blog\" data-путь=\"/blog\">Блог</a></li><li><a href=\"about.html\" data-путь=\"/about\">Об Александре</a></li><li><a href=\"news.html\" data-путь=\"/news\">Новости</a></li></ul><div class=\"ob-nm__якоря\"><span class=\"ob-nm__якоря-м\">На главной:</span><a href=\"index.html#rec9000000032\" data-путь=\"/\" data-якорь=\"rec9000000032\">Отзывы</a><a href=\"index.html#rec9000000034\" data-путь=\"/\" data-якорь=\"rec9000000034\">Проекты</a><a href=\"index.html#rec9000000031\" data-путь=\"/\" data-якорь=\"rec9000000031\">Партнёры</a></div><div class=\"ob-nm__связь\"><a class=\"ob-nm__тел\" href=\"tel:+79019608069\">+7 (901) 960-80-69</a><div class=\"ob-nm__мессы\"><a href=\"https://t.me/ReznichenkoOpenbaza\" target=\"_blank\" rel=\"noopener\">Telegram</a><a href=\"https://max.ru/join/bATDWxSUu7dPxEyafZFkBu_St0pPuv6TNSYCXZsAot8\" target=\"_blank\" rel=\"noopener\">MAX</a></div><a class=\"ob-nm__заявка\" href=\"#popup:zayavka\">Оставить заявку</a></div></nav>";
+  function путь(){var п=location.pathname.replace(/\/$/,'').split('/').pop().replace(/\.html$/,'');return (п===''||п==='index')?'/':'/'+п}
+  function собрать(){
+    var м=document.getElementById('ob-nm');if(!м)return false;
+    if(м.classList.contains('ob-nm--проще'))return true;
+    var с=м.querySelector('.ob-nm__сетка');if(!с)return false;
+    с.innerHTML=НОВОЕ;м.classList.add('ob-nm--проще');
+    var п=путь();
+    [].forEach.call(с.querySelectorAll('[data-путь]'),function(a){
+      if(a.getAttribute('data-путь')===п&&!a.getAttribute('data-якорь'))a.setAttribute('aria-current','page');
+    });
+    return true;
+  }
+  if(!собрать()){document.addEventListener('DOMContentLoaded',собрать);window.addEventListener('load',собрать);}
+})();
 </script><style>
 /* ── короткая форма заявки (22.09) ── */
 #rec1934397191 .t-input-group_in,#rec1934397191 .t-contact-method__value-container{display:none!important}
@@ -1816,6 +2462,178 @@ var т;window.addEventListener('resize',function(){clearTimeout(т);т=setTimeou
     сб.setAttribute('data-success-btn',ЗАКР);
     и.value=новыйКод();   /* следующая заявка с этой страницы — со своим кодом */
   });
+})();
+</script><style>/* ob-связь-телефон */
+/* ── связь с телефона: Telegram и телефон рядом с «МЕНЮ» (30.09) ── */
+#ob-свз{position:absolute;z-index:9999;display:flex;align-items:center;height:44px;margin:0;padding:0;pointer-events:auto}
+#ob-свз[hidden]{display:none!important}
+#ob-свз .ob-свз__a{box-sizing:border-box;display:flex;align-items:center;justify-content:center;flex:0 0 44px;
+  width:44px;height:44px;margin:0;padding:0;border-radius:50%;color:#313a39!important;text-decoration:none!important;
+  -webkit-tap-highlight-color:transparent;pointer-events:auto;cursor:pointer}
+#ob-свз .ob-свз__к{box-sizing:border-box;display:flex;align-items:center;justify-content:center;
+  width:var(--ob-свз-к,36px);height:var(--ob-свз-к,36px);border-radius:50%;border:1px solid rgba(49,58,57,.32);
+  background:rgba(255,255,251,.6);pointer-events:none}
+#ob-свз .ob-свз__a svg{display:block;width:18px;height:18px;pointer-events:none}
+#ob-свз .ob-свз__тг svg{margin-left:-1px}
+#ob-свз .ob-свз__a:active .ob-свз__к{background:rgba(49,58,57,.1)}
+#ob-свз .ob-свз__a:focus-visible{outline:2px solid #313a39;outline-offset:-3px}
+#ob-свз[data-n="1"] .ob-свз__тел{display:none}
+@media (min-width:640px){#ob-свз{display:none!important}}
+
+/* ── после заявки: что дальше (30.09) ── */
+#tildaformsuccesspopup-new .ob-чд{margin:0 0 16px;text-align:center;font-family:var(--t-text-font,Arial)}
+#tildaformsuccesspopup-new .ob-зг:has(.ob-чд) .ob-зг__т{margin-bottom:2px}
+#tildaformsuccesspopup-new .ob-чд__т{margin:0 0 12px;font-size:14.5px;line-height:1.4;color:rgba(49,58,57,.74)}
+#tildaformsuccesspopup-new .ob-чд__b{box-sizing:border-box;display:flex;align-items:center;justify-content:center;width:100%;
+  min-height:48px;padding:0 20px;border-radius:14px;border:1.5px solid var(--ob-чд-акц,#52719d);background:transparent;
+  color:var(--ob-чд-акц,#52719d)!important;text-decoration:none!important;font-size:16px;font-weight:600;line-height:1.2;
+  transition:background-color .18s}
+#tildaformsuccesspopup-new .ob-чд__b:hover{background:rgba(49,58,57,.05)}
+#tildaformsuccesspopup-new .ob-чд__b:focus-visible{outline:2px solid var(--ob-чд-акц,#52719d);outline-offset:3px}
+#tildaformsuccesspopup-new .ob-чд__b svg{width:20px;height:20px;margin-right:10px;flex:0 0 auto}
+/* телефон: шторка Тильды — max-height 80vh (верх на 20% экрана) и прокрутка внутри; с нашей строкой и кнопкой на 390×664
+   «Закрыть» уходила под край (замер 30.09: 673 > 664). Шторка растёт по содержимому до края экрана, поля чуть уже */
+@media screen and (max-width:640px){
+  #tildaformsuccesspopup-new:has(.ob-чд) .t-form-success-popup__wrapper{max-height:calc(100% - 16px);padding-top:36px;
+    padding-bottom:calc(24px + env(safe-area-inset-bottom,0px))}
+  #tildaformsuccesspopup-new .ob-чд{margin-bottom:12px}
+  #tildaformsuccesspopup-new .ob-чд__т{margin-bottom:10px}
+}
+/* без окна бота гайдов: наше — единственное действие, кнопка залитая, родная «Закрыть» тихая */
+#tildaformsuccesspopup-new .ob-чд-окно{margin:2px auto 0;max-width:380px;color:#313a39;font-family:var(--t-text-font,Arial)}
+#tildaformsuccesspopup-new .ob-чд-окно .ob-чд__свяж{margin:0 0 2px;font-size:16px;line-height:1.45;text-align:center;color:#313a39}
+#tildaformsuccesspopup-new .ob-чд--главная{margin-bottom:0}
+#tildaformsuccesspopup-new .ob-чд--главная .ob-чд__b{background:var(--ob-чд-акц,#52719d);border-color:transparent;color:#fffffb!important}
+#tildaformsuccesspopup-new .ob-чд--главная .ob-чд__b:hover{background:var(--ob-чд-навед,#6c98bc)}
+#tildaformsuccesspopup-new:has(.ob-чд--главная) button.t-form-success-popup__button{background:transparent!important;
+  color:#313a39!important;border:1px solid rgba(49,58,57,.25)!important;box-shadow:none!important}
+#tildaformsuccesspopup-new:has(.ob-чд--главная) .t-form-success-popup__content-icon-background{fill:var(--ob-чд-акц,#52719d)!important}
+</style><script>
+(function(){   /* связь с телефона: Telegram и телефон рядом с «МЕНЮ» (30.09) */
+  var ШАПКА='#rec1855532261', МЕНЮ='1769795571592', ЛОГО='1769796007296000001', ПЛАШКА='1769796208141',
+      ТЕЛ_ПК='1777313207550000002', ТГ="https://t.me/ReznichenkoOpenbaza", ТЕЛ="tel:+79019608069", ТЕЛ_Т="+7 (901) 960-80-69", ЗНАК_ТГ="<svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path fill=\"currentColor\" d=\"M21.4 4.1 2.9 11.3c-1.3.5-1.2 1.2-.2 1.5l4.7 1.5 1.8 5.6c.2.6.4.8.9.8.4 0 .6-.2.9-.4l2.3-2.2 4.7 3.5c.9.5 1.5.2 1.7-.8l3.1-14.6c.3-1.3-.5-1.9-1.4-1.5ZM9.7 14.4l-.4 4.2-1.5-4.8 10.8-6.8-8.9 7.4Z\"/><\/svg>", ЗНАК_ТЕЛ="<svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path fill=\"currentColor\" d=\"M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.61 21 3 13.39 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1.02l-2.2 2.2Z\"/><\/svg>", Ш=44;
+  function эл(id){var r=document.querySelector(ШАПКА);return r&&r.querySelector('.tn-elem[data-elem-id="'+id+'"]')}
+  function видно(e){if(!e)return false;var cs=getComputedStyle(e);if(cs.display==='none'||cs.visibility==='hidden')return false;
+    var r=e.getBoundingClientRect();return r.width>0&&r.height>0&&r.right>0&&r.left<window.innerWidth}
+  /* рамка самих букв, а не блока Тильды: у надписей блоки шире текста */
+  function буквы(e){var a=e.querySelector('.tn-atom')||e;try{var г=document.createRange();г.selectNodeContents(a);
+    var r=г.getBoundingClientRect();if(r.width)return r}catch(_){}return e.getBoundingClientRect()}
+  function группа(){var г=document.getElementById('ob-свз');if(г)return г;
+    г=document.createElement('div');г.id='ob-свз';г.className='ob-свз';г.hidden=true;
+    г.innerHTML='<a class="ob-свз__a ob-свз__тг" href="'+ТГ+'" target="_blank" rel="noopener" aria-label="Написать в Telegram">'
+      +'<span class="ob-свз__к">'+ЗНАК_ТГ+'</span></a>'
+      +'<a class="ob-свз__a ob-свз__тел" href="'+ТЕЛ+'" aria-label="Позвонить: '+ТЕЛ_Т+'">'
+      +'<span class="ob-свз__к">'+ЗНАК_ТЕЛ+'</span></a>';
+    return г}
+  function поставить(){
+    var меню=эл(МЕНЮ),лого=эл(ЛОГО),плашка=эл(ПЛАШКА),г=document.getElementById('ob-свз');
+    var холст=меню&&меню.closest('.t396__artboard');
+    /* ПК и планшет: в шапке свой номер или кнопка заявки рядом с «МЕНЮ» — значки не ставим */
+    if(!холст||!видно(меню)||window.innerWidth>=640||видно(эл(ТЕЛ_ПК))){if(г)г.hidden=true;return}
+    г=группа();if(г.parentNode!==холст)холст.appendChild(г);
+    var х=холст.getBoundingClientRect(),м=буквы(меню),л=видно(лого)?буквы(лого):null,
+        п=видно(плашка)?плашка.getBoundingClientRect():м;
+    var место=м.left-(л?л.right:х.left),n=место>=2*Ш+6?2:(место>=Ш+6?1:0);
+    if(!n){г.hidden=true;return}
+    var отступ=Math.min(6,(место-n*Ш)/2);   /* от «М» до края зоны нажатия */
+    г.setAttribute('data-n',n);
+    г.style.setProperty('--ob-свз-к',Math.max(28,Math.min(36,Math.round(п.height)-10))+'px');
+    г.style.left=Math.round(м.left-отступ-n*Ш-х.left)+'px';
+    г.style.top=Math.round(п.top+п.height/2-Ш/2-х.top)+'px';
+    г.hidden=false;
+  }
+  /* шапка досчитывает размеры не сразу (шрифты с CDN, zoom Тильды) — повторяем и следим, как в макс.py */
+  var раз=0,т=setInterval(function(){поставить();if(++раз>30)clearInterval(т)},400);
+  if(document.readyState!=='loading')поставить();else document.addEventListener('DOMContentLoaded',поставить);
+  window.addEventListener('load',поставить);window.addEventListener('resize',поставить);
+  window.addEventListener('orientationchange',function(){setTimeout(поставить,300)});window.addEventListener('pageshow',поставить);
+  if(document.fonts&&document.fonts.ready){document.fonts.ready.then(поставить);
+    if(document.fonts.addEventListener)document.fonts.addEventListener('loadingdone',поставить)}
+  if(window.ResizeObserver){var сл=new ResizeObserver(function(){поставить()}),есть=false,
+    ж=setInterval(function(){var м=эл(МЕНЮ);if(!м)return;сл.observe(м);var л=эл(ЛОГО);if(л)сл.observe(л);есть=true;clearInterval(ж)},300);
+    setTimeout(function(){if(!есть)clearInterval(ж)},15000)}
+})();
+
+(function(){   /* после заявки: что дальше (30.09) */
+  var Ф='#rec1934397191', ТГ="https://t.me/ReznichenkoOpenbaza", ФРАЗА="Отвечаем в мессенджере, обычно в тот же день.", КНОПКА="Написать сразу в Telegram", ЗНАК="<svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path fill=\"currentColor\" d=\"M21.4 4.1 2.9 11.3c-1.3.5-1.2 1.2-.2 1.5l4.7 1.5 1.8 5.6c.2.6.4.8.9.8.4 0 .6-.2.9-.4l2.3-2.2 4.7 3.5c.9.5 1.5.2 1.7-.8l3.1-14.6c.3-1.3-.5-1.9-1.4-1.5ZM9.7 14.4l-.4 4.2-1.5-4.8 10.8-6.8-8.9 7.4Z\"/><\/svg>", ЗАГ="Заявка принята", СВЯЖ="Команда Александра свяжется с вами.", ЗЕЛ=["115491986", "115948776", "115971636", "115972016", "115971356", "115973026", "115976516"], КРАС=["123821646"];
+  /* акцент — как у формы (заявка_гайд_бот.py): её переменная, а без неё — по номеру страницы */
+  function акцент(ф){var кс=getComputedStyle(ф.closest(Ф)),а=(кс.getPropertyValue('--ob-ф-акц')||'').trim(),
+      н=(кс.getPropertyValue('--ob-ф-навед')||'').trim();if(а)return [а,н||а];
+    var ar=document.getElementById('allrecords'),id=ar?ar.getAttribute('data-tilda-page-id'):'';
+    if(ЗЕЛ.indexOf(id)>=0)return ['#1e7268','rgba(30,114,104,.85)'];
+    if(КРАС.indexOf(id)>=0)return ['#961f25','rgba(150,31,37,.85)'];
+    return ['#52719d','#6c98bc']}
+  function блок(главная){return '<div class="ob-чд'+(главная?' ob-чд--главная':'')+'"><p class="ob-чд__т">'+ФРАЗА+'</p>'
+    +'<a class="ob-чд__b" href="'+ТГ+'" target="_blank" rel="noopener">'+ЗНАК+КНОПКА+'</a></div>'}
+  /* на window: событие Тильды всплывает сюда после document, где текст окна ставит бот гайдов */
+  window.addEventListener('tildaform:aftersuccess',function(e){
+    var ф=e.target;if(!ф||!ф.closest||!ф.closest(Ф))return;
+    var сб=ф.querySelector('.js-successbox');if(!сб)return;
+    var ак=акцент(ф),кор=document.documentElement.style;
+    кор.setProperty('--ob-чд-акц',ак[0]);кор.setProperty('--ob-чд-навед',ак[1]);
+    var т=сб.getAttribute('data-success-message')||'';
+    if(т.indexOf('ob-чд')>=0)return;
+    if(т.indexOf('ob-зг__т')>=0){   /* окно «Заявка принята» с ботом гайдов — строка и кнопка под «свяжется с вами» */
+      т=т.replace(/(<p class="ob-зг__т">[\s\S]*?<\/p>)/,function(м){return м+блок(false)});
+    }else{
+      т='<div class="ob-чд-окно"><p class="ob-чд__свяж">'+СВЯЖ+'</p>'+блок(true)+'</div>';
+      сб.setAttribute('data-success-title',ЗАГ);
+    }
+    сб.setAttribute('data-success-message',т);
+  });
+})();
+
+(function(){   /* цели Метрики: форма, звонок, Telegram, MAX (30.09) */
+  if(window.obЦелиПуть)return;window.obЦелиПуть=1;
+  var М=108184957, КОРНИ={"zayavka_open": "Заявка: форма открыта", "zayavka_sent": "Заявка: отправлена", "phone_click": "Звонок", "tg_personal": "Telegram личный", "tg_community": "Telegram сообщество", "max_click": "MAX"}, Ф='#rec1934397191', очередь=[], ждём=null, тиков=0, последний=null, кнопка_формы='';
+  var журнал=window.obЦели=window.obЦели||[];
+  function страница(){var п=location.pathname.replace(/\/index\.html$/,'/').replace(/\.html$/,'');return п||'/'}
+  function сброс(){
+    if(typeof window.ym!=='function'){if(!ждём)ждём=setInterval(сброс,500);if(++тиков>60){clearInterval(ждём);ждём=null}return}
+    if(ждём){clearInterval(ждём);ждём=null}
+    while(очередь.length){var з=очередь.shift();try{window.ym(М,'reachGoal',з[0],з[1])}catch(_){}}
+  }
+  function цель(ид,что){var п={},в={};в[страница()]=что;п[КОРНИ[ид]]=в;журнал.push([ид,п]);очередь.push([ид,п]);сброс()}
+  function где(e){
+    if(e.closest('#ob-свз'))return 'шапка · значок';
+    if(e.closest('#tildaformsuccesspopup-new'))return 'после заявки';
+    if(e.closest(Ф))return 'форма';
+    if(e.closest('#ob-nm,#rec1991854501'))return 'меню';   /* своё меню (демо) и родное Нулевым блоком */
+    if(e.closest('#rec1855532261'))return 'шапка';
+    if(e.closest('#rec1992766661'))return 'нижняя полоса';
+    if(e.closest('#rec1855638161'))return 'подвал';
+    if(e.closest('#obWebinar,#obWebinarBar'))return 'вебинар';
+    return 'страница'}
+  /* видимая надпись: у нижней полосы родной текст спрятан, новый нарисован в ::after (текст-кнопки.py) */
+  function надпись(e){var т=(e.getAttribute('aria-label')||e.innerText||'').replace(/\s+/g,' ').trim();
+    if(!т){var с=[e].concat([].slice.call(e.querySelectorAll('*'),0,8));
+      for(var i=0;i<с.length&&!т;i++){try{var к=getComputedStyle(с[i],'::after').content;if(к&&/^["']/.test(к))т=к.slice(1,-1)}catch(_){}}}
+    if(!т){var и=e.querySelector('img[alt]');т=и?и.getAttribute('alt'):''}
+    if(!т)т=(e.getAttribute('title')||e.textContent||'').replace(/\s+/g,' ').trim();
+    return (т||'значок').slice(0,60)}
+  /* захват на window — раньше всех обработчиков страницы: чужой stopPropagation цель не съест */
+  window.addEventListener('click',function(e){
+    var a=e.target&&e.target.closest?e.target.closest('a[href],button,[role="button"]'):null;if(!a)return;
+    if(e.isTrusted!==false)последний={эл:a,к:Date.now()};
+    var h=a.getAttribute('href')||'',ид=null;
+    if(/^tel:/i.test(h))ид='phone_click';
+    else if(/t\.me\/reznichenkoopenbaza/i.test(h))ид='tg_personal';
+    else if(/t\.me\/openbaza(?:[\/?#]|$)/i.test(h))ид='tg_community';
+    else if(/^https?:\/\/(www\.)?max\.ru\//i.test(h))ид='max_click';
+    if(ид)цель(ид,где(a));
+  },true);
+  /* форма открылась — любым путём (кнопка, призыв после отзывов, меню, адрес с #popup); кнопка — последнее нажатие ≤3 с */
+  function следить(){
+    var r=document.querySelector(Ф),п=r&&r.querySelector('.t-popup');if(!п)return false;
+    var было=п.classList.contains('t-popup_show');
+    new MutationObserver(function(){var есть=п.classList.contains('t-popup_show');if(есть===было)return;было=есть;if(!есть)return;
+      var e=последний&&Date.now()-последний.к<3000?последний.эл:null;
+      кнопка_формы=e?где(e)+' · '+надпись(e):'без кнопки';
+      цель('zayavka_open',кнопка_формы)}).observe(п,{attributes:true,attributeFilter:['class']});
+    return true}
+  if(!следить()){var раз=0,т=setInterval(function(){if(следить()||++раз>40)clearInterval(т)},250)}
+  window.addEventListener('tildaform:aftersuccess',function(e){var ф=e.target;
+    if(ф&&ф.closest&&ф.closest(Ф))цель('zayavka_sent',кнопка_формы||'без кнопки')});
 })();
 </script><script>
 (function(){
