@@ -935,6 +935,42 @@ document.addEventListener('DOMContentLoaded',t_setvisRecs);}})();</script><scrip
   .ob-пд-зов{padding:26px 22px}
   .ob-пд-зов .ob-пд-b{width:100%;box-sizing:border-box}
 }
+
+/* хоум-стейджинг коротко (30.09) */
+.ob-пд-хс2{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,300px);gap:22px 40px;align-items:start}
+.ob-пд-хс2__т .ob-h2{margin-bottom:14px}
+.ob-пд-хс2__т .ob-lead{margin:0;max-width:680px}
+.ob-пд-хс2__цена{display:flex;flex-direction:column;gap:8px;padding:22px;border-radius:22px;background:var(--акц);color:#fffffb}
+.ob-пд-хс2__цс{font-family:var(--t-text-font,Arial);font-size:36px;font-weight:700;line-height:1;white-space:nowrap}
+.ob-пд-хс2__мета{margin-bottom:8px;font-family:var(--t-text-font,Arial);font-size:14px;line-height:1.4;color:rgba(255,255,251,.84)}
+.ob-пд-хс2__цена .ob-пд-b{width:100%;box-sizing:border-box;background:#fffffb;color:#313a39;border-color:#fffffb}
+.ob-пд-хс2__цена .ob-пд-b:hover{background:rgba(255,255,251,.86);border-color:rgba(255,255,251,.86)}
+.ob-пд-хс2__шаги{grid-column:1/-1;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:0;padding:0;list-style:none}
+.ob-пд-хс2__ш{display:flex;align-items:flex-start;gap:12px;padding:16px;border-radius:18px;background:#fffffb;border:1px solid rgba(82,113,157,.18)}
+.ob-пд-хс2__н{flex:none;display:flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:50%;
+  background:var(--акц);color:#fffffb;font-family:var(--t-text-font,Arial);font-size:14px;font-weight:700}
+.ob-пд-хс2__ш b{display:block;font-family:var(--t-text-font,Arial);font-size:15.5px;font-weight:600;line-height:1.25;color:#313a39}
+.ob-пд-хс2__ш b+span{display:block;margin-top:3px;font-family:var(--t-text-font,Arial);font-size:14px;line-height:1.4;color:rgba(49,58,57,.78)}
+.ob-пд-хс2__подр{grid-column:1/-1}
+.ob-пд-хс2__подр summary{display:inline-flex;align-items:center;gap:10px;min-height:44px;padding-right:4px;cursor:pointer;list-style:none;
+  font-family:var(--t-text-font,Arial);font-size:15px;font-weight:600;color:var(--акц)}
+.ob-пд-хс2__подр summary::-webkit-details-marker{display:none}
+.ob-пд-хс2__подр summary:after{content:"";width:7px;height:7px;margin-top:-4px;border-right:2px solid currentColor;
+  border-bottom:2px solid currentColor;transform:rotate(45deg)}
+.ob-пд-хс2__подр[open] summary:after{margin-top:4px;transform:rotate(-135deg)}
+.ob-пд-хс2__подр summary:focus-visible{outline:2px solid var(--акц);outline-offset:3px}
+.ob-пд-хс2__подр .ob-пд-хс__списки{margin-top:6px}
+@media screen and (max-width:1100px){.ob-пд-хс2__шаги{grid-template-columns:1fr 1fr}}
+@media screen and (max-width:760px){
+  /* телефон: что это → как проходит (список без карточек) → цена с кнопкой → подробности */
+  .ob-пд-хс2{grid-template-columns:minmax(0,1fr);gap:18px}
+  .ob-пд-хс2__шаги{order:2;grid-template-columns:minmax(0,1fr);gap:12px}
+  .ob-пд-хс2__ш{padding:0;background:none;border:0;border-radius:0}
+  .ob-пд-хс2__н{width:28px;height:28px;font-size:13px}
+  .ob-пд-хс2__цена{order:3}
+  .ob-пд-хс2__подр{order:4}
+  .ob-пд-хс2__цс{font-size:32px}
+}
 </style><style>/* ob-мобильные */
 /* ── телефоны и Safari: общее ────────────────────────────────────── */
 html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
@@ -1335,19 +1371,23 @@ html.ob-зш-кивок #rec1855532261 .tn-elem[data-elem-id="1769795874967"] .t
   </div></section>
 
   <section class="ob-sec ob-sec--soft" id="home-staging"><div class="ob-wrap">
-    <div class="ob-label">Для готового объекта</div>
-    <h2 class="ob-h2">Декорирование объекта / хоум-стейджинг</h2>
-    <p class="ob-lead"><b>Больше стиля — больше ценности.</b> Онлайн-решение для преобразования дизайна существующих объектов. 2,5&nbsp;часа видеоконсультации с&nbsp;экспертом.</p>
-    <div class="ob-пд-хс__шаги"><div class="ob-пд-хс__ш"><span class="ob-пд-хс__н">1</span><b>Ваши материалы</b><p>Вы предоставляете фото и видео объекта.</p><ul><li>Фото объекта</li><li>Видео объекта</li><li>План (при наличии)</li><li>Пожелания и задачи</li></ul></div><div class="ob-пд-хс__ш"><span class="ob-пд-хс__н">2</span><b>Подготовка эксперта</b><p>Мы анализируем материалы, формируем идеи и готовим варианты к встрече.</p><ul><li>Анализ объекта</li><li>Выявление зон для изменений</li><li>Подбор референсов</li><li>Подготовка к обсуждению</li></ul></div><div class="ob-пд-хс__ш"><span class="ob-пд-хс__н">3</span><b>Видеоконсультация</b><p>2,5 часа вместе с экспертом. Разбираем каждое помещение.</p><ul><li>Что оставить, что убрать</li><li>Что переставить и заменить</li><li>Подбор декора, мебели, света</li><li>Куда повесить картину</li><li>Какие выбрать шторы</li><li>Разбор по каждому помещению</li></ul></div><div class="ob-пд-хс__ш"><span class="ob-пд-хс__н">4</span><b>Итоговые материалы</b><p>Через 14 дней вы получаете книгу консультации и шпаргалку.</p><ul><li>Книга консультации</li><li>Референсы по каждому помещению</li><li>Конкретные ссылки на товары</li><li>Пошаговый план действий</li><li>Список: что купить и куда поставить</li><li>Рекомендации по декору, текстилю, свету и картинам</li></ul></div></div>
-    <div class="ob-пд-хс__низ">
-      <div class="ob-пд-хс__списки"><div class="ob-пд-хс__сп"><b>Что вы получаете</b><ul><li>Концепция преобразования вашего объекта</li><li>Референсы интерьера и стилевые решения</li><li>Подбор конкретных элементов декора</li><li>Рекомендации по текстилю и шторам</li><li>Подбор освещения</li><li>Куда повесить картины и как оформить стены</li><li>Ссылки на конкретные товары на маркетплейсах</li></ul></div><div class="ob-пд-хс__сп"><b>Для кого</b><ul><li>Владельцы баз отдыха</li><li>Сдающие недвижимость (аренда)</li><li>Собственники апартаментов и гостевых домов</li><li>Кто готовит объект к сезону</li><li>Кто хочет повысить привлекательность объекта и увеличить доход</li><li>Владельцы существующих объектов, которые хотят обновить интерьер без ремонта</li></ul></div><div class="ob-пд-хс__сп"><b>Результат</b><ul><li>Стильный и гармоничный интерьер</li><li>Конкретные решения, а не общие идеи</li><li>Пошаговый план действий</li><li>Ссылки на реальные товары</li><li>Экономия времени и бюджета</li><li>Повышение привлекательности объекта для гостей и роста доходности</li></ul></div></div>
-      <div class="ob-пд-хс__цена">
-        <span class="ob-пд-хс__цм">Стоимость</span>
-        <b class="ob-пд-хс__цс">80&nbsp;000&nbsp;₽</b>
-        <div class="ob-пд-хс__сроки"><div><span>Видеоконсультация</span><b>2,5 часа</b></div><div><span>Итоговые материалы</span><b>до 14 календарных дней</b></div></div>
-        <p class="ob-пд-хс__итог"><b>Ваш объект может больше.</b> Привлекательный интерьер — больше гостей, выше заполняемость, больше доход.</p>
+    <div class="ob-пд-хс2">
+      <div class="ob-пд-хс2__т">
+        <div class="ob-label">Для готового объекта</div>
+        <h2 class="ob-h2">Хоум-стейджинг</h2>
+        <p class="ob-lead">Объект уже есть, а интерьер не радует? Эксперт онлайн разберёт каждое помещение и подскажет,
+        что оставить, что переставить и что докупить, — обновить интерьер без ремонта.</p>
+      </div>
+      <div class="ob-пд-хс2__цена">
+        <b class="ob-пд-хс2__цс">80&nbsp;000&nbsp;₽</b>
+        <span class="ob-пд-хс2__мета">Онлайн · видеоконсультация 2,5&nbsp;часа · материалы до 14&nbsp;дней</span>
         <a class="ob-пд-b" href="#popup:zayavka" data-ob-услуга="Хоум-стейджинг (декорирование объекта, 80 000 ₽)">Заказать консультацию</a>
       </div>
+      <ol class="ob-пд-хс2__шаги"><li class="ob-пд-хс2__ш"><span class="ob-пд-хс2__н">1</span><span><b>Фото и видео</b><span>Присылаете фото и видео объекта, план — если есть</span></span></li><li class="ob-пд-хс2__ш"><span class="ob-пд-хс2__н">2</span><span><b>Подготовка</b><span>Эксперт разбирает материалы и подбирает референсы</span></span></li><li class="ob-пд-хс2__ш"><span class="ob-пд-хс2__н">3</span><span><b>Видеоконсультация</b><span>2,5 часа вместе с экспертом по каждому помещению</span></span></li><li class="ob-пд-хс2__ш"><span class="ob-пд-хс2__н">4</span><span><b>Итоговые материалы</b><span>Через 14 дней — книга консультации со ссылками на товары</span></span></li></ol>
+      <details class="ob-пд-хс2__подр">
+        <summary>Что входит и кому подойдёт</summary>
+        <div class="ob-пд-хс__списки"><div class="ob-пд-хс__сп"><b>Что вы получаете</b><ul><li>Концепция преобразования вашего объекта</li><li>Референсы интерьера и стилевые решения</li><li>Подбор конкретных элементов декора</li><li>Рекомендации по текстилю и шторам</li><li>Подбор освещения</li><li>Куда повесить картины и как оформить стены</li><li>Ссылки на конкретные товары на маркетплейсах</li></ul></div><div class="ob-пд-хс__сп"><b>Для кого</b><ul><li>Владельцы баз отдыха</li><li>Сдающие недвижимость (аренда)</li><li>Собственники апартаментов и гостевых домов</li><li>Кто готовит объект к сезону</li><li>Кто хочет повысить привлекательность объекта и увеличить доход</li><li>Владельцы существующих объектов, которые хотят обновить интерьер без ремонта</li></ul></div><div class="ob-пд-хс__сп"><b>Результат</b><ul><li>Стильный и гармоничный интерьер</li><li>Конкретные решения, а не общие идеи</li><li>Пошаговый план действий</li><li>Ссылки на реальные товары</li><li>Экономия времени и бюджета</li><li>Повышение привлекательности объекта для гостей и роста доходности</li></ul></div></div>
+      </details>
     </div>
   </div></section>
   <section class="ob-sec"><div class="ob-wrap">
