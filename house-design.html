@@ -2400,6 +2400,22 @@ var т;window.addEventListener('resize',function(){clearTimeout(т);т=setTimeou
 .ob-house-pair__switch button[aria-pressed="true"]{background:#52719D;color:#FFFFFB}
 .ob-house-pair__switch button:focus-visible{outline:2px solid #52719D;outline-offset:2px}
 @media(max-width:390px){.ob-пд-гал .ob-house-pair figcaption{padding:12px;gap:8px}.ob-house-pair__switch button{padding:10px 12px}}
+
+.ob-пд-гал{gap:24px}
+.ob-пд-гал figure.ob-house-pair{border-radius:24px;border:1px solid rgba(82,113,157,.16);box-shadow:0 8px 28px rgba(49,58,57,.065);transition:box-shadow .3s,border-color .3s}
+.ob-house-pair__images{aspect-ratio:4/3;background:#313A39;overflow:hidden}
+.ob-пд-гал .ob-house-pair__images img{object-fit:cover;object-position:center bottom}
+.ob-пд-гал .ob-house-pair figcaption{padding:20px 22px;gap:16px;font-size:24px;font-weight:500;line-height:1.25}
+.ob-house-pair__switch{position:relative;isolation:isolate;gap:0;padding:4px;background:rgba(82,113,157,.075);border:1px solid rgba(82,113,157,.12);border-radius:999px}
+.ob-house-pair__switch::before{content:"";position:absolute;z-index:-1;top:4px;bottom:4px;left:4px;width:calc((100% - 8px)/2);border-radius:999px;background:#52719D;box-shadow:0 2px 6px rgba(82,113,157,.22);transition:transform .5s cubic-bezier(.22,.68,0,1.1)}
+.ob-house-pair__switch:has(button[data-view="1"][aria-pressed="true"])::before{transform:translateX(100%)}
+.ob-house-pair__switch button{box-sizing:border-box;position:relative;width:88px;min-height:44px;padding:10px 8px;border-radius:999px;color:#52719D;background:transparent!important;transition:color .3s;font-size:14px;font-weight:500}
+.ob-house-pair__switch button[aria-pressed="true"]{color:#FFFFFB}
+.ob-пд-гал__п{margin-top:22px;line-height:1.6;max-width:740px}
+@media(hover:hover){.ob-пд-гал figure.ob-house-pair:hover{border-color:rgba(82,113,157,.42);box-shadow:0 12px 36px rgba(49,58,57,.12)}}
+@media(max-width:640px){.ob-пд-гал{gap:22px}.ob-пд-гал figure.ob-house-pair{border-radius:22px}.ob-пд-гал .ob-house-pair figcaption{padding:17px 18px;font-size:21px;gap:12px}.ob-house-pair__switch button{width:75px}}
+@media(max-width:360px){.ob-пд-гал .ob-house-pair figcaption{flex-direction:column;align-items:stretch}.ob-house-pair__switch button{width:50%;flex:1}}
+@media(prefers-reduced-motion:reduce){.ob-house-pair__switch::before,.ob-house-pair__switch button,.ob-пд-гал figure.ob-house-pair{transition:none}}
 </style><script>(function(){function init(){
  var cards=Array.from(document.querySelectorAll('.ob-house-pair'));
  var reduced=window.matchMedia('(prefers-reduced-motion: reduce)');
