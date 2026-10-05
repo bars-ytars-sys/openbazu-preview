@@ -1,0 +1,46 @@
+name: Telegram → новости сайта
+
+on:
+  schedule:
+    - cron: '17,47 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: telegram-news
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            assets/news
+            инструменты/тг-лента
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install image library
+        run: python -m pip install Pillow==11.3.0
+      - name: Collect and validate public channel
+        run: |
+          python инструменты/тг-лента/тест_сборщика.py
+          python инструменты/тг-лента/обновить-сайт.py
+      - name: Publish only feed and images
+        shell: bash
+        run: |
+          set -euo pipefail
+          git add -- assets/news
+          if ! git diff --cached --quiet; then
+            git config user.name 'github-actions[bot]'
+            git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+            git commit -m 'news: sync public Telegram channel'
+            git push origin HEAD:main
+          fi
+      - name: Refresh and verify site CDN
+        run: python инструменты/тг-лента/обновить-сайт.py --purge
