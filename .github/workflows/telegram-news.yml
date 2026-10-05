@@ -2,7 +2,8 @@ name: Telegram → новости сайта
 
 on:
   schedule:
-    - cron: '17,47 * * * *'
+    # 20:55 UTC = 23:55 по Москве, одна выгрузка в сутки.
+    - cron: '55 20 * * *'
   workflow_dispatch:
 
 permissions:
