@@ -8,9 +8,6 @@ body a.ob-price-request:hover{text-decoration:underline!important}
 .ob-price-from{display:inline-block;margin:18px 0 0!important;padding:8px 14px!important;border-radius:12px;background:#FFFFFB;font:600 20px/1.4 TildaSans,Arial,sans-serif!important;color:var(--ob-price-accent)!important}
 body[data-price-enabled="true"] :is(.t-store__card__price-wrapper,.t-store__prod-popup__price-wrapper,.t-store__prod-popup__price,.t-store__prod-popup__price_old,.t-store__card__price,.t-store__card__price_old){display:none!important}
 body[data-price-enabled="true"] #allrecords #rec1888966131 .js-store-price-wrapper{display:none!important}
-body:has(.t-popup_show .t-store__prod-popup__container) .t975{display:none!important}
-body:has(.t-popup_show .t-store__prod-popup__container) #allrecords #t-footer .t975{display:none!important}
-body:has(.t-popup_show .t-store__prod-popup__container) #t-header{visibility:hidden!important;pointer-events:none!important}
 #ob-price-demo-dialog{border:0;border-radius:28px;padding:38px;width:calc(100% - 32px);max-width:500px;max-height:calc(100dvh - 32px);box-sizing:border-box;overflow:auto;background:#FFFFFB;color:#313A39;font:400 16px/1.5 TildaSans,Arial,sans-serif;box-shadow:0 14px 60px #313A3933}
 #ob-price-demo-dialog::backdrop{background:#313A39b3}
 #ob-price-demo-dialog [hidden]{display:none!important}

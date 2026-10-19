@@ -11,14 +11,19 @@
   const success = document.getElementById('ob-price-success');
   let trigger;
   let service = '';
-  function open(button) {
+  let nativeForward = false;
+  function identify(button) {
     trigger = button;
     const card = button.closest('.t-store__card,.t-store__prod-popup__container,li,tr,article,.ob-пвт,.ob-тар');
-    const product = button.closest('.t-store__card,.t-store__prod-popup__container');
+    const product = button.closest('.t-store__card,.t-store__prod-popup__container') ||
+      document.querySelector('.t-popup_show .t-store__prod-popup__container');
     const productName = product?.querySelector('.js-store-prod-name,.t-store__card__title,.t-store__prod-popup__name')?.textContent;
     service = productName || button.dataset.obService || button.getAttribute('data-ob-услуга') ||
       card?.querySelector('h3,h4,.t-store__card__title,.t-store__prod-popup__name')?.textContent ||
       document.querySelector('h1')?.textContent || document.title;
+  }
+  function open(button) {
+    identify(button);
     document.getElementById('ob-price-service').textContent = service.trim();
     content.hidden = false;
     success.hidden = true;
@@ -33,6 +38,7 @@
     const a = event.target.closest('a,button');
     if (!a) return;
     const href = a.getAttribute('href') || '';
+    if (href.startsWith('#popup:') && !nativeForward) identify(a);
     if (href && !href.startsWith('#')) {
       const destination = new URL(href,location.href);
       const originalSite = ['xn--80abtjtnmcm9em.xn--p1ai','открытьбазу.рф'].includes(destination.hostname);
@@ -46,10 +52,19 @@
         }
       }
     }
-    if (/^#(?:popup:|order)/.test(href) || a.matches('.js-store-prod-btn2,.js-store-prod-popup-buy-btn,.ob-price-request')) {
+    if (a.matches('.ob-price-request,.ob-price-label') ||
+        (document.body.dataset.priceEnabled === 'true' && a.matches('.js-store-prod-btn2,.js-store-prod-popup-buy-btn'))) {
       event.preventDefault();
       event.stopImmediatePropagation();
-      open(a);
+      identify(a);
+      const nativeTrigger = document.querySelector('#t-header a[href="#popup:zayavka"]');
+      const nativePopup = document.querySelector('.t-popup[data-tooltip-hook="#popup:zayavka"]');
+      if (nativeTrigger && nativePopup) {
+        nativeForward = true;
+        try {nativeTrigger.click();} finally {nativeForward = false;}
+      } else {
+        open(a);
+      }
     }
   }, true);
   dialog.querySelector('.ob-price-close').addEventListener('click', close);
@@ -79,13 +94,40 @@
     form.reset();
     success.focus();
   });
+  document.addEventListener('ob-demo-native-submit', event => {
+    const nativeForm = event.detail;
+    if (!nativeForm.reportValidity()) return;
+    const fields = Object.fromEntries(new FormData(nativeForm));
+    try {
+      const key = 'openbazu-price-demo-1910';
+      const requests = JSON.parse(localStorage.getItem(key) || '[]');
+      requests.push({id:crypto.randomUUID(),createdAt:new Date().toISOString(),service,...fields});
+      localStorage.setItem(key,JSON.stringify(requests));
+    } catch (_) {}
+    let message = nativeForm.querySelector('.js-successbox,.t-form__successbox');
+    if (!message) {message=document.createElement('div');nativeForm.append(message);}
+    message.setAttribute('role','status');
+    message.textContent = 'Предпросмотр: заявка сохранена в браузере и не отправлена.';
+    message.style.display = 'block';
+  });
   // Каталог Тильды загружает карточки после готовности страницы.
+  function setButtonText(button,text) {
+    const label=button.querySelector('.t-btnflex__text,.t-btntext__text,.tn-atom__button-text');
+    if (label) label.textContent=text;
+    else {
+      for (const node of [...button.childNodes]) {
+        if (node.nodeType===Node.TEXT_NODE) node.textContent='';
+        else if (!['STYLE','SCRIPT'].includes(node.tagName)) node.remove();
+      }
+      button.insertBefore(document.createTextNode(text),button.firstChild);
+    }
+  }
   function cleanCatalog() {
     if (document.body.dataset.priceEnabled !== 'true') return;
     for (const button of document.querySelectorAll('.t-store__card a[href^="#order"],.t-store__prod-popup a[href^="#order"],.js-store-prod-btn2,.js-store-prod-popup-buy-btn')) {
       if (button.dataset.obPriceReady) continue;
       button.dataset.obPriceReady = 'true';
-      button.textContent = 'Узнать цену';
+      setButtonText(button,'Узнать цену');
       button.setAttribute('href','#popup:zayavka');
     }
     // Лента новостей создаёт собственный CTA уже после загрузки HTML.

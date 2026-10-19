@@ -1,0 +1,84 @@
+@font-face {
+  font-family: 'TildaSans';
+  font-style: normal;
+  font-weight: 250 1000;
+  src: url("/openbazu-preview/prices-19-10/native/static.tildacdn.com/fonts/tildasans/TildaSans-VF.woff2") format('woff2-variations'),
+       url("/openbazu-preview/prices-19-10/native/static.tildacdn.com/fonts/tildasans/TildaSans-VF.woff") format('woff-variations');     
+}
+@font-face {
+  font-family: 'TildaSans';
+  font-style: normal;
+  font-weight: 300;
+  src: url("/openbazu-preview/prices-19-10/native/static.tildacdn.com/fonts/tildasans/TildaSans-Light.eot");
+  src: url("/openbazu-preview/prices-19-10/native/static.tildacdn.com/fonts/tildasans/TildaSans-Light.eot") format('embedded-opentype'),
+       url("/openbazu-preview/prices-19-10/native/static.tildacdn.com/fonts/tildasans/TildaSans-VF.woff2") format('woff2-variations'),
+       url("/openbazu-preview/prices-19-10/native/static.tildacdn.com/fonts/tildasans/TildaSans-VF.woff") format('woff-variations'),
+       url("/openbazu-preview/prices-19-10/native/static.tildacdn.com/fonts/tildasans/TildaSans-Light.woff2") format('woff2'),
+       url("/openbazu-preview/prices-19-10/native/static.tildacdn.com/fonts/tildasans/TildaSans-Light.woff") format('woff');
+}
+@font-face {
+  font-family: 'TildaSans';
+  font-style: normal;
+  font-weight: 400;
+  src: url("/openbazu-preview/prices-19-10/native/static.tildacdn.com/fonts/tildasans/TildaSans-Regular.eot");
+  src: url("/openbazu-preview/prices-19-10/native/static.tildacdn.com/fonts/tildasans/TildaSans-Regular.eot") format('embedded-opentype'),
+       url("/openbazu-preview/prices-19-10/native/static.tildacdn.com/fonts/tildasans/TildaSans-VF.woff2") format('woff2-variations'),
+       url("/openbazu-preview/prices-19-10/native/static.tildacdn.com/fonts/tildasans/TildaSans-VF.woff") format('woff-variations'),  
+       url("/openbazu-preview/prices-19-10/native/static.tildacdn.com/fonts/tildasans/TildaSans-Regular.woff2") format('woff2'),
+       url("/openbazu-preview/prices-19-10/native/static.tildacdn.com/fonts/tildasans/TildaSans-Regular.woff") format('woff');
+}
+@font-face {
+  font-family: 'TildaSans';
+  font-style: normal;
+  font-weight: 500;
+  src: url("/openbazu-preview/prices-19-10/native/static.tildacdn.com/fonts/tildasans/TildaSans-Medium.eot");
+  src: url("/openbazu-preview/prices-19-10/native/static.tildacdn.com/fonts/tildasans/TildaSans-Medium.eot") format('embedded-opentype'),
+       url("/openbazu-preview/prices-19-10/native/static.tildacdn.com/fonts/tildasans/TildaSans-VF.woff2") format('woff2-variations'),
+       url("/openbazu-preview/prices-19-10/native/static.tildacdn.com/fonts/tildasans/TildaSans-VF.woff") format('woff-variations'),  
+       url("/openbazu-preview/prices-19-10/native/static.tildacdn.com/fonts/tildasans/TildaSans-Medium.woff2") format('woff2'),
+       url("/openbazu-preview/prices-19-10/native/static.tildacdn.com/fonts/tildasans/TildaSans-Medium.woff") format('woff');
+}
+@font-face {
+  font-family: 'TildaSans';
+  font-style: normal;
+  font-weight: 600;
+  src: url("/openbazu-preview/prices-19-10/native/static.tildacdn.com/fonts/tildasans/TildaSans-Semibold.eot");
+  src: url("/openbazu-preview/prices-19-10/native/static.tildacdn.com/fonts/tildasans/TildaSans-Semibold.eot") format('embedded-opentype'),
+       url("/openbazu-preview/prices-19-10/native/static.tildacdn.com/fonts/tildasans/TildaSans-VF.woff2") format('woff2-variations'),
+       url("/openbazu-preview/prices-19-10/native/static.tildacdn.com/fonts/tildasans/TildaSans-VF.woff") format('woff-variations'),  
+       url("/openbazu-preview/prices-19-10/native/static.tildacdn.com/fonts/tildasans/TildaSans-Semibold.woff2") format('woff2'),
+       url("/openbazu-preview/prices-19-10/native/static.tildacdn.com/fonts/tildasans/TildaSans-Semibold.woff") format('woff');
+}
+@font-face {
+  font-family: 'TildaSans';
+  font-style: normal;
+  font-weight: 700;
+  src: url("/openbazu-preview/prices-19-10/native/static.tildacdn.com/fonts/tildasans/TildaSans-Bold.eot");
+  src: url("/openbazu-preview/prices-19-10/native/static.tildacdn.com/fonts/tildasans/TildaSans-Bold.eot") format('embedded-opentype'),
+       url("/openbazu-preview/prices-19-10/native/static.tildacdn.com/fonts/tildasans/TildaSans-VF.woff2") format('woff2-variations'),
+       url("/openbazu-preview/prices-19-10/native/static.tildacdn.com/fonts/tildasans/TildaSans-VF.woff") format('woff-variations'),  
+       url("/openbazu-preview/prices-19-10/native/static.tildacdn.com/fonts/tildasans/TildaSans-Bold.woff2") format('woff2'),
+       url("/openbazu-preview/prices-19-10/native/static.tildacdn.com/fonts/tildasans/TildaSans-Bold.woff") format('woff');
+}
+@font-face {
+  font-family: 'TildaSans';
+  font-style: normal;
+  font-weight: 800;
+  src: url("/openbazu-preview/prices-19-10/native/static.tildacdn.com/fonts/tildasans/TildaSans-Extrabold.eot");
+  src: url("/openbazu-preview/prices-19-10/native/static.tildacdn.com/fonts/tildasans/TildaSans-Extrabold.eot") format('embedded-opentype'),
+       url("/openbazu-preview/prices-19-10/native/static.tildacdn.com/fonts/tildasans/TildaSans-VF.woff2") format('woff2-variations'),
+       url("/openbazu-preview/prices-19-10/native/static.tildacdn.com/fonts/tildasans/TildaSans-VF.woff") format('woff-variations'),  
+       url("/openbazu-preview/prices-19-10/native/static.tildacdn.com/fonts/tildasans/TildaSans-Extrabold.woff2") format('woff2'),
+       url("/openbazu-preview/prices-19-10/native/static.tildacdn.com/fonts/tildasans/TildaSans-Extrabold.woff") format('woff');
+}
+@font-face {
+  font-family: 'TildaSans';
+  font-style: normal;
+  font-weight: 900;
+  src: url("/openbazu-preview/prices-19-10/native/static.tildacdn.com/fonts/tildasans/TildaSans-Black.eot");
+  src: url("/openbazu-preview/prices-19-10/native/static.tildacdn.com/fonts/tildasans/TildaSans-Black.eot") format('embedded-opentype'),
+       url("/openbazu-preview/prices-19-10/native/static.tildacdn.com/fonts/tildasans/TildaSans-VF.woff2") format('woff2-variations'),
+       url("/openbazu-preview/prices-19-10/native/static.tildacdn.com/fonts/tildasans/TildaSans-VF.woff") format('woff-variations'),  
+       url("/openbazu-preview/prices-19-10/native/static.tildacdn.com/fonts/tildasans/TildaSans-Black.woff2") format('woff2'),
+       url("/openbazu-preview/prices-19-10/native/static.tildacdn.com/fonts/tildasans/TildaSans-Black.woff") format('woff');
+}

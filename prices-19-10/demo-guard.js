@@ -9,6 +9,8 @@
     event.stopImmediatePropagation();
     if (event.target.id === 'ob-price-demo-form') {
       document.dispatchEvent(new CustomEvent('ob-demo-submit', { detail: event.target }));
+    } else {
+      document.dispatchEvent(new CustomEvent('ob-demo-native-submit', { detail: event.target }));
     }
   }, true);
   HTMLFormElement.prototype.submit = function () {};
@@ -46,8 +48,13 @@
             const dir=sort[1]==='desc'?-1:1;
             products=[...products].sort((a,b)=>dir*(sort[0]==='title'?String(a.title).localeCompare(String(b.title),'ru'):Number(a[sort[0]]||0)-Number(b[sort[0]]||0)));
           }
-          data.products=products;
           data.total=products.length;
+          const size=Number(params.get('size'))||products.length;
+          const slice=Math.max(1,Number(params.get('slice'))||1);
+          data.products=products.slice((slice-1)*size,slice*size);
+          data.slice=slice;
+          if(slice*size<products.length)data.nextslice=slice+1;
+          else delete data.nextslice;
           Object.defineProperty(this,'responseText',{configurable:true,value:JSON.stringify(data)});
         } catch (e) { console.error('Не удалось прочитать локальный каталог',e); }
       });
