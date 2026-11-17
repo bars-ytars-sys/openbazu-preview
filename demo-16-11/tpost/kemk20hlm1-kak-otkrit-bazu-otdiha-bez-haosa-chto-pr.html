@@ -845,7 +845,7 @@ document.addEventListener('DOMContentLoaded',t_setvisRecs);}})();</script>
     { re: /проектировани[\p{L}]*/iu, url: '/engineering', name: 'Проектирование' },
     { re: /строительств[\p{L}]*/iu, url: '/building', name: 'Строительство' },
     { re: /консультаци[\p{L}]*/iu, url: '/consultations', name: 'Консультации' },
-    { re: /продвижени[\p{L}]*|рекламн[\p{L}]* кампани[\p{L}]*/iu, url: '/promotion', name: 'Продвижение' },
+    { re: /продвижени[\p{L}]*|рекламн[\p{L}]* кампани[\p{L}]*/iu, url: '/websites', name: 'Продвижение' },
     { re: /Открытьбазу(?:\.рф)?|баз[\p{L}]* отдыха под ключ/iu, url: '/', name: 'Главная' }
   ];
   var setup = function () {
@@ -898,7 +898,7 @@ document.addEventListener('DOMContentLoaded',t_setvisRecs);}})();</script>
     end.querySelector('.ob-ст__b').href = dest.href;
     var more = end.querySelector('.ob-ст-конец__ещё');
     PAGES.forEach(function (p) {
-      if (p.url === '/promotion' && best.url !== '/promotion') return;
+      if (p.url === '/websites' && best.url !== '/websites') return;
       var a = document.createElement('a');
       a.href = p.url;
       a.textContent = p.name;
