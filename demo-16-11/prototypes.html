@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="ru">
+<head><meta name="robots" content="noindex,nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Открытьбазу.рф — прототипы улучшений</title>
+<style>
+@font-face{font-family:Engravers;src:url(assets/engravers.woff) format("woff");font-weight:700;font-display:swap}
+:root{--blue:#52719d;--deep:#314e71;--ink:#313a39;--paper:#fffffb;--line:#d8e0df;--soft:#eef3f4;--green:#1e7268}
+*{box-sizing:border-box}
+body{margin:0;background:#e8eef0;color:var(--ink);font:16px/1.38 Arial,sans-serif}
+main{max-width:1160px;margin:24px auto;padding:0 14px}
+section{background:var(--paper);border:1px solid var(--line);border-radius:24px;padding:34px 40px;margin:24px 0;overflow:hidden}
+nav{display:flex;flex-wrap:wrap;gap:8px;font-size:14px}
+nav a{background:var(--paper);padding:8px 12px;border-radius:999px;color:var(--deep);text-decoration:none;border:1px solid var(--line)}
+h1,h2,h3{font-family:Engravers,Arial,sans-serif;font-weight:700;line-height:1.06;margin:0;color:var(--ink)}
+h1{font-size:29px;margin:20px 0}h2{font-size:38px;margin-bottom:18px}h3{font-size:24px;margin-bottom:6px}
+p{margin:0 0 13px}.route{font-size:13px;color:var(--deep);margin:0 0 11px}
+.note{font-size:13px;color:#52615e;margin:9px 0 0}
+.split{display:grid;grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);gap:28px;align-items:center}
+.image{display:block;width:100%;height:280px;object-fit:cover;border-radius:17px}
+.button{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:8px 16px;border:1px solid var(--blue);border-radius:12px 12px 0 12px;background:var(--blue);color:#fff;font:700 15px/1.12 Engravers,Arial,sans-serif;text-transform:uppercase;text-decoration:none;cursor:pointer}
+.ghost{background:transparent;color:var(--deep)}
+.button:hover,.button:focus-visible{outline:2px solid var(--deep);outline-offset:2px}
+.actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:15px}
+.table-wrap{overflow-x:auto}
+table{width:100%;border-collapse:collapse;table-layout:fixed;text-align:left}
+th,td{padding:8px 12px;border-bottom:1px solid var(--line);font-weight:400}
+th{color:var(--deep);font-weight:700}
+.compare-head img{width:100%;height:100px;object-fit:cover;border-radius:13px;margin-bottom:7px}
+.compare-head td:first-child{vertical-align:bottom;font-weight:700}
+tr:last-child td{border-bottom:0}
+.field{display:block;margin:10px 0;font-size:13px}
+input{width:100%;height:42px;margin-top:4px;border:1px solid var(--line);background:var(--paper);color:var(--ink);border-radius:10px;padding:0 12px;font:16px Arial}
+.summary{background:var(--soft);padding:15px 17px;border-radius:14px;margin:13px 0}
+.summary strong{display:block;margin-bottom:4px;color:var(--deep)}
+.info-row{display:flex;justify-content:space-between;gap:10px;padding:8px 0;border-bottom:1px solid var(--line)}
+.info-row span:first-child{color:#556560}
+.stepbar{display:flex;gap:8px;margin-bottom:14px}
+.stepbar button{font:14px Arial;border:1px solid var(--line);border-radius:999px;background:var(--paper);color:var(--deep);padding:7px 11px;cursor:pointer}
+.stepbar button[aria-pressed=true]{background:var(--blue);color:#fff;border-color:var(--blue)}
+.guide-wrap{background:#e9efec;border-radius:16px;min-height:278px;display:grid;place-items:center}
+.guide-wrap img{width:auto;height:239px;max-width:100%;object-fit:contain}
+.thread{background:#edf3f4;padding:16px;border-radius:16px}
+.bubble{background:#fff;border-radius:13px 13px 13px 2px;padding:12px 15px;margin:6px 0 14px}
+.bubble p:last-child{margin-bottom:0}
+.metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:13px;margin:0 0 17px}
+.metrics div{border-top:3px solid var(--blue);padding:8px 0}
+.metrics strong{display:block;color:var(--deep);font-size:34px}
+.waiting{color:#8b4f19;font-weight:700}.success{color:#206859;font-weight:700}
+[hidden]{display:none!important}
+@media(max-width:730px){section{padding:22px 18px}h2{font-size:30px}.split{grid-template-columns:1fr;gap:14px}.image{height:220px}.compare-head img{height:71px}.metrics strong{font-size:26px}.table-wrap table{min-width:410px}.route{font-size:12px}}
+</style>
+</head>
+<body>
+<main>
+<nav aria-label="Прототипы"><a href="#compare">Сравнение</a><a href="#land">Биржа</a><a href="#case">Тариф и кейс</a><a href="#booking">Бронирование</a><a href="#guide">После гайда</a><a href="#control">Доставка заявок</a></nav>
+<h1>ОТКРЫТЬБАЗУ.РФ / Прототипы улучшений</h1>
+<section id="compare">
+<p class="route">КАТАЛОГ ПРОЕКТОВ</p><h2>Сравнение двух проектов</h2>
+<div class="table-wrap"><table><tbody>
+<tr class="compare-head"><td></td><td><img src="assets/bariloche.png" alt=""><h3>Барилоче</h3></td><td><img src="assets/ko.png" alt=""><h3>Проект КО</h3></td></tr>
+<tr><th scope="row">Комплект чертежей</th><td><strong>35 000 ₽</strong></td><td><strong>14 500 ₽</strong></td></tr>
+<tr><th scope="row">Жилая площадь</th><td>137 м²</td><td>80,6 м²</td></tr>
+<tr><th scope="row">Терраса</th><td>9,4 м²</td><td>22 м²</td></tr>
+<tr><th scope="row">Конструкция</th><td>Железобетон</td><td>Каркас</td></tr>
+<tr><td></td><td><a class="button" href="http://127.0.0.1:8794/shop-projects/tproduct/1888966131-189702352052-bariloche#estimate">Смета для «Барилоче»</a></td><td><a class="button ghost" href="http://127.0.0.1:8794/shop-projects/tproduct/1888966131-788895976672-proekt-ko#estimate">Смета для КО</a></td></tr>
+</tbody></table></div>
+</section>
+<section id="land">
+<p class="route">БИРЖА ЗЕМЛИ · КОНСУЛЬТАЦИЯ</p><h2>Разбор выбранного участка</h2>
+<div class="split">
+<img class="image" src="assets/land.webp" alt="Участок из объявления Биржи земли">
+<div><h3>Первая береговая линия</h3><p>75 соток · Ярославская область</p>
+<div class="summary"><strong>Участок уже в заявке</strong>Ссылка на объявление и регион подставлены.</div>
+<label class="field">Что хотите открыть?<input value="Небольшую базу отдыха" aria-label="Что хотите открыть?"></label>
+<div class="actions"><button class="button" type="button" data-feedback="Участок и задача добавлены в черновик.">Обсудить участок</button></div>
+<p class="note" aria-live="polite">Предварительный разбор перед покупкой.</p>
+</div></div>
+</section>
+<section id="case">
+<p class="route">ПРОЕКТИРОВАНИЕ · РЯДОМ С ТАРИФОМ</p><h2>Как выглядит похожий проект</h2>
+<div class="split">
+<img class="image" src="assets/kurovo.webp" alt="Визуализация концепции «Дома в Курово»">
+<div><h3>Дома в Курово</h3><p>Пример концепции рядом с курортом Сорочаны.</p>
+<div class="info-row"><span>Задача</span><strong>Развитие действующей базы</strong></div>
+<div class="info-row"><span>Решение</span><strong>Новые дома в стиле шале</strong></div>
+<div class="actions"><a class="button ghost" href="https://xn--80abtjtnmcm9em.xn--p1ai/cases">Смотреть концепцию</a><button type="button" class="button" data-feedback="В запрос добавлен пример «Дома в Курово».">Обсудить похожий проект</button></div>
+<p class="note" aria-live="polite">Пример проектирования.</p>
+</div></div>
+</section>
+<section id="booking">
+<p class="route">РАЗРАБОТКА САЙТОВ · ДЕМОНСТРАЦИЯ ДЛЯ ВЛАДЕЛЬЦА</p><h2>Как гость оформит бронь</h2>
+<div class="split">
+<img class="image" src="assets/panorama.webp" alt="Фото дома «Панорама»">
+<div><div class="stepbar" aria-label="Шаги учебной брони">
+<button type="button" data-book="dates" aria-pressed="false">Даты</button><button type="button" data-book="payment" aria-pressed="true">Предоплата</button><button type="button" data-book="done" aria-pressed="false">Подтверждение</button></div>
+<h3 id="book-title">Сводка перед оплатой</h3>
+<div class="info-row"><span>Дом</span><strong>Панорама</strong></div>
+<div class="info-row"><span>Заезд и выезд</span><strong>Пример на 2 ночи</strong></div>
+<div class="actions"><button class="button" type="button" data-book="done">Пройти тестовый шаг</button></div>
+<p class="note">Учебная бронь без списания и проверки наличия.</p>
+</div></div>
+</section>
+<section id="guide">
+<p class="route">МАТЕРИАЛЫ · ПОСЛЕ ВЫДАЧИ ГАЙДА</p><h2>Продолжение после чтения</h2>
+<div class="split">
+<div class="guide-wrap"><img src="assets/guide.webp" alt="Обложка гайда"></div>
+<div class="thread">
+<h3>Открытьбазу.рф</h3>
+<div class="bubble"><p><strong>Гайд готов</strong></p><p>Как вернуть заявки и предоплаты</p></div>
+<div class="bubble"><p><strong>Можно начать с одного решения</strong></p><p>Если заявки приходят, но гости не бронируют, разберите продажи с управляющей.</p></div>
+<div class="actions"><a class="button" href="https://xn--80abtjtnmcm9em.xn--p1ai/consultations">Разобрать заявки</a></div>
+</div></div>
+</section>
+<section id="control">
+<p class="route">ДОСТАВКА ЗАЯВОК · УСЛОВНЫЕ ДАННЫЕ ДЛЯ ПРИМЕРА</p><h2>Заявки на сайте и в CRM</h2>
+<div class="metrics"><div><strong>12</strong>Принял сайт</div><div><strong>11</strong>Подтвердила CRM</div><div><strong>7</strong>Подошли по задаче</div></div>
+<div class="table-wrap"><table>
+<thead><tr><th>Заявка</th><th>Источник</th><th>Доставка</th><th>Следующее действие</th></tr></thead>
+<tbody><tr><td>№ 012</td><td>Каталог · Проект КО</td><td class="waiting">CRM не подтвердила</td><td>Проверить доставку</td></tr>
+<tr><td>№ 011</td><td>Сайты · Аудит</td><td class="success">Доставлена</td><td>Назначить ответственного</td></tr>
+<tr><td>№ 010</td><td>Биржа · Участок</td><td class="success">Доставлена</td><td>Связались с клиентом</td></tr></tbody>
+</table></div>
+</section>
+</main>
+<script>
+for (const button of document.querySelectorAll('[data-feedback]')) {
+  button.addEventListener('click', () => {
+    const status = button.closest('section').querySelector('[aria-live]');
+    status.textContent = button.dataset.feedback;
+  });
+}
+const booking = document.getElementById('booking');
+const labels = {dates:'Выбрать дату заезда и выезда',payment:'Сводка перед оплатой',done:'Тестовая бронь подтверждена'};
+for (const button of booking.querySelectorAll('[data-book]')) {
+  button.addEventListener('click', () => {
+    booking.querySelector('h3').textContent = labels[button.dataset.book];
+    for (const tab of booking.querySelectorAll('.stepbar button')) {
+      tab.setAttribute('aria-pressed', String(tab.dataset.book === button.dataset.book));
+    }
+  });
+}
+</script>
+</body></html>
