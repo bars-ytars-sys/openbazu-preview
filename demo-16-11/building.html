@@ -7194,8 +7194,7 @@ setTimeout(function(){(function(d,w,k,o,g) {var n=d.getElementsByTagName(o)[0],s
     box.setAttribute('aria-labelledby', 'ob-уход-н');
     box.innerHTML = '<div class="ob-уход__к"><button type="button" class="ob-уход__x" aria-label="Закрыть">&#215;</button>' +
       '<p class="ob-уход__н" id="ob-уход-н">Остались вопросы?</p>' +
-      '<p class="ob-уход__т">Если не до конца понятно, как устроена услуга и что вы получите, — оставьте заявку. ' +
-      'Объясним простыми словами и подскажем, с чего начать.</p>' +
+      '<p class="ob-уход__т">Расскажем, как проходит работа, что входит в услугу и какой результат вы получите. Подскажем, с чего начать.</p>' +
       '<div class="ob-уход__кн"><a class="ob-уход__b" href="' + HOOK + '">Оставить заявку</a>' +
       '<button type="button" class="ob-уход__ещё"></button></div></div>';
     document.body.appendChild(box);
@@ -7262,7 +7261,7 @@ setTimeout(function(){(function(d,w,k,o,g) {var n=d.getElementsByTagName(o)[0],s
 (function () {
   if (window.__obSiteService) return;
   window.__obSiteService = 1;
-  var HOOKS = ['#popup:site', '#popup:direct-site'];
+  var HOOKS = ['#popup:site', '#popup:direct-site', '#popup:direct'];
   var clean = function (t) { return (t || '').replace(/\s+/g, ' ').trim().slice(0, 160); };
   var label = function (a) {
     if (a.getAttribute('data-ob-service')) return clean(a.getAttribute('data-ob-service'));

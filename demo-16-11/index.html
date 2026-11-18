@@ -1370,7 +1370,7 @@ var base='https://cdn.jsdelivr.net/gh/bars-ytars-sys/openbazu-preview@1b55f652b1
 function hidden(name,value){if(!form)return;var input=form.querySelector('input[name="'+name+'"]');if(!input){input=document.createElement('input');input.type='hidden';input.name=name;form.appendChild(input)}input.value=value}
 function init(){form=document.querySelector(record+' form');if(!form||form.dataset.obGiftBound)return;form.dataset.obGiftBound='1';var alphabet='23456789ABCDEFGHJKMNPQRSTUVWXYZ',bytes=new Uint8Array(6);crypto.getRandomValues(bytes);leadCode=Array.from(bytes,function(x){return alphabet[x%alphabet.length]}).join('');hidden('КОД ЗАЯВКИ',leadCode);hidden('Запрошенный материал','Гайд и полный прайс на услуги');
 form.addEventListener('tildaform:aftersuccess',function(){var box=form.querySelector('.js-successbox');if(!box)return;
-box.setAttribute('data-success-title','Заявка принята');box.setAttribute('data-success-message','<div class="ob-gift-downloads"><a href="'+base+'guide-land-2026-10-11.pdf" target="_blank" rel="noopener">Скачать гайд</a><a href="https://bars-ytars-sys.github.io/openbazu-preview/assets/price-services-2026-11-01.pdf" target="_blank" rel="noopener">Скачать полный прайс на услуги</a><a href="https://t.me/otkrytbazu_bot?start=z'+leadCode+'" target="_blank" rel="noopener">Открыть бот в Telegram</a></div>');box.setAttribute('data-success-btn','Закрыть');
+box.setAttribute('data-success-title','Заявка принята');box.setAttribute('data-success-message','<div class="ob-gift-downloads"><a href="'+base+'guide-land-2026-10-11.pdf" target="_blank" rel="noopener">Скачать гайд</a><a href="https://bars-ytars-sys.github.io/openbazu-preview/assets/price-services-2026-11-01.pdf" target="_blank" rel="noopener">Скачать полный прайс на услуги</a><a href="https://t.me/openbaza" target="_blank" rel="noopener">Открыть наш ТГ канал</a></div>');box.setAttribute('data-success-btn','Закрыть');
 });}
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();window.addEventListener('load',init);document.addEventListener('click',function(e){if(e.target.closest&&e.target.closest('a[href="#popup:zayavka"]'))init()},true);
 })();</script> <!-- nominify end --> <!-- nominify begin --><script id="ob-fixes-0911">(function(){function fix(){var d={"links": {"rec4634304401": [["https://xn--e1adnd0h.xn--80abtjtnmcm9em.xn--p1ai", "https://xn----7sbcscidf0aj2b.xn--p1ai"]], "rec4640566001": [["https://xn--e1adnd0h.xn--80abtjtnmcm9em.xn--p1ai", "https://xn----7sbcscidf0aj2b.xn--p1ai"]]}, "backgrounds": {"rec4634304401": [["https://tempfile.aiquickdraw.com/as/e4e96d6e30820ba4a6f3e8f857893982_1791384619406.png", "https://cdn.jsdelivr.net/gh/bars-ytars-sys/openbazu-preview@fbba735f97df0ac014f1625a1f393712aed5b7d5/assets/newcomer-start-1210.webp"]], "rec4635440601": [["https://tempfile.aiquickdraw.com/as/c25c564eebedc7a04d47c24b89310f2a_1791543439348.png", "https://cdn.jsdelivr.net/gh/bars-ytars-sys/openbazu-preview@855886cc6c5018a6d651615e7c942d020294e9c1/assets/house-project-bg-0911-212486c1.webp"]]}};Object.keys(d.links).forEach(function(id){var r=document.getElementById(id);if(!r)return;r.querySelectorAll('a[href]').forEach(function(a){var h=a.getAttribute('href');d.links[id].forEach(function(p){h=h.replace(p[0],p[1])});a.setAttribute('href',h)})});Object.keys(d.backgrounds).forEach(function(id){var r=document.getElementById(id);if(!r)return;r.querySelectorAll('style,[style]').forEach(function(n){var a=n.tagName==='STYLE',s=a?n.textContent:n.getAttribute('style');d.backgrounds[id].forEach(function(p){s=s.split(p[0]).join(p[1])});if(a)n.textContent=s;else n.setAttribute('style',s)})});document.documentElement.dataset.obFixes0911='published'}if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',fix,{once:true});else fix()})();</script><!-- nominify end --> <!-- nominify end --> </div> </div> </div> </div> <div id="rec3740456801" class="r t-rec" style=" " data-animationappear="off" data-record-type="131"> <!-- T123 --> <div class="t123"> <div class="t-container_100 "> <div class="t-width t-width_100 "> <!-- nominify begin --> <!-- Мобильные мелочи: ссылка «Проверить землю» в блоке Биржи была высотой 19 пикселей — пальцем не попасть, и плашка «Выгодный набор» была 12 пикселей. Только стили, разметка не трогается. На широком экране ничего не меняется --> <style>
@@ -3343,50 +3343,56 @@ role="img"> </div> </div> <div class='t396__elem tn-elem uc-numbers tn-elem__183
       <div class="ob-label">Результаты</div>
       <h3 class="ob-рез__h">Базы, которые мы сопровождали</h3>
     </div>
-    <p class="ob-рез__lead">Цифры из наших проектов: загрузка, сроки и бюджет.</p>
+    <p class="ob-рез__lead">Как создавали и развивали базы отдыха — в выпусках с объектов.</p>
   </div>
-  <div class="ob-рез__сетка">
-    <article class="ob-рез__твер">
-      <a class="ob-рез__фото" href="https://youtu.be/tUTxLxYQmD8" target="_blank" rel="noopener" aria-label="Смотреть видео о базе в Твери">
-        <img src="https://cdn.jsdelivr.net/gh/bars-ytars-sys/openbazu-preview@main/assets/news/3330-1.webp" width="800" height="450"
-             alt="База отдыха в Твери: стройка в июле и готовые дома в октябре" loading="lazy" decoding="async">
-      </a>
-      <div class="ob-рез__т">
-        <p class="ob-рез__знак">Свежий проект · октябрь 2026</p>
-        <p class="ob-рез__ч">4 месяца</p>
-        <p class="ob-рез__п">Построили базу отдыха в Твери: 6 домов, ресторан с видом на Волгу и котельную</p>
-        <div class="ob-рез__кн">
-          <a class="ob-рез__b" href="#popup:zayavka" data-ob-service="Кейс: база в Твери — 6 домов за 4 месяца">Хочу так же</a>
-          <a class="ob-рез__видео" href="https://youtu.be/tUTxLxYQmD8" target="_blank" rel="noopener">Смотреть видео&nbsp;&#8599;</a>
-        </div>
-      </div>
-    </article>
+  <div class="ob18-episodes"><article class="ob18-episode"><a href="https://youtu.be/tUTxLxYQmD8" target="_blank" rel="noopener" aria-label="Смотреть выпуск — Тверь"><img src="https://cdn.jsdelivr.net/gh/bars-ytars-sys/openbazu-preview@main/assets/news/3330-1.webp" alt="Тверь" width="480" height="270" loading="lazy"><span class="ob18-watch">Смотреть выпуск ↗</span></a><div><h4>Тверь</h4><p>Построили 6 домов, ресторан и котельную.</p><a class="ob18-case-request" href="#popup:zayavka" data-ob-service="Кейс: Тверь">Обсудить проект →</a></div></article><article class="ob18-episode"><a href="https://youtu.be/CiEqtRojBpU" target="_blank" rel="noopener" aria-label="Смотреть выпуск — Айка · Алтай"><img src="assets/case-aika-18-11.jpg" alt="Айка · Алтай" width="480" height="270" loading="lazy"><span class="ob18-watch">Смотреть выпуск ↗</span></a><div><h4>Айка · Алтай</h4><p>Концепция, строительство и развитие базы отдыха.</p><a class="ob18-case-request" href="#popup:zayavka" data-ob-service="Кейс: Айка · Алтай">Обсудить проект →</a></div></article><article class="ob18-episode"><a href="https://youtu.be/m9whFk6rTHM" target="_blank" rel="noopener" aria-label="Смотреть выпуск — Гусь-Хрустальный"><img src="assets/case-gus-18-11.jpg" alt="Гусь-Хрустальный" width="480" height="270" loading="lazy"><span class="ob18-watch">Смотреть выпуск ↗</span></a><div><h4>Гусь-Хрустальный</h4><p>Строительство и запуск базы во Владимирской области.</p><a class="ob18-case-request" href="#popup:zayavka" data-ob-service="Кейс: Гусь-Хрустальный">Обсудить проект →</a></div></article></div><div class="ob-рез__сетка">
+
     <article class="ob-рез__к">
       <p class="ob-рез__ч" data-до="92" data-формат="{}%">92%</p>
       <p class="ob-рез__п">средняя загрузка в год</p>
       <p class="ob-рез__пр">Наша база «Берёзовая роща»</p>
-      <a class="ob-рез__л" href="#popup:zayavka" data-ob-service="Кейс: «Берёзовая роща» — загрузка 92%">Хочу так же <i>&#8594;</i></a>
+      <a class="ob-рез__л" href="#popup:zayavka" data-ob-service="Кейс: «Берёзовая роща» — загрузка 92%">Обсудить проект <i>&#8594;</i></a>
     </article>
     <article class="ob-рез__к">
       <p class="ob-рез__ч" data-до="60" data-формат="{}%">60%</p>
       <p class="ob-рез__п">загрузка через 3 месяца после запуска</p>
       <p class="ob-рез__пр">База на 3 Га, запуск в августе 2023</p>
-      <a class="ob-рез__л" href="#popup:zayavka" data-ob-service="Кейс: база на 3 Га — загрузка 60% через 3 месяца">Хочу так же <i>&#8594;</i></a>
+      <a class="ob-рез__л" href="#popup:zayavka" data-ob-service="Кейс: база на 3 Га — загрузка 60% через 3 месяца">Обсудить проект <i>&#8594;</i></a>
     </article>
     <article class="ob-рез__к">
       <p class="ob-рез__ч" data-до="6" data-формат="−{} млн ₽">−6 млн ₽</p>
       <p class="ob-рез__п">от заявленного бюджета</p>
       <p class="ob-рез__пр">5 домов на 34 сотках, Краснодарский край</p>
-      <a class="ob-рез__л" href="#popup:zayavka" data-ob-service="Кейс: 5 домов в Краснодарском крае — бюджет меньше на 6 млн ₽">Хочу так же <i>&#8594;</i></a>
+      <a class="ob-рез__л" href="#popup:zayavka" data-ob-service="Кейс: 5 домов в Краснодарском крае — бюджет меньше на 6 млн ₽">Обсудить проект <i>&#8594;</i></a>
     </article>
     <article class="ob-рез__к">
       <p class="ob-рез__ч" data-до="10" data-формат="+{} домов">+10 домов</p>
       <p class="ob-рез__п">в том же бюджете</p>
       <p class="ob-рез__пр">Реставрация базы на 12 Га</p>
-      <a class="ob-рез__л" href="#popup:zayavka" data-ob-service="Кейс: реставрация базы на 12 Га — +10 домов в бюджете">Хочу так же <i>&#8594;</i></a>
+      <a class="ob-рез__л" href="#popup:zayavka" data-ob-service="Кейс: реставрация базы на 12 Га — +10 домов в бюджете">Обсудить проект <i>&#8594;</i></a>
     </article>
   </div>
-</div>
+</div><style>
+.ob-рез{background:#edf2f4;color:#313a39;border:1px solid #e0e7ea;padding:34px}
+.ob-рез .ob-label,.ob-рез .ob-рез__h{color:#52719d}
+.ob-рез .ob-рез__lead{color:#53625f}
+.ob18-episodes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-bottom:22px}
+.ob18-episode{min-width:0;overflow:hidden;border-radius:18px;background:#fffffb;border:1px solid #dce4e6}
+.ob18-episode>a{position:relative;display:block;aspect-ratio:16/9;overflow:hidden}
+.ob18-episode img{display:block;width:100%;height:100%;object-fit:cover}
+.ob18-episode>div{padding:18px}
+.ob18-episode h4{margin:0 0 8px;color:#52719d;font:700 21px/1.2 TildaSans,Arial,sans-serif}
+.ob18-episode p{min-height:3em;margin:0 0 12px;font:400 15px/1.5 TildaSans,Arial,sans-serif;color:#313a39}
+.ob18-watch{position:absolute;right:10px;bottom:10px;border-radius:12px;padding:6px 10px;background:#fffffb;color:#52719d;font:600 13px/1.4 TildaSans,Arial,sans-serif}
+.ob18-case-request{display:inline-flex;align-items:center;min-height:44px;font:600 15px/1.4 TildaSans,Arial,sans-serif;color:#52719d!important}
+.ob-рез .ob-рез__сетка{grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.ob-рез .ob-рез__к{background:#fffffb;border:1px solid #dce4e6;padding:22px 18px}
+.ob-рез .ob-рез__ч{color:#52719d;font-size:clamp(26px,3vw,38px)}
+.ob-рез .ob-рез__п,.ob-рез .ob-рез__пр{color:#313a39}
+.ob-рез .ob-рез__л{color:#52719d!important}
+@media(max-width:900px){.ob-рез .ob-рез__сетка{grid-template-columns:1fr 1fr}.ob18-episodes{grid-template-columns:1fr}.ob18-episode{display:grid;grid-template-columns:1fr 1fr}.ob18-episode>a{height:100%;min-height:170px;aspect-ratio:auto}}
+@media(max-width:640px){.ob-рез{padding:22px 16px}.ob18-episode{display:block}.ob18-episode>a{aspect-ratio:16/9;min-height:0}.ob18-episode p{min-height:0}.ob-рез .ob-рез__к{padding:18px 14px}}
+</style>
  <div class="ob-label">Примеры наших работ</div> <h2 class="ob-h2">Концепции баз отдыха,&thinsp;которые мы разработали</h2> <p class="ob-lead">Готовые концепции баз отдыха: от премиум-формата
           со СПА до компактных домиков.</p> <div class="ob-cnn" data-n="9" data-name="Северная база отдыха"> <button type="button" class="ob-cnn__обл" data-i="0" data-big="https://cdn.jsdelivr.net/gh/bars-ytars-sys/openbazu-preview@26d6880/assets/proj-sever-9-big.webp"
                 data-t="Стеклянный павильон у бассейна" aria-label="Смотреть кадры проекта"><img src="https://cdn.jsdelivr.net/gh/bars-ytars-sys/openbazu-preview@26d6880/assets/proj-sever-9-big.webp"
@@ -4774,14 +4780,34 @@ href="#popup:zayavka"><span class="t-btnflex__text">Обсудить свой п
   }
   var controller = window.AbortController ? new AbortController() : null;
   var timer = controller ? setTimeout(function() { controller.abort(); }, 10000) : null;
-  fetch(assets + 'news/feed.json', {cache:'no-cache', signal:controller ? controller.signal : undefined})
+  fetch('assets/news-feed-18-11.json', {cache:'no-cache', signal:controller ? controller.signal : undefined})
     .then(function(r) { if (!r.ok) throw new Error('Feed unavailable'); return r.json(); })
     .then(function(feed) {
       if (!feed || !Array.isArray(feed.посты)) throw new Error('Invalid feed');
-      var seen = {};
-      var posts = feed.посты.filter(function(p) {
+      var seen = {}, episodes = {};
+      function episodeKey(post) {
+        var preview = post.превью_ссылки;
+        var urls = [(preview && preview.url) || ''];
+        var content = post.html || '';
+        var links = content.match(/https?:[^"<>\s]+/g) || [];
+        urls = urls.concat(links);
+        for (var i = 0; i < urls.length; i++) {
+          try {
+            var u = new URL(urls[i].replace(/&amp;/g,'&'));
+            if (/(^|\.)youtu\.be$/.test(u.hostname)) return 'youtube:' + u.pathname.split('/')[1];
+            if (/(^|\.)youtube\.com$/.test(u.hostname)) {
+              var v = u.searchParams.get('v') || (/^\/(?:shorts|embed)\//.test(u.pathname) && u.pathname.split('/')[2]);
+              if (v) return 'youtube:' + v;
+            }
+          } catch (e) {}
+        }
+        return 'title:' + String(post.заголовок || '').toLocaleLowerCase('ru').replace(/[^a-zа-яё0-9]+/g,' ').trim();
+      }
+      var posts = feed.посты.slice().sort(function(a,b) { return Date.parse(b.дата)-Date.parse(a.дата) || b.id-a.id; }).filter(function(p) {
         if (!p || !Number.isSafeInteger(p.id) || p.id <= 0 || seen[p.id] || editorial.exclude.indexOf(p.id) >= 0 || !p.заголовок || !Number.isFinite(Date.parse(p.дата)) || /вебинар/i.test(p.заголовок + ' ' + (p.текст || '')) || !image(p)) return false;
-        seen[p.id] = true; return true;
+        var key = episodeKey(p);
+        if (episodes[key]) return false;
+        seen[p.id] = true; episodes[key] = true; return true;
       }).sort(function(a,b) { return Date.parse(b.дата)-Date.parse(a.дата) || b.id-a.id; }).slice(0,3);
       if (posts.length !== 3) throw new Error('Incomplete feed');
       return Promise.all(posts.map(preload)).then(function() {
@@ -8784,8 +8810,7 @@ setTimeout(function(){(function(d,w,k,o,g) {var n=d.getElementsByTagName(o)[0],s
     box.setAttribute('aria-labelledby', 'ob-уход-н');
     box.innerHTML = '<div class="ob-уход__к"><button type="button" class="ob-уход__x" aria-label="Закрыть">&#215;</button>' +
       '<p class="ob-уход__н" id="ob-уход-н">Остались вопросы?</p>' +
-      '<p class="ob-уход__т">Если не до конца понятно, как устроена услуга и что вы получите, — оставьте заявку. ' +
-      'Объясним простыми словами и подскажем, с чего начать.</p>' +
+      '<p class="ob-уход__т">Расскажем, как проходит работа, что входит в услугу и какой результат вы получите. Подскажем, с чего начать.</p>' +
       '<div class="ob-уход__кн"><a class="ob-уход__b" href="' + HOOK + '">Оставить заявку</a>' +
       '<button type="button" class="ob-уход__ещё"></button></div></div>';
     document.body.appendChild(box);
@@ -8852,7 +8877,7 @@ setTimeout(function(){(function(d,w,k,o,g) {var n=d.getElementsByTagName(o)[0],s
 (function () {
   if (window.__obSiteService) return;
   window.__obSiteService = 1;
-  var HOOKS = ['#popup:site', '#popup:direct-site'];
+  var HOOKS = ['#popup:site', '#popup:direct-site', '#popup:direct'];
   var clean = function (t) { return (t || '').replace(/\s+/g, ' ').trim().slice(0, 160); };
   var label = function (a) {
     if (a.getAttribute('data-ob-service')) return clean(a.getAttribute('data-ob-service'));

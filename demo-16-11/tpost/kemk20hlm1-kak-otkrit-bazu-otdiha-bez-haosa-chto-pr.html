@@ -767,7 +767,7 @@ document.addEventListener('DOMContentLoaded',t_setvisRecs);}})();</script>
     popup.hidden = true;
     popup.innerHTML = '<button class="ob-reading-close" type="button" aria-label="Закрыть предложение">×</button>' +
       '<h2>Планируете открыть базу?</h2>' +
-      '<p>Поможем разобраться с участком, форматом и первыми шагами.</p>' +
+      '<p>Поможем разобраться с участком, форматом и первыми шагами</p>' +
       '<a>Оставить заявку</a>';
     popup.querySelector('a').href = destination.href;
     document.body.append(popup);
@@ -815,13 +815,16 @@ document.addEventListener('DOMContentLoaded',t_setvisRecs);}})();</script>
 .ob-ст-конец__ещё{display:flex;flex-wrap:wrap;gap:8px 18px;margin:20px 0 0;padding:16px 0 0;border-top:1px solid rgba(82,113,157,.2);font-size:15px}
 .ob-ст-конец__ещё span{color:#313a39;font-weight:600}
 .ob-ст-конец__ещё a{color:#52719d!important;text-decoration:underline;text-underline-offset:3px}
-.ob-ст-окно{position:fixed;right:20px;bottom:20px;z-index:100060;width:min(380px,calc(100% - 24px));padding:22px 22px 20px;border-radius:22px;
+.ob-ст-окно{position:fixed;right:20px;bottom:20px;z-index:100060;width:min(520px,calc(100% - 32px));padding:30px 30px 26px;border-radius:22px;
   background:#fffffb;border:1px solid rgba(82,113,157,.25);box-shadow:0 18px 48px rgba(49,58,57,.24);opacity:0;transform:translateY(16px);
   transition:opacity .25s,transform .3s cubic-bezier(.2,.8,.2,1)}
 .ob-ст-окно.ob-ст-окно--вид{opacity:1;transform:none}
 .ob-ст-окно[hidden]{display:none!important}
 .ob-ст-окно .ob-ст__н{font-size:21px}
 .ob-ст-окно .ob-ст__т{font-size:15px;margin-bottom:14px}
+.ob-ст-окно{max-height:calc(100dvh - 32px);overflow:auto}
+.ob-ст-окно .ob-ст__н{font-size:26px;margin-right:24px}
+.ob-ст-окно .ob-ст__т{font-size:18px;line-height:1.5}
 .ob-ст-окно .ob-ст__b{min-height:46px;width:100%}
 .ob-ст__x{position:absolute;right:8px;top:8px;width:44px;height:44px;padding:0;border:0;border-radius:50%;background:transparent;cursor:pointer;
   color:#313a39;font:26px/1 Arial,sans-serif}
@@ -891,8 +894,8 @@ document.addEventListener('DOMContentLoaded',t_setvisRecs);}})();</script>
     var end = document.createElement('section');
     end.id = 'ob-ст-конец';
     end.className = 'ob-ст ob-ст-конец';
-    end.innerHTML = '<p class="ob-ст__н">Обсудим вашу базу отдыха?</p>' +
-      '<p class="ob-ст__т">Расскажите, на каком вы этапе, — подскажем, что делать дальше.</p>' +
+    end.innerHTML = '<p class="ob-ст__н">Планируете открыть или развить базу отдыха?</p>' +
+      '<p class="ob-ст__т">Расскажите, что уже есть и что хотите сделать. Подскажем, с чего начать и чем наша команда может помочь на вашем этапе.</p>' +
       '<a class="ob-ст__b">Оставить заявку</a>' +
       '<p class="ob-ст-конец__ещё"><span>Полезно по теме:</span></p>';
     end.querySelector('.ob-ст__b').href = dest.href;
@@ -914,8 +917,8 @@ document.addEventListener('DOMContentLoaded',t_setvisRecs);}})();</script>
     pop.hidden = true;
     pop.setAttribute('aria-label', 'Заявка на помощь с базой отдыха');
     pop.innerHTML = '<button type="button" class="ob-ст__x" aria-label="Закрыть">&#215;</button>' +
-      '<p class="ob-ст__н">Планируете открыть базу?</p>' +
-      '<p class="ob-ст__т">Поможем разобраться с участком, форматом и первыми шагами.</p>' +
+      '<p class="ob-ст__н">Планируете открыть базу отдыха?</p>' +
+      '<p class="ob-ст__т">Поможем разобраться с участком, форматом и первыми шагами</p>' +
       '<a class="ob-ст__b">Оставить заявку</a>';
     pop.querySelector('.ob-ст__b').href = dest.href;
     document.body.appendChild(pop);
