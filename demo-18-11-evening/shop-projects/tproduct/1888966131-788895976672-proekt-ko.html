@@ -1,0 +1,841 @@
+<!DOCTYPE html> <html> <head><meta name="robots" content="noindex,nofollow"><meta http-equiv="Content-Security-Policy" content="form-action 'none'; connect-src 'self'"><script>/* Демо: отправка форм и запросов в сервисы отключена */(function(){document.addEventListener("submit",function(e){e.preventDefault();e.stopImmediatePropagation()},true);HTMLFormElement.prototype.submit=function(){};var F=window.fetch;if(F)window.fetch=function(i,o){var m=String((o&&o.method)||(i&&i.method)||"GET").toUpperCase();return m==="GET"||m==="HEAD"?F.apply(this,arguments):Promise.reject(new Error("demo"))};var O=XMLHttpRequest.prototype.open,X=XMLHttpRequest.prototype.send;XMLHttpRequest.prototype.open=function(m){this.__m=String(m).toUpperCase();return O.apply(this,arguments)};XMLHttpRequest.prototype.send=function(){if(this.__m!=="GET"&&this.__m!=="HEAD")return;return X.apply(this,arguments)};if(navigator.sendBeacon)navigator.sendBeacon=function(){return true}})();</script><script>/* Демо на GitHub: ссылки на страницы демо остаются в демо, остальные ведут на живой сайт */(function(){var P="/openbazu-preview/demo-18-11-evening/",L="https://xn--80abtjtnmcm9em.xn--p1ai",M={"/": "index.html", "/promotion": "promotion.html", "/engineering": "engineering.html", "/building": "building.html", "/consultations": "consultations.html", "/materials": "materials.html", "/websites": "websites.html", "/services": "services.html", "/shop-projects": "shop-projects.html", "/shop-projects/tproduct/1888966131-189702352052-bariloche": "shop-projects/tproduct/1888966131-189702352052-bariloche.html", "/shop-projects/tproduct/1888966131-788895976672-proekt-ko": "shop-projects/tproduct/1888966131-788895976672-proekt-ko.html", "/tpost/kak-vybrat-koncepciyu-bazy-otdyha": "tpost/kak-vybrat-koncepciyu-bazy-otdyha.html", "/tpost/kemk20hlm1-kak-otkrit-bazu-otdiha-bez-haosa-chto-pr": "tpost/kemk20hlm1-kak-otkrit-bazu-otdiha-bez-haosa-chto-pr.html"};window.addEventListener("click",function(e){var a=e.target.closest&&e.target.closest("a[href]");if(!a)return;var h=a.getAttribute("href");if(!h||h.charAt(0)==="#"||/^(mailto|tel|javascript):/i.test(h))return;var u;try{u=new URL(a.href,location.href)}catch(x){return}if(u.origin!==location.origin||u.pathname.indexOf(P)===0)return;var p=u.pathname.replace(/\/+$/,"")||"/";a.href=M[p]?P+M[p]+u.search+u.hash:L+u.pathname+u.search+u.hash},true)})();</script><script>/* демо: данные магазина из снимка */(function(){var B="/openbazu-preview/demo-18-11-evening/store/";function map(u){var x;try{x=new URL(u,location.href)}catch(e){return null}if(x.hostname!=="store.tildaapi.com")return null;var m=/\/api\/(\w+)\//.exec(x.pathname);if(!m)return null;var e=m[1];if(e==="getproductslist"){var n=+x.searchParams.get("size")||6,s=+x.searchParams.get("slice")||1;return B+(n>=50?"list-all.json":"list-"+n+"-"+s+".json")}if(e==="getfilters")return B+"filters.json";if(e==="getrelevantproducts")return B+"relevant.json";return null}var O=XMLHttpRequest.prototype.open;XMLHttpRequest.prototype.open=function(m,u){var r=map(u);if(r)arguments[1]=r;return O.apply(this,arguments)};var F=window.fetch;if(F)window.fetch=function(i,o){var u=typeof i==="string"?i:(i&&i.url);var r=u&&map(u);return F.call(this,r||i,o)}})();</script> <meta charset="utf-8" /> <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <meta name="yandex-verification" content="db0ff118132128a9" /> <!--metatextblock-->
+<title>Проект КО</title>
+<meta name="description" content="📏9 х 11,4">
+<meta name="keywords" content="">
+<meta property="og:title" content="Проект КО" />
+<meta property="og:description" content="📏9 х 11,4" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://xn--80abtjtnmcm9em.xn--p1ai/shop-projects/tproduct/1888966131-788895976672-proekt-ko" />
+<meta property="og:image" content="https://static.tildacdn.com/stor3866-3033-4732-b931-363064353435/50911383.png" />
+<link rel="canonical" href="https://xn--80abtjtnmcm9em.xn--p1ai/shop-projects/tproduct/1888966131-788895976672-proekt-ko" />
+<!--/metatextblock--> <meta name="format-detection" content="telephone=no" /> <meta http-equiv="x-dns-prefetch-control" content="on"> <link rel="dns-prefetch" href="https://ws.tildacdn.com"> <link rel="dns-prefetch" href="https://static.tildacdn.com"> <!--favicons--> <link rel="icon" type="image/png" sizes="32x32" href="https://static.tildacdn.com/tild6233-6563-4039-a531-323463353235/Group_39681.png" media="(prefers-color-scheme: light)"/> <link rel="icon" type="image/png" sizes="32x32" href="https://static.tildacdn.com/tild6265-3963-4135-b064-613138316530/Group_39681.png" media="(prefers-color-scheme: dark)"/> <link rel="apple-touch-icon" type="image/png" href="https://static.tildacdn.com/tild3333-3363-4532-a564-623338663766/Group_39681.png"> <link rel="icon" type="image/png" sizes="192x192" href="https://static.tildacdn.com/tild3333-3363-4532-a564-623338663766/Group_39681.png"> <!--/favicons--> <!-- Assets --> <script src="https://neo.tildacdn.com/js/tilda-fallback-1.0.min.js" async charset="utf-8"></script> <link rel="stylesheet" href="https://static.tildacdn.com/css/tilda-grid-3.0.min.css" type="text/css" media="all" onerror="this.loaderr='y';"/> <link rel="stylesheet" href="https://static.tildacdn.com/ws/project6324277/tilda-blocks-page117095716.min.css?t=1793285528" type="text/css" media="all" onerror="this.loaderr='y';" /> <link rel="stylesheet" href="https://static.tildacdn.com/css/tilda-animation-2.0.min.css" type="text/css" media="all" onerror="this.loaderr='y';" /> <link rel="stylesheet" href="https://static.tildacdn.com/css/tilda-forms-1.0.min.css" type="text/css" media="all" onerror="this.loaderr='y';" /> <link rel="stylesheet" href="https://static.tildacdn.com/css/tilda-cart-1.0.min.css" type="text/css" media="all" onerror="this.loaderr='y';" /> <link rel="stylesheet" href="https://static.tildacdn.com/css/tilda-popup-1.1.min.css" type="text/css" media="print" onload="this.media='all';" onerror="this.loaderr='y';" /> <noscript><link rel="stylesheet" href="https://static.tildacdn.com/css/tilda-popup-1.1.min.css" type="text/css" media="all" /></noscript> <link rel="stylesheet" href="https://static.tildacdn.com/css/tilda-slds-1.4.min.css" type="text/css" media="print" onload="this.media='all';" onerror="this.loaderr='y';" /> <noscript><link rel="stylesheet" href="https://static.tildacdn.com/css/tilda-slds-1.4.min.css" type="text/css" media="all" /></noscript> <link rel="stylesheet" href="https://static.tildacdn.com/css/tilda-catalog-1.1.min.css" type="text/css" media="print" onload="this.media='all';" onerror="this.loaderr='y';" /> <noscript><link rel="stylesheet" href="https://static.tildacdn.com/css/tilda-catalog-1.1.min.css" type="text/css" media="all" /></noscript> <link rel="stylesheet" href="https://static.tildacdn.com/css/tilda-catalog-filters-1.0.min.css" type="text/css" media="all" onerror="this.loaderr='y';" /> <link rel="stylesheet" href="https://static.tildacdn.com/css/tilda-zoom-2.0.min.css" type="text/css" media="print" onload="this.media='all';" onerror="this.loaderr='y';" /> <noscript><link rel="stylesheet" href="https://static.tildacdn.com/css/tilda-zoom-2.0.min.css" type="text/css" media="all" /></noscript> <link rel="stylesheet" href="https://static.tildacdn.com/css/katex.min.css" type="text/css" media="all" onerror="this.loaderr='y';" /> <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700" type="text/css" /> <link rel="stylesheet" href="https://static.tildacdn.com/css/fonts-tildasans.css" type="text/css" media="all" onerror="this.loaderr='y';" /> <script nomodule src="https://static.tildacdn.com/js/tilda-polyfill-1.0.min.js" charset="utf-8"></script> <script type="text/javascript">function t_onReady(func) {if(document.readyState!='loading') {func();} else {document.addEventListener('DOMContentLoaded',func);}}
+function t_onFuncLoad(funcName,okFunc,time) {if(typeof window[funcName]==='function') {okFunc();} else {setTimeout(function() {t_onFuncLoad(funcName,okFunc,time);},(time||100));}}function t_throttle(fn,threshhold,scope) {return function() {fn.apply(scope||this,arguments);};}function t396_initialScale(t){var e=document.getElementById("rec"+t);if(e){var i=e.querySelector(".t396__artboard");if(i){window.tn_scale_initial_window_width||(window.tn_scale_initial_window_width=document.documentElement.clientWidth);var a=window.tn_scale_initial_window_width,l=[],n,r=i.getAttribute("data-artboard-screens");if(r){r=r.split(",");for(var o=0;o<r.length;o++)l[o]=parseInt(r[o],10)}else l=[320,480,640,960,1200];for(var o=0;o<l.length;o++){var _=l[o];a>=_&&(n=_)}var d="edit"===window.allrecords.getAttribute("data-tilda-mode"),s="center"===t396_scaleInitial__getFieldValue(i,"valign",n,l),c="grid"===t396_scaleInitial__getFieldValue(i,"upscale",n,l),u=t396_scaleInitial__getFieldValue(i,"height_vh",n,l),g=t396_scaleInitial__getFieldValue(i,"height",n,l),w=!!window.opr&&!!window.opr.addons||!!window.opera||-1!==navigator.userAgent.indexOf(" OPR/");if(!d&&s&&!c&&!u&&g&&!w){var f=parseFloat((a/n).toFixed(3)),h=[i,i.querySelector(".t396__carrier"),i.querySelector(".t396__filter")],v=Math.floor(parseInt(g,10)*f)+"px",p;i.style.setProperty("--initial-scale-height",v);for(var o=0;o<h.length;o++)h[o].style.setProperty("height","var(--initial-scale-height)");t396_scaleInitial__getElementsToScale(i,n,l).forEach((function(t){t.style.zoom=f}))}}}}function t396_scaleInitial__getElementsToScale(t,e,i){return t?Array.prototype.slice.call(t.children).filter((function(t){if(!t)return!1;if(!t.classList.contains("t396__elem")&&!t.classList.contains("t396__group"))return!1;if(!t.querySelector(".tn-molecule, .tn-atom"))return!1;var a=!t.getAttribute("data-elem-type")&&t.classList.contains("tn-group"),l=t396_scaleInitial__getFieldValue(t,"container",e,i);return!l&&a&&(l="grid"),"grid"===l})):[]}function t396_scaleInitial__getFieldValue(t,e,i,a){if(!t)return null;var l=a[a.length-1],n=t.getAttribute(t396_scaleInitial__getFieldAttribute(t,e,i,l));if(null===n)for(var r=0;r<a.length;r++){var o=a[r];if(!(o<=i)&&null!==(n=t.getAttribute(t396_scaleInitial__getFieldAttribute(t,e,o,l))))break}return n}function t396_scaleInitial__getFieldAttribute(t,e,i,a){var l=["widthmode","heightmode","flex"],n=t.classList.contains("t396__artboard"),r=!n&&t.classList.contains("tn-group"),o="data-field-";n&&(o="data-artboard-"),r&&(o="data-group-");var _="-value",d;return(n||r&&-1!==l.indexOf(e))&&(_=""),o+e+(i===a?"":"-res-"+i)+_}window.TN_SCALE_INITIAL_VER="1.0",window.tn_scale_initial_window_width=null;</script> <script src="https://static.tildacdn.com/js/jquery-1.10.2.min.js" charset="utf-8" onerror="this.loaderr='y';"></script> <script src="https://static.tildacdn.com/js/tilda-scripts-3.0.min.js" charset="utf-8" defer onerror="this.loaderr='y';"></script> <script src="https://static.tildacdn.com/ws/project6324277/tilda-blocks-page117095716.min.js?t=1793285528" charset="utf-8" onerror="this.loaderr='y';"></script> <script src="https://static.tildacdn.com/js/tilda-lazyload-1.0.min.js" charset="utf-8" async onerror="this.loaderr='y';"></script> <script src="https://static.tildacdn.com/js/tilda-animation-2.0.min.js" charset="utf-8" async onerror="this.loaderr='y';"></script> <script src="https://static.tildacdn.com/js/tilda-forms-1.0.min.js" charset="utf-8" async onerror="this.loaderr='y';"></script> <script src="https://static.tildacdn.com/js/tilda-cart-1.1.min.js" charset="utf-8" async onerror="this.loaderr='y';"></script> <script src="https://static.tildacdn.com/js/tilda-widget-positions-1.0.min.js" charset="utf-8" async onerror="this.loaderr='y';"></script> <script src="https://static.tildacdn.com/js/hammer.min.js" charset="utf-8" async onerror="this.loaderr='y';"></script> <script src="https://static.tildacdn.com/js/tilda-slds-1.4.min.js" charset="utf-8" async onerror="this.loaderr='y';"></script> <script src="https://static.tildacdn.com/js/tilda-products-1.0.min.js" charset="utf-8" async onerror="this.loaderr='y';"></script> <script src="https://static.tildacdn.com/js/tilda-catalog-1.1.min.js" charset="utf-8" async onerror="this.loaderr='y';"></script> <script src="https://static.tildacdn.com/js/tilda-zero-1.2.min.js" charset="utf-8" async onerror="this.loaderr='y';"></script> <script src="https://static.tildacdn.com/js/tilda-faq-1.0.min.js" charset="utf-8" async onerror="this.loaderr='y';"></script> <script src="https://static.tildacdn.com/js/tilda-menu-1.0.min.js" charset="utf-8" async onerror="this.loaderr='y';"></script> <script src="https://static.tildacdn.com/js/tilda-popup-1.0.min.js" charset="utf-8" async onerror="this.loaderr='y';"></script> <script src="https://static.tildacdn.com/js/tilda-animation-sbs-1.0.min.js" charset="utf-8" async onerror="this.loaderr='y';"></script> <script src="https://static.tildacdn.com/js/tilda-zoom-2.0.min.js" charset="utf-8" async onerror="this.loaderr='y';"></script> <script src="https://static.tildacdn.com/js/tilda-zero-scale-1.0.min.js" charset="utf-8" async onerror="this.loaderr='y';"></script> <script src="https://static.tildacdn.com/js/tilda-zero-tooltip-1.1.min.js" charset="utf-8" async onerror="this.loaderr='y';"></script> <script src="https://static.tildacdn.com/js/tilda-zero-fixed-1.0.min.js" charset="utf-8" async onerror="this.loaderr='y';"></script> <script src="https://static.tildacdn.com/js/tilda-undercut-1.0.min.js" charset="utf-8" async onerror="this.loaderr='y';"></script> <script src="https://static.tildacdn.com/js/tilda-skiplink-1.0.min.js" charset="utf-8" async onerror="this.loaderr='y';"></script> <script src="https://static.tildacdn.com/js/tilda-events-1.0.min.js" charset="utf-8" async onerror="this.loaderr='y';"></script> <script src="https://static.tildacdn.com/js/tilda-formula.min.js" charset="utf-8" async onerror="this.loaderr='y';"></script> <script src="https://static.tildacdn.com/js/tilda-autoscale-1.0.min.js" charset="utf-8" async onerror="this.loaderr='y';"></script> <!-- nominify begin --><script>(function(a,m,o,c,r,m){a[m]={id:"399364",hash:"3e84c3ace383d8bb0707addc4c9443e843aed709c2c7e601c8ed92b68afeea0b",locale:"ru",inline:true,setMeta:function(p){this.params=(this.params||[]).concat([p])}};a[o]=a[o]||function(){(a[o].q=a[o].q||[]).push(arguments)};a[o+'Config']=a[o+'Config']||{};a[o+'Config'].hidden=!0;var d=a.document,s=d.createElement('script');s.async=true;s.id=m+'_script';s.src='https://gso.amocrm.invalid/js/button.js';d.head&&d.head.appendChild(s)}(window,0,'amoSocialButton',0,0,'amo_social_button'));</script> <script src="https://cdn.postnikovmd.com/tilda@1.4/mods.min.js"></script> <script src="https://cdn.postnikovmd.com/tilda@1.6/mods.min.js"></script><!-- nominify end --><script type="text/javascript">window.dataLayer=window.dataLayer||[];</script> <script type="text/javascript">(function() {var ttt='cebo';var tt='oog';var re=new RegExp("bot|g" + tt + "le|yandex|baidu|bing|msn|duckduckbot|teoma|slurp|crawler|spider|robot|crawling|fa" + ttt + "ok","i");if((re.test(navigator.userAgent))===false&&typeof(sessionStorage)!='undefined'&&sessionStorage.getItem('visited')!=='y'&&document.visibilityState){var style=document.createElement('style');style.type='text/css';style.innerHTML='@media screen and (min-width: 980px) {.t-records {opacity: 0;}.t-records_animated {-webkit-transition: opacity ease-in-out .2s;-moz-transition: opacity ease-in-out .2s;-o-transition: opacity ease-in-out .2s;transition: opacity ease-in-out .2s;}.t-records.t-records_visible {opacity: 1;}}';document.getElementsByTagName('head')[0].appendChild(style);function t_setvisRecs(){var alr=document.querySelectorAll('.t-records');Array.prototype.forEach.call(alr,function(el) {el.classList.add("t-records_animated");});setTimeout(function() {Array.prototype.forEach.call(alr,function(el) {el.classList.add("t-records_visible");});sessionStorage.setItem("visited","y");},400);}
+document.addEventListener('DOMContentLoaded',t_setvisRecs);}})();</script></head> <body class="t-body" style="margin:0;"> <!--allrecords--> <div id="allrecords" class="t-records" data-product-page="y" data-hook="blocks-collection-content-node" data-tilda-project-id="6324277" data-tilda-page-id="117095716" data-tilda-page-alias="shop-projects" data-tilda-formskey="4dc198819318fb6bae8c3819e6324277" data-tilda-lazy="yes" data-tilda-root-zone="com" data-tilda-project-headcode="yes" data-tilda-ts="y" data-tilda-project-country="RU">
+<!-- PRODUCT START -->
+
+                
+
+
+
+
+
+<div id="rec1888966131" class="r t-rec" style="" >
+    <div class="t-store t-store__prod-snippet__container">
+
+        
+                <div class="t-store__prod-popup__close-txt-wr" style="position:absolute;">
+            <a href="https://xn--80abtjtnmcm9em.xn--p1ai/shop-projects" class="js-store-close-text t-store__prod-popup__close-txt t-descr t-descr_xxs" style="color:#ffffff;">
+                Вернуться к выбору
+            </a>
+        </div>
+        
+        <a href="https://xn--80abtjtnmcm9em.xn--p1ai/shop-projects" class="t-popup__close" style="position:absolute; background-color:#ffffff">
+            <div class="t-popup__close-wrapper">
+                <svg class="t-popup__close-icon t-popup__close-icon_arrow" width="26px" height="26px" viewBox="0 0 26 26" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M10.4142136,5 L11.8284271,6.41421356 L5.829,12.414 L23.4142136,12.4142136 L23.4142136,14.4142136 L5.829,14.414 L11.8284271,20.4142136 L10.4142136,21.8284271 L2,13.4142136 L10.4142136,5 Z" fill="#ffffff"></path></svg>
+                <svg class="t-popup__close-icon t-popup__close-icon_cross" width="23px" height="23px" viewBox="0 0 23 23" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="#ffffff" fill-rule="evenodd"><rect transform="translate(11.313708, 11.313708) rotate(-45.000000) translate(-11.313708, -11.313708) " x="10.3137085" y="-3.6862915" width="2" height="30"></rect><rect transform="translate(11.313708, 11.313708) rotate(-315.000000) translate(-11.313708, -11.313708) " x="10.3137085" y="-3.6862915" width="2" height="30"></rect></g></svg>
+            </div>
+        </a>
+        
+        <div class="js-store-product js-product t-store__product-snippet" data-product-lid="788895976672" data-product-uid="788895976672" itemscope itemtype="http://schema.org/Product">
+            <meta itemprop="productID" content="788895976672" />
+
+            <div class="t-container">
+                <div>
+                    <meta itemprop="image" content="https://static.tildacdn.com/stor3866-3033-4732-b931-363064353435/50911383.png" />
+                    <div class="t-store__prod-popup__slider js-store-prod-slider t-store__prod-popup__col-left t-col t-col_6">
+                        <div class="js-product-img" style="width:100%;padding-bottom:75%;background-size:cover;opacity:0;">
+                        </div>
+                    </div>
+                    <div class="t-store__prod-popup__info t-align_left t-store__prod-popup__col-right t-col t-col_6">
+
+                        <div class="t-store__prod-popup__title-wrapper">
+                            <h1 class="js-store-prod-name js-product-name t-store__prod-popup__name t-name t-name_xl" itemprop="name" >Проект КО</h1>
+                            <div class="t-store__prod-popup__brand t-descr t-descr_xxs" >
+                                                            </div>
+                            <div class="t-store__prod-popup__sku t-descr t-descr_xxs">
+                                <span class="js-store-prod-sku js-product-sku" translate="no" >
+                                    
+                                </span>
+                            </div>
+                        </div>
+
+                                                                        <div itemprop="offers" itemscope itemtype="http://schema.org/Offer" style="display:none;">
+                            <meta itemprop="serialNumber" content="788895976672" />
+                                                        <meta itemprop="price" content="14500.00" />
+                            <meta itemprop="priceCurrency" content="RUB" />
+                                                        <link itemprop="availability" href="http://schema.org/InStock">
+                                                    </div>
+                        
+                                                
+                        <div class="js-store-price-wrapper t-store__prod-popup__price-wrapper">
+                            <div class="js-store-prod-price t-store__prod-popup__price t-store__prod-popup__price-item t-name t-name_md" style="">
+                                                                <div class="js-product-price js-store-prod-price-val t-store__prod-popup__price-value" data-product-price-def="14500.0000" data-product-price-def-str="14500.00">14500.00</div><div class="t-store__prod-popup__price-currency" translate="no">₽</div>
+                                                            </div>
+                            <div class="js-store-prod-price-old t-store__prod-popup__price_old t-store__prod-popup__price-item t-name t-name_md" style="">
+                                                                <div class="js-store-prod-price-old-val t-store__prod-popup__price-value">19500.00</div><div class="t-store__prod-popup__price-currency" translate="no">₽</div>
+                                                            </div>
+                        </div>
+
+                        <div class="js-product-controls-wrapper">
+                        </div>
+
+                        <div class="t-store__prod-popup__links-wrapper">
+                                                    </div>
+
+                                                <div class="t-store__prod-popup__btn-wrapper"  style="opacity: 0;" tt="Узнать цену">
+                                                        <a href="#order" class="t-store__prod-popup__btn t-store__prod-popup__btn_disabled t-btn t-btn_sm" style="color:#ffffff;background-color:#392c45;border:1px solid #e0e0e0;border-radius:10px;-moz-border-radius:10px;-webkit-border-radius:10px;font-family:TildaSans;font-weight:400;">
+                                <table style="width:100%; height:100%;">
+                                    <tbody>
+                                        <tr>
+                                            <td class="js-store-prod-popup-buy-btn-txt">Узнать цену</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </a>
+                                                    </div>
+                        
+                        <div class="js-store-prod-text t-store__prod-popup__text t-descr t-descr_xxs" >
+                                                    <div class="js-store-prod-all-text" itemprop="description">
+                                <div style="font-size: 14px;" data-customstyle="yes">⚪ Состав проекта:<br />⚫ ЭП (Эскизный проект)<br />⚫ КР (Конструктивный Раздел)<br />⚫ 3D модель архитектуры и каркаса дома в формате .skp<br />⚫ Ведомость отделочных материалов, пиломатериала, гвоздей;<br />⚪ Принимаем заказы на проектирование, обращайтесь!<br /><br />Размер:: 9 х 11,4 кв. м.<br />Площадь под застройку:: 102,6 кв. м.<br />Площадь жилая:: 80,6 кв. м.<br />Площадь террасы:: 22 кв. м.<br />Тип:: Каркасный<br />Кол-во спальных комнат:: 2<br />Кол-во С/У:: 1<br />Фундамент:: Свайный</div>                            </div>
+                                                                            <div class="js-store-prod-all-charcs">
+                                                                                                                                                                        </div>
+                                                </div>
+
+                    </div>
+                </div>
+
+                            </div>
+        </div>
+                <div class="t-store__relevants__container">
+            <div class="t-container">
+                <div class="t-col">
+                    <div class="t-store__relevants__title t-uptitle t-uptitle_xxl" >Смотрите также</div>
+                    <div class="t-store__relevants-grid-cont js-store-relevants-grid-cont js-store-grid-cont t-store__valign-buttons t-store__grid-cont_mobile-one-row"></div>
+                </div>
+            </div>
+        </div>
+                <div class="js-store-error-msg t-store__error-msg-cont"></div>
+        <div itemscope itemtype="http://schema.org/ImageGallery" style="display:none;">
+                                                                                                                                                                                                                        </div>
+
+    </div>
+
+                        
+                        
+    
+    <style>
+        /* body bg color */
+        
+
+        /* body bg color end */
+        /* Slider stiles */
+        .t-slds__bullet_active .t-slds__bullet_body {
+            background-color: #222 !important;
+        }
+
+        .t-slds__bullet:hover .t-slds__bullet_body {
+            background-color: #222 !important;
+        }
+        /* Slider stiles end */
+    </style>
+    
+
+        
+        
+        
+        
+        
+        <style>
+        .t-store__product-snippet .t-btn:not(.t-animate_no-hover):hover{
+            background-color: #e0e0e0 !important;
+            color: #392c45 !important;
+            
+            
+    	}
+        .t-store__product-snippet .t-btn:not(.t-animate_no-hover){
+            -webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out; transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+        </style>
+        
+
+        
+        
+    <style>
+        
+        /* brand subtitle */
+        .t-store__product-snippet .t-store__prod-popup__brand,
+        /* sku subtitle */
+        .t-store__product-snippet .t-store__prod-popup__sku {
+            font-size: 14px;
+        }
+        
+
+        
+        /* styles for options */
+        .t-store__product-snippet .t-product__option-title,
+        .t-store__product-snippet .t-product__option-select {
+            font-size: 14px;
+        }
+        
+
+        
+        /* characteristics */
+        .t-store__product-snippet .js-store-prod-all-charcs p {
+            font-size: 14px;
+        }
+        
+    </style>
+    
+    
+        
+    <style>
+        
+        @media screen and (max-width: 480px) {
+            
+            .t-store__product-snippet .t-store__prod-popup__brand,
+            .t-store__product-snippet .t-store__prod-popup__sku {
+                font-size: 13px;
+            }
+            
+
+            
+            .t-store__product-snippet .t-product__option-title,
+            .t-store__product-snippet .t-product__option-select {
+                font-size: 13px;
+            }
+            
+
+            
+            .t-store__product-snippet .js-store-prod-all-charcs p {
+                font-size: 13px;
+            }
+            
+        }
+        
+    </style>
+    
+    
+        
+    <style>
+        
+    </style>
+    
+    
+        
+        <style>
+    
+                    
+            .t-popup__container {
+                border-radius: 20px;
+            }
+            
+                            
+            .js-store-desktop-custom-gallery .t-img,.t-slds__main {
+                 border-radius: 15px;
+                overflow: hidden;
+            }
+            
+                            
+            .t-slds__thumbsbullet-border, .t-slds__thumbsbullet {
+                border-radius: 10px;
+                overflow: hidden;
+            }
+            
+                            
+            .t-store__relevants__container .t-store__card__bgimg {
+                border-radius: 20px;
+            }
+            
+            
+        </style>
+    
+    
+    <div class="js-store-tpl-slider-arrows" style="display: none;">
+                
+
+
+<div class="t-slds__arrow_wrapper t-slds__arrow_wrapper-left" data-slide-direction="left">
+  <div class="t-slds__arrow t-slds__arrow-left t-slds__arrow-withbg" style="width: 30px; height: 30px;background-color: rgba(255,255,255,1);">
+    <div class="t-slds__arrow_body t-slds__arrow_body-left" style="width: 7px;">
+      <svg style="display: block" viewBox="0 0 7.3 13" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <desc>Left</desc>
+        <polyline
+        fill="none"
+        stroke="#000000"
+        stroke-linejoin="butt"
+        stroke-linecap="butt"
+        stroke-width="1"
+        points="0.5,0.5 6.5,6.5 0.5,12.5"
+        />
+      </svg>
+    </div>
+  </div>
+</div>
+<div class="t-slds__arrow_wrapper t-slds__arrow_wrapper-right" data-slide-direction="right">
+  <div class="t-slds__arrow t-slds__arrow-right t-slds__arrow-withbg" style="width: 30px; height: 30px;background-color: rgba(255,255,255,1);">
+    <div class="t-slds__arrow_body t-slds__arrow_body-right" style="width: 7px;">
+      <svg style="display: block" viewBox="0 0 7.3 13" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <desc>Right</desc>
+        <polyline
+        fill="none"
+        stroke="#000000"
+        stroke-linejoin="butt"
+        stroke-linecap="butt"
+        stroke-width="1"
+        points="0.5,0.5 6.5,6.5 0.5,12.5"
+        />
+      </svg>
+    </div>
+  </div>
+</div>    </div>
+
+    
+    <script>
+        t_onReady(function() {
+            var tildacopyEl = document.getElementById('tildacopy');
+            if (tildacopyEl) tildacopyEl.style.display = 'none';
+
+            var recid = '1888966131';
+            var options = {};
+            var product = {"uid":788895976672,"rootpartid":10254457,"title":"Проект КО","descr":"📏9 х 11,4","text":"<div style=\"font-size: 14px;\" data-customstyle=\"yes\">⚪ Состав проекта:<br \/>⚫ ЭП (Эскизный проект)<br \/>⚫ КР (Конструктивный Раздел)<br \/>⚫ 3D модель архитектуры и каркаса дома в формате .skp<br \/>⚫ Ведомость отделочных материалов, пиломатериала, гвоздей;<br \/>⚪ Принимаем заказы на проектирование, обращайтесь!<br \/><br \/>Размер:: 9 х 11,4 кв. м.<br \/>Площадь под застройку:: 102,6 кв. м.<br \/>Площадь жилая:: 80,6 кв. м.<br \/>Площадь террасы:: 22 кв. м.<br \/>Тип:: Каркасный<br \/>Кол-во спальных комнат:: 2<br \/>Кол-во С\/У:: 1<br \/>Фундамент:: Свайный<\/div>","price":"14500.0000","priceold":"19500","gallery":[{"img":"https:\/\/static.tildacdn.com\/stor3866-3033-4732-b931-363064353435\/50911383.png"},{"img":"https:\/\/static.tildacdn.com\/stor3162-3532-4934-a164-636661363938\/38436188.png"},{"img":"https:\/\/static.tildacdn.com\/stor3538-3637-4134-a333-363433663639\/83406229.png"},{"img":"https:\/\/static.tildacdn.com\/stor6235-3661-4439-a439-396132303761\/45128838.png"},{"img":"https:\/\/static.tildacdn.com\/stor3535-3330-4534-b235-316635306436\/91815769.png"},{"img":"https:\/\/static.tildacdn.com\/stor6132-6564-4261-a635-633838643939\/25375867.png"},{"img":"https:\/\/static.tildacdn.com\/stor3632-6139-4162-a532-643039363865\/75392568.png"}],"sort":1032500,"portion":0,"newsort":0,"json_chars":"null","externalid":"kMvTMtjX2L1YPsSX6sIT","pack_label":"lwh","pack_x":0,"pack_y":0,"pack_z":0,"pack_m":0,"parentuid":"","editions":[{"uid":788895976672,"price":"14 500.00","priceold":"19 500.00","sku":"","quantity":"","img":"https:\/\/static.tildacdn.com\/stor3866-3033-4732-b931-363064353435\/50911383.png"}],"characteristics":[],"properties":[],"partuids":[569073953982],"url":"https:\/\/xn--80abtjtnmcm9em.xn--p1ai\/shop-projects\/tproduct\/1888966131-788895976672-proekt-ko"};
+
+            
+                        
+
+            // draw slider or show image for SEO
+            if (window.isSearchBot) {
+                var imgEl = document.querySelector('.js-product-img');
+                if (imgEl) imgEl.style.opacity = '1';
+            } else {
+                
+                var prodcard_optsObj = {
+    hasWrap: false,
+    txtPad: '',
+    bgColor: '',
+    borderRadius: '',
+    shadowSize: '0px',
+    shadowOpacity: '',
+    shadowSizeHover: '',
+    shadowOpacityHover: '',
+    shadowShiftyHover: '',
+    btnTitle1: 'Узнать подробнее',
+    btnLink1: 'popup',
+    btnTitle2: 'Узнать цену',
+    btnLink2: 'order',
+    showOpts: false};
+
+var price_optsObj = {
+    color: '',
+    colorOld: '',
+    fontSize: '14px',
+    fontWeight: '800'
+};
+
+var popup_optsObj = {
+    columns: '6',
+    columns2: '6',
+    isVertical: '',
+    align: 'left',
+    btnTitle: 'Узнать цену',
+    closeText: 'Вернуться к выбору',
+    iconColor: '#ffffff',
+    containerBgColor: '',
+    overlayBgColorRgba: 'rgba(0,0,0,0.80)',
+    popupStat: '',
+    popupContainer: '',
+    fixedButton: true,
+    mobileGalleryStyle: ''
+};
+
+var slider_optsObj = {
+    anim_speed: '',
+    arrowColor: '#000000',
+    videoPlayerIconColor: '',
+    cycle: 'on',
+    controls: 'arrowsthumbs',
+    bgcolor: '#ebebeb'
+};
+
+var slider_dotsOptsObj = {
+    size: '',
+    bgcolor: '',
+    bordersize: '',
+    bgcoloractive: ''
+};
+
+var slider_slidesOptsObj = {
+    zoomable: true,
+    bgsize: 'cover',
+    ratio: '1'
+};
+
+var typography_optsObj = {
+    descrColor: '',
+    titleColor: ''
+};
+
+var default_sortObj = {
+    in_stock: false};
+
+var btn1_style = 'font-weight:400;font-family:TildaSans;border-radius:10px;-moz-border-radius:10px;-webkit-border-radius:10px;color:#ffffff;background-color:#392c45;border:1px solid #e0e0e0;';
+var btn2_style = 'font-weight:400;font-family:TildaSans;border-radius:10px;-moz-border-radius:10px;-webkit-border-radius:10px;color:#3a2c45;background-color:#eaeaee;border:1px solid ;';
+
+var options_catalog = {
+    btn1_style: btn1_style,
+    btn2_style: btn2_style,
+    storepart: '583737525251',
+    prodCard: prodcard_optsObj,
+    popup_opts: popup_optsObj,
+    defaultSort: default_sortObj,
+    slider_opts: slider_optsObj,
+    slider_dotsOpts: slider_dotsOptsObj,
+    slider_slidesOpts: slider_slidesOptsObj,
+    typo: typography_optsObj,
+    price: price_optsObj,
+    blocksInRow: '3',
+    imageHover: true,
+    imageHeight: '',
+    imageRatioClass: 't-store__card__imgwrapper_1-1',
+    align: 'left',
+    vindent: '20px',
+    isHorizOnMob:false,
+    itemsAnim: '',
+    hasOriginalAspectRatio: false,
+    markColor: '',
+    markBgColor: '',
+    currencySide: 'r',
+    currencyTxt: '₽',
+    currencySeparator: '.',
+    currencyDecimal: '',
+    btnSize: '',
+    verticalAlignButtons: false,
+    hideFilters: false,
+    titleRelevants: 'Смотрите также',
+    showRelevants: '583737525251',
+    relevants_slider: false,
+    relevants_quantity: '4',
+    isFlexCols: true,
+    isPublishedPage: true,
+    previewmode: true,
+    colClass: 't-col t-col_3',
+    ratio: '1_1',
+    sliderthumbsside: '',
+    showStoreBtnQuantity: '',
+    tabs: '',
+    galleryStyle: '',
+    title_typo: '{\"fontfamily\":\"EngraversGothic\",\"fontweight\":\"700\",\"color\":\"linear-gradient(0.25turn,rgba(70,104,153,1) 0%,rgba(30,114,104,1) 100%)\",\"fontsize\":\"25px\",\"uppercase\":\"uppercase\"}',
+    descr_typo: '{\"fontsize\":\"13px\",\"fontsize_res_480\":\"12px\",\"fontfamily\":\"TildaSans\",\"fontweight\":\"400\"}',
+    price_typo: '{\"fontsize\":\"14px\",\"fontsize_res_480\":\"13px\",\"fontweight\":\"800\"}',
+    price_old_typo: '{\"fontsize\":\"14px\",\"fontsize_res_480\":\"13px\",\"fontweight\":\"800\",\"color\":\"#313a39\",\"opacity\":\"30%\"}',
+    menu_typo: '{\"fontsize\":\"20px\",\"fontfamily\":\"TildaSans\",\"fontweight\":\"500\",\"color\":\"#52719d\"}',
+    options_typo: '{\"fontsize\":\"14px\",\"fontsize_res_480\":\"13px\"}',
+    sku_typo: '{\"fontsize\":\"14px\",\"fontsize_res_480\":\"13px\"}',
+    characteristics_typo: '{\"fontsize\":\"14px\",\"fontsize_res_480\":\"13px\"}',
+    button_styles: '{\"size\":\"sm\",\"styleid\":\"Q6td2\",\"color\":\"var(--uc-button-color-Q6td2,#fefefe)\",\"bgcolor\":\"var(--uc-button-bgcolor-Q6td2,#6c98bc)\",\"radius\":\"var(--uc-button-radius-Q6td2,15px 15px 0px 15px)\",\"shadow\":\"var(--uc-button-shadow-Q6td2,1px 1px 10px rgba(82,113,157,0.2))\",\"fontfamily\":\"var(--uc-button-fontfamily-Q6td2,EngraversGothic)\",\"lineheight\":\"var(--uc-button-lineheight-Q6td2,1.2)\",\"uppercase\":\"var(--uc-button-uppercase-Q6td2,uppercase)\",\"letterspacing\":\"var(--uc-button-letterspacing-Q6td2,0px)\",\"fontweight\":\"var(--uc-button-fontweight-Q6td2,700)\",\"fontsize\":\"var(--uc-button-fontsize-Q6td2,15px)\",\"iconposition\":\"var(--uc-button-iconposition-Q6td2,row-reverse)\",\"iconsize\":\"var(--uc-button-iconsize-Q6td2,10px)\",\"gap\":\"var(--uc-button-gap-Q6td2,10px)\",\"padding\":\"var(--uc-button-padding-Q6td2,5px 15px 5px 15px)\"}',
+    button2_styles: '{\"size\":\"sm\",\"styleid\":\"Q6td2\",\"color\":\"var(--uc-button-color-Q6td2,#fefefe)\",\"bgcolor\":\"var(--uc-button-bgcolor-Q6td2,#6c98bc)\",\"radius\":\"var(--uc-button-radius-Q6td2,15px 15px 0px 15px)\",\"shadow\":\"var(--uc-button-shadow-Q6td2,1px 1px 10px rgba(82,113,157,0.2))\",\"fontfamily\":\"var(--uc-button-fontfamily-Q6td2,EngraversGothic)\",\"lineheight\":\"var(--uc-button-lineheight-Q6td2,1.2)\",\"uppercase\":\"var(--uc-button-uppercase-Q6td2,uppercase)\",\"letterspacing\":\"var(--uc-button-letterspacing-Q6td2,0px)\",\"fontweight\":\"var(--uc-button-fontweight-Q6td2,700)\",\"fontsize\":\"var(--uc-button-fontsize-Q6td2,15px)\",\"iconposition\":\"var(--uc-button-iconposition-Q6td2,row-reverse)\",\"iconsize\":\"var(--uc-button-iconsize-Q6td2,10px)\",\"gap\":\"var(--uc-button-gap-Q6td2,10px)\",\"padding\":\"var(--uc-button-padding-Q6td2,5px 15px 5px 15px)\"}',
+    buttonicon: '',
+    buttoniconhover: '',
+    storebreadcrumbs_styles: '',
+    horizontalScrollHint: 'circle',
+};                
+                // emulate, get options_catalog from file store_catalog_fields
+                options = options_catalog;
+                options.typo.title = "" || '';
+                options.typo.descr = "" || '';
+
+                try {
+                    if (options.showRelevants) {
+                        var itemsCount = '4';
+                        var relevantsMethod;
+                        switch (options.showRelevants) {
+                            case 'cc':
+                                relevantsMethod = 'current_category';
+                                break;
+                            case 'all':
+                                relevantsMethod = 'all_categories';
+                                break;
+                            default:
+                                relevantsMethod = 'category_' + options.showRelevants;
+                                break;
+                        }
+
+                        t_onFuncLoad('t_store_loadProducts', function() {
+                            t_store_loadProducts(
+                                'relevants',
+                                recid,
+                                options,
+                                false,
+                                {
+                                    currentProductUid: '788895976672',
+                                    relevantsQuantity: itemsCount,
+                                    relevantsMethod: relevantsMethod,
+                                    relevantsSort: 'random'
+                                }
+                            );
+                        });
+                    }
+                } catch (e) {
+                    console.log('Error in relevants: ' + e);
+                }
+            }
+
+            
+                            options.popup_opts.btnTitle = 'Узнать цену';
+                        
+
+            window.tStoreOptionsList = [];
+
+            t_onFuncLoad('t_store_productInit', function() {
+                t_store_productInit(recid, options, product);
+            });
+
+            // if user coming from catalog redirect back to main page
+            if (window.history.state && (window.history.state.productData || window.history.state.storepartuid)) {
+                window.onpopstate = function() {
+                    window.history.replaceState(null, null, window.location.origin);
+                    window.location.replace(window.location.origin);
+                };
+            }
+        });
+    </script>
+    
+
+</div>
+
+
+<!-- PRODUCT END -->
+
+<div id="rec2123112901" class="r t-rec" style="" data-animationappear="off" data-record-type="706"> <!-- @classes: t-text t-text_xs t-name t-name_xs t-name_md t-btn t-btn_sm --> <script>t_onReady(function() {setTimeout(function() {t_onFuncLoad('tcart__init',function() {tcart__init('2123112901',{cssClassName:''});});},50);var userAgent=navigator.userAgent.toLowerCase();var body=document.body;if(!body) return;if(userAgent.indexOf('\u0069\u006e\u0073\u0074\u0061\u0067\u0072\u0061\u006d')!==-1&&userAgent.indexOf('iphone')!==-1) {body.style.position='relative';}
+var rec=document.querySelector('#rec2123112901');if(!rec) return;var cartWindow=rec.querySelector('.t706__cartwin,.t706__cartpage');var allRecords=document.querySelector('.t-records');var currentMode=allRecords.getAttribute('data-tilda-mode');if(cartWindow&&currentMode!=='edit'&&currentMode!=='preview') {cartWindow.addEventListener('scroll',t_throttle(function() {if(window.lazy==='y'||document.querySelector('#allrecords').getAttribute('data-tilda-lazy')==='yes') {t_onFuncLoad('t_lazyload_update',function() {t_lazyload_update();});}},500));}});</script> <div class="t706" data-cart-countdown="yes" data-opencart-onorder="yes" data-project-currency="₽" data-project-currency-side="r" data-project-currency-sep="." data-project-currency-code="RUB" data-payment-system="tinkoff" data-cart-sendevent-onadd="y"> <div class="t706__carticon" style=""> <div class="t706__carticon-text t-name t-name_xs"></div> <div class="t706__carticon-wrapper"> <div class="t706__carticon-imgwrap"> <svg role="img" class="t706__carticon-img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"> <path fill="none" stroke-width="2" stroke-miterlimit="10" d="M44 18h10v45H10V18h10z"/> <path fill="none" stroke-width="2" stroke-miterlimit="10" d="M22 24V11c0-5.523 4.477-10 10-10s10 4.477 10 10v13"/> </svg> </div> <div class="t706__carticon-counter js-carticon-counter" style="background-color:var(--uc-color-color-bEFLDY,#52719d);"></div> </div> </div> <div class="t706__cartwin" style="display: none;"> <div class="t706__close t706__cartwin-close"> <button type="button" class="t706__close-button t706__cartwin-close-wrapper" aria-label="Закрыть корзину"> <svg role="presentation" class="t706__close-icon t706__cartwin-close-icon" width="23px" height="23px" viewBox="0 0 23 23" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"> <g stroke="none" stroke-width="1" fill="#fff" fill-rule="evenodd"> <rect transform="translate(11.313708, 11.313708) rotate(-45.000000) translate(-11.313708, -11.313708) " x="10.3137085" y="-3.6862915" width="2" height="30"></rect> <rect transform="translate(11.313708, 11.313708) rotate(-315.000000) translate(-11.313708, -11.313708) " x="10.3137085" y="-3.6862915" width="2" height="30"></rect> </g> </svg> </button> </div> <div class="t706__cartwin-content"> <div class="t706__cartwin-top"> <div class="t706__cartwin-heading t-name t-name_xl"></div> </div> <div class="t706__cartwin-products"></div> <div class="t706__cartwin-bottom"> <div class="t706__cartwin-prodamount-wrap t-descr t-descr_sm"> <span class="t706__cartwin-prodamount-label"></span> <span class="t706__cartwin-prodamount"></span> </div> </div> <div class="t706__orderform "> <form
+id="form2123112901" name='form2123112901' role="form" action='' method='POST' data-formactiontype="2" data-inputbox=".t-input-group" class="t-form js-form-proccess t-form_inputs-total_2 " data-formsended-callback="t706_onSuccessCallback"> <input type="hidden" name="formservices[]" value="c3b7e1ed25591119dbd3d71516896680" class="js-formaction-services"> <input type="hidden" name="formservices[]" value="6b6b32131e1e6bab9d862b0bf1119181" class="js-formaction-services"> <input type="hidden" name="formservices[]" value="7d5d6732b24d883a241de69db62881c2" class="js-formaction-services"> <input type="hidden" name="formservices[]" value="b1da6220554fac79d551376f62a1ce75" class="js-formaction-services"> <input type="hidden" name="formservices[]" value="4afb571201ea95288228f73d6e7e4b68" class="js-formaction-services"> <input type="hidden" name="formservices[]" value="a63b5067b5e71e8d30980bb09dafb911" class="js-formaction-services"> <input type="hidden" name="tildaspec-formname" tabindex="-1" value="Cart"> <!-- @classes t-title t-text t-btn --> <div class="js-successbox t-form__successbox t-text t-text_md"
+aria-live="polite"
+style="display:none;"></div> <div
+class="t-form__inputsbox
+t-form__inputsbox_inrow "> <div
+class="t-input-group t-input-group_nm " data-input-lid="2311158466360" data-field-type="nm" data-field-name="Name"> <label
+for='input_2311158466360'
+class="t-input-title t-descr t-descr_md"
+id="field-title_2311158466360" data-redactor-toolbar="no"
+field="li_title__2311158466360"
+style="color:;">Ваше имя</label> <div class="t-input-block "> <input
+type="text"
+autocomplete="name"
+name="Name"
+id="input_2311158466360"
+class="t-input js-tilda-rule"
+value="" data-tilda-req="1" aria-required="true" data-tilda-rule="name"
+aria-describedby="error_2311158466360"
+style="color:#000000;border:1px solid #000000;"> </div> <div class="t-input-error" aria-live="polite" id="error_2311158466360"></div> </div> <div
+class="t-input-group t-input-group_em " data-input-lid="2311158466362" data-field-type="em" data-field-name="Email"> <label
+for='input_2311158466362'
+class="t-input-title t-descr t-descr_md"
+id="field-title_2311158466362" data-redactor-toolbar="no"
+field="li_title__2311158466362"
+style="color:;">Ваша почта</label> <div class="t-input-block "> <input
+type="email"
+autocomplete="email"
+name="Email"
+id="input_2311158466362"
+class="t-input js-tilda-rule"
+value="" data-tilda-req="1" aria-required="true" data-tilda-rule="email"
+aria-describedby="error_2311158466362"
+style="color:#000000;border:1px solid #000000;"> </div> <div class="t-input-error" aria-live="polite" id="error_2311158466362"></div> </div> <div class="t-form__errorbox-middle"> <!--noindex--> <div
+class="js-errorbox-all t-form__errorbox-wrapper"
+style="display:none;" data-nosnippet
+tabindex="-1"
+aria-label="Ошибки при заполнении формы"> <ul
+role="list"
+class="t-form__errorbox-text t-text t-text_md"> <li class="t-form__errorbox-item js-rule-error js-rule-error-all"></li> <li class="t-form__errorbox-item js-rule-error js-rule-error-req"></li> <li class="t-form__errorbox-item js-rule-error js-rule-error-email"></li> <li class="t-form__errorbox-item js-rule-error js-rule-error-name"></li> <li class="t-form__errorbox-item js-rule-error js-rule-error-phone"></li> <li class="t-form__errorbox-item js-rule-error js-rule-error-minlength"></li> <li class="t-form__errorbox-item js-rule-error js-rule-error-string"></li> </ul> </div> <!--/noindex--> </div> <div class="t-form__submit"> <button
+class="t-submit t-btnflex t-btnflex_type_submit t-btnflex_md"
+type="submit"><span class="t-btnflex__text">Checkout</span> <style>#rec2123112901 .t-btnflex.t-btnflex_type_submit{color:var(--uc-button-color-Q6td2,#fefefe);background-color:var(--uc-button-bgcolor-Q6td2,#6c98bc);--border-width:0px;border-style:none !important;border-radius:var(--uc-button-radius-Q6td2,15px 15px 0px 15px);box-shadow:var(--uc-button-shadow-Q6td2,1px 1px 10px rgba(82,113,157,0.2)) !important;font-family:var(--uc-button-fontfamily-Q6td2,EngraversGothic);font-weight:var(--uc-button-fontweight-Q6td2,700);font-size:var(--uc-button-fontsize-Q6td2,15px);--line-height:var(--uc-button-lineheight-Q6td2,1.2);letter-spacing:var(--uc-button-letterspacing-Q6td2,0px);gap:var(--uc-button-gap-Q6td2,10px);padding:var(--uc-button-padding-Q6td2,5px 15px 5px 15px);text-transform:var(--uc-button-uppercase-Q6td2,uppercase);flex-direction:var(--uc-button-iconposition-Q6td2,row-reverse);transition-duration:0.2s;transition-property:background-color,color,border-color,box-shadow,opacity,transform,gap;transition-timing-function:ease-in-out;}#rec2123112901 .t-btnflex.t-btnflex_type_submit .t-btnflex__icon{width:var(--uc-button-iconsize-Q6td2,10px);height:var(--uc-button-iconsize-Q6td2,10px);}</style></button> </div> </div> <div class="t-form__errorbox-bottom"> <!--noindex--> <div
+class="js-errorbox-all t-form__errorbox-wrapper"
+style="display:none;" data-nosnippet
+tabindex="-1"
+aria-label="Ошибки при заполнении формы"> <ul
+role="list"
+class="t-form__errorbox-text t-text t-text_md"> <li class="t-form__errorbox-item js-rule-error js-rule-error-all"></li> <li class="t-form__errorbox-item js-rule-error js-rule-error-req"></li> <li class="t-form__errorbox-item js-rule-error js-rule-error-email"></li> <li class="t-form__errorbox-item js-rule-error js-rule-error-name"></li> <li class="t-form__errorbox-item js-rule-error js-rule-error-phone"></li> <li class="t-form__errorbox-item js-rule-error js-rule-error-minlength"></li> <li class="t-form__errorbox-item js-rule-error js-rule-error-string"></li> </ul> </div> <!--/noindex--> </div> </form> <style>#rec2123112901 input::-webkit-input-placeholder{color:#000000;opacity:0.5;}#rec2123112901 input::-moz-placeholder{color:#000000;opacity:0.5;}#rec2123112901 input:-moz-placeholder{color:#000000;opacity:0.5;}#rec2123112901 input:-ms-input-placeholder{color:#000000;opacity:0.5;}#rec2123112901 textarea::-webkit-input-placeholder{color:#000000;opacity:0.5;}#rec2123112901 textarea::-moz-placeholder{color:#000000;opacity:0.5;}#rec2123112901 textarea:-moz-placeholder{color:#000000;opacity:0.5;}#rec2123112901 textarea:-ms-input-placeholder{color:#000000;opacity:0.5;}</style> </div> </div> </div> <div class="t706__cartdata"> </div> </div> <style></style> <style>.t-menuwidgeticons__cart .t-menuwidgeticons__icon-counter{background-color:var(--uc-color-color-bEFLDY,#52719d);}</style> </div>
+
+</div>
+<!--/allrecords--> <!-- Stat --> <!-- Yandex.Metrika counter 108184957 --> <script type="text/javascript" data-tilda-cookie-type="analytics">setTimeout(function(){(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,"script","https://mc.yandex.invalid/metrika/tag.js","ym");window.mainMetrikaId='108184957';ym(window.mainMetrikaId,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true,params:{__ym:{"ymCms":{"cms":"tilda","cmsVersion":"1.0","cmsCatalog":"1"}}},ecommerce:"dataLayer"});},2000);</script> <noscript><div><img src="https://mc.yandex.invalid/watch/108184957" style="position:absolute; left:-9999px;" alt="" /></div></noscript> <!-- /Yandex.Metrika counter --> <script type="text/javascript">if(!window.mainTracker) {window.mainTracker='tilda';}
+setTimeout(function(){(function(d,w,k,o,g) {var n=d.getElementsByTagName(o)[0],s=d.createElement(o),f=function(){n.parentNode.insertBefore(s,n);};s.type="text/javascript";s.async=true;s.key=k;s.id="tildastatscript";s.src=g;if(w.opera=="[object Opera]") {d.addEventListener("DOMContentLoaded",f,false);} else {f();}})(document,window,'18d8551831b8e445c8157db75bc36dd0','script','https://static.tildacdn.com/js/tilda-stat-off-1.0.min.js');},2000);</script> <!-- Каталог проектов (17.11): в окне и на странице проекта — «Стоимость комплекта чертежей», «Купить проект» (корзина Тильды)
+     и «Запросить смету строительства»; в каталоге — сравнение проектов по трём строкам: стоимость проекта, жилая площадь, конструкция.
+     Для HTML-блока на странице каталога /shop-projects (и на страницах проектов). Цвета — только брендбук. -->
+<style>
+/* Раньше цены в каталоге были скрыты (режим «Узнать цену»). Раз проект можно купить — цена видна на карточках и в окне проекта. */
+#allrecords[data-tilda-page-id="117095716"] #rec1888966131 .js-store-price-wrapper{display:flex!important;flex-wrap:wrap;align-items:baseline;gap:0 8px}
+#allrecords[data-tilda-page-id="117095716"] #rec1888966131 :is(.t-store__prod-popup__price,.t-store__card__price){display:flex!important}
+#allrecords[data-tilda-page-id="117095716"] #rec1888966131 :is(.t-store__prod-popup__price_old,.t-store__card__price_old):not(:empty){display:flex!important}
+.ob-кат-подпись{margin:0 0 4px;font-family:'TildaSans',Arial,sans-serif;font-size:14px;line-height:1.3;color:#313a39}
+.ob-кат-кнопки{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0 0}
+.ob-кат-кнопки button,.ob-срв button{font-family:'TildaSans',Arial,sans-serif;cursor:pointer}
+.ob-кат-купить,.ob-кат-смета{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 22px;border-radius:12px;
+  font-size:15px;font-weight:600;line-height:1.2;transition:background .2s,color .2s,border-color .2s}
+.ob-кат-купить{border:1.5px solid #52719d;background:#52719d;color:#fffffb}
+.ob-кат-купить:hover{background:#1e7268;border-color:#1e7268}
+.ob-кат-смета{border:1.5px solid #52719d;background:#fffffb;color:#52719d}
+.ob-кат-смета:hover{background:#52719d;color:#fffffb}
+.ob-кат-кнопки button:focus-visible,.ob-срв button:focus-visible,.ob-срв a:focus-visible,.ob-срв-т:focus-visible{outline:2px solid #52719d;outline-offset:3px}
+/* сравнение */
+#rec1888966131 .t-store__card{position:relative}
+.ob-срв-т{position:absolute;top:10px;left:10px;z-index:5;display:inline-flex;align-items:center;gap:7px;min-height:34px;padding:0 12px 0 9px;border:0;
+  border-radius:18px;background:rgba(255,255,251,.95);color:#313a39;font:600 13px/1 'TildaSans',Arial,sans-serif;cursor:pointer}
+.ob-срв-т:before{content:"";display:inline-flex;align-items:center;justify-content:center;width:15px;height:15px;border:1.5px solid #52719d;border-radius:4px;
+  background:#fffffb;color:#fffffb;font-size:11px;font-weight:700;line-height:1}
+.ob-срв-т[aria-pressed="true"]{background:#52719d;color:#fffffb}
+.ob-срв-т[aria-pressed="true"]:before{content:"✓";background:#fffffb;color:#52719d;border-color:#fffffb}
+.ob-срв-бар{position:fixed;left:50%;bottom:20px;z-index:9990;display:flex;align-items:center;gap:12px;max-width:calc(100% - 24px);padding:10px 10px 10px 20px;
+  border-radius:30px;background:#313a39;color:#fffffb;font:600 15px/1.2 'TildaSans',Arial,sans-serif;transform:translateX(-50%)}
+.ob-срв-бар[hidden]{display:none!important}
+.ob-срв-бар__т{white-space:nowrap}
+.ob-срв-бар button{min-height:40px;padding:0 18px;border:0;border-radius:20px;font:600 14px/1 'TildaSans',Arial,sans-serif;cursor:pointer}
+.ob-срв-бар__go{background:#fffffb;color:#313a39}
+.ob-срв-бар__go:disabled{opacity:.5;cursor:default}
+.ob-срв-бар__x{background:transparent;color:#fffffb;text-decoration:underline;text-underline-offset:3px}
+.ob-срв{position:fixed;inset:0;z-index:100040;display:flex;align-items:center;justify-content:center;padding:20px;background:rgba(49,58,57,.6)}
+.ob-срв[hidden]{display:none!important}
+.ob-срв__к{position:relative;width:min(1000px,100%);max-height:calc(100vh - 40px);overflow:auto;padding:30px;border-radius:24px;background:#fffffb;color:#313a39}
+.ob-срв__н{margin:0 50px 18px 0;font-family:'EngraversGothic','TildaSans',Arial,sans-serif;font-size:26px;line-height:1.1;font-weight:700;text-transform:uppercase;color:#52719d}
+.ob-срв__закрыть{position:absolute;top:14px;right:14px;width:44px;height:44px;padding:0;border:0;border-radius:50%;background:transparent;color:#313a39;font:28px/1 Arial,sans-serif}
+.ob-срв__закрыть:hover{background:rgba(108,152,188,.16)}
+.ob-срв__табл{width:100%;border-collapse:collapse;table-layout:fixed;font-family:'TildaSans',Arial,sans-serif;font-size:16px}
+.ob-срв__табл th,.ob-срв__табл td{padding:12px 10px;border-bottom:1px solid rgba(49,58,57,.12);text-align:left;vertical-align:top}
+.ob-срв__табл th[scope="row"]{width:180px;color:#52719d;font-weight:700}
+.ob-срв__табл thead td{border-bottom:0}
+.ob-срв__фото{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:12px;background:rgba(49,58,57,.06)}
+.ob-срв__имя{margin:10px 0 0;font-weight:700;font-size:16px;line-height:1.3}
+.ob-срв__д{display:flex;flex-direction:column;gap:8px}
+.ob-срв__д button{min-height:42px;padding:0 14px;border-radius:10px;font-size:14px;font-weight:600}
+.ob-срв__откр{border:1.5px solid #52719d;background:#52719d;color:#fffffb}
+.ob-срв__смета{border:1.5px solid #52719d;background:#fffffb;color:#52719d}
+@media (max-width:640px){
+  .ob-кат-кнопки button{width:100%}
+  .ob-срв{padding:0;align-items:flex-end}
+  .ob-срв__к{max-height:92vh;padding:22px 14px;border-radius:22px 22px 0 0}
+  .ob-срв__н{font-size:21px}
+  .ob-срв__обёртка{overflow-x:auto}
+  .ob-срв__табл{min-width:560px;font-size:15px}
+  .ob-срв__табл th[scope="row"]{width:120px}
+  .ob-срв-бар{left:12px;right:12px;bottom:12px;transform:none;justify-content:space-between;padding-left:16px}
+}
+</style>
+<script>
+(function () {
+  if (window.__obCatalog) return;
+  window.__obCatalog = 1;
+  var HOOK = '#popup:zayavka', MAX = 3;
+  var API = 'https://store.tildaapi.com/api/getproductslist/?storepartuid=583737525251&recid=1888966131&getparts=true&getoptions=true&slice=1&size=100';
+  var money = function (n) { return Math.round(+n || 0).toLocaleString('ru-RU').replace(/\s/g, ' ') + ' ₽'; };
+  var esc = function (t) { return String(t == null ? '' : t).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); };
+
+  // Заявка с подписью. На странице проекта формы нет — переходим в каталог, там форма откроется сама.
+  var openForm = function (service) {
+    var trig = document.querySelector('#t-header a[href="' + HOOK + '"]') || document.querySelector('#rec1855532261 a[href="' + HOOK + '"]');
+    if (!trig || !document.querySelector('.t-popup[data-tooltip-hook="' + HOOK + '"]')) {
+      location.href = '/openbazu-preview/demo-18-11-evening/shop-projects.html?ob_request=' + encodeURIComponent(service);
+      return;
+    }
+    trig.click();
+    var put = function () {
+      [].forEach.call(document.querySelectorAll('.t-popup[data-tooltip-hook="' + HOOK + '"] form'), function (f) {
+        var i = f.querySelector('input[name="Запрошенная услуга"]');
+        if (!i) { i = document.createElement('input'); i.type = 'hidden'; i.name = 'Запрошенная услуга'; f.appendChild(i); }
+        i.value = service;
+      });
+    };
+    put(); setTimeout(put, 80); setTimeout(put, 500); setTimeout(put, 900);
+  };
+  var closeProduct = function (then) {
+    if (typeof window.t_store_closePopup === 'function' && document.querySelector('.t-popup_show .t-store__prod-popup__container')) {
+      window.t_store_closePopup(false);
+      setTimeout(then, 350);
+    } else then();
+  };
+
+  /* 1. Окно и страница проекта: подпись цены, «Купить проект», «Запросить смету строительства».
+        Родную кнопку прячем: скрипт сайта на этой странице превращает её в «Узнать цену». */
+  var buy = function (c, title) {
+    var p = c.querySelector('.js-product-price');
+    var price = p ? parseFloat(p.getAttribute('data-product-price-def') || p.textContent.replace(/[^\d.,]/g, '').replace(',', '.')) : 0;
+    var im = c.querySelector('[data-original]') || (c.getAttribute('data-product-img') ? { getAttribute: function () { return c.getAttribute('data-product-img'); } } : null);
+    var holder = c.closest('[data-product-uid]') || c.querySelector('[data-product-uid]');
+    if (typeof window.tcart__addProduct !== 'function') { openForm('Купить проект: ' + title); return; }
+    window.tcart__addProduct({ name: title, price: price || 0, img: im ? im.getAttribute('data-original') : '', quantity: 1,
+      uid: holder ? holder.getAttribute('data-product-uid') : '', url: location.href });
+    if (typeof window.tcart__openCart === 'function') setTimeout(window.tcart__openCart, 250);
+  };
+  var enhance = function (c) {
+    var name = c.querySelector('.js-store-prod-name'), bw = c.querySelector('.t-store__prod-popup__btn-wrapper');
+    if (!name || !bw) return;
+    var title = name.textContent.trim();
+    if (c.getAttribute('data-ob-cat') === title && c.querySelector('.ob-кат-кнопки')) return;
+    c.setAttribute('data-ob-cat', title);
+    [].forEach.call(c.querySelectorAll('.ob-кат-кнопки,.ob-кат-подпись'), function (e) { e.remove(); });
+    var pw = c.querySelector('.js-store-price-wrapper');
+    if (pw) {
+      var l = document.createElement('p');
+      l.className = 'ob-кат-подпись';
+      l.textContent = 'Стоимость комплекта чертежей';
+      pw.parentNode.insertBefore(l, pw);
+    }
+    bw.style.display = 'none';
+    var box = document.createElement('div');
+    box.className = 'ob-кат-кнопки';
+    box.innerHTML = '<button type="button" class="ob-кат-купить">Купить проект</button>' +
+      '<button type="button" class="ob-кат-смета">Запросить смету строительства</button>';
+    bw.parentNode.insertBefore(box, bw.nextSibling);
+    box.querySelector('.ob-кат-купить').addEventListener('click', function () { buy(c, title); });
+    box.querySelector('.ob-кат-смета').addEventListener('click', function () {
+      closeProduct(function () { openForm('Смета строительства: ' + title); });
+    });
+  };
+
+  /* 2. Сравнение в каталоге: до трёх проектов, три строки. */
+  var picked = [], data = null, bar = null, modal = null;
+  var load = function () {
+    if (data) return Promise.resolve(data);
+    return fetch(API + '&c=' + Date.now()).then(function (r) { return r.json(); }).then(function (j) {
+      data = {};
+      (j.products || []).forEach(function (p) { data[String(p.uid)] = p; });
+      return data;
+    }).catch(function () { data = {}; return data; });
+  };
+  var field = function (p, re) {
+    var t = String((p && p.text) || '').replace(/<br\s*\/?>/gi, '\n').replace(/<[^>]+>/g, '');
+    var m = t.match(re);
+    return m ? m[1].trim() : '';
+  };
+  var area = function (p) { var v = field(p, /Площадь жилая:+\s*([\d.,]+)/i); return v ? v.replace('.', ',') + ' м²' : '—'; };
+  var build = function (p) {
+    var v = field(p, /Тип:+\s*([^\n]+)/i);
+    if (!v) return '—';
+    if (/каркас/i.test(v)) return 'Каркас';
+    if (/железобетон/i.test(v)) return 'Железобетон';
+    if (/sip|сип/i.test(v)) return 'SIP-панели';
+    if (/брус|бревн/i.test(v)) return 'Брус';
+    if (/газобетон/i.test(v)) return 'Газобетон';
+    return v.charAt(0).toUpperCase() + v.slice(1);
+  };
+  var cardOf = function (uid) { return document.querySelector('#rec1888966131 .t-store__card[data-product-uid="' + uid + '"]'); };
+  var syncToggles = function () {
+    [].forEach.call(document.querySelectorAll('.ob-срв-т'), function (b) {
+      b.setAttribute('aria-pressed', String(picked.indexOf(b.getAttribute('data-uid')) >= 0));
+    });
+    if (!bar) {
+      bar = document.createElement('div');
+      bar.className = 'ob-срв-бар';
+      bar.innerHTML = '<span class="ob-срв-бар__т"></span><button type="button" class="ob-срв-бар__go">Сравнить</button><button type="button" class="ob-срв-бар__x">Сбросить</button>';
+      document.body.appendChild(bar);
+      bar.querySelector('.ob-срв-бар__go').addEventListener('click', show);
+      bar.querySelector('.ob-срв-бар__x').addEventListener('click', function () { picked = []; syncToggles(); });
+    }
+    bar.hidden = !picked.length;
+    bar.querySelector('.ob-срв-бар__т').textContent = picked.length < 2 ? 'Выберите ещё проект для сравнения' : 'Выбрано проектов: ' + picked.length + ' из ' + MAX;
+    bar.querySelector('.ob-срв-бар__go').disabled = picked.length < 2;
+  };
+  var toggle = function (uid) {
+    var i = picked.indexOf(uid);
+    if (i >= 0) picked.splice(i, 1);
+    else if (picked.length < MAX) picked.push(uid);
+    else { syncToggles(); bar.querySelector('.ob-срв-бар__т').textContent = 'Можно сравнить до трёх проектов'; return; }
+    syncToggles();
+  };
+  // Вторая кнопка карточки: была «Узнать цену» (скрипт сайта), теперь «Купить проект» — сразу в корзину.
+  var cardButton = function (card) {
+    var b2 = card.querySelector('.js-store-prod-btn2');
+    if (!b2) return;
+    b2.setAttribute('data-ob-price-ready', '1');
+    b2.setAttribute('data-ob-buy', '1');
+    b2.setAttribute('href', '#order');
+    var lab = b2.querySelector('.t-btnflex__text,.t-btntext__text,.js-store-prod-btn2-txt,.t-store__card__btn-text,span') || b2;
+    if (lab.textContent.trim() !== 'Купить проект') lab.textContent = 'Купить проект';
+  };
+  window.addEventListener('click', function (e) {
+    var b = e.target.closest && e.target.closest('[data-ob-buy]');
+    if (!b) return;
+    var card = b.closest('.t-store__card');
+    if (!card) return;
+    e.preventDefault();
+    e.stopImmediatePropagation();
+    buy(card, (card.querySelector('.js-store-prod-name') || {}).textContent ? card.querySelector('.js-store-prod-name').textContent.trim() : '');
+  }, true);
+  var decorate = function () {
+    [].forEach.call(document.querySelectorAll('#rec1888966131 .t-store__card[data-product-uid]'), function (card) {
+      if (!card.closest('.t-store__prod-popup__container,.t-popup,[class*="relevants"]')) cardButton(card);
+      if (card.querySelector('.ob-срв-т') || card.closest('.t-store__prod-popup__container,.t-popup,[class*="relevants"]')) return;
+      var uid = card.getAttribute('data-product-uid');
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'ob-срв-т';
+      b.setAttribute('data-uid', uid);
+      b.setAttribute('aria-pressed', String(picked.indexOf(uid) >= 0));
+      b.textContent = 'Сравнить';
+      b.addEventListener('click', function (e) { e.preventDefault(); e.stopPropagation(); toggle(uid); });
+      card.appendChild(b);
+    });
+  };
+  var close = function () { if (modal) modal.hidden = true; };
+  var show = function () {
+    load().then(function (d) {
+      var items = picked.map(function (uid) {
+        var p = d[uid] || {}, card = cardOf(uid);
+        var title = p.title || (card && card.querySelector('.js-store-prod-name') ? card.querySelector('.js-store-prod-name').textContent.trim() : '');
+        var img = card && card.getAttribute('data-product-img');
+        if (!img) { try { img = JSON.parse(p.gallery || '[]')[0].img; } catch (e) { img = ''; } }
+        var price = p.price != null ? p.price : (card && card.querySelector('.js-product-price') ? card.querySelector('.js-product-price').textContent.replace(/[^\d.]/g, '') : 0);
+        return { uid: uid, title: title, img: img, price: money(price), area: area(p), build: build(p) };
+      });
+      if (!modal) {
+        modal = document.createElement('div');
+        modal.className = 'ob-срв';
+        modal.setAttribute('role', 'dialog');
+        modal.setAttribute('aria-modal', 'true');
+        modal.setAttribute('aria-labelledby', 'ob-срв-н');
+        document.body.appendChild(modal);
+        modal.addEventListener('click', function (e) { if (e.target === modal) close(); });
+        modal.addEventListener('keydown', function (e) { if (e.key === 'Escape') close(); });
+      }
+      var col = function (fn) { return items.map(fn).join(''); };
+      modal.innerHTML = '<div class="ob-срв__к"><button type="button" class="ob-срв__закрыть" aria-label="Закрыть">&#215;</button>' +
+        '<p class="ob-срв__н" id="ob-срв-н">Сравнение проектов</p><div class="ob-срв__обёртка"><table class="ob-срв__табл"><thead><tr><td></td>' +
+        col(function (x) { return '<td>' + (x.img ? '<img class="ob-срв__фото" src="' + esc(x.img) + '" alt="' + esc(x.title) + '">' : '') + '<p class="ob-срв__имя">' + esc(x.title) + '</p></td>'; }) +
+        '</tr></thead><tbody>' +
+        '<tr><th scope="row">Стоимость проекта</th>' + col(function (x) { return '<td>' + x.price + '</td>'; }) + '</tr>' +
+        '<tr><th scope="row">Жилая площадь</th>' + col(function (x) { return '<td>' + x.area + '</td>'; }) + '</tr>' +
+        '<tr><th scope="row">Конструкция</th>' + col(function (x) { return '<td>' + esc(x.build) + '</td>'; }) + '</tr>' +
+        '<tr><th scope="row"></th>' + col(function (x) { return '<td><div class="ob-срв__д"><button type="button" class="ob-срв__откр" data-uid="' + x.uid + '">Открыть проект</button>' +
+          '<button type="button" class="ob-срв__смета" data-title="' + esc(x.title) + '">Запросить смету</button></div></td>'; }) + '</tr>' +
+        '</tbody></table></div></div>';
+      modal.querySelector('.ob-срв__закрыть').addEventListener('click', close);
+      [].forEach.call(modal.querySelectorAll('.ob-срв__откр'), function (b) {
+        b.addEventListener('click', function () {
+          close();
+          var card = cardOf(b.getAttribute('data-uid')), a = card && card.querySelector('a[href*="/tproduct/"]');
+          if (a) a.click();
+        });
+      });
+      [].forEach.call(modal.querySelectorAll('.ob-срв__смета'), function (b) {
+        b.addEventListener('click', function () { close(); openForm('Смета строительства: ' + b.getAttribute('data-title')); });
+      });
+      modal.hidden = false;
+      modal.querySelector('.ob-срв__закрыть').focus();
+    });
+  };
+
+  var queued = false;
+  var scan = function () {
+    queued = false;
+    // окно проекта в каталоге и отдельная страница проекта: от блока кнопки вверх до части с названием проекта
+    [].forEach.call(document.querySelectorAll('.t-store__prod-popup__btn-wrapper'), function (bw) {
+      var c = bw.parentElement;
+      while (c && c !== document.body && !c.querySelector('.js-store-prod-name')) c = c.parentElement;
+      if (c && c !== document.body) enhance(c);
+    });
+    if (document.getElementById('rec1888966131')) decorate();
+  };
+  var later = function () { if (!queued) { queued = true; requestAnimationFrame(scan); } };
+  if (window.MutationObserver) new MutationObserver(later).observe(document.documentElement, { childList: true, subtree: true });
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', later); else later();
+  window.addEventListener('load', later);
+})();
+</script>
+</body> </html>
