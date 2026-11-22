@@ -188,3 +188,5 @@
 .ld-dialog__photo--full{object-fit:contain;max-height:560px;background:var(--ld-wash);cursor:zoom-in}
 
 @media(max-width:639px){.ld-bundlerow{grid-template-columns:58px minmax(0,1fr) 101px;gap:10px}.ld-bundlerow img{width:58px;height:58px}.ld-bundlerow>div:last-child{grid-column:auto;display:flex;flex-direction:column;align-items:flex-end;gap:4px}.ld-bundlerow b{font-size:14px}.ld-bundlerow small{font-size:12px}.ld-qty button{width:33px}.ld-qty output{min-width:33px}.ld-remove{margin:0}.ld-bundlebar b{font-size:13px}}
+
+.ld-proof__photo--plan{object-fit:contain;background:var(--ld-wash);padding:12px}
