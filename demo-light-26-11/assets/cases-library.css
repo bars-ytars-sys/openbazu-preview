@@ -15,3 +15,5 @@
 #ob-case-library a:focus-visible{outline:2px solid #52719d;outline-offset:3px}
 @media(max-width:800px){#ob-case-library .ob-case-library__videos,#ob-case-library .ob-cn{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:560px){#ob-case-library .ob-wrap{padding:0 20px}#ob-case-library .ob-case-library__videos,#ob-case-library .ob-cn{grid-template-columns:1fr}#ob-case-library h2{font-size:26px}}
+
+#ob-case-library .ob-case-library__h{font:700 25px/1.2 EngraversGothic,Arial,sans-serif;color:#52719d;margin:30px 0 20px}
