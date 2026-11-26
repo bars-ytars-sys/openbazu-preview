@@ -9,3 +9,7 @@ body .ob-рез__b,body .ob-кейс-cta__b,body .ob-cnn__заявка{border-ra
 /* A former text link is now a button: reserve real padding for its label and arrow. */
 body .ob-cnn__заявка{box-sizing:border-box!important;display:inline-flex;align-items:center;justify-content:space-between;align-self:flex-start;width:fit-content;max-width:100%;min-width:0;min-height:48px;padding:12px 18px!important;gap:12px!important;font:600 15px/1.25 TildaSans,Arial,sans-serif!important;white-space:normal;text-align:left;overflow-wrap:break-word}
 body .ob-cnn__заявка i{flex:0 0 auto;line-height:1;font-style:normal;white-space:nowrap}
+
+.ob-all-cases-row{grid-column:1/-1;margin:16px 0 4px;display:flex;justify-content:center}
+body .ob-all-cases{display:inline-flex;align-items:center;justify-content:center;gap:14px;min-height:48px;box-sizing:border-box;padding:12px 24px;border:1px solid #52719d;border-radius:15px 15px 0 15px;background:#52719d;color:#fffffb!important;text-decoration:none;font:600 16px/1.25 TildaSans,Arial,sans-serif}
+body .ob-all-cases:hover{background:#6c98bc;border-color:#6c98bc}
