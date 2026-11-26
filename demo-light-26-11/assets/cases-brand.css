@@ -1,0 +1,62 @@
+/* Case portfolio: the same typography, paper, blues and button shape as the approved main page. Demo only. */
+body.obc26-ready,body.obc26-ready #allrecords{background:#fffffb!important}
+body.obc26-ready #rec665336252,body.obc26-ready #rec665336257{display:none!important}
+.obc26[hidden]{display:none!important}
+.obc26{--obc-blue:#52719d;--obc-light:#6c98bc;--obc-ink:#313a39;--obc-paper:#fffffb;background:var(--obc-paper);color:var(--obc-ink);font-family:TildaSans,Arial,sans-serif}
+.obc26 *{box-sizing:border-box}
+.obc26-shell{max-width:1280px;margin:0 auto;padding:0 24px}
+.obc26-head{padding:108px 0 32px}
+.obc26-eyebrow{font:600 12px/1.3 TildaSans,Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#52719d;margin:0 0 14px}
+html body #allrecords .obc26 .obc26-title{position:static!important;display:block!important;width:auto!important;height:auto!important;max-width:900px!important;padding:0!important;margin:0!important;background:none!important;color:#52719d!important;-webkit-text-fill-color:#52719d!important;font:700 44px/1.1 EngraversGothic,Arial,sans-serif!important;letter-spacing:.005em!important;text-transform:uppercase!important;text-align:left!important;transform:none!important}
+html body #allrecords .obc26 .obc26-intro{position:static!important;display:block!important;width:auto!important;height:auto!important;max-width:700px!important;margin:18px 0 0!important;padding:0!important;background:none!important;font:400 17px/1.45 TildaSans,Arial,sans-serif!important;color:#313a39!important;-webkit-text-fill-color:#313a39!important;text-align:left!important;transform:none!important}
+.obc26-nav{display:flex;flex-wrap:wrap;gap:10px 30px;margin:24px 0 0;padding:0;border-bottom:1px solid #d9e3ea}
+.obc26-nav a{display:inline-flex;align-items:center;gap:12px;min-height:46px;font:600 15px/1.3 TildaSans,Arial,sans-serif;text-decoration:none!important;color:#52719d!important;border-bottom:2px solid transparent;margin-bottom:-1px;transition:border-color .15s,color .15s}
+.obc26-nav a:first-child{border-color:#52719d}
+.obc26-nav a:hover{border-color:#6c98bc;color:#6c98bc!important}
+.obc26-nav span{font:400 16px TildaSans,Arial,sans-serif}
+.obc26-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;padding-bottom:44px;scroll-margin-top:90px}
+.obc26-card{min-width:0;display:flex;flex-direction:column;border:1px solid #d9e3ea;border-radius:20px;overflow:hidden;background:#fffffb;box-shadow:0 7px 24px rgba(38,62,85,.035);transition:border-color .18s,box-shadow .18s}
+.obc26-card:hover{border-color:#aac0d2;box-shadow:0 10px 28px rgba(38,62,85,.075)}
+.obc26-cover{display:block;position:relative;aspect-ratio:16/10;overflow:hidden;background:#edf2f4;text-decoration:none}
+.obc26-cover img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .3s ease}
+.obc26-cover:hover img{transform:scale(1.025)}
+.obc26-body{padding:20px;display:flex;flex-direction:column;flex:1;gap:12px}
+.obc26-number{font:600 12px/1.25 TildaSans,Arial,sans-serif;color:#52719d;letter-spacing:.09em;text-transform:uppercase}
+.obc26-card h3{margin:0 0 6px;font:700 23px/1.15 EngraversGothic,Arial,sans-serif;letter-spacing:.005em;text-transform:uppercase;color:#313a39}
+.obc26-card h3 a{color:inherit!important;text-decoration:none!important}
+.obc26-actions{margin-top:auto;display:flex;align-items:center;justify-content:space-between;gap:12px;padding-top:5px}
+.obc26-detail{display:inline-flex;align-items:center;gap:8px;min-height:48px;color:#52719d!important;text-decoration:none!important;font:600 14px/1.25 TildaSans,Arial,sans-serif}
+.obc26-detail span{flex:none;font-size:18px}
+body .obc26-request{display:inline-flex;align-items:center;justify-content:center;flex:none;min-height:48px;max-width:100%;padding:12px 16px;border:1px solid #52719d;border-radius:15px 15px 0 15px;background:#52719d;color:#fffffb!important;-webkit-text-fill-color:#fffffb!important;text-decoration:none!important;font:600 15px/1.25 TildaSans,Arial,sans-serif;text-align:center;transition:background-color .15s,border-color .15s}
+body .obc26-request:hover,body .obc26-request:focus-visible{background:#6c98bc;border-color:#6c98bc;color:#fffffb!important}
+.obc26 a:focus-visible{outline:2px solid #52719d;outline-offset:4px}
+body.obc26-ready #ob-case-library .ob-wrap,body.obc26-ready #rec3872937101 .ob-wrap{max-width:1280px}
+body.obc26-ready #ob-case-library h2,body.obc26-ready #ob-case-library h3{font-family:EngraversGothic,Arial,sans-serif;text-transform:uppercase;color:#52719d}
+body.obc26-ready #ob-case-library{padding:56px 0;background:#edf2f4}
+body.obc26-ready #ob-case-library .ob-cn__c{background:#fffffb}
+body.obc26-ready #ob-case-library .ob-cn__t{font-size:22px}
+body.obc26-ready .t750__title{font-family:EngraversGothic,Arial,sans-serif!important;color:#52719d!important;text-transform:uppercase!important}
+body.obc26-ready .t750__text,body.obc26-ready .t750__descr{font-family:TildaSans,Arial,sans-serif!important;color:#313a39!important}
+body.obc26-ready .t750__btn{font-family:TildaSans,Arial,sans-serif!important;background:#52719d!important;color:#fffffb!important;border-color:#52719d!important;border-radius:15px 15px 0 15px!important}
+body.obc26-ready .t750__btn:hover{background:#6c98bc!important;border-color:#6c98bc!important}
+#obc26-cases,#obc26-videos,#obc26-concepts{scroll-margin-top:90px}
+@media(max-width:1100px){.obc26-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.obc26-title{max-width:780px}.obc26-head{padding-top:100px}}
+@media(max-width:639px){
+ .obc26-shell{padding:0 20px}
+ .obc26-head{padding:86px 0 24px}
+ html body #allrecords .obc26 .obc26-title{font-size:28px!important;line-height:1.1!important}
+ html body #allrecords .obc26 .obc26-intro{font-size:16px!important;line-height:1.4!important;margin-top:16px!important}
+ .obc26-eyebrow{font-size:11px;margin-bottom:11px}
+ .obc26-nav{gap:6px 20px;margin-top:18px}
+ .obc26-nav a{font-size:14px;min-height:44px}
+ .obc26-grid{grid-template-columns:minmax(0,1fr);gap:20px;padding-bottom:30px}
+ .obc26-cover{aspect-ratio:16/10}
+ .obc26-body{padding:18px;gap:10px}
+ .obc26-card h3{font-size:24px;line-height:1.12;margin-bottom:4px}
+ .obc26-actions{gap:10px}
+ body .obc26-request{font-size:14px;padding:12px 14px}
+ .obc26-detail{font-size:14px}
+ body.obc26-ready #ob-case-library{padding:36px 0}
+}
+@media(max-width:370px){.obc26-shell{padding:0 16px}.obc26-nav{gap:0 18px}.obc26-nav a{font-size:13px}.obc26-actions{flex-direction:column-reverse;align-items:stretch;gap:3px}body .obc26-request{width:100%}.obc26-detail{justify-content:center}.obc26-card h3{font-size:22px}}
+@media(prefers-reduced-motion:reduce){.obc26 *{transition:none!important}}
