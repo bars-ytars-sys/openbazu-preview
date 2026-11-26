@@ -73,3 +73,12 @@ body.obc26-services-ready #rec667528572,body.obc26-services-ready #rec665336258{
 .obc26-service .obc26-request span{font-size:20px;line-height:1;flex:none}
 @media(max-width:639px){.obc26-services{padding:32px 0 40px}.obc26-services h2{font-size:28px;margin-bottom:20px}.obc26-services__grid{grid-template-columns:minmax(0,1fr);gap:16px}.obc26-service{padding:22px}.obc26-service h3{font-size:25px;overflow-wrap:break-word}.obc26-service p{font-size:16px;line-height:1.4;margin:12px 0 20px}.obc26-service .obc26-request{min-height:48px;font-size:16px}}
 @media(max-width:370px){.obc26-service{padding:20px}.obc26-service h3{font-size:23px}}
+/* Concepts lead the portfolio; all existing cards and native galleries keep their handlers. */
+#obc26-portfolio>#rec3872937101 .ob-sec{padding:22px 0 34px}
+#obc26-portfolio>#rec3872937101 .ob-wrap{max-width:1280px;padding:0 24px;box-sizing:border-box}
+.obc26-section-title{margin:0 0 24px;color:#52719d;font:700 34px/1.12 EngraversGothic,Arial,sans-serif;text-transform:uppercase;letter-spacing:.005em}
+.obc26-case-section{padding-top:24px}
+#obc26-concepts-more{padding-top:14px;background:transparent}
+#obc26-concepts-more .ob-case-library__h{color:#52719d;text-transform:uppercase}
+@media(max-width:639px){#obc26-portfolio>#rec3872937101 .ob-wrap{padding:0 20px}#obc26-portfolio>#rec3872937101 .ob-sec{padding:14px 0 24px}.obc26-section-title{font-size:28px;margin-bottom:20px}.obc26-case-section{padding-top:18px}}
+@media(max-width:370px){#obc26-portfolio>#rec3872937101 .ob-wrap{padding:0 16px}}

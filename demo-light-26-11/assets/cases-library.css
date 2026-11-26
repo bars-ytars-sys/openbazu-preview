@@ -1,19 +1,19 @@
 /* All projects remain in the visible cases catalogue, with the original details. */
 #ob-case-library{padding:40px 0;background:#edf2f4;color:#313a39}
-#ob-case-library .ob-wrap{max-width:1200px;padding:0 24px;margin:0 auto;box-sizing:border-box}
-#ob-case-library h2{font:700 30px/1.15 EngraversGothic,Arial,sans-serif;color:#52719d;margin:0 0 24px}
-#ob-case-library .ob-case-library__videos,#ob-case-library .ob-cn{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin:0 0 24px}
-#ob-case-library .ob18-episode,#ob-case-library .ob-cn__c{display:block;min-width:0;overflow:hidden;border:1px solid rgba(82,113,157,.18);border-radius:20px;background:#fffffb;color:#313a39;text-decoration:none}
-#ob-case-library .ob18-episode>a{display:block;position:relative}
-#ob-case-library img{display:block;width:100%;aspect-ratio:16/10;object-fit:cover}
-#ob-case-library .ob18-episode>div,#ob-case-library .ob-cn__b{padding:18px}
-#ob-case-library h4,#ob-case-library .ob-cn__t{font:700 22px/1.2 EngraversGothic,Arial,sans-serif;margin:0 0 8px;color:#313a39}
-#ob-case-library p,#ob-case-library .ob-cn__d{font:400 16px/1.4 TildaSans,Arial,sans-serif;margin:0;color:#313a39}
-#ob-case-library .ob18-watch{position:absolute;bottom:12px;left:12px;padding:8px 12px;border-radius:12px;background:#52719d;color:#fffffb;font:600 13px/1.2 TildaSans,Arial,sans-serif}
-#ob-case-library .ob18-case-request,#ob-case-library .ob-cn__go{display:inline-flex;align-items:center;gap:10px;min-height:44px;padding-top:8px;font:600 15px/1.3 TildaSans,Arial,sans-serif;color:#52719d;text-decoration:none}
-#ob-case-library .ob-cn__go i{font-style:normal}
-#ob-case-library a:focus-visible{outline:2px solid #52719d;outline-offset:3px}
-@media(max-width:800px){#ob-case-library .ob-case-library__videos,#ob-case-library .ob-cn{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:560px){#ob-case-library .ob-wrap{padding:0 20px}#ob-case-library .ob-case-library__videos,#ob-case-library .ob-cn{grid-template-columns:1fr}#ob-case-library h2{font-size:26px}}
+:is(#ob-case-library,#obc26-concepts-more) .ob-wrap{max-width:1200px;padding:0 24px;margin:0 auto;box-sizing:border-box}
+:is(#ob-case-library,#obc26-concepts-more) h2{font:700 30px/1.15 EngraversGothic,Arial,sans-serif;color:#52719d;margin:0 0 24px}
+:is(#ob-case-library,#obc26-concepts-more) .ob-case-library__videos,:is(#ob-case-library,#obc26-concepts-more) .ob-cn{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin:0 0 24px}
+:is(#ob-case-library,#obc26-concepts-more) .ob18-episode,:is(#ob-case-library,#obc26-concepts-more) .ob-cn__c{display:block;min-width:0;overflow:hidden;border:1px solid rgba(82,113,157,.18);border-radius:20px;background:#fffffb;color:#313a39;text-decoration:none}
+:is(#ob-case-library,#obc26-concepts-more) .ob18-episode>a{display:block;position:relative}
+:is(#ob-case-library,#obc26-concepts-more) img{display:block;width:100%;aspect-ratio:16/10;object-fit:cover}
+:is(#ob-case-library,#obc26-concepts-more) .ob18-episode>div,:is(#ob-case-library,#obc26-concepts-more) .ob-cn__b{padding:18px}
+:is(#ob-case-library,#obc26-concepts-more) h4,:is(#ob-case-library,#obc26-concepts-more) .ob-cn__t{font:700 22px/1.2 EngraversGothic,Arial,sans-serif;margin:0 0 8px;color:#313a39}
+:is(#ob-case-library,#obc26-concepts-more) p,:is(#ob-case-library,#obc26-concepts-more) .ob-cn__d{font:400 16px/1.4 TildaSans,Arial,sans-serif;margin:0;color:#313a39}
+:is(#ob-case-library,#obc26-concepts-more) .ob18-watch{position:absolute;bottom:12px;left:12px;padding:8px 12px;border-radius:12px;background:#52719d;color:#fffffb;font:600 13px/1.2 TildaSans,Arial,sans-serif}
+:is(#ob-case-library,#obc26-concepts-more) .ob18-case-request,:is(#ob-case-library,#obc26-concepts-more) .ob-cn__go{display:inline-flex;align-items:center;gap:10px;min-height:44px;padding-top:8px;font:600 15px/1.3 TildaSans,Arial,sans-serif;color:#52719d;text-decoration:none}
+:is(#ob-case-library,#obc26-concepts-more) .ob-cn__go i{font-style:normal}
+:is(#ob-case-library,#obc26-concepts-more) a:focus-visible{outline:2px solid #52719d;outline-offset:3px}
+@media(max-width:800px){:is(#ob-case-library,#obc26-concepts-more) .ob-case-library__videos,:is(#ob-case-library,#obc26-concepts-more) .ob-cn{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){:is(#ob-case-library,#obc26-concepts-more) .ob-wrap{padding:0 20px}:is(#ob-case-library,#obc26-concepts-more) .ob-case-library__videos,:is(#ob-case-library,#obc26-concepts-more) .ob-cn{grid-template-columns:1fr}:is(#ob-case-library,#obc26-concepts-more) h2{font-size:26px}}
 
-#ob-case-library .ob-case-library__h{font:700 25px/1.2 EngraversGothic,Arial,sans-serif;color:#52719d;margin:30px 0 20px}
+:is(#ob-case-library,#obc26-concepts-more) .ob-case-library__h{font:700 25px/1.2 EngraversGothic,Arial,sans-serif;color:#52719d;margin:30px 0 20px}
