@@ -60,3 +60,16 @@ body.obc26-ready .t750__btn:hover{background:#6c98bc!important;border-color:#6c9
 }
 @media(max-width:370px){.obc26-shell{padding:0 16px}.obc26-nav{gap:0 18px}.obc26-nav a{font-size:13px}.obc26-actions{flex-direction:column-reverse;align-items:stretch;gap:3px}body .obc26-request{width:100%}.obc26-detail{justify-content:center}.obc26-card h3{font-size:22px}}
 @media(prefers-reduced-motion:reduce){.obc26 *{transition:none!important}}
+/* Services at the bottom use the same system as the portfolio above. */
+body.obc26-services-ready #rec667528572,body.obc26-services-ready #rec665336258{display:none!important}
+.obc26-services{padding:48px 0 56px;scroll-margin-top:84px}
+.obc26-services h2{margin:0 0 24px;font:700 34px/1.12 EngraversGothic,Arial,sans-serif;letter-spacing:.005em;text-transform:uppercase;color:#52719d}
+.obc26-services__grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.obc26-service{display:flex;flex-direction:column;align-items:flex-start;min-width:0;padding:26px;border:1px solid #d9e3ea;border-radius:20px;background:#fffffb;box-shadow:0 7px 24px rgba(38,62,85,.035)}
+.obc26-service__accent{display:block;width:36px;height:2px;flex:none;background:#6c98bc;margin:0 0 17px}
+.obc26-service h3{margin:0;color:#52719d;font:700 26px/1.12 EngraversGothic,Arial,sans-serif;letter-spacing:.005em;text-transform:uppercase}
+.obc26-service p{margin:14px 0 22px;max-width:49ch;color:#313a39;font:400 17px/1.45 TildaSans,Arial,sans-serif}
+.obc26-service .obc26-request{margin-top:auto;gap:24px;min-width:152px;font-size:16px;padding:12px 20px}
+.obc26-service .obc26-request span{font-size:20px;line-height:1;flex:none}
+@media(max-width:639px){.obc26-services{padding:32px 0 40px}.obc26-services h2{font-size:28px;margin-bottom:20px}.obc26-services__grid{grid-template-columns:minmax(0,1fr);gap:16px}.obc26-service{padding:22px}.obc26-service h3{font-size:25px;overflow-wrap:break-word}.obc26-service p{font-size:16px;line-height:1.4;margin:12px 0 20px}.obc26-service .obc26-request{min-height:48px;font-size:16px}}
+@media(max-width:370px){.obc26-service{padding:20px}.obc26-service h3{font-size:23px}}

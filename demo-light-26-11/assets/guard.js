@@ -73,6 +73,8 @@
     const href = trigger.getAttribute('href');
     if (!href || href.startsWith('#') || /^(tel:|mailto:|javascript:)/i.test(href)) return;
     let u; try { u = new URL(href, location.href); } catch (_) { return; }
+    // This verified public service has no copied demo page; allow its explicit link only.
+    if (trigger.matches('#obc26-services a[data-obc-public-link="interior"]') && u.protocol === 'https:' && u.hostname === 'xn--80abtjtnmcm9em.xn--p1ai' && u.pathname === '/interiordesign') return;
     if (u.hostname === 'xn--80abtjtnmcm9em.xn--p1ai' || (u.origin === location.origin && !u.pathname.startsWith(base.pathname))) {
       const target = window.LD_URL(u.pathname + u.search + u.hash);
       if (target) trigger.href = target;
