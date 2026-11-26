@@ -1,0 +1,18 @@
+/* Only the three selected projects appear on the main page. */
+#rec4637216901 .ob-featured{padding:50px 0}
+#rec4637216901 .ob-featured-wrap{max-width:1200px;margin:0 auto;padding:0 24px;box-sizing:border-box}
+#rec4637216901 .ob-featured-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;margin:26px 0}
+#rec4637216901 .ob-featured-grid>article{display:flex;flex-direction:column;min-width:0;margin:0;padding:0;border:1px solid rgba(82,113,157,.18);border-radius:22px;background:#fffffb;overflow:hidden;box-shadow:none}
+#rec4637216901 .ob-featured-grid .rv-project__visual,#rec4637216901 .ob-featured-grid .ob18-episode>a{display:block;position:relative;width:100%;aspect-ratio:16/10;padding:0;border:0;border-radius:0;overflow:hidden}
+#rec4637216901 .ob-featured-grid img{display:block;width:100%;height:100%;object-fit:cover}
+#rec4637216901 .ob-featured-grid .rv-project__body,#rec4637216901 .ob-featured-grid .ob18-episode>div{display:flex;flex-direction:column;flex:1;gap:0;padding:20px}
+#rec4637216901 .ob-featured-grid h3{font:700 25px/1.15 EngraversGothic,Arial,sans-serif;color:#313a39;margin:8px 0 12px}
+#rec4637216901 .ob-featured-grid p{font:400 16px/1.4 TildaSans,Arial,sans-serif;color:#313a39;margin:0 0 20px}
+#rec4637216901 .ob-featured-grid .rv-project__label{font:600 12px/1.4 TildaSans,Arial,sans-serif;color:#52719d}
+#rec4637216901 .ob-featured-actions,#rec4637216901 .rv-project__actions{display:flex;flex-direction:column;gap:10px;margin-top:auto}
+#rec4637216901 .ob-featured-grid .rv-button,#rec4637216901 .ob-featured-watch,#rec4637216901 .ob-featured-grid .ob18-case-request{display:flex;align-items:center;justify-content:center;min-height:46px;box-sizing:border-box;width:100%;padding:12px 14px;border:1px solid #52719d;border-radius:15px 15px 0 15px;background:#52719d;color:#fffffb!important;text-decoration:none;font:600 15px/1.25 TildaSans,Arial,sans-serif;text-align:center}
+#rec4637216901 .ob-featured-grid .rv-button--line,#rec4637216901 .ob-featured-grid .ob18-case-request{background:#fffffb;color:#52719d!important}
+#rec4637216901 .ob-featured-grid .rv-button:hover,#rec4637216901 .ob-featured-watch:hover,#rec4637216901 .ob-featured-grid .ob18-case-request:hover{background:#6c98bc;color:#fffffb!important;border-color:#6c98bc}
+#rec4637216901 .ob-featured-grid .ob18-watch{position:absolute;left:12px;right:auto!important;width:auto!important;bottom:12px;padding:7px 10px;border-radius:10px;background:#52719d;color:#fffffb;font:600 12px/1.25 TildaSans,Arial,sans-serif}
+#rec4637216901 .ob-featured .ob-кейс-cta{margin-top:30px}
+@media(max-width:900px){#rec4637216901 .ob-featured-grid{grid-template-columns:1fr}#rec4637216901 .ob-featured-wrap{padding:0 20px}#rec4637216901 .ob-featured-grid img{max-height:360px}#rec4637216901 .ob-featured-grid .rv-project__visual,#rec4637216901 .ob-featured-grid .ob18-episode>a{max-height:360px}}
