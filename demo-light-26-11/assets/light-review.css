@@ -13,3 +13,18 @@ body .ob-cnn__заявка i{flex:0 0 auto;line-height:1;font-style:normal;white
 .ob-all-cases-row{grid-column:1/-1;margin:16px 0 4px;display:flex;justify-content:center}
 body .ob-all-cases{display:inline-flex;align-items:center;justify-content:center;gap:14px;min-height:48px;box-sizing:border-box;padding:12px 24px;border:1px solid #52719d;border-radius:15px 15px 0 15px;background:#52719d;color:#fffffb!important;text-decoration:none;font:600 16px/1.25 TildaSans,Arial,sans-serif}
 body .ob-all-cases:hover{background:#6c98bc;border-color:#6c98bc}
+/* Uniform concept-card rhythm: 20px between copy, request and gallery. */
+body .ob-cnn .ob-cnn__т{box-sizing:border-box;min-width:0;padding:24px!important}
+body .ob-cnn .ob-cnn__д{margin-bottom:20px!important}
+body .ob-cnn .ob-cnn__заявка{margin:0!important;flex-shrink:0}
+body .ob-cnn--плитка .ob-cnn__т{flex:1 1 auto}
+body .ob-cnn--плитка .ob-cnn__заявка{margin-top:auto!important}
+body .ob-cnn .ob-cnn__мини{margin-top:0!important;flex-shrink:0}
+body .ob-cnn .ob-cnn__заявка+.ob-cnn__мини{margin-top:20px!important}
+body .rv-project .rv-project__body{padding:24px}
+body .rv-project .rv-project__body p{margin-bottom:20px}
+body .rv-project .rv-project__actions .rv-button{min-height:48px}
+body #obc26-concepts-more .ob-cn__c{display:flex;flex-direction:column}
+body #obc26-concepts-more .ob-cn__b{display:flex;flex-direction:column;flex:1;padding:24px}
+body #obc26-concepts-more .ob-cn__go{margin-top:auto;padding-top:20px}
+@media(max-width:640px){body .ob-cnn .ob-cnn__т{padding:20px!important}body .rv-project .rv-project__body,body #obc26-concepts-more .ob-cn__b{padding:20px}}
