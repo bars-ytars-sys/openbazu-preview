@@ -1,0 +1,7 @@
+/* Демо 26.11: брендбук для заявок после кейсов и в окнах. Без зелёных hover-состояний. */
+body .ob-рез__b,body .ob-кейс-cta__b,body .ob-cnn__заявка,body .ob-уход__b,body .ob-ст__b{background:#52719d!important;background-image:none!important;color:#fffffb!important;-webkit-text-fill-color:#fffffb!important;border-color:#52719d!important;box-shadow:none!important;transition:background-color .15s ease,border-color .15s ease!important}
+body .ob-рез__b:hover,body .ob-кейс-cta__b:hover,body .ob-cnn__заявка:hover,body .ob-уход__b:hover,body .ob-ст__b:hover,body .ob-рез__b:focus-visible,body .ob-кейс-cta__b:focus-visible,body .ob-cnn__заявка:focus-visible,body .ob-уход__b:focus-visible,body .ob-ст__b:focus-visible{background:#6c98bc!important;background-image:none!important;border-color:#6c98bc!important;color:#fffffb!important}
+body .ob-кейс-cta{background:#edf2f4!important;background-image:none!important;border:1px solid rgba(82,113,157,.22)!important;border-radius:28px!important;box-shadow:none!important}
+body .ob-кейс-cta__h{color:#52719d!important;background:none!important;-webkit-text-fill-color:#52719d!important}
+body .ob-кейс-cta__т{color:#313a39!important}
+body .ob-рез__b,body .ob-кейс-cta__b,body .ob-cnn__заявка{border-radius:15px 15px 0 15px!important}
