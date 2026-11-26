@@ -22,10 +22,17 @@
 #obv-preview .obv-steps p{font:400 17px/1.4 TildaSans,Arial,sans-serif;color:#52719d;margin:0}
 @media(min-width:641px) and (max-width:1399px){#obv-preview .obv-copy{left:28px;bottom:90px}#obv-preview .obv-title{font-size:40px}#obv-preview .obv-lead{font-size:21px}#obv-preview .obv-gift{right:24px;width:360px;padding:20px}#obv-preview .obv-gift__name{font-size:20px}#obv-preview .obv-gift__link{font-size:14px}}
 @media(min-width:641px) and (max-width:1000px){#obv-preview .obv-title{font-size:32px}#obv-preview .obv-lead{font-size:16px}#obv-preview .obv-gift{max-width:34%;right:20px;padding:17px}#obv-preview .obv-steps{gap:25px;padding:26px}#obv-preview .obv-steps h2{font-size:21px}#obv-preview .obv-steps p{font-size:15px}}
-/* Mobile: retain the live site's original hero, replacing its media only. */
+/* Mobile art direction: the team photo has its own unobstructed frame. */
+#rec3452320701 .obv-mobile-team{display:none}
 @media(max-width:639px){
  #obv-preview{display:none!important}
  #rec3452320701{display:block!important}
- html body #allrecords #rec3452320701 .t396__artboard[data-artboard-recid="3452320701"]{background-image:url("./team-photo.webp")!important}
+ html body #allrecords #rec3452320701 .t396__artboard[data-artboard-recid="3452320701"]{background:#313a39!important;min-height:0!important;height:auto!important}
+ html body #allrecords #rec3452320701 .t396__artboard[data-artboard-recid="3452320701"]::before{display:none!important}
+ html body #allrecords #rec3452320701 .t396__artboard[data-artboard-recid="3452320701"]>[data-elem-id="1767688573545"]{order:1}
+ html body #allrecords #rec3452320701 .t396__artboard[data-artboard-recid="3452320701"]>.obv-mobile-team{display:block;position:relative;width:100%;aspect-ratio:16/10;margin:0;flex:0 0 auto;overflow:hidden;border-radius:14px;z-index:2;order:2}
+ #rec3452320701 .obv-mobile-team img{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:cover;object-position:center 40%;filter:none}
+ html body #allrecords #rec3452320701 .t396__artboard[data-artboard-recid="3452320701"]>#ob-bzw{order:3;margin:0 auto!important;max-width:100%!important}
+ html body #allrecords #rec3452320701 .t396__artboard[data-artboard-recid="3452320701"]>[data-elem-id="1769509412139000001"]{order:4}
  #rec3452320701 .ob18-mobile-video{display:none!important}
 }
