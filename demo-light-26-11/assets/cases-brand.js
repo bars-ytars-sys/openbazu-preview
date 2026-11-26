@@ -11,6 +11,13 @@
   root.hidden=false;document.body.classList.add('obc26-ready');
   var services=document.getElementById('obc26-services');
   if(services&&services.querySelectorAll('.obc26-service').length===4){services.hidden=false;document.body.classList.add('obc26-services-ready');}
+  if(services&&location.hash==='#obc26-services'){
+   var interrupted=false;var cancel=function(){interrupted=true};
+   ['wheel','touchstart','keydown'].forEach(function(type){window.addEventListener(type,cancel,{once:true,passive:true})});
+   var place=function(){if(!interrupted&&location.hash==='#obc26-services')services.scrollIntoView({block:'start',behavior:'instant'})};
+   requestAnimationFrame(function(){requestAnimationFrame(place)});
+   if(document.fonts&&document.fonts.ready)document.fonts.ready.then(place);
+  }
   var videos=document.querySelector('#ob-case-library .ob-case-library__videos');if(videos)videos.id='obc26-videos';
   var concepts=document.querySelector('#rec3872937101 .ob-h2');if(concepts)concepts.id='obc26-concepts';
   root.querySelectorAll('[data-obc-hook]').forEach(function(card){
