@@ -1,0 +1,44 @@
+/* Demo 27.11: compact first screen, using the supplied original photo. */
+@media(min-width:640px){
+ #obv-preview .obv-reference{height:clamp(380px,calc(100svh - 300px),640px)}
+ #obv-preview .obv-photo img{object-position:center 18%}
+ #obv-preview .obv-copy{left:28px;bottom:36px;width:52%;max-width:650px}
+ #obv-preview .obv-title{font-size:clamp(30px,2.55vw,42px);line-height:1.08}
+ #obv-preview .obv-lead{font-size:17px;line-height:1.4;font-weight:400;max-width:590px;margin-top:15px}
+ #obv-preview .obv-gift{right:26px;bottom:16px;width:292px;max-width:29%;padding:15px 18px;border-radius:18px}
+ #obv-preview .obv-gift__label{font-size:11px;letter-spacing:.08em;margin-bottom:7px}
+ #obv-preview .obv-gift__name{font-size:19px;margin-bottom:7px}
+ #obv-preview .obv-gift__note{font-size:13px;line-height:1.35}
+ #obv-preview .obv-gift__link{display:none}
+ #obv-preview .obv-steps{gap:28px;padding:24px;margin-top:-10px;border-radius:22px}
+ #obv-preview .obv-steps h2{font-size:20px;line-height:1.2;margin-bottom:12px}
+ #obv-preview .obv-steps p{font-size:15px;line-height:1.4}
+}
+@media(min-width:640px) and (max-width:1100px){
+ #obv-preview .obv-copy{left:24px;bottom:30px;width:55%}
+ #obv-preview .obv-title{font-size:30px}
+ #obv-preview .obv-lead{font-size:15px;line-height:1.4}
+ #obv-preview .obv-gift{right:20px;bottom:16px;width:240px;max-width:29%;padding:14px 16px}
+ #obv-preview .obv-gift__name{font-size:18px}
+ #obv-preview .obv-steps{gap:20px;padding:20px}
+ #obv-preview .obv-steps h2{font-size:18px}
+ #obv-preview .obv-steps p{font-size:14px}
+}
+@media(max-width:639px){
+ html body #allrecords #rec3452320701 .t396__artboard[data-artboard-recid="3452320701"]{padding:24px 18px 20px!important;gap:12px!important}
+ html body #allrecords #rec3452320701 .t396__artboard>[data-elem-id="1767688573545"] .tn-atom{font-size:24px!important;line-height:1.12!important}
+ html body #allrecords #rec3452320701 .t396__artboard>.obv-mobile-team{aspect-ratio:1.8!important}
+ html body #allrecords #rec3452320701 .obv-mobile-team img{object-position:center 24%}
+ html body #allrecords #rec3452320701 .t396__artboard>[data-elem-id="1769509412139000001"] .tn-atom{font-size:14px!important;line-height:1.4!important}
+ html body #allrecords #rec3452320701 .t396__artboard>#ob-bzw{padding:14px 17px!important;min-height:0!important;border-radius:16px!important}
+ html body #allrecords #rec3452320701 #ob-bzw .ob-bzw__l{font-size:11px!important;line-height:1.25!important}
+ html body #allrecords #rec3452320701 #ob-bzw .ob-bzw__n{font-size:18px!important;line-height:1.2!important;margin:6px 0!important}
+ html body #allrecords #rec3452320701 #ob-bzw .ob-bzw__d{font-size:12px!important;line-height:1.35!important}
+ .obv-mobile-directions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;order:5;width:100%;position:relative;z-index:2;margin:0}
+ .obv-mobile-directions details{min-width:0;padding:12px 10px;border:1px solid rgba(255,255,251,.2);border-radius:12px;color:#fffffb}
+ .obv-mobile-directions summary{display:flex;align-items:center;justify-content:space-between;gap:5px;min-height:36px;cursor:pointer;list-style:none;font:700 15px/1.2 EngraversGothic,Arial,sans-serif;text-transform:uppercase}
+ .obv-mobile-directions summary::-webkit-details-marker{display:none}
+ .obv-mobile-directions summary::after{content:'+';font:400 16px/1 TildaSans,Arial,sans-serif;flex:none;color:#94b7d3}
+ .obv-mobile-directions details[open] summary::after{content:'−'}
+ .obv-mobile-directions details p{font:400 13px/1.45 TildaSans,Arial,sans-serif;margin:10px 0 0;color:#e4e9e9}
+}
