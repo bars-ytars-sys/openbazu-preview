@@ -1,0 +1,12 @@
+/* Three blue colourways. The approved layout and mobile hero stay unchanged. */
+@media(min-width:640px){
+ #obv-preview[data-blue="deep"]{--hero-panel:52,87,127;--hero-heading:#fffffb;--hero-body:#fffffb}
+ #obv-preview[data-blue="brand"]{--hero-panel:82,113,157;--hero-heading:#fffffb;--hero-body:#fffffb}
+ #obv-preview[data-blue="light"]{--hero-panel:222,233,242;--hero-heading:#3f618e;--hero-body:#313a39}
+ #obv-preview[data-blue] .obv-reference{background:rgb(var(--hero-panel))}
+ #obv-preview[data-blue] .obv-shade{background:linear-gradient(90deg,rgb(var(--hero-panel)) 0%,rgb(var(--hero-panel)) 25%,rgba(var(--hero-panel),.94) 30%,rgba(var(--hero-panel),.35) 39%,transparent 48%)}
+ #obv-preview[data-blue] .obv-title{color:var(--hero-heading)!important;-webkit-text-fill-color:var(--hero-heading)!important}
+ #obv-preview[data-blue] .obv-lead{color:var(--hero-body)!important}
+}
+@media(min-width:960px){#obv-preview[data-blue] .obv-photo img{right:-6px}}
+@media(min-width:1400px){#obv-preview[data-blue] .obv-photo img{right:-20px}}
