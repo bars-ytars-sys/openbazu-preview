@@ -1,0 +1,28 @@
+/* Desktop only, 27.11: second original photo, bottom preserved, empty upper wall trimmed. */
+@media(min-width:640px){
+ #obv-preview .obv-reference{background:#313a39;--photo-trim:clamp(48px,8svh,80px)}
+ #obv-preview .obv-photo picture{display:contents}
+ #obv-preview .obv-photo img{position:absolute;left:auto;right:-36px;top:auto;bottom:0;display:block;width:auto;height:calc(100% + var(--photo-trim));max-width:none;object-fit:contain;object-position:right bottom;filter:none;mask-image:linear-gradient(90deg,transparent 0%,#000 12%,#000 100%);-webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 12%,#000 100%)}
+ #obv-preview .obv-shade{background:linear-gradient(90deg,#313a39 0%,#313a39 25%,rgba(49,58,57,.94) 30%,rgba(49,58,57,.35) 39%,transparent 48%);mask-image:none;-webkit-mask-image:none}
+ #obv-preview .obv-copy{top:50%;bottom:auto;left:30px;width:440px;max-width:34%;transform:translateY(-50%)}
+ #obv-preview .obv-title{font-size:clamp(30px,2.5vw,40px);line-height:1.09;text-shadow:none!important}
+ #obv-preview .obv-lead{font-size:17px;line-height:1.4;font-weight:400;margin-top:16px;max-width:none;text-shadow:none}
+ #obv-preview .obv-gift{position:relative;inset:auto;display:block;width:292px;max-width:100%;margin:22px 0 0;padding:14px 18px;box-shadow:none}
+}
+@media(min-width:640px) and (max-width:1100px){
+ #obv-preview .obv-copy{left:24px;width:36%;max-width:36%}
+ #obv-preview .obv-title{font-size:28px}
+ #obv-preview .obv-lead{font-size:14px;line-height:1.4;margin-top:13px}
+ #obv-preview .obv-photo img{right:-18px}
+ #obv-preview .obv-gift{margin-top:18px;width:260px;padding:13px 16px}
+}
+@media(min-width:640px) and (max-width:959px){
+ #obv-preview .obv-reference{height:auto}
+ #obv-preview .obv-photo{position:relative;inset:auto;width:100%;height:clamp(300px,50svh,420px)}
+ #obv-preview .obv-photo img{position:static;width:100%;height:100%;object-fit:contain;object-position:center;mask-image:none;-webkit-mask-image:none}
+ #obv-preview .obv-shade{display:none}
+ #obv-preview .obv-copy{position:relative;inset:auto;transform:none;width:100%;max-width:none;padding:24px}
+ #obv-preview .obv-title{font-size:28px}
+ #obv-preview .obv-lead{font-size:16px;max-width:600px}
+ #obv-preview .obv-steps{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
