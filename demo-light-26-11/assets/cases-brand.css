@@ -101,3 +101,30 @@ body .obc28-filter:focus-visible{outline:2px solid #52719d;outline-offset:3px}
 
 /* The selected own bases fill the working-bases row evenly. */
 @media(min-width:640px){.obc26-grid[data-case-filter="working"]{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* Unified project cards requested by Lera: one image, title, description and identical CTA. */
+body.obp-ready #rec3872937101,body.obp-ready #ob-case-library{display:none!important}
+.obp-collection{padding-top:0;scroll-margin-top:84px}
+.obp-filters{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 16px}
+body .obp-filter{appearance:none;max-width:100%;min-height:44px;padding:10px 20px;border:1px solid #d9e3ea;border-radius:24px;background:#fffffb;color:#52719d;font:600 15px/1.3 TildaSans,Arial,sans-serif;cursor:pointer}
+body .obp-filter[aria-pressed="true"]{background:#52719d;border-color:#52719d;color:#fffffb}
+body .obp-filter:hover{border-color:#52719d}
+body .obp-filter:focus-visible{outline:2px solid #52719d;outline-offset:3px}
+.obp-count{margin:0 0 24px;color:#52719d;font:400 15px/1.4 TildaSans,Arial,sans-serif}
+.obp-card .obp-view{appearance:none;border:0;padding:0;width:100%;cursor:pointer;color:inherit}
+.obp-view-label{position:absolute;right:14px;bottom:14px;display:inline-flex;align-items:center;gap:12px;padding:9px 12px;border-radius:12px;background:rgba(49,58,57,.88);color:#fffffb;font:600 13px/1.25 TildaSans,Arial,sans-serif}
+.obp-card .obc26-body{gap:12px}
+.obp-card .obp-excerpt{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;overflow:hidden;margin:0;color:#68716f;font:400 16px/1.45 TildaSans,Arial,sans-serif}
+.obp-card .obc26-actions{padding-top:10px;margin-top:auto}
+body .obp-card .obc26-request{appearance:none;width:100%;min-width:0;justify-content:space-between;gap:12px;text-align:left;white-space:normal;cursor:pointer}
+.obp-card .obc26-request span{flex:none;font-size:19px}
+.obp-own{padding-top:42px;margin-top:8px;border-top:1px solid #d9e3ea;scroll-margin-top:84px}
+.obp-own .obc26-section-title{margin-bottom:14px}
+.obp-own-lead{max-width:740px;margin:0 0 26px;color:#68716f;font:400 17px/1.45 TildaSans,Arial,sans-serif}
+.obp-own-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+.obp-own-grid .obc26-number{color:#52719d}
+@media(max-width:639px){.obp-filters{gap:8px}body .obp-filter{font-size:14px;padding:10px 16px}.obp-count{font-size:14px;margin-bottom:20px}.obp-card .obc26-body{padding:18px}.obp-card .obp-excerpt{font-size:16px}.obp-own{padding-top:30px}.obp-own-lead{font-size:16px;margin-bottom:22px}.obp-own-grid{grid-template-columns:minmax(0,1fr)}.obp-view-label{right:12px;bottom:12px}}
+
+/* Keep the same project CTA wording and readable button metrics inside native case windows. */
+body.obp-ready .t750__btn{font:600 16px/1.25 TildaSans,Arial,sans-serif!important;text-transform:none!important;white-space:normal!important;min-height:48px;max-width:100%;height:auto!important;padding:12px 20px!important;box-sizing:border-box}
+body.obp-ready .t750__btn .t-btnflex__text{white-space:normal;line-height:1.25}

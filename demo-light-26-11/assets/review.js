@@ -11,7 +11,7 @@
   websites:{title:'Обсудить продвижение',description:'Посмотрим вашу задачу: новый сайт, реклама или увеличение бронирований.',extra:'promotion',comment:'Что хотите улучшить'},
   building:{title:'Запросить смету',description:'Уточним, что планируете построить и какие исходные данные уже есть.',extra:'building',comment:'Какие дома и сколько планируете построить'},
   consultations:{title:'Подобрать консультацию',description:'Расскажите, какой вопрос нужно разобрать. Подберём формат консультации.',extra:'',comment:'Какой вопрос хотите разобрать'},
-  cases:{title:'Обсудить похожий проект',description:'Расскажите о своём участке и планах. Обсудим, какие решения подходят вашей задаче.',extra:'project',comment:'Что важно учесть в вашем проекте'},
+  cases:{title:'Заказать подобный проект',description:'Расскажите о своём участке и планах. Обсудим, какие решения подходят вашей задаче.',extra:'project',comment:'Что важно учесть в вашем проекте'},
   'shop-projects':{title:'Запросить смету строительства',description:'Уточним выбранную модель, количество домов и регион строительства.',extra:'building',comment:'Что важно учесть'},
   materials:{title:'Подобрать обучающие материалы',description:'Расскажите о своей задаче в управлении базой отдыха.',extra:'',comment:'Какую задачу хотите решить'},
   services:{title:'Подобрать услугу',description:'Уточним вашу ситуацию и подберём формат работы.',extra:'stage',comment:'Какая помощь нужна'}
@@ -58,7 +58,7 @@
  }
  function gallery(id,index=0){
   const p=projects.find(x=>x.id===id);if(!p)return;const i=(index+p.images.length)%p.images.length;
-  modal('<p class="rv-eyebrow">Концепция · '+esc(p.place)+' · '+esc(p.area)+'</p><h2 id="rv-title">'+esc(p.title)+'</h2><div class="rv-gallery__stage"><img src="'+asset(p.images[i])+'" alt="'+esc(p.title)+' — рендер '+(i+1)+'"></div><div class="rv-gallery__nav"><button type="button" data-rv-photo="'+id+':'+(i-1)+'">Предыдущий</button><span>'+ (i+1)+' из '+p.images.length+'</span><button type="button" data-rv-photo="'+id+':'+(i+1)+'">Следующий</button></div><div class="rv-gallery__thumbs">'+p.images.map((s,j)=>'<button type="button" data-rv-photo="'+id+':'+j+'" aria-label="Рендер '+(j+1)+'" aria-current="'+(i===j)+'"><img src="'+asset(p.thumbs[j])+'" alt="" loading="lazy"></button>').join('')+'</div>'+p.description.split('\n').filter(Boolean).map(t=>'<p>'+esc(t)+'</p>').join('')+'<button class="rv-button" data-rv-request="'+id+'">Обсудить похожий проект</button>',true);
+  modal('<p class="rv-eyebrow">'+esc(['Концепция',p.place,p.area].filter(Boolean).join(' · '))+'</p><h2 id="rv-title">'+esc(p.title)+'</h2><div class="rv-gallery__stage"><img src="'+asset(p.images[i])+'" alt="'+esc(p.title)+' — рендер '+(i+1)+'"></div><div class="rv-gallery__nav"><button type="button" data-rv-photo="'+id+':'+(i-1)+'">Предыдущий</button><span>'+ (i+1)+' из '+p.images.length+'</span><button type="button" data-rv-photo="'+id+':'+(i+1)+'">Следующий</button></div><div class="rv-gallery__thumbs">'+p.images.map((s,j)=>'<button type="button" data-rv-photo="'+id+':'+j+'" aria-label="Рендер '+(j+1)+'" aria-current="'+(i===j)+'"><img src="'+asset(p.thumbs[j])+'" alt="" loading="lazy"></button>').join('')+'</div>'+p.description.split('\n').filter(Boolean).map(t=>'<p>'+esc(t)+'</p>').join('')+'<button class="rv-button" data-rv-request="'+id+'">Заказать подобный проект</button>',true);
  }
  window.LD_TOAST=text=>{modal('<h2 id="rv-title">Демонстрация</h2><p>'+esc(text)+'</p><button class="rv-button" data-rv-close>Понятно</button>')};
  window.LD_HANDLE=(e,el)=>{
@@ -66,7 +66,7 @@
   if(el.dataset.rvGallery){gallery(el.dataset.rvGallery);return true}
   if(el.dataset.rvPhoto){const [id,n]=el.dataset.rvPhoto.split(':');gallery(id,+n);return true}
   if(el.dataset.rvChannel){channel=el.dataset.rvChannel;$$('[data-rv-channel]',overlay).forEach(b=>b.setAttribute('aria-pressed',String(b===el)));const n=$('#rv-contact');n.value='';n.setCustomValidity('');n.type=channel==='phone'?'tel':'text';n.autocomplete=channel==='phone'?'tel':'off';n.placeholder=channel==='phone'?'+7 (___) ___-__-__':channel==='telegram'?'@username или номер':'Ссылка или номер';$('#rv-contact-label').textContent=channel==='phone'?'Номер телефона':channel==='telegram'?'Ваш Telegram':'Ваш MAX';return true}
-  if(el.dataset.rvRequest){const p=projects.find(p=>p.id===el.dataset.rvRequest);request(p?{...defs.cases,title:'Обсудить похожий проект',topic:p.title,project:p.id,source:location.pathname}:context(el));return true}
+  if(el.dataset.rvRequest){const p=projects.find(p=>p.id===el.dataset.rvRequest);request(p?{...defs.cases,title:'Заказать подобный проект',topic:p.title,project:p.id,source:location.pathname}:context(el));return true}
   if(el.matches('.ob-кат-купить,.js-store-prod-btn2,.ob-срв__откр')){window.LD_TOAST('Покупки и оформление заказов в демо отключены.');return true}
   const href=el.getAttribute('href')||'';
   const nativeForm=href.startsWith('#popup:')&&$('.t-popup[data-tooltip-hook="'+CSS.escape(href)+'"] form');
