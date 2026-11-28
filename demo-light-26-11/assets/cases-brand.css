@@ -98,3 +98,6 @@ body .obc28-filter:focus-visible{outline:2px solid #52719d;outline-offset:3px}
 
 /* Keep the roof of the official Barskie Polya house visible in the landscape cover. */
 .obc26-card[data-obc-hook="#case12"] .obc26-cover img{object-position:50% 20%}
+
+/* The selected own bases fill the working-bases row evenly. */
+@media(min-width:640px){.obc26-grid[data-case-filter="working"]{grid-template-columns:repeat(2,minmax(0,1fr))}}

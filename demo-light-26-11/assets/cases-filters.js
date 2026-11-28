@@ -6,7 +6,7 @@
  const tags={
   '#case1':['launch','reconstruction'], '#case2':['compact','launch'],
   '#case3':['reconstruction'], '#case4':['compact','launch'], '#case5':[],
-  '#case6':['working'], '#case7':['compact','launch'], '#case8':['launch','working'],
+  '#case6':['working'], '#case7':['compact','launch'], '#case8':['launch'],
   '#case9':['launch'], '#case10':['compact','launch'], '#case11':['compact','launch'], '#case12':['working']
  };
  const options=[['all','Все проекты'],['compact','Небольшой участок'],['launch','Запуск с нуля'],['reconstruction','Реконструкция'],['working','Работающая база']];
@@ -24,6 +24,7 @@
   grid.before(controls,count);
   function select(value,updateURL){
    if(!options.some(x=>x[0]===value))value='all';
+   grid.dataset.caseFilter=value;
    let visible=0;
    cards.forEach(c=>{c.hidden=value!=='all'&&!tags[c.dataset.obcHook].includes(value);if(!c.hidden)visible++});
    controls.querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.caseFilter===value)));
